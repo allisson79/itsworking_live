@@ -1,5 +1,4 @@
 
-// Mark active navigation link
 document.addEventListener('DOMContentLoaded', function() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = document.querySelectorAll('.nav-link');
@@ -15,19 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Hamburger menu functionality
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('nav ul.main-menu');
   
   if (menuToggle && mobileMenu) {
-    // Toggle mobile menu
     menuToggle.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       
       mobileMenu.classList.toggle('mobile-menu-open');
       
-      // Change hamburger icon
       if (mobileMenu.classList.contains('mobile-menu-open')) {
         menuToggle.innerHTML = '✕';
       } else {
@@ -35,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Close menu when clicking on a link
     const menuLinks = mobileMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
       link.addEventListener('click', function() {
@@ -44,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(event) {
       if (!event.target.closest('nav') && mobileMenu.classList.contains('mobile-menu-open')) {
         mobileMenu.classList.remove('mobile-menu-open');
@@ -52,14 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Prevent menu from closing when clicking inside it
     mobileMenu.addEventListener('click', function(e) {
       e.stopPropagation();
     });
   }
 });
 
-// Add subtle animations on page load
 window.addEventListener('load', function() {
   const navItems = document.querySelectorAll('nav a:not([href="#"])');
   navItems.forEach((item, index) => {
