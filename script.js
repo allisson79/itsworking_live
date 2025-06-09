@@ -1,4 +1,3 @@
-
 // Mark active navigation link
 document.addEventListener('DOMContentLoaded', function() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -6,11 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   navLinks.forEach(link => {
     const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage || 
-        (currentPage === '' && linkHref === 'index.html') ||
-        (currentPage === 'index.html' && linkHref === 'index.html') ||
-        (currentPage === 'om-oss.html' && linkHref === 'om-oss.html') ||
-        (currentPage === 'hvorfor-velge-oss.html' && linkHref === 'hvorfor-velge-oss.html')) {
+    if (
+      linkHref === currentPage ||
+      (currentPage === '' && linkHref === 'index.html') ||
+      (currentPage === 'index.html' && linkHref === 'index.html') ||
+      (currentPage === 'om-oss.html' && linkHref === 'om-oss.html') ||
+      (currentPage === 'hvorfor-velge-oss.html' && linkHref === 'hvorfor-velge-oss.html')
+    ) {
       link.classList.add('active');
     }
   });
@@ -18,21 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Hamburger menu functionality
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('nav ul:last-child');
-  
+
   if (menuToggle && mobileMenu) {
     // Toggle mobile menu
     menuToggle.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      
       mobileMenu.classList.toggle('mobile-menu-open');
-      
-      // Change hamburger icon
-      if (mobileMenu.classList.contains('mobile-menu-open')) {
-        menuToggle.innerHTML = '✕';
-      } else {
-        menuToggle.innerHTML = '☰';
-      }
+      menuToggle.innerHTML = mobileMenu.classList.contains('mobile-menu-open') ? '✕' : '☰';
     });
 
     // Close menu when clicking on a link
@@ -51,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.innerHTML = '☰';
       }
     });
-    
+
     // Prevent menu from closing when clicking inside it
     mobileMenu.addEventListener('click', function(e) {
       e.stopPropagation();
