@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Hamburger menu functionality
   const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileMenu = document.querySelector('nav ul:last-child');
+  const mobileMenu = document.querySelector('nav ul.main-menu');
   
   if (menuToggle && mobileMenu) {
     // Toggle mobile menu
