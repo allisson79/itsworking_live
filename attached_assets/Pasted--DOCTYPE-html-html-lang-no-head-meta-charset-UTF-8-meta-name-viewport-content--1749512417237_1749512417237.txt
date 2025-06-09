@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Its Working – Hjem</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li>
+        <strong>
+          <a href="index.html">
+            <img src="its_working_logo_transparent.png" alt="Its Working - Hjem" style="height: 150px" />
+          </a>
+        </strong>
+      </li>
+      <li>
+        <button class="mobile-menu-toggle" aria-label="Åpne meny">☰</button>
+      </li>
+    </ul>
+    <ul class="main-menu">
+      <li><a href="#" class="nav-link disabled">Tjenester</a></li>
+      <li><a href="#" class="nav-link disabled">Leverandører</a></li>
+      <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
+      <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
+      <li><a href="mailto:kontakt@itsworking.no" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <header style="background-image: url('hero_trondheim.jpg')" class="hero">
+    <div class="hero-overlay">
+      <h1>En trygg, lokal IT-partner – ærlig, tilgjengelig og med løsninger som virker.</h1>
+      <p>Vi hjelper små og mellomstore bedrifter i Trondheim med stabilt internett og smarte IT-løsninger – levert med menneskelig kontakt og ekte ansvar.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <p><strong>Its Working</strong> er nettopp lansert, og endelig er hjelpen nærmere enn noen gang. Vi kommer til å dele spennende nyheter og muligheter løpende fremover. Allerede nå er vi stolt partner med Norges ledende fiberleverandør, GlobalConnect, og samarbeider med flere dyktige, lokale aktører som bidrar i våre leveranser.</p>
+    <p>I tiden fremover vil vi publisere referanser fra fornøyde kunder og presentere nye samarbeid som styrker både bredden og kvaliteten i tjenestene våre. Mange som tidligere har jobbet med oss, har allerede meldt at de ønsker å komme tilbake – fordi de savner nærheten, ærligheten og den tilgjengeligheten vi alltid har stått for.</p>
+    <p><strong>Den 25. juni</strong> lanserer vi våre tjenester og leverandørnettverk. Vi gleder oss stort til å ønske gamle kjente og nye kunder velkommen hjem til en IT-partner som kjenner byen og folka som bor her.</p>
+  </main>
+
+  <footer class="container">
+    <small>
+      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a>
+    </small>
+  </footer>
+</body>
+</html>
