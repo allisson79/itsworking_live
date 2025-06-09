@@ -1,3 +1,4 @@
+
 entrypoint = "index.html"
 modules = ["web"]
 
@@ -6,7 +7,7 @@ channel = "stable-24_11"
 packages = ["static-web-server"]
 
 [deployment]
-publicDir = "/"
+publicDir = "."
 deploymentTarget = "static"
 
 [workflows]
@@ -19,12 +20,16 @@ mode = "parallel"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "echo \"Starting static web server...\""
-waitForPort = 80
+waitForPort = 5000
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "static-web-server -w ./.config/static-web-server.toml"
+args = "static-web-server -p 5000 -d ."
 
 [[ports]]
 localPort = 80
 externalPort = 80
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
