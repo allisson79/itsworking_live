@@ -1,0 +1,734 @@
+.hero {
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-overlay {
+  background: 
+    linear-gradient(135deg, rgba(0, 42, 92, 0.6), rgba(0, 0, 0, 0.4)),
+    radial-gradient(circle at 80% 20%, rgba(30, 127, 216, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(0, 42, 92, 0.1) 0%, transparent 50%);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  animation: heroSlideUp 1s ease-out;
+  position: relative;
+}
+
+/* Elegant hero-animasjon */
+@keyframes heroSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtil breathing-effekt på hero-overlay */
+.hero-overlay:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
+  border-color: rgba(30, 127, 216, 0.3);
+}
+
+/* Diskret pulserende effekt */
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, 
+    rgba(30, 127, 216, 0.1), 
+    rgba(0, 42, 92, 0.1), 
+    rgba(30, 127, 216, 0.1));
+  border-radius: 10px;
+  opacity: 0.5;
+  animation: subtlePulse 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Global font setting */
+* {
+  font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
+}
+
+/* Forbedret base responsive design */
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Tving mobil layout på små skjermer - MUST WORK */
+@media screen and (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: none !important;
+    -ms-text-size-adjust: none !important;
+  }
+  
+  body {
+    min-width: 320px !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    zoom: 1 !important;
+    font-size: 14px !important;
+  }
+  
+  /* Overstyr eventuell desktop-styling */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Sikre at container ikke blir for bred */
+  .container,
+  .container-fluid {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* Force mobile layout on smaller screens regardless of device */
+@media only screen and (max-device-width: 768px) {
+  html {
+    -webkit-text-size-adjust: none !important;
+  }
+  
+  body {
+    font-size: 14px !important;
+    width: 100% !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Show hamburger menu on all screen sizes */
+.mobile-menu-toggle {
+  display: block !important;
+  background: #0043a8;
+  border: 2px solid #0043a8;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  margin-left: auto !important;
+  position: relative;
+  z-index: 1002;
+  box-shadow: 0 4px 12px rgba(0, 67, 168, 0.4);
+  transition: all 0.3s ease;
+  line-height: 1;
+  min-width: 50px;
+  text-align: center;
+}
+
+.mobile-menu-toggle:hover {
+  background-color: rgba(0, 67, 168, 0.8);
+  transform: scale(1.05);
+}
+
+
+
+/* Navigation container */
+nav.container-fluid {
+  position: relative;
+  padding: 1.5rem 2rem;
+}
+
+/* Ensure first nav ul takes full width and positions items correctly */
+nav ul:first-child {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Logo container */
+nav ul:first-child li:first-child {
+  flex: 0 0 auto;
+}
+
+/* Hamburger container - force to right */
+nav ul:first-child li:last-child {
+  flex: 0 0 auto;
+  margin-left: auto !important;
+}
+
+nav img {
+  height: 150px !important;
+  transition: all 0.4s ease;
+}
+
+/* Elegant logo hover-effekt */
+nav a img {
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 42, 92, 0.1));
+  border: none;
+}
+
+nav a:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(0, 42, 92, 0.3));
+}
+
+/* Subtil animasjon når siden laster */
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav img {
+  animation: logoFadeIn 0.8s ease-out;
+}
+
+main.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Desktop navigation - hidden by default, shown when hamburger is clicked */
+nav ul:last-child {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 2rem;
+  width: 300px;
+  max-width: calc(100vw - 4rem);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(0, 67, 168, 0.15);
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 0;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 42, 92, 0.25);
+  z-index: 1001;
+}
+
+/* Show menu when hamburger is clicked */
+nav ul:last-child.mobile-menu-open {
+  display: flex !important;
+}
+
+/* Desktop menu items styling */
+nav ul:last-child.mobile-menu-open li {
+  width: 100%;
+  margin: 0;
+}
+
+nav ul:last-child.mobile-menu-open a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid #0043a8;
+  border-radius: 8px;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0043a8 !important;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+nav ul:last-child.mobile-menu-open a:hover {
+  background-color: #0043a8;
+  color: white !important;
+  transform: translateY(-1px);
+}
+
+nav ul:last-child.mobile-menu-open a.disabled {
+  padding: 1rem 1rem 2.2rem 1rem;
+  position: relative;
+}
+
+nav ul:last-child.mobile-menu-open a.disabled:after {
+  content: "Kommer 25. juni";
+  position: absolute;
+  bottom: 0.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #0043a8;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Konsistente navigasjonslenker */
+nav a:not(:has(img)) {
+  color: #0043a8 !important;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #0043a8;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+/* Logo link styling without border */
+nav a:has(img) {
+  border: none !important;
+  padding: 0;
+  background: none !important;
+}
+
+nav a:has(img):hover {
+  background: none !important;
+  border: none !important;
+}
+
+/* Hover-effekt for navigasjonslenker */
+nav a:not(:has(img)):hover {
+  background-color: #0043a8;
+  color: #fff !important;
+}
+
+/* Aktiv side markering */
+nav a.active {
+  background-color: #0043a8;
+  color: #fff !important;
+}
+
+/* Deaktivert knapp styling */
+nav a.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: transparent;
+  color: #0043a8 !important;
+  border: 2px solid #0043a8;
+  opacity: 0.7;
+  position: relative;
+  padding: 0.6rem 1.2rem 1.8rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* "Kommer 25. juni" tekst inne i knappen */
+nav a.disabled:after {
+  content: "Kommer 25. juni";
+  position: absolute;
+  bottom: 0.3rem;
+  font-size: 0.65rem;
+  color: #0043a8;
+  font-style: italic;
+  font-weight: normal;
+}
+
+nav a.disabled:hover {
+  background-color: transparent;
+  color: #0043a8 !important;
+}
+
+/* Remove conflicting mobile menu toggle rule */
+
+.mobile-menu-toggle:hover {
+  background-color: rgba(0, 67, 168, 0.8);
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+/* Mobil navigasjon - komplett ombygget */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 16px; /* Økt fra 14px for bedre lesbarhet */
+  }
+  
+  body {
+    font-size: 1rem !important;
+  }
+  
+  /* Hamburger-meny synlig på mobil */
+  .mobile-menu-toggle {
+    display: block !important;
+    background: #0043a8;
+    border: 2px solid #0043a8;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: auto !important;
+    position: relative;
+    z-index: 1002;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .mobile-menu-toggle:hover {
+    background-color: #0043a8;
+    color: white;
+  }
+  
+  /* Navigation layout for mobil */
+  nav.container-fluid {
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    backdrop-filter: none;
+    z-index: 1000;
+    border-bottom: none;
+    min-height: auto; /* La innholdet bestemme høyden */
+  }
+  
+  /* Øverste rad med logo og hamburger */
+  nav ul:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    width: 100%;
+    position: relative;
+  }
+  
+  nav img {
+    height: min(35vh, 400px) !important; /* Mye større logo - opptil 35% av skjermhøyde eller 400px */
+    max-width: 90vw; /* Mer plass horisontalt */
+    width: auto;
+    margin: 1rem 0; /* Litt margin for bedre spacing */
+  }
+  
+  /* Skjul standard meny på mobil */
+  nav ul:last-child {
+    display: none !important;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 1rem;
+    left: auto;
+    width: calc(100vw - 2rem);
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 67, 168, 0.15);
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem;
+    box-shadow: 0 8px 25px rgba(0, 42, 92, 0.25);
+    z-index: 1001;
+  }
+  
+  /* Vis meny når åpen */
+  nav ul:last-child.mobile-menu-open {
+    display: flex !important;
+  }
+  
+  nav ul:last-child.mobile-menu-open li {
+    margin: 0;
+    width: 100%;
+  }
+  
+  nav ul:last-child.mobile-menu-open a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 67, 168, 0.1);
+    margin: 0;
+  }
+  
+  nav ul:last-child.mobile-menu-open a:last-child {
+    border-bottom: none;
+  }
+  
+  /* Mobilmeny lenker - mye større og lettere å treffe */
+  nav a:not(:has(img)) {
+    display: block;
+    text-align: center;
+    font-size: 1.1rem; /* Større tekst */
+    padding: 1rem 1.5rem; /* Mye større klikkområde */
+    margin: 0.3rem 0;
+    border-radius: 8px;
+    font-weight: 600;
+    background-color: #f8f9fa;
+    border: 2px solid #0043a8;
+    color: #0043a8 !important;
+    transition: all 0.3s ease;
+    min-height: 50px; /* Minimum høyde for lett touch */
+  }
+  
+  nav a:not(:has(img)):hover,
+  nav a:not(:has(img)):active {
+    background-color: #0043a8;
+    color: white !important;
+    transform: scale(1.02);
+  }
+  
+  /* Spesiell styling for deaktiverte knapper på mobil */
+  nav a.disabled {
+    padding: 1rem 1.5rem 2.5rem 1.5rem;
+    background-color: #e9ecef;
+    opacity: 0.8;
+    position: relative;
+  }
+  
+  nav a.disabled:after {
+    content: "Kommer 25. juni";
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #0043a8;
+    font-style: italic;
+    font-weight: normal;
+  }
+  
+  /* Hero - forbedret for mobil */
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 60vh;
+    background-attachment: scroll; /* Bedre ytelse på mobil */
+  }
+  
+  .hero-overlay {
+    padding: 1.5rem;
+    margin: 0;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .hero-overlay h1 {
+    font-size: 1.5rem; /* Større for bedre lesbarhet */
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-overlay p {
+    font-size: 1rem; /* Større for bedre lesbarhet */
+    line-height: 1.5;
+  }
+  
+  /* Main content - kraftig forbedret lesbarhet */
+  main.container {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+    line-height: 1.7; /* Økt linjehøyde for bedre lesbarhet */
+  }
+  
+  main.container h2 {
+    font-size: 1.6rem; /* Mye større overskrifter */
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    color: #0043a8;
+    font-weight: 700;
+  }
+  
+  main.container h3 {
+    font-size: 1.3rem; /* Større underoverskrifter */
+    line-height: 1.4;
+    margin: 2rem 0 1rem 0;
+    color: #1e7fd8;
+    font-weight: 600;
+  }
+  
+  main.container p {
+    font-size: 1.1rem; /* Større brødtekst */
+    line-height: 1.7; /* Økt linjehøyde */
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  /* Forbedret list styling for mobil */
+  main.container ul {
+    margin: 1rem 0 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  main.container li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    padding: 0.8rem 1rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #0043a8;
+    border-radius: 4px;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  
+  main.container li:before {
+    content: "✓";
+    position: absolute;
+    left: 1rem;
+    color: #0043a8;
+    font-weight: bold;
+  }
+  
+  /* HR styling for mobil */
+  hr {
+    margin: 2.5rem 0 !important;
+    border: none !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #0043a8, transparent) !important;
+  }
+  
+  /* Footer - forbedret for mobil */
+  footer {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  footer small {
+    display: block;
+    line-height: 2;
+    font-size: 1rem;
+  }
+  
+  footer a {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    margin: 0.5rem 0.3rem;
+    display: inline-block;
+    border-radius: 8px;
+    min-width: 120px;
+  }
+}
+
+/* Extra små skjermer - optimalisert for de minste mobilene */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+  
+  nav.container-fluid {
+    padding: 0.5rem;
+  }
+  
+  nav img {
+    height: 55px !important;
+  }
+  
+  nav ul:last-child {
+    gap: 0.25rem;
+  }
+  
+  nav a:not(:has(img)) {
+    min-width: 70px;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  nav a.disabled {
+    padding: 0.3rem 0.5rem 1rem 0.5rem;
+  }
+  
+  nav a.disabled:after {
+    font-size: 0.45rem;
+  }
+  
+  .hero {
+    padding: 2rem 0.5rem;
+    min-height: 40vh;
+  }
+  
+  .hero-overlay {
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+  }
+  
+  .hero-overlay h1 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+  
+  .hero-overlay p {
+    font-size: 0.85rem;
+  }
+  
+  main.container {
+    padding: 1rem 0.5rem;
+  }
+  
+  main.container h2 {
+    font-size: 1.15rem;
+  }
+  
+  main.container h3 {
+    font-size: 1rem;
+  }
+  
+  main.container p,
+  main.container li {
+    font-size: 0.85rem;
+  }
+  
+  footer {
+    padding: 1rem 0.5rem;
+  }
+  
+  footer a {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Footer knapper - samme stil som før */
+footer a {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #0043a8;
+  border-radius: 6px;
+  color: #0043a8 !important;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+footer a:hover {
+  background-color: #0043a8;
+  color: #fff !important;
+}
+
+/* Enkel footer styling */
+footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+}

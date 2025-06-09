@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SmartFiber – Fremtidens nettverksløsning for restaurant- og utelivsbransjen</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Spesifikke stiler for onepager */
+    .section-spacing {
+      margin: 4rem 0;
+      padding: 3rem 0;
+    }
+
+    .section-divider {
+      border-top: 2px solid #e0e0e0;
+      margin: 3rem 0;
+    }
+
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+
+    .onepage-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 67, 168, 0.1);
+    }
+
+    .onepage-nav ul:last-child {
+      gap: 1rem;
+    }
+
+    .onepage-nav a:not(:has(img)) {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .price-table {
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+
+    .price-table table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 42, 92, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .price-table th {
+      background: linear-gradient(135deg, #0043a8, #1e7fd8);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .price-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .price-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(0, 42, 92, 0.05), rgba(30, 127, 216, 0.05));
+      border: 1px solid rgba(0, 67, 168, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .onepage-nav img {
+        height: 100px !important;
+      }
+
+      .section-spacing {
+        margin: 2rem 0;
+        padding: 2rem 0;
+      }
+
+      .price-table th,
+      .price-table td {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+
+<body class="smooth-scroll">
+  <nav class="container-fluid onepage-nav">
+    <ul>
+      <li>
+        <strong><a href="#hjem"><img src="its_working_logo_transparent.png" alt="Its Working - Hjem" style="height: 120px" /></a></strong>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="#hjem" class="nav-link">Hjem</a></li>
+      <li><a href="#fordeler" class="nav-link">Fordeler</a></li>
+      <li><a href="#priser" class="nav-link">Priser</a></li>
+      <li><a href="mailto:kontakt@itsworking.no" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- HJEM SEKSJON -->
+  <section id="hjem">
+    <header style="background-image: url('hero_trondheim.jpg')" class="hero">
+      <div class="hero-overlay">
+        <h1>SmartFiber – Fremtidens nettverksløsning for restaurant- og utelivsbransjen i Trondheim</h1>
+        <p>Levert av It's Working AS i samarbeid med GlobalConnect</p>
+      </div>
+    </header>
+
+    <main class="container section-spacing">
+      <h2>Hvorfor SmartFiber?</h2>
+      <p><strong>SmartFiber</strong> er spesialtilpasset restaurant- og utelivsbransjen og sikrer stabil drift, høy sikkerhet og enkel skalerbarhet. It's Working AS tilbyr denne løsningen lokalt, med sterk bransjekunnskap og høy teknisk kompetanse.</p>
+
+      <div class="highlight-box">
+        <h3>Lokal forankring – trygg og rask service</h3>
+        <p>It's Working AS kjenner restaurant- og utelivsbransjen i Trondheim og tilbyr personlig oppfølging og rask respons. Med GlobalConnects robuste infrastruktur får du det beste fra to verdener: moderne teknologi og lokal tilstedeværelse.</p>
+      </div>
+    </main>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- FORDELER SEKSJON -->
+  <section id="fordeler">
+    <header style="background-image: url('velge oss.png')" class="hero">
+      <div class="hero-overlay">
+        <h1>Fordeler for din bedrift</h1>
+        <p>SmartFiber gir deg alt du trenger for smidig drift i restaurant- og utelivsbransjen</p>
+      </div>
+    </header>
+
+    <main class="container section-spacing">
+      <h3>Høy oppetid og driftssikkerhet</h3>
+      <p>Lynrask fiber med automatisk 4G-backup sikrer kontinuerlig drift – selv ved linjebrudd.</p>
+
+      <h3>Sikker betaling og personvern</h3>
+      <p>Innebygd brannmur og datakryptering gir trygg kortbruk og full GDPR-samsvar.</p>
+
+      <h3>Eget gjestenettverk</h3>
+      <p>Separat og sikkert WiFi for gjester – uten å kompromittere driftsnettverket.</p>
+
+      <h3>Skalerbar og fleksibel</h3>
+      <p>Enkel utvidelse og tilpasning når virksomheten vokser eller endrer behov.</p>
+
+      <h3>Enkel administrasjon</h3>
+      <p>Automatisk vedlikehold og oppdateringer – krever ingen IT-kompetanse hos ansatte.</p>
+
+      <div class="highlight-box" style="text-align: center; margin-top: 3rem;">
+        <h2 style="color: #0043a8; margin-bottom: 1rem;">Én løsning – én leverandør – ingen bekymringer</h2>
+      </div>
+    </main>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- PRISER SEKSJON -->
+  <section id="priser">
+    <header style="background-image: url('hands-63743_1280.jpg')" class="hero">
+      <div class="hero-overlay">
+        <h1>Kampanjepriser 2025</h1>
+        <p>Spesialtilbud for restaurant- og utelivsbransjen i Trondheim</p>
+      </div>
+    </header>
+
+    <main class="container section-spacing">
+      <p><strong>Prisene gjelder med 36 måneders bindingstid og etablerte fiberpunkter. Tilbudet gjelder t.o.m. 30.06.2025.</strong></p>
+
+      <div class="price-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Hastighet</th>
+              <th>Pris pr. måned</th>
+              <th>Etablering</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>50/50 Mbps</strong></td>
+              <td><strong>1 690,-</strong></td>
+              <td><strong>0,-</strong></td>
+            </tr>
+            <tr>
+              <td><strong>100/100 Mbps</strong></td>
+              <td><strong>1 790,-</strong></td>
+              <td><strong>0,-</strong></td>
+            </tr>
+            <tr>
+              <td><strong>200/200 Mbps</strong></td>
+              <td><strong>2 090,-</strong></td>
+              <td><strong>0,-</strong></td>
+            </tr>
+            <tr>
+              <td><strong>500/500 Mbps</strong></td>
+              <td><strong>2 990,-</strong></td>
+              <td><strong>0,-</strong></td>
+            </tr>
+            <tr>
+              <td><strong>1000/1000 Mbps</strong></td>
+              <td><strong>3 490,-</strong></td>
+              <td><strong>0,-</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="text-align: center; margin: 3rem 0;">
+        <img src="gc-logo-hor-white.png" alt="GlobalConnect Partner" style="max-height: 60px; opacity: 0.8;">
+      </div>
+    </main>
+  </section>
+
+  <footer class="container section-spacing" style="text-align: center;">
+    <small>
+      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a>
+    </small>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Update active navigation based on scroll position
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 200;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
