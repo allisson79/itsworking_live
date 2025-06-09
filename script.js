@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (linkHref === currentPage || 
         (currentPage === '' && linkHref === 'index.html') ||
         (currentPage === 'index.html' && linkHref === 'index.html') ||
-        (currentPage === 'om-oss.html' && linkHref === 'om-oss.html')) {
+        (currentPage === 'om-oss.html' && linkHref === 'om-oss.html') ||
+        (currentPage === 'hvorfor-velge-oss.html' && linkHref === 'hvorfor-velge-oss.html')) {
       link.classList.add('active');
     }
   });
@@ -69,5 +70,7 @@ window.addEventListener('load', function() {
       item.style.opacity = '1';
       item.style.transform = 'translateY(0)';
     }, index * 100);
+  });
+});
   });
 });
