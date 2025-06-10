@@ -1,4 +1,3 @@
-
 // Mobile menu toggle functionality - robust version
 (function() {
   'use strict';
