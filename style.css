@@ -583,19 +583,44 @@ nav a.disabled:hover {
     line-height: 1.6;
     margin-bottom: 0.8rem;
     padding: 0.8rem 1rem;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #11181f, #1a2332);
     border-left: 4px solid #0043a8;
+    border: 1px solid rgba(0, 67, 168, 0.3);
     border-radius: 4px;
     position: relative;
     padding-left: 2.5rem;
+    color: #e9ecef;
   }
 
   main.container li:before {
     content: "✓";
     position: absolute;
     left: 1rem;
-    color: #0043a8;
+    color: #1e7fd8;
     font-weight: bold;
+  }
+
+  /* Dark theme FAQ boxes for mobile */
+  #quick-faq div {
+    background: linear-gradient(135deg, #11181f, #1a2332) !important;
+    border: 1px solid rgba(0, 67, 168, 0.3) !important;
+    color: #e9ecef !important;
+  }
+
+  #quick-faq h3 {
+    color: #1e7fd8 !important;
+  }
+
+  #quick-faq p {
+    color: #e9ecef !important;
+  }
+
+  /* Dark theme sections for mobile */
+  #founders-story,
+  section[style*="background: #f8f9fa"] {
+    background: linear-gradient(135deg, #11181f, #1a2332) !important;
+    border: 2px solid #0043a8 !important;
+    color: #e9ecef !important;
   }
 
   /* HR styling for mobil */
@@ -731,4 +756,33 @@ footer {
   margin-top: 3rem;
   padding: 2rem 0;
   text-align: center;
+}
+
+/* Dark styling for Pipedrive scheduler iframe */
+#book-meeting {
+  background: #11181f;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(17, 24, 31, 0.3);
+}
+
+#book-meeting h2 {
+  color: #ffffff !important;
+}
+
+#book-meeting p {
+  color: #e9ecef !important;
+}
+
+#book-meeting iframe {
+  border: 3px solid #0043a8 !important;
+  background-color: white;
+  filter: contrast(0.95) brightness(0.98);
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  #book-meeting iframe {
+    filter: invert(0.9) hue-rotate(180deg) contrast(1.1) brightness(1.1);
+  }
 }
