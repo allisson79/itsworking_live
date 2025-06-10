@@ -9,7 +9,7 @@
 
       if (!menuToggle || !mainMenu) {
         console.log('Menu elements not found, retrying...');
-        setTimeout(initializeMenu, 100);
+        setTimeout(initializeMenu, 200);
         return;
       }
 

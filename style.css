@@ -372,11 +372,15 @@ nav a.disabled:hover {
 /* Mobil navigasjon - komplett ombygget */
 @media screen and (max-width: 768px) {
   html {
-    font-size: 16px; /* Økt fra 14px for bedre lesbarhet */
+    font-size: 18px; /* Økt til 18px for mye bedre lesbarhet */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 
   body {
     font-size: 1rem !important;
+    line-height: 1.7;
+    overflow-x: hidden;
   }
 
   /* Hamburger-meny synlig på mobil */
@@ -385,16 +389,18 @@ nav a.disabled:hover {
     background: #0043a8;
     border: 2px solid #0043a8;
     color: white;
-    font-size: 1.5rem;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
+    font-size: 1.8rem;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: auto !important;
     position: relative;
     z-index: 1002;
-    min-width: 50px;
+    min-width: 60px;
+    min-height: 60px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 67, 168, 0.3);
   }
 
   .mobile-menu-toggle:hover {
@@ -425,10 +431,10 @@ nav a.disabled:hover {
   }
 
   nav img {
-    height: min(35vh, 400px) !important; /* Mye større logo - opptil 35% av skjermhøyde eller 400px */
-    max-width: 90vw; /* Mer plass horisontalt */
+    height: min(30vh, 200px) !important; /* Optimalisert størrelse for mobilskjermer */
+    max-width: 85vw; /* Mer plass horisontalt */
     width: auto;
-    margin: 1rem 0; /* Litt margin for bedre spacing */
+    margin: 0.5rem 0; /* Redusert margin for bedre spacing */
   }
 
   /* Skjul standard meny på mobil */
@@ -439,15 +445,15 @@ nav a.disabled:hover {
     right: 1rem;
     left: auto;
     width: calc(100vw - 2rem);
-    max-width: 350px;
-    background: #004a99;
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(240, 246, 255, 0.3);
-    border-radius: 12px;
+    max-width: 400px;
+    background: linear-gradient(135deg, #004a99, #0043a8);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(240, 246, 255, 0.4);
+    border-radius: 16px;
     flex-direction: column;
     gap: 0;
-    padding: 1rem;
-    box-shadow: 0 8px 25px rgba(0, 42, 92, 0.25);
+    padding: 1.5rem;
+    box-shadow: 0 12px 35px rgba(0, 42, 92, 0.4);
     z-index: 1001;
   }
 
@@ -479,16 +485,20 @@ nav a.disabled:hover {
     display: block;
     width: 100%;
     text-align: center;
-    font-size: 1.1rem; /* Større tekst */
-    padding: 1rem 1.5rem; /* Mye større klikkområde */
-    margin: 0.3rem 0;
-    border-radius: 8px;
+    font-size: 1.2rem; /* Enda større tekst */
+    padding: 1.2rem 1.8rem; /* Enda større klikkområde */
+    margin: 0.4rem 0;
+    border-radius: 12px;
     font-weight: 600;
-    background: linear-gradient(135deg, var(--dark-bg), var(--dark-bg-secondary));
-    border: 2px solid var(--primary-blue);
-    color: var(--light-blue) !important;
+    background: rgba(240, 246, 255, 0.15);
+    border: 2px solid rgba(240, 246, 255, 0.3);
+    color: #f0f6ff !important;
     transition: all 0.3s ease;
-    min-height: 50px; /* Minimum høyde for lett touch */
+    min-height: 60px; /* Større minimum høyde for lett touch */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   nav a:not(:has(img)):hover,
@@ -520,56 +530,64 @@ nav a.disabled:hover {
 
   /* Hero - forbedret for mobil */
   .hero {
-    padding: 2rem 1rem;
-    min-height: 60vh;
+    padding: 3rem 1.5rem;
+    min-height: 50vh;
     background-attachment: scroll; /* Bedre ytelse på mobil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-overlay {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     margin: 0;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    max-width: 500px;
   }
 
   .hero-overlay h1 {
-    font-size: 1.5rem; /* Større for bedre lesbarhet */
+    font-size: 1.7rem; /* Enda større for bedre lesbarhet */
     line-height: 1.3;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .hero-overlay p {
-    font-size: 1rem; /* Større for bedre lesbarhet */
-    line-height: 1.5;
+    font-size: 1.1rem; /* Større for bedre lesbarhet */
+    line-height: 1.6;
+    text-align: center;
   }
 
   /* Main content - kraftig forbedret lesbarhet */
   main.container {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.8rem;
     max-width: 100%;
-    line-height: 1.7; /* Økt linjehøyde for bedre lesbarhet */
+    line-height: 1.8; /* Enda mer økt linjehøyde for bedre lesbarhet */
   }
 
   main.container h2 {
-    font-size: 1.6rem; /* Mye større overskrifter */
+    font-size: 1.8rem; /* Enda større overskrifter */
     line-height: 1.3;
-    margin-bottom: 1.5rem;
-    color: #0043a8;
+    margin-bottom: 2rem;
+    color: #1e7fd8;
     font-weight: 700;
+    text-align: center;
   }
 
   main.container h3 {
-    font-size: 1.3rem; /* Større underoverskrifter */
+    font-size: 1.4rem; /* Større underoverskrifter */
     line-height: 1.4;
-    margin: 2rem 0 1rem 0;
+    margin: 2.5rem 0 1.5rem 0;
     color: #1e7fd8;
     font-weight: 600;
   }
 
   main.container p {
-    font-size: 1.1rem; /* Større brødtekst */
-    line-height: 1.7; /* Økt linjehøyde */
-    margin-bottom: 1.5rem;
+    font-size: 1.15rem; /* Enda større brødtekst */
+    line-height: 1.8; /* Enda mer økt linjehøyde */
+    margin-bottom: 2rem;
     text-align: left;
   }
 
@@ -657,10 +675,23 @@ nav a.disabled:hover {
   }
 }
 
+/* Smooth scrolling for mobile */
+@media screen and (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
 /* Extra små skjermer - optimalisert for de minste mobilene */
 @media screen and (max-width: 480px) {
   html {
-    font-size: 13px;
+    font-size: 16px; /* Økt fra 13px for bedre lesbarhet */
   }
 
   nav.container-fluid {
