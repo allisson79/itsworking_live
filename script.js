@@ -6,7 +6,7 @@
   function initializeMenu() {
     try {
       const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const mainMenu = document.querySelector('nav ul:last-child');
+      const mainMenu = document.querySelector('ul.main-menu');
       
       if (!menuToggle || !mainMenu) {
         console.log('Menu elements not found, retrying...');
