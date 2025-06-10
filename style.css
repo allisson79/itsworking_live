@@ -474,32 +474,33 @@ nav a.disabled:hover {
   }
 
   /* Mobilmeny lenker - mye større og lettere å treffe */
-  nav a:not(:has(img)) {
+  nav ul.main-menu.mobile-menu-open a {
     display: block;
+    width: 100%;
     text-align: center;
     font-size: 1.1rem; /* Større tekst */
     padding: 1rem 1.5rem; /* Mye større klikkområde */
     margin: 0.3rem 0;
     border-radius: 8px;
     font-weight: 600;
-    background-color: #f8f9fa;
-    border: 2px solid #0043a8;
-    color: #0043a8 !important;
+    background: linear-gradient(135deg, var(--dark-bg), var(--dark-bg-secondary));
+    border: 2px solid var(--primary-blue);
+    color: var(--light-blue) !important;
     transition: all 0.3s ease;
     min-height: 50px; /* Minimum høyde for lett touch */
   }
 
   nav a:not(:has(img)):hover,
   nav a:not(:has(img)):active {
-    background-color: #0043a8;
-    color: white !important;
+    background-color: var(--primary-blue);
+    color: var(--text-light) !important;
     transform: scale(1.02);
   }
 
   /* Spesiell styling for deaktiverte knapper på mobil */
   nav a.disabled {
     padding: 1rem 1.5rem 2.5rem 1.5rem;
-    background-color: #e9ecef;
+    background: linear-gradient(135deg, var(--dark-bg-secondary), var(--dark-bg));
     opacity: 0.8;
     position: relative;
   }
@@ -786,3 +787,8 @@ footer {
     filter: invert(0.9) hue-rotate(180deg) contrast(1.1) brightness(1.1);
   }
 }
+```
+
+```
+The CSS code was modified to ensure that the mobile menu items adhere to the dark theme by removing light background colors and replacing them with dark gradients and appropriate text colors, utilizing CSS variables for better maintainability.
+```
