@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Kontakt oss - Its Working</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li>
+        <strong><a href="index.html"><img src="its_working_logo_transparent.png" alt="Its Working - Hjem" style="height: 150px" /></a></strong>
+      </li>
+      <li>
+        <button class="mobile-menu-toggle" aria-label="Åpne meny">☰</button>
+      </li>
+    </ul>
+    <ul class="main-menu">
+      <li><a href="#" class="nav-link disabled">Tjenester</a></li>
+      <li><a href="#" class="nav-link disabled">Leverandører</a></li>
+      <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
+      <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <header style="background-image: url('hero_trondheim.jpg')" class="hero">
+    <div class="hero-overlay">
+      <h1>Kontakt oss</h1>
+      <p>Vi svarer personlig innen 4 timer i arbeidstiden. Har du akutt behov? Ring oss direkte.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Contact Form -->
+    <section id="contact-form" style="margin-bottom: 3rem;">
+      <h2>Send oss en melding</h2>
+      <form action="#" method="POST" style="max-width: 600px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <label for="name">Navn *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label for="company">Bedrift</label>
+            <input type="text" id="company" name="company">
+          </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <label for="email">E-post *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label for="interest">Hva kan vi hjelpe med?</label>
+          <select id="interest" name="interest">
+            <option value="">Velg tema...</option>
+            <option value="internett">Internett og fiber</option>
+            <option value="it-support">IT-support og drift</option>
+            <option value="sikkerhet">IT-sikkerhet</option>
+            <option value="tjenester">Generelle tjenester</option>
+            <option value="helsjesjekk">Gratis IT-helsesjekk</option>
+            <option value="annet">Annet</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label for="message">Melding *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Fortell oss litt om dine behov eller utfordringer..."></textarea>
+        </div>
+
+        <button type="submit" style="background-color: #0043a8; border: 2px solid #0043a8; color: white; padding: 1rem 2rem; border-radius: 6px; font-weight: bold; cursor: pointer;">
+          Send melding
+        </button>
+      </form>
+    </section>
+
+    <hr style="margin: 3rem 0; border: 1px solid #e0e0e0;">
+
+    <!-- Business Hours -->
+    <section id="business-hours" style="margin-bottom: 3rem;">
+      <h2>Kontaktinformasjon</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #0043a8;">
+          <h3 style="margin-top: 0; color: #0043a8;">Vårt løfte til deg</h3>
+          <p><strong>Responstid:</strong> Maks 4 timer i arbeidstiden</p>
+          <p><strong>Akutte saker:</strong> Løses samme arbeidsdag</p>
+          <p><strong>Personlig oppfølging:</strong> Du snakker med fagpersonen som kan hjelpe</p>
+        </div>
+        
+        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e7fd8;">
+          <h3 style="margin-top: 0; color: #1e7fd8;">Kontaktinfo</h3>
+          <p><strong>E-post:</strong> <a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a></p>
+          <p><strong>Telefon:</strong> Kommer 25. juni</p>
+          <p><strong>Adresse:</strong> Trondheim sentrum</p>
+          <p><strong>Arbeidstid:</strong> Man-Fre 08:00-17:00</p>
+        </div>
+      </div>
+    </section>
+
+    <hr style="margin: 3rem 0; border: 1px solid #e0e0e0;">
+
+    <!-- Free Health Check Offer -->
+    <section id="health-check" style="text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
+      <h2 style="color: #0043a8; margin-bottom: 1rem;">Gratis IT-helsesjekk</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+        Få en uforpliktende vurdering av din IT-situasjon. Vi bruker 15 minutter på telefon for å gi deg konkrete råd – helt gratis.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0; text-align: left;">
+        <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e0e0e0;">
+          <strong>✓ Sikkerhetsvurdering</strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Identifiser potensielle sårbarheter</p>
+        </div>
+        <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e0e0e0;">
+          <strong>✓ Ytelsesanalyse</strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Finn flaskehalser og forbedringer</p>
+        </div>
+        <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e0e0e0;">
+          <strong>✓ Kostnadsbesparelser</strong>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Oppdag unødvendige utgifter</p>
+        </div>
+      </div>
+      <p style="font-style: italic; color: #666; margin-top: 1rem;">
+        Ingen forpliktelser, ingen skjulte agenda – bare ærlige råd fra en som bryr seg.
+      </p>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section id="newsletter" style="background: #0043a8; color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+      <h2 style="color: white; margin-bottom: 1rem;">Bli med på reisen</h2>
+      <p style="margin-bottom: 1.5rem;">
+        Få beskjed når vi lanserer nye tjenester og dele nyttige IT-tips for små bedrifter.
+      </p>
+      <form action="#" method="POST" style="max-width: 400px; margin: 0 auto;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+          <input type="email" name="newsletter_email" placeholder="Din e-postadresse" required 
+                 style="flex: 1; min-width: 250px; padding: 0.8rem; border: none; border-radius: 6px;">
+          <button type="submit" style="background: white; color: #0043a8; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: bold; cursor: pointer; white-space: nowrap;">
+            Meld meg på
+          </button>
+        </div>
+      </form>
+      <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">
+        Vi sender maksimalt én e-post per måned. Du kan melde deg av når som helst.
+      </p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>
+      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a>
+    </small>
+  </footer>
+</body>
+
+</html>
