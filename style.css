@@ -798,9 +798,9 @@ nav a.disabled:hover {
 /* Footer knapper - samme stil som før */
 footer a {
   padding: 0.6rem 1.2rem;
-  border: 2px solid #0043a8;
+  border: 2px solid #1e7fd8;
   border-radius: 6px;
-  color: #0043a8 !important;
+  color: #1e7fd8 !important;
   font-weight: bold;
   text-decoration: none;
   background-color: transparent;
@@ -809,15 +809,21 @@ footer a {
 }
 
 footer a:hover {
-  background-color: #0043a8;
-  color: #fff !important;
+  background-color: #1e7fd8;
+  color: #11181f !important;
 }
 
-/* Enkel footer styling */
+/* Footer styling - dark theme */
 footer {
   margin-top: 3rem;
   padding: 2rem 0;
   text-align: center;
+  background: linear-gradient(135deg, #11181f, #1a2332);
+  border-top: 2px solid rgba(30, 127, 216, 0.3);
+}
+
+footer small {
+  color: #e9ecef;
 }
 
 /* Dark styling for Pipedrive scheduler iframe */
