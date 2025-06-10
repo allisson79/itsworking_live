@@ -1,3 +1,41 @@
+
+// Mobile performance optimizations
+(function() {
+  'use strict';
+
+  // Optimize scroll performance on mobile
+  let ticking = false;
+  function updateScrollPosition() {
+    // Add any scroll-based animations here
+    ticking = false;
+  }
+
+  function requestScrollTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateScrollPosition);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', requestScrollTick, { passive: true });
+
+  // Prevent iOS bounce scrolling
+  document.addEventListener('touchmove', function(e) {
+    if (e.target.closest('.mobile-menu-open')) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // Add loading optimization for images
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+      img.src = img.dataset.src;
+    });
+  }
+})();
+
+
 // Mobile menu toggle functionality - robust version
 (function() {
   'use strict';
@@ -23,7 +61,15 @@
         mainMenu.classList.toggle('mobile-menu-open');
       });
 
-      // Close menu when clicking outside
+      // Close menu when clicking outside (optimized for mobile)
+      document.addEventListener('touchstart', function(event) {
+        if (mainMenu.classList.contains('mobile-menu-open')) {
+          if (!menuToggle.contains(event.target) && !mainMenu.contains(event.target)) {
+            mainMenu.classList.remove('mobile-menu-open');
+          }
+        }
+      }, { passive: true });
+
       document.addEventListener('click', function(event) {
         if (mainMenu.classList.contains('mobile-menu-open')) {
           if (!menuToggle.contains(event.target) && !mainMenu.contains(event.target)) {

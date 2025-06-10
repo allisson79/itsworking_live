@@ -697,7 +697,7 @@ nav a.disabled:hover {
     -webkit-overflow-scrolling: touch !important;
     -webkit-tap-highlight-color: rgba(0, 67, 168, 0.3) !important;
   }
-  
+
   body {
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
@@ -848,8 +848,3 @@ footer {
     filter: invert(0.9) hue-rotate(180deg) contrast(1.1) brightness(1.1);
   }
 }
-```
-
-```
-The CSS code was modified to ensure that the mobile menu items adhere to the dark theme by removing light background colors and replacing them with dark gradients and appropriate text colors, utilizing CSS variables for better maintainability.
-```
