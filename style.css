@@ -82,33 +82,44 @@ body {
   -ms-text-size-adjust: 100%;
 }
 
-/* Tving mobil layout på små skjermer - MUST WORK */
+/* Mobile-first responsive design */
 @media screen and (max-width: 768px) {
   html {
-    -webkit-text-size-adjust: none !important;
-    -ms-text-size-adjust: none !important;
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100% !important;
+    -ms-text-size-adjust: 100% !important;
   }
 
   body {
     min-width: 320px !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
-    zoom: 1 !important;
-    font-size: 14px !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
   }
 
-  /* Overstyr eventuell desktop-styling */
+  /* Ensure all elements respect mobile boundaries */
   * {
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* Sikre at container ikke blir for bred */
+  /* Mobile-optimized containers */
   .container,
   .container-fluid {
     max-width: 100% !important;
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin: 0 auto !important;
+  }
+
+  /* Improve touch targets for mobile */
+  button, 
+  a, 
+  input, 
+  textarea {
+    min-height: 44px !important;
+    min-width: 44px !important;
   }
 }
 
@@ -369,18 +380,18 @@ nav a.disabled:hover {
   transition: all 0.2s ease;
 }
 
-/* Mobil navigasjon - komplett ombygget */
+/* Mobile navigation - completely rebuilt for better UX */
 @media screen and (max-width: 768px) {
-  html {
-    font-size: 18px; /* Økt til 18px for mye bedre lesbarhet */
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+  /* Prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
   }
 
   body {
     font-size: 1rem !important;
     line-height: 1.7;
-    overflow-x: hidden;
   }
 
   /* Hamburger-meny synlig på mobil */
@@ -431,10 +442,11 @@ nav a.disabled:hover {
   }
 
   nav img {
-    height: min(30vh, 200px) !important; /* Optimalisert størrelse for mobilskjermer */
-    max-width: 85vw; /* Mer plass horisontalt */
-    width: auto;
-    margin: 0.5rem 0; /* Redusert margin for bedre spacing */
+    height: clamp(80px, 20vw, 120px) !important;
+    max-width: 70vw !important;
+    width: auto !important;
+    margin: 0.5rem 0 !important;
+    object-fit: contain !important;
   }
 
   /* Skjul standard meny på mobil */
@@ -528,23 +540,26 @@ nav a.disabled:hover {
     font-weight: normal;
   }
 
-  /* Hero - forbedret for mobil */
+  /* Mobile-optimized hero section */
   .hero {
-    padding: 3rem 1.5rem;
-    min-height: 50vh;
-    background-attachment: scroll; /* Bedre ytelse på mobil */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem 1rem !important;
+    min-height: 60vh !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .hero-overlay {
-    padding: 2rem 1.5rem;
-    margin: 0;
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-    width: 100%;
-    max-width: 500px;
+    padding: 1.5rem !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px) !important;
+    width: 100% !important;
+    max-width: 90vw !important;
+    text-align: center !important;
   }
 
   .hero-overlay h1 {
@@ -560,35 +575,35 @@ nav a.disabled:hover {
     text-align: center;
   }
 
-  /* Main content - kraftig forbedret lesbarhet */
+  /* Mobile main content - optimized for readability */
   main.container {
-    padding: 2.5rem 1.8rem;
-    max-width: 100%;
-    line-height: 1.8; /* Enda mer økt linjehøyde for bedre lesbarhet */
+    padding: 2rem 1rem !important;
+    max-width: 100% !important;
+    line-height: 1.7 !important;
   }
 
   main.container h2 {
-    font-size: 1.8rem; /* Enda større overskrifter */
-    line-height: 1.3;
-    margin-bottom: 2rem;
-    color: #1e7fd8;
-    font-weight: 700;
-    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1.5rem !important;
+    color: #1e7fd8 !important;
+    font-weight: 700 !important;
+    text-align: center !important;
   }
 
   main.container h3 {
-    font-size: 1.4rem; /* Større underoverskrifter */
-    line-height: 1.4;
-    margin: 2.5rem 0 1.5rem 0;
-    color: #1e7fd8;
-    font-weight: 600;
+    font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
+    line-height: 1.4 !important;
+    margin: 2rem 0 1rem 0 !important;
+    color: #1e7fd8 !important;
+    font-weight: 600 !important;
   }
 
   main.container p {
-    font-size: 1.15rem; /* Enda større brødtekst */
-    line-height: 1.8; /* Enda mer økt linjehøyde */
-    margin-bottom: 2rem;
-    text-align: left;
+    font-size: clamp(1rem, 3.5vw, 1.1rem) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.5rem !important;
+    text-align: left !important;
   }
 
   /* Forbedret list styling for mobil */
@@ -675,16 +690,30 @@ nav a.disabled:hover {
   }
 }
 
-/* Smooth scrolling for mobile */
+/* Mobile performance and UX optimizations */
 @media screen and (max-width: 768px) {
   html {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    -webkit-tap-highlight-color: rgba(0, 67, 168, 0.3) !important;
   }
   
   body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+  }
+
+  /* Improve mobile interaction feedback */
+  button:active,
+  a:active {
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease !important;
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  input, textarea, select {
+    font-size: 16px !important;
   }
 }
 
