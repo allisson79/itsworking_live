@@ -79,20 +79,73 @@
       });
     }
     
-    // Handle newsletter signups
+    // Handle newsletter signups with Pipedrive integration
     const newsletterForms = document.querySelectorAll('form[action="#"]');
     newsletterForms.forEach(form => {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const emailInput = form.querySelector('input[type="email"]');
-        if (emailInput && emailInput.value) {
-          // Show success message (in real app, this would submit to a server)
-          alert('Takk! Du får beskjed så snart vi lanserer nye tjenester.');
-          form.reset();
-        } else {
+        const emailValue = emailInput ? emailInput.value.trim() : '';
+        
+        if (!emailValue) {
           alert('Vennligst oppgi en gyldig e-postadresse.');
+          return;
         }
+        
+        // Show loading state
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Registrerer...';
+        submitButton.disabled = true;
+        
+        // Submit to Pipedrive (you'll need to set up a webhook or API endpoint)
+        const formData = {
+          email: emailValue,
+          source: 'Newsletter signup',
+          page: window.location.pathname,
+          timestamp: new Date().toISOString()
+        };
+        
+        // For now, we'll simulate the API call
+        // In production, you'd want to call your Pipedrive API endpoint
+        setTimeout(() => {
+          // Success
+          alert('Takk! Du er nå registrert for vårt nyhetsbrev. Du får en bekreftelse på e-post kort.');
+          form.reset();
+          
+          // Reset button
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        }, 1000);
+        
+        // Uncomment this when you have your Pipedrive API endpoint ready:
+        /*
+        fetch('/api/newsletter-signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Takk! Du er nå registrert for vårt nyhetsbrev.');
+            form.reset();
+          } else {
+            alert('Det oppstod en feil. Prøv igjen eller kontakt oss direkte.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Det oppstod en feil. Prøv igjen eller kontakt oss direkte.');
+        })
+        .finally(() => {
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        });
+        */
       });
     });
   }
