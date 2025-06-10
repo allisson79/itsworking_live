@@ -211,6 +211,13 @@ nav a img {
   border: none;
 }
 
+/* Better logo visibility on mobile */
+@media screen and (max-width: 768px) {
+  nav a img {
+    filter: drop-shadow(0 3px 12px rgba(0, 42, 92, 0.4)) drop-shadow(0 1px 4px rgba(255, 255, 255, 0.1));
+  }
+}
+
 nav a:hover img {
   transform: scale(1.05);
   filter: drop-shadow(0 4px 12px rgba(0, 42, 92, 0.3));
@@ -447,8 +454,8 @@ nav a.disabled:hover {
   }
 
   nav img {
-    height: clamp(80px, 20vw, 120px) !important;
-    max-width: 70vw !important;
+    height: clamp(100px, 25vw, 140px) !important;
+    max-width: 75vw !important;
     width: auto !important;
     margin: 0.5rem 0 !important;
     object-fit: contain !important;
@@ -733,7 +740,7 @@ nav a.disabled:hover {
   }
 
   nav img {
-    height: 55px !important;
+    height: 80px !important;
   }
 
   nav ul:last-child {
