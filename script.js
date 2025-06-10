@@ -142,6 +142,90 @@ function submitContact(event) {
   event.target.reset();
 }
 
+// Blog functionality
+function filterBlog(category) {
+  const posts = document.querySelectorAll('.blog-post');
+  const buttons = document.querySelectorAll('.blog-category-btn');
+
+  // Update active button
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+    btn.style.background = 'transparent';
+    btn.style.color = '#0043a8';
+  });
+
+  // Set active button
+  event.target.classList.add('active');
+  event.target.style.background = '#0043a8';
+  event.target.style.color = 'white';
+
+  // Filter posts
+  posts.forEach(post => {
+    if (category === 'all' || post.dataset.category === category) {
+      post.style.display = 'block';
+      post.style.animation = 'fadeIn 0.5s ease';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+function openBlogPost(postId) {
+  // Map post IDs to actual file names
+  const postMap = {
+    'phishing-trondheim': 'blog-post-phishing.html',
+    'backup-strategi': 'blog-post-backup.html',
+    'fiber-utbygging': 'blog-post-fiber.html',
+    'passord-sikkerhet': 'blog-post-passord.html',
+    'hjemmekontor-sikkerhet': 'blog-post-hjemmekontor.html',
+    'gdpr-endringer': 'blog-post-gdpr.html'
+  };
+
+  const fileName = postMap[postId];
+  if (fileName) {
+    window.location.href = fileName;
+  } else {
+    alert('Denne artikkelen kommer snart!');
+  }
+}
+
+// Blog post sharing functionality
+function shareOnEmail() {
+  const subject = encodeURIComponent(document.title);
+  const body = encodeURIComponent(`Sjekk ut denne nyttige IT-artikkelen: ${window.location.href}`);
+  window.location.href = `mailto:?subject=${subject}&body=${body}`;
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    alert('Lenke kopiert til utklippstavlen!');
+  }).catch(() => {
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = window.location.href;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Lenke kopiert til utklippstavlen!');
+  });
+}
+
+// Add fade-in animation for blog posts
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
+  }
+`;
+document.head.appendChild(style);
+
 // IT Health Check booking functionality
 function openHealthCheck() {
   // This could open a calendar booking widget or redirect to scheduling page
