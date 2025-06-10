@@ -732,3 +732,35 @@ footer {
   padding: 2rem 0;
   text-align: center;
 }
+
+/* Dark styling for Pipedrive scheduler iframe */
+#book-meeting {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 67, 168, 0.1);
+}
+
+#book-meeting iframe {
+  border: 3px solid #0043a8 !important;
+  background-color: white;
+  filter: contrast(0.95) brightness(0.98);
+}
+
+@media (prefers-color-scheme: dark) {
+  #book-meeting {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  }
+  
+  #book-meeting h2 {
+    color: #ffffff !important;
+  }
+  
+  #book-meeting p {
+    color: #ecf0f1 !important;
+  }
+  
+  #book-meeting iframe {
+    filter: invert(0.9) hue-rotate(180deg) contrast(1.1) brightness(1.1);
+  }
+}</media>
