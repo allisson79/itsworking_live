@@ -229,14 +229,14 @@ nav ul:last-child {
   right: 2rem;
   width: 300px;
   max-width: calc(100vw - 4rem);
-  background: linear-gradient(135deg, #11181f, #1a2332);
+  background: #004a99;
   backdrop-filter: blur(15px);
-  border: 2px solid rgba(0, 67, 168, 0.4);
+  border: 2px solid rgba(240, 246, 255, 0.3);
   border-radius: 12px;
   flex-direction: column;
   gap: 0;
   padding: 1.5rem;
-  box-shadow: 0 12px 30px rgba(0, 42, 92, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 74, 153, 0.4);
   z-index: 1001;
 }
 
@@ -256,13 +256,13 @@ nav ul.main-menu.mobile-menu-open a {
   width: 100%;
   text-align: center;
   padding: 1rem;
-  border: 2px solid #1e7fd8;
+  border: 2px solid #f0f6ff;
   border-radius: 8px;
   margin: 0.3rem 0;
   font-size: 1rem;
   font-weight: 600;
-  color: #1e7fd8 !important;
-  background-color: rgba(30, 127, 216, 0.1);
+  color: #f0f6ff !important;
+  background-color: rgba(240, 246, 255, 0.1);
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -270,10 +270,10 @@ nav ul.main-menu.mobile-menu-open a {
 }
 
 nav ul.main-menu.mobile-menu-open a:hover {
-  background-color: #1e7fd8;
-  color: #11181f !important;
+  background-color: #f0f6ff;
+  color: #004a99 !important;
   transform: translateY(-1px);
-  border-color: #1e7fd8;
+  border-color: #f0f6ff;
 }
 
 nav ul.main-menu.mobile-menu-open a.disabled {
@@ -288,7 +288,7 @@ nav ul.main-menu.mobile-menu-open a.disabled:after {
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.7rem;
-  color: #1e7fd8;
+  color: #f0f6ff;
   font-style: italic;
   font-weight: normal;
 }
@@ -440,9 +440,9 @@ nav a.disabled:hover {
     left: auto;
     width: calc(100vw - 2rem);
     max-width: 350px;
-    background: linear-gradient(135deg, #11181f, #1a2332);
+    background: #004a99;
     backdrop-filter: blur(15px);
-    border: 2px solid rgba(30, 127, 216, 0.4);
+    border: 2px solid rgba(240, 246, 255, 0.3);
     border-radius: 12px;
     flex-direction: column;
     gap: 0;
