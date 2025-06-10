@@ -11,6 +11,7 @@ publicDir = "."
 deploymentTarget = "static"
 
 [workflows]
+runButton = "Serve Website"
 
 [[workflows.workflow]]
 name = "Serve static"
@@ -20,6 +21,15 @@ mode = "parallel"
 task = "shell.exec"
 args = "echo \"Starting static web server...\""
 waitForPort = 5000
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "static-web-server -p 5000 -d ."
+
+[[workflows.workflow]]
+name = "Serve Website"
+author = 43468941
+mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
