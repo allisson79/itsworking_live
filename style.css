@@ -214,7 +214,14 @@ nav a img {
 /* Better logo visibility on mobile */
 @media screen and (max-width: 768px) {
   nav a img {
-    filter: drop-shadow(0 3px 12px rgba(0, 42, 92, 0.4)) drop-shadow(0 1px 4px rgba(255, 255, 255, 0.1));
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8)) 
+            drop-shadow(0 2px 8px rgba(0, 42, 92, 0.6)) 
+            drop-shadow(0 1px 4px rgba(255, 255, 255, 0.3))
+            contrast(1.1) brightness(1.05);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 42, 92, 0.05));
+    border-radius: 8px;
+    padding: 0.5rem;
+    backdrop-filter: blur(5px);
   }
 }
 
@@ -436,11 +443,12 @@ nav a.disabled:hover {
     padding: 1.5rem 1rem;
     position: sticky;
     top: 0;
-    background: transparent;
-    backdrop-filter: none;
+    background: linear-gradient(135deg, rgba(17, 24, 31, 0.95), rgba(26, 35, 50, 0.95));
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(30, 127, 216, 0.3);
     z-index: 1000;
-    border-bottom: none;
     min-height: auto; /* La innholdet bestemme høyden */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 
   /* Øverste rad med logo og hamburger */
