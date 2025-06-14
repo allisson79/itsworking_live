@@ -200,7 +200,7 @@ nav ul:first-child li:last-child {
 }
 
 nav img {
-  height: 150px !important;
+  height: 80px !important;
 }
 
 main.container {
@@ -418,8 +418,8 @@ nav a.disabled:hover {
   }
 
   nav img {
-    height: clamp(80px, 20vw, 120px) !important;
-    max-width: 70vw !important;
+    height: clamp(50px, 15vw, 80px) !important;
+    max-width: 60vw !important;
     width: auto !important;
   }
 
