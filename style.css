@@ -199,7 +199,13 @@ nav ul:first-child li:last-child {
   margin-left: auto !important;
 }
 
-
+/* Logo styling - maximum size for mobile */
+nav img {
+  height: clamp(120px, 25vw, 200px) !important;
+  max-width: 80vw !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
 
 main.container {
   padding-top: 2rem;
@@ -395,7 +401,7 @@ nav a.disabled:hover {
 
   /* Navigation layout for mobil */
   nav.container-fluid {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     position: sticky;
     top: 0;
     background: transparent;
@@ -413,6 +419,15 @@ nav a.disabled:hover {
     margin-bottom: 0;
     width: 100%;
     position: relative;
+  }
+
+  /* Maksimal logo størrelse på mobil */
+  nav img {
+    height: clamp(150px, 35vw, 250px) !important;
+    max-width: 75vw !important;
+    width: auto !important;
+    object-fit: contain !important;
+    transition: none !important;
   }
 
 
