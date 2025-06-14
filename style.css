@@ -71,15 +71,20 @@
   font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
 }
 
-/* Forbedret base responsive design */
+/* Dark theme for entire page */
 html {
   font-size: 16px;
+  background: linear-gradient(135deg, #11181f, #1a2332);
+  min-height: 100%;
 }
 
 body {
   line-height: 1.6;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  background: linear-gradient(135deg, #11181f, #1a2332);
+  color: #e9ecef;
+  min-height: 100vh;
 }
 
 /* Mobile-first responsive design */
