@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>IT Tips Blog - Its Working</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li>
+        <strong><a href="index.html"><img src="its_working_logo_transparent.png" alt="Its Working - Hjem" style="height: 150px" /></a></strong>
+      </li>
+      <li>
+        <button class="mobile-menu-toggle" aria-label="Åpne meny">☰</button>
+      </li>
+    </ul>
+    <ul class="main-menu">
+      <li><a href="#" class="nav-link disabled">Tjenester</a></li>
+      <li><a href="#" class="nav-link disabled">Leverandører</a></li>
+      <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
+      <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
+      <li><a href="blog.html" class="nav-link">IT Tips</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <header style="background-image: url('hero_trondheim.jpg')" class="hero">
+    <div class="hero-overlay">
+      <h1>IT Tips & Sikkerhet</h1>
+      <p>Praktiske råd, cybersikkerhet og lokale IT-nyheter for Trondheims-bedrifter</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Blog Categories -->
+    <section id="blog-categories" style="margin-bottom: 3rem;">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem;">
+        <button class="blog-category-btn active" onclick="filterBlog('all')" style="background: #0043a8; color: white; border: 2px solid #0043a8; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold;">Alle</button>
+        <button class="blog-category-btn" onclick="filterBlog('cybersikkerhet')" style="background: transparent; color: #0043a8; border: 2px solid #0043a8; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold;">Cybersikkerhet</button>
+        <button class="blog-category-btn" onclick="filterBlog('beste-praksis')" style="background: transparent; color: #0043a8; border: 2px solid #0043a8; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold;">Beste praksis</button>
+        <button class="blog-category-btn" onclick="filterBlog('lokale-nyheter')" style="background: transparent; color: #0043a8; border: 2px solid #0043a8; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold;">Lokale nyheter</button>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section id="blog-posts">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+        
+        <!-- Post 1: Cybersikkerhet -->
+        <article class="blog-post" data-category="cybersikkerhet" style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; color: #e9ecef; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.9rem; color: #b8c5d1;">
+            <span class="blog-category" style="background: #dc3545; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Cybersikkerhet</span>
+            <span class="blog-date">8. juni 2025</span>
+          </div>
+          <h3 style="color: #1e7fd8; margin-bottom: 1rem; cursor: pointer;" onclick="openBlogPost('phishing-trondheim')">Økning i phishing-angrep mot Trondheim-bedrifter</h3>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">Politiet advarer om økt phishing-aktivitet rettet mot lokale bedrifter. Her er hvordan du beskytter deg og dine ansatte.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="openBlogPost('phishing-trondheim')" style="background: #1e7fd8; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Les mer</button>
+            <span style="font-size: 0.9rem; color: #b8c5d1;">5 min lesing</span>
+          </div>
+        </article>
+
+        <!-- Post 2: Beste praksis -->
+        <article class="blog-post" data-category="beste-praksis" style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; color: #e9ecef; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.9rem; color: #b8c5d1;">
+            <span class="blog-category" style="background: #28a745; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Beste praksis</span>
+            <span class="blog-date">5. juni 2025</span>
+          </div>
+          <h3 style="color: #1e7fd8; margin-bottom: 1rem; cursor: pointer;" onclick="openBlogPost('backup-strategi')">5 enkle backup-regler som redder virksomheten din</h3>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">En godt planlagt backup-strategi kan være forskjellen på 1 times nedetid og 1 ukes krise. Her er våre viktigste tips.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="openBlogPost('backup-strategi')" style="background: #1e7fd8; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Les mer</button>
+            <span style="font-size: 0.9rem; color: #b8c5d1;">7 min lesing</span>
+          </div>
+        </article>
+
+        <!-- Post 3: Lokale nyheter -->
+        <article class="blog-post" data-category="lokale-nyheter" style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; color: #e9ecef; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.9rem; color: #b8c5d1;">
+            <span class="blog-category" style="background: #007bff; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Lokale nyheter</span>
+            <span class="blog-date">3. juni 2025</span>
+          </div>
+          <h3 style="color: #1e7fd8; margin-bottom: 1rem; cursor: pointer;" onclick="openBlogPost('fiber-utbygging')">Ny fiber-infrastruktur i Midtbyen: Hva betyr det for din bedrift?</h3>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">GlobalConnect utvider fibernettet i sentrum. Vi forklarer hvordan dette påvirker hastigheter og tilgjengelighet.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="openBlogPost('fiber-utbygging')" style="background: #1e7fd8; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Les mer</button>
+            <span style="font-size: 0.9rem; color: #b8c5d1;">4 min lesing</span>
+          </div>
+        </article>
+
+        <!-- Post 4: Cybersikkerhet -->
+        <article class="blog-post" data-category="cybersikkerhet" style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; color: #e9ecef; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.9rem; color: #b8c5d1;">
+            <span class="blog-category" style="background: #dc3545; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Cybersikkerhet</span>
+            <span class="blog-date">1. juni 2025</span>
+          </div>
+          <h3 style="color: #1e7fd8; margin-bottom: 1rem; cursor: pointer;" onclick="openBlogPost('passord-sikkerhet')">Hvorfor "Passord123!" ikke holder mål lenger</h3>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">Moderne passordkrav og hvorfor du bør investere i en passordmanager. Praktiske tips for bedrifter.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="openBlogPost('passord-sikkerhet')" style="background: #1e7fd8; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Les mer</button>
+            <span style="font-size: 0.9rem; color: #b8c5d1;">6 min lesing</span>
+          </div>
+        </article>
+
+        <!-- Post 5: Beste praksis -->
+        <article class="blog-post" data-category="beste-praksis" style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; color: #e9ecef; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.9rem; color: #b8c5d1;">
+            <span class="blog-category" style="background: #28a745; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Beste praksis</span>
+            <span class="blog-date">28. mai 2025</span>
+          </div>
+          <h3 style="color: #1e7fd8; margin-bottom: 1rem; cursor: pointer;" onclick="openBlogPost('hjemmekontor-sikkerhet')">Hjemmekontor-sikkerhet: Sjekkliste for småbedrifter</h3>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">Hybrid arbeid er her for å bli. Sørg for at hjemmekontoret er like sikkert som kontoret.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="openBlogPost('hjemmekontor-sikkerhet')" style="background: #1e7fd8; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Les mer</button>
+            <span style="font-size: 0.9rem; color: #b8c5d1;">8 min lesing</span>
+          </div>
+        </article>
+
+        <!-- Post 6: Lokale nyheter -->
+        <article class="blog-post" data-category="lokale-nyheter" style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; color: #e9ecef; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.9rem; color: #b8c5d1;">
+            <span class="blog-category" style="background: #007bff; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Lokale nyheter</span>
+            <span class="blog-date">25. mai 2025</span>
+          </div>
+          <h3 style="color: #1e7fd8; margin-bottom: 1rem; cursor: pointer;" onclick="openBlogPost('gdpr-endringer')">Nye GDPR-endringer: Hva gjelder for norske bedrifter?</h3>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6;">EU oppdaterer personvernreglene. Vi forklarer hva som gjelder for bedrifter i Trondheim.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="openBlogPost('gdpr-endringer')" style="background: #1e7fd8; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Les mer</button>
+            <span style="font-size: 0.9rem; color: #b8c5d1;">10 min lesing</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section id="blog-newsletter" style="background: linear-gradient(135deg, #0043a8, #1e7fd8); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 3rem 0;">
+      <h2 style="color: white; margin-bottom: 1rem;">Hold deg oppdatert</h2>
+      <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+        Få de viktigste IT-tipsene og sikkerhetsnyheter direkte i innboksen din.
+      </p>
+      <form action="#" method="POST" style="max-width: 500px; margin: 0 auto;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+          <input type="email" name="blog_newsletter_email" placeholder="Din e-postadresse" required 
+                 style="flex: 1; min-width: 280px; padding: 1rem; border: 2px solid #1e7fd8; border-radius: 6px; font-size: 1rem; background: #11181f; color: #e9ecef;">
+          <button type="submit" style="background: #1e7fd8; color: #11181f; border: none; padding: 1rem 1.5rem; border-radius: 6px; font-weight: bold; cursor: pointer; white-space: nowrap; font-size: 1rem;">
+            Abonner
+          </button>
+        </div>
+      </form>
+      <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.9;">
+        Månedlig nyhetsbrev. Ingen spam. Meld deg av når som helst.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <small>
+      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a>
+    </small>
+  </footer>
+</body>
+
+</html>
