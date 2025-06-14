@@ -415,7 +415,7 @@ nav a.disabled:hover {
     position: relative;
   }
 
-  
+
 
   /* Skjul standard meny på mobil */
   nav ul:last-child {
@@ -693,10 +693,6 @@ nav a.disabled:hover {
 
   nav.container-fluid {
     padding: 0.5rem;
-  }
-
-  nav img {
-    height: 55px !important;
   }
 
   nav ul:last-child {
