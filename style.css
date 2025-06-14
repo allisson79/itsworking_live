@@ -199,9 +199,7 @@ nav ul:first-child li:last-child {
   margin-left: auto !important;
 }
 
-nav img {
-  height: 150px !important;
-}
+
 
 main.container {
   padding-top: 2rem;
@@ -417,11 +415,7 @@ nav a.disabled:hover {
     position: relative;
   }
 
-  nav img {
-    height: clamp(80px, 20vw, 120px) !important;
-    max-width: 70vw !important;
-    width: auto !important;
-  }
+  
 
   /* Skjul standard meny på mobil */
   nav ul:last-child {
