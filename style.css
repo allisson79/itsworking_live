@@ -201,35 +201,6 @@ nav ul:first-child li:last-child {
 
 nav img {
   height: 150px !important;
-  transition: all 0.4s ease;
-}
-
-/* Elegant logo hover-effekt */
-nav a img {
-  transition: all 0.4s ease;
-  filter: drop-shadow(0 2px 8px rgba(0, 42, 92, 0.1));
-  border: none;
-}
-
-nav a:hover img {
-  transform: scale(1.05);
-  filter: drop-shadow(0 4px 12px rgba(0, 42, 92, 0.3));
-}
-
-/* Subtil animasjon når siden laster */
-@keyframes logoFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-nav img {
-  animation: logoFadeIn 0.8s ease-out;
 }
 
 main.container {
@@ -450,8 +421,6 @@ nav a.disabled:hover {
     height: clamp(80px, 20vw, 120px) !important;
     max-width: 70vw !important;
     width: auto !important;
-    margin: 0.5rem 0 !important;
-    object-fit: contain !important;
   }
 
   /* Skjul standard meny på mobil */
