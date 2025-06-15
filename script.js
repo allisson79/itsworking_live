@@ -40,18 +40,21 @@
 (function() {
   'use strict';
 
+  let menuInitialized = false;
+
   function initializeMenu() {
+    if (menuInitialized) return;
+    
     try {
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const mainMenu = document.querySelector('ul.main-menu');
 
       if (!menuToggle || !mainMenu) {
-        console.log('Menu elements not found, retrying...');
         setTimeout(initializeMenu, 200);
         return;
       }
 
-      console.log('Menu initialized successfully');
+      menuInitialized = true;
 
       // Toggle menu on button click
       menuToggle.addEventListener('click', function(e) {
