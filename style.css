@@ -179,6 +179,18 @@ nav.container-fluid {
   padding: 1.5rem 2rem;
 }
 
+/* Desktop logo optimization */
+@media screen and (min-width: 769px) {
+  nav img {
+    height: clamp(80px, 6vh, 100px) !important;
+    max-width: 180px !important;
+  }
+  
+  nav.container-fluid {
+    padding: 1rem 2rem;
+  }
+}
+
 /* Ensure first nav ul takes full width and positions items correctly */
 nav ul:first-child {
   display: flex !important;
@@ -199,12 +211,13 @@ nav ul:first-child li:last-child {
   margin-left: auto !important;
 }
 
-/* Logo styling - maximum size for mobile */
+/* Logo styling - optimized for all screen sizes */
 nav img {
-  height: clamp(120px, 25vw, 200px) !important;
-  max-width: 80vw !important;
+  height: clamp(60px, 8vh, 120px) !important;
+  max-width: 200px !important;
   width: auto !important;
   object-fit: contain !important;
+  transition: all 0.3s ease !important;
 }
 
 main.container {
@@ -421,13 +434,13 @@ nav a.disabled:hover {
     position: relative;
   }
 
-  /* Maksimal logo størrelse på mobil */
+  /* Optimized logo size for mobile */
   nav img {
-    height: clamp(150px, 35vw, 250px) !important;
-    max-width: 75vw !important;
+    height: clamp(80px, 12vh, 150px) !important;
+    max-width: 60vw !important;
     width: auto !important;
     object-fit: contain !important;
-    transition: none !important;
+    transition: all 0.3s ease !important;
   }
 
 
