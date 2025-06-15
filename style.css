@@ -182,8 +182,8 @@ nav.container-fluid {
 /* Desktop logo optimization */
 @media screen and (min-width: 769px) {
   nav img {
-    height: clamp(120px, 10vh, 180px) !important;
-    max-width: 320px !important;
+    height: clamp(150px, 12vh, 220px) !important;
+    max-width: 400px !important;
   }
   
   nav.container-fluid {
@@ -213,8 +213,8 @@ nav ul:first-child li:last-child {
 
 /* Logo styling - optimized for all screen sizes */
 nav img {
-  height: clamp(100px, 12vh, 200px) !important;
-  max-width: 350px !important;
+  height: clamp(130px, 15vh, 250px) !important;
+  max-width: 400px !important;
   width: auto !important;
   object-fit: contain !important;
   transition: all 0.3s ease !important;
@@ -436,8 +436,8 @@ nav a.disabled:hover {
 
   /* Optimized logo size for mobile */
   nav img {
-    height: clamp(120px, 18vh, 220px) !important;
-    max-width: 80vw !important;
+    height: clamp(140px, 22vh, 280px) !important;
+    max-width: 90vw !important;
     width: auto !important;
     object-fit: contain !important;
     transition: all 0.3s ease !important;
