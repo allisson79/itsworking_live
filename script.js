@@ -36,6 +36,45 @@
 })();
 
 
+// Dark mode toggle functionality
+(function() {
+  'use strict';
+
+  // Check for saved theme preference or default to light mode
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  function createDarkModeToggle() {
+    const toggle = document.createElement('button');
+    toggle.className = 'dark-mode-toggle';
+    toggle.setAttribute('aria-label', 'Toggle dark mode');
+    toggle.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      
+      // Update button icon
+      this.innerHTML = isDarkMode ? '☀️' : '🌙';
+      
+      // Save preference
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+
+    document.body.appendChild(toggle);
+  }
+
+  // Create toggle when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createDarkModeToggle);
+  } else {
+    createDarkModeToggle();
+  }
+})();
+
 // Mobile menu toggle functionality - robust version
 (function() {
   'use strict';
