@@ -131,81 +131,21 @@ function toggleFAQ(element) {
   }
 }
 
-// Newsletter signup functionality
 function submitNewsletter(event) {
   event.preventDefault();
-  const email = document.getElementById('newsletter-email').value;
-
-  if (email) {
-    // Send to Pipedrive or your email service
-    alert('Takk! Vi sender deg informasjon når vi lanserer 25. juni.');
-    document.getElementById('newsletter-email').value = '';
-  }
+  alert('Takk for at du melder deg på! Vi sender deg en bekreftelse snart.');
+  // Here you would normally send the form data to your server
 }
 
-// Contact form functionality
 function submitContact(event) {
   event.preventDefault();
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData);
-
-  // Here you would typically send to your backend or email service
-  console.log('Contact form submitted:', data);
-  alert('Takk for din henvendelse! Vi kontakter deg innen 4 timer på virkedager.');
-  event.target.reset();
+  alert('Takk for din henvendelse! Vi kommer tilbake til deg innen 4 timer.');
+  // Here you would normally send the form data to your server
 }
 
-// Blog functionality
-function filterBlog(category) {
-  const posts = document.querySelectorAll('.blog-post');
-  const buttons = document.querySelectorAll('.blog-category-btn');
-
-  // Update active button
-  buttons.forEach(btn => {
-    btn.classList.remove('active');
-    btn.style.background = 'transparent';
-    btn.style.color = '#0043a8';
-  });
-
-  // Set active button
-  event.target.classList.add('active');
-  event.target.style.background = '#0043a8';
-  event.target.style.color = 'white';
-
-  // Filter posts
-  posts.forEach(post => {
-    if (category === 'all' || post.dataset.category === category) {
-      post.style.display = 'block';
-      post.style.animation = 'fadeIn 0.5s ease';
-    } else {
-      post.style.display = 'none';
-    }
-  });
-}
-
-function openBlogPost(postId) {
-  // Map post IDs to actual file names
-  const postMap = {
-    'phishing-trondheim': 'blog-post-phishing.html',
-    'backup-strategi': 'blog-post-backup.html',
-    'fiber-utbygging': 'blog-post-fiber.html',
-    'passord-sikkerhet': 'blog-post-passord.html',
-    'hjemmekontor-sikkerhet': 'blog-post-hjemmekontor.html',
-    'gdpr-endringer': 'blog-post-gdpr.html'
-  };
-
-  const fileName = postMap[postId];
-  if (fileName) {
-    window.location.href = fileName;
-  } else {
-    alert('Denne artikkelen kommer snart!');
-  }
-}
-
-// Blog post sharing functionality
 function shareOnEmail() {
   const subject = encodeURIComponent(document.title);
-  const body = encodeURIComponent(`Sjekk ut denne nyttige IT-artikkelen: ${window.location.href}`);
+  const body = encodeURIComponent(`Sjekk ut denne artikkelen: ${window.location.href}`);
   window.location.href = `mailto:?subject=${subject}&body=${body}`;
 }
 
@@ -214,15 +154,127 @@ function copyLink() {
     alert('Lenke kopiert til utklippstavlen!');
   }).catch(() => {
     // Fallback for older browsers
-    const textArea = document.createElement('textarea');
-    textArea.value = window.location.href;
-    document.body.appendChild(textArea);
-    textArea.select();
+    const textarea = document.createElement('textarea');
+    textarea.value = window.location.href;
+    document.body.appendChild(textarea);
+    textarea.select();
     document.execCommand('copy');
-    document.body.removeChild(textArea);
+    document.body.removeChild(textarea);
     alert('Lenke kopiert til utklippstavlen!');
   });
 }
+
+function openBlogPost(postId) {
+  const postUrls = {
+    'phishing-trondheim': 'blog-post-phishing.html',
+    'backup-strategi': 'blog-post-backup.html',
+    'passord-sikkerhet': 'blog-post-passord.html',
+    'fiber-utbygging': '#', // Placeholder - post doesn't exist yet
+    'hjemmekontor-sikkerhet': '#', // Placeholder - post doesn't exist yet
+    'gdpr-endringer': '#' // Placeholder - post doesn't exist yet
+  };
+
+  const url = postUrls[postId];
+  if (url && url !== '#') {
+    window.location.href = url;
+  } else {
+    alert('Denne artikkelen kommer snart!');
+  }
+}
+
+function filterBlog(category) {
+  const posts = document.querySelectorAll('.blog-post');
+  const buttons = document.querySelectorAll('.blog-category-btn');
+
+  // Update button styles
+  buttons.forEach(btn => {
+    btn.style.background = 'transparent';
+    btn.style.color = '#0043a8';
+    btn.classList.remove('active');
+  });
+
+  event.target.style.background = '#0043a8';
+  event.target.style.color = 'white';
+  event.target.classList.add('active');
+
+  // Filter posts
+  posts.forEach(post => {
+    if (category === 'all' || post.dataset.category === category) {
+      post.style.display = 'block';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+// Blog functionality
+//function filterBlog(category) {
+//  const posts = document.querySelectorAll('.blog-post');
+//  const buttons = document.querySelectorAll('.blog-category-btn');
+//
+//  // Update active button
+//  buttons.forEach(btn => {
+//    btn.classList.remove('active');
+//    btn.style.background = 'transparent';
+//    btn.style.color = '#0043a8';
+//  });
+//
+//  // Set active button
+//  event.target.classList.add('active');
+//  event.target.style.background = '#0043a8';
+//  event.target.style.color = 'white';
+//
+//  // Filter posts
+//  posts.forEach(post => {
+//    if (category === 'all' || post.dataset.category === category) {
+//      post.style.display = 'block';
+//      post.style.animation = 'fadeIn 0.5s ease';
+//    } else {
+//      post.style.display = 'none';
+//    }
+//  });
+//}
+//
+//function openBlogPost(postId) {
+//  // Map post IDs to actual file names
+//  const postMap = {
+//    'phishing-trondheim': 'blog-post-phishing.html',
+//    'backup-strategi': 'blog-post-backup.html',
+//    'fiber-utbygging': 'blog-post-fiber.html',
+//    'passord-sikkerhet': 'blog-post-passord.html',
+//    'hjemmekontor-sikkerhet': 'blog-post-hjemmekontor.html',
+//    'gdpr-endringer': 'blog-post-gdpr.html'
+//  };
+//
+//  const fileName = postMap[postId];
+//  if (fileName) {
+//    window.location.href = fileName;
+//  } else {
+//    alert('Denne artikkelen kommer snart!');
+//  }
+//}
+
+// Blog post sharing functionality
+//function shareOnEmail() {
+//  const subject = encodeURIComponent(document.title);
+//  const body = encodeURIComponent(`Sjekk ut denne nyttige IT-artikkelen: ${window.location.href}`);
+//  window.location.href = `mailto:?subject=${subject}&body=${body}`;
+//}
+//
+//function copyLink() {
+//  navigator.clipboard.writeText(window.location.href).then(() => {
+//    alert('Lenke kopiert til utklippstavlen!');
+//  }).catch(() => {
+//    // Fallback for older browsers
+//    const textArea = document.createElement('textarea');
+//    textArea.value = window.location.href;
+//    document.body.appendChild(textArea);
+//    textArea.select();
+//    document.execCommand('copy');
+//    document.body.removeChild(textArea);
+//    alert('Lenke kopiert til utklippstavlen!');
+//  });
+//}
 
 // Add fade-in animation for blog posts
 const style = document.createElement('style');
