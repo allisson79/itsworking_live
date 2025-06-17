@@ -65,12 +65,12 @@
       }
 
       menuInitialized = true;
+      console.log('Menu initialized successfully');
 
       // Toggle menu on button click
       menuToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Menu toggle clicked');
         mainMenu.classList.toggle('mobile-menu-open');
       });
 
