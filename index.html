@@ -80,10 +80,19 @@
   <main class="container">
     <!-- Tjenester Section -->
     <section id="tjenester" style="margin: 4rem 0;">
-      <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 3rem;">Våre tjenester</h2>
+      <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 1rem;">Våre tjenester</h2>
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <div style="background: linear-gradient(135deg, #ffc107, #ff8c00); color: #000; padding: 1rem 2rem; border-radius: 25px; display: inline-block; font-weight: bold; margin-bottom: 1rem;">
+          🚀 Lansering 25. juni 2025
+        </div>
+        <div style="font-size: 1.2rem; color: #1e7fd8; font-weight: bold;">
+          Nedtelling til lansering: <span id="countdown" style="color: #ffc107;">Laster...</span>
+        </div>
+      </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
         
-        <div class="service-card">
+        <div class="service-card" style="position: relative; opacity: 0.8;">
+          <div style="position: absolute; top: 1rem; right: 1rem; background: #ffc107; color: #000; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">KOMMER SNART</div>
           <div class="service-icon">🌐</div>
           <h3>Fiber og internett</h3>
           <p>Lynrask fiber fra GlobalConnect med automatisk 4G-backup. Garantert oppetid og lokal support.</p>
@@ -93,10 +102,11 @@
             <li>24/7 overvåking</li>
             <li>Ingen bindingstid</li>
           </ul>
-          <div class="price-tag">Fra kr 890/mnd</div>
+          <div class="price-tag" style="background: linear-gradient(135deg, #6c757d, #495057);">Fra kr 890/mnd</div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" style="position: relative; opacity: 0.8;">
+          <div style="position: absolute; top: 1rem; right: 1rem; background: #ffc107; color: #000; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">KOMMER SNART</div>
           <div class="service-icon">☁️</div>
           <h3>Microsoft 365 og skyløsninger</h3>
           <p>Komplett Microsoft 365-oppsett med e-post, SharePoint, Teams og sikker backup.</p>
@@ -106,10 +116,11 @@
             <li>Teams for samarbeid</li>
             <li>Automatisk backup</li>
           </ul>
-          <div class="price-tag">Fra kr 125/bruker/mnd</div>
+          <div class="price-tag" style="background: linear-gradient(135deg, #6c757d, #495057);">Fra kr 125/bruker/mnd</div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" style="position: relative; opacity: 0.8;">
+          <div style="position: absolute; top: 1rem; right: 1rem; background: #ffc107; color: #000; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">KOMMER SNART</div>
           <div class="service-icon">🛡️</div>
           <h3>Cybersikkerhet</h3>
           <p>Beskytt bedriften mot ransomware, phishing og datainnbrudd med moderne sikkerhetsløsninger.</p>
@@ -119,10 +130,11 @@
             <li>Sikkerhetsopplæring</li>
             <li>Incident response</li>
           </ul>
-          <div class="price-tag">Fra kr 290/bruker/mnd</div>
+          <div class="price-tag" style="background: linear-gradient(135deg, #6c757d, #495057);">Fra kr 290/bruker/mnd</div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" style="position: relative; opacity: 0.8;">
+          <div style="position: absolute; top: 1rem; right: 1rem; background: #ffc107; color: #000; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">KOMMER SNART</div>
           <div class="service-icon">🔧</div>
           <h3>IT-drift og support</h3>
           <p>Komplett IT-drift med proaktiv overvåking, oppdateringer og rask support når du trenger det.</p>
@@ -132,7 +144,7 @@
             <li>Helpdesk på norsk</li>
             <li>4 timers responstid</li>
           </ul>
-          <div class="price-tag">Fra kr 450/bruker/mnd</div>
+          <div class="price-tag" style="background: linear-gradient(135deg, #6c757d, #495057);">Fra kr 450/bruker/mnd</div>
         </div>
 
       </div>
@@ -163,8 +175,12 @@
     <!-- Gratis IT-sjekk Section -->
     <section id="gratis-sjekk" style="background: linear-gradient(135deg, #0043a8, #1e7fd8); color: white; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin: 4rem 0;">
       <h2 style="color: white; margin-bottom: 1rem;">Gratis IT-helsesjekk</h2>
+      <div style="background: rgba(255,255,255,0.2); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+        <strong>🎯 Forhåndsbestilling åpen nå!</strong><br>
+        <small>Tjenesten lanseres 25. juni 2025</small>
+      </div>
       <p style="margin-bottom: 1.5rem; font-size: 1.2rem;">
-        Få en grundig vurdering av din IT-situasjon – helt kostnadsfritt og uten forpliktelser.
+        Registrer deg nå og få en grundig vurdering av din IT-situasjon – helt kostnadsfritt og uten forpliktelser.
       </p>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; text-align: left;">
@@ -187,12 +203,12 @@
       </div>
 
       <div style="margin-top: 2rem;">
-        <a href="mailto:kontakt@itsworking.no?subject=Gratis IT-helsesjekk" style="background: white; color: #0043a8; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; margin-right: 1rem;">📧 Book gratis sjekk</a>
-        <a href="tel:+4798850462" style="background: rgba(255,255,255,0.2); color: white; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid white; font-size: 1.2rem; display: inline-block;">📞 Ring nå</a>
+        <a href="mailto:kontakt@itsworking.no?subject=Forhåndsbestilling - Gratis IT-helsesjekk" style="background: white; color: #0043a8; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; margin-right: 1rem;">📧 Forhåndsbestill nå</a>
+        <a href="tel:+4798850462" style="background: rgba(255,255,255,0.2); color: white; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid white; font-size: 1.2rem; display: inline-block;">📞 Spør om lansering</a>
       </div>
       
       <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.9;">
-        15-30 minutter • Ingen forpliktelser • Kun ærlige råd
+        15-30 minutter • Ingen forpliktelser • Kun ærlige råd • Lanseres 25. juni 2025
       </p>
     </section>
 
