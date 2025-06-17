@@ -1,4 +1,3 @@
-
 // Mobile performance optimizations
 (function() {
   'use strict';
@@ -36,28 +35,42 @@
 })();
 
 
+// Force dark mode only
+(function() {
+  'use strict';
+
+  // Always apply dark mode
+  document.body.classList.add('dark-mode');
+
+  // Remove any saved light mode preference
+  localStorage.removeItem('theme');
+})();
+
 // Mobile menu toggle functionality - robust version
 (function() {
   'use strict';
 
+  let menuInitialized = false;
+
   function initializeMenu() {
+    if (menuInitialized) return;
+
     try {
       const menuToggle = document.querySelector('.mobile-menu-toggle');
       const mainMenu = document.querySelector('ul.main-menu');
 
       if (!menuToggle || !mainMenu) {
-        console.log('Menu elements not found, retrying...');
         setTimeout(initializeMenu, 200);
         return;
       }
 
+      menuInitialized = true;
       console.log('Menu initialized successfully');
 
       // Toggle menu on button click
       menuToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Menu toggle clicked');
         mainMenu.classList.toggle('mobile-menu-open');
       });
 
@@ -118,81 +131,21 @@ function toggleFAQ(element) {
   }
 }
 
-// Newsletter signup functionality
 function submitNewsletter(event) {
   event.preventDefault();
-  const email = document.getElementById('newsletter-email').value;
-
-  if (email) {
-    // Send to Pipedrive or your email service
-    alert('Takk! Vi sender deg informasjon når vi lanserer 25. juni.');
-    document.getElementById('newsletter-email').value = '';
-  }
+  alert('Takk for at du melder deg på! Vi sender deg en bekreftelse snart.');
+  // Here you would normally send the form data to your server
 }
 
-// Contact form functionality
 function submitContact(event) {
   event.preventDefault();
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData);
-
-  // Here you would typically send to your backend or email service
-  console.log('Contact form submitted:', data);
-  alert('Takk for din henvendelse! Vi kontakter deg innen 4 timer på virkedager.');
-  event.target.reset();
+  alert('Takk for din henvendelse! Vi kommer tilbake til deg innen 4 timer.');
+  // Here you would normally send the form data to your server
 }
 
-// Blog functionality
-function filterBlog(category) {
-  const posts = document.querySelectorAll('.blog-post');
-  const buttons = document.querySelectorAll('.blog-category-btn');
-
-  // Update active button
-  buttons.forEach(btn => {
-    btn.classList.remove('active');
-    btn.style.background = 'transparent';
-    btn.style.color = '#0043a8';
-  });
-
-  // Set active button
-  event.target.classList.add('active');
-  event.target.style.background = '#0043a8';
-  event.target.style.color = 'white';
-
-  // Filter posts
-  posts.forEach(post => {
-    if (category === 'all' || post.dataset.category === category) {
-      post.style.display = 'block';
-      post.style.animation = 'fadeIn 0.5s ease';
-    } else {
-      post.style.display = 'none';
-    }
-  });
-}
-
-function openBlogPost(postId) {
-  // Map post IDs to actual file names
-  const postMap = {
-    'phishing-trondheim': 'blog-post-phishing.html',
-    'backup-strategi': 'blog-post-backup.html',
-    'fiber-utbygging': 'blog-post-fiber.html',
-    'passord-sikkerhet': 'blog-post-passord.html',
-    'hjemmekontor-sikkerhet': 'blog-post-hjemmekontor.html',
-    'gdpr-endringer': 'blog-post-gdpr.html'
-  };
-
-  const fileName = postMap[postId];
-  if (fileName) {
-    window.location.href = fileName;
-  } else {
-    alert('Denne artikkelen kommer snart!');
-  }
-}
-
-// Blog post sharing functionality
 function shareOnEmail() {
   const subject = encodeURIComponent(document.title);
-  const body = encodeURIComponent(`Sjekk ut denne nyttige IT-artikkelen: ${window.location.href}`);
+  const body = encodeURIComponent(`Sjekk ut denne artikkelen: ${window.location.href}`);
   window.location.href = `mailto:?subject=${subject}&body=${body}`;
 }
 
@@ -201,30 +154,185 @@ function copyLink() {
     alert('Lenke kopiert til utklippstavlen!');
   }).catch(() => {
     // Fallback for older browsers
-    const textArea = document.createElement('textarea');
-    textArea.value = window.location.href;
-    document.body.appendChild(textArea);
-    textArea.select();
+    const textarea = document.createElement('textarea');
+    textarea.value = window.location.href;
+    document.body.appendChild(textarea);
+    textarea.select();
     document.execCommand('copy');
-    document.body.removeChild(textArea);
+    document.body.removeChild(textarea);
     alert('Lenke kopiert til utklippstavlen!');
   });
 }
 
+function openBlogPost(postId) {
+  const postUrls = {
+    'phishing-trondheim': 'blog-post-phishing.html',
+    'backup-strategi': 'blog-post-backup.html',
+    'passord-sikkerhet': 'blog-post-passord.html',
+    'fiber-utbygging': '#', // Placeholder - post doesn't exist yet
+    'hjemmekontor-sikkerhet': '#', // Placeholder - post doesn't exist yet
+    'gdpr-endringer': '#' // Placeholder - post doesn't exist yet
+  };
+
+  const url = postUrls[postId];
+  if (url && url !== '#') {
+    window.location.href = url;
+  } else {
+    alert('Denne artikkelen kommer snart!');
+  }
+}
+
+function filterBlog(category) {
+  const posts = document.querySelectorAll('.blog-post');
+  const buttons = document.querySelectorAll('.blog-category-btn');
+
+  // Update button styles
+  buttons.forEach(btn => {
+    btn.style.background = 'transparent';
+    btn.style.color = '#0043a8';
+    btn.classList.remove('active');
+  });
+
+  event.target.style.background = '#0043a8';
+  event.target.style.color = 'white';
+  event.target.classList.add('active');
+
+  // Filter posts
+  posts.forEach(post => {
+    if (category === 'all' || post.dataset.category === category) {
+      post.style.display = 'block';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Menu initialized successfully');
+
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const mainMenu = document.querySelector('.main-menu');
+
+  if (toggle && mainMenu) {
+    toggle.addEventListener('click', function() {
+      console.log('Menu toggle clicked');
+      mainMenu.classList.toggle('show');
+    });
+  }
+});
+
+// Add smooth scrolling to anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Blog category filtering
+function filterBlog(category) {
+  const posts = document.querySelectorAll('.blog-post');
+  const buttons = document.querySelectorAll('.blog-category-btn');
+
+  // Update active button
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // Update button styles
+  buttons.forEach(btn => {
+    if (btn.classList.contains('active')) {
+      btn.style.background = '#0043a8';
+      btn.style.color = 'white';
+    } else {
+      btn.style.background = 'transparent';
+      btn.style.color = '#0043a8';
+    }
+  });
+
+  // Filter posts
+  posts.forEach(post => {
+    if (category === 'all' || post.dataset.category === category) {
+      post.style.display = 'block';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+// Blog post navigation
+function openBlogPost(postId) {
+  const posts = {
+    'backup-regler': 'blog-post-backup.html',
+    'phishing-angrep': 'blog-post-phishing.html',
+    'passord-sikkerhet': 'blog-post-passord.html',
+    'hjemmekontor-sikkerhet': '#',
+    'microsoft-365': '#',
+    'gdpr-endringer': '#'
+  };
+
+  if (posts[postId] && posts[postId] !== '#') {
+    window.location.href = posts[postId];
+  } else {
+    alert('Dette blogginnlegget kommer snart!');
+  }
+}
+
+// Add hover effects to service cards
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      const cardStyle = this.style;
+      cardStyle.transform = 'translateY(-10px)';
+      cardStyle.boxShadow = '0 20px 40px rgba(0, 67, 168, 0.4)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+      const cardStyle = this.style;
+      cardStyle.transform = 'translateY(0)';
+      cardStyle.boxShadow = '0 8px 25px rgba(0, 67, 168, 0.2)';
+    });
+  });
+});
+
+// Add hover effects to partner cards
+document.addEventListener('DOMContentLoaded', function() {
+  const partnerCards = document.querySelectorAll('.partner-card');
+
+  partnerCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      const partnerStyle = this.style;
+      partnerStyle.background = 'rgba(30, 127, 216, 0.2)';
+      partnerStyle.transform = 'translateY(-5px)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+      const partnerStyle = this.style;
+      partnerStyle.background = 'rgba(30, 127, 216, 0.1)';
+      partnerStyle.transform = 'translateY(0)';
+    });
+  });
+});
+
 // Add fade-in animation for blog posts
-const style = document.createElement('style');
-style.textContent = `
+const blogAnimationStyle = document.createElement('style');
+blogAnimationStyle.textContent = `
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  
+
   .blog-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
   }
 `;
-document.head.appendChild(style);
+document.head.appendChild(blogAnimationStyle);
 
 // IT Health Check booking functionality
 function openHealthCheck() {
@@ -263,3 +371,35 @@ function initCountdown() {
 
 // Initialize countdown when page loads
 document.addEventListener('DOMContentLoaded', initCountdown);
+
+// Smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+
+      // Skip if it's just "#" or if target doesn't exist
+      if (href === '#' || href === '#/') return;
+
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+
+        const offsetTop = target.offsetTop - 100; // Account for fixed nav
+
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+
+        // Close mobile menu if open
+        const mobileMenu = document.querySelector('.main-menu');
+        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
+          mobileMenu.classList.remove('mobile-menu-open');
+        }
+      }
+    });
+  });
+});
