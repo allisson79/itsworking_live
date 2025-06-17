@@ -319,21 +319,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Add fade-in animation for blog posts
-const blogAnimationStyle = document.createElement('style');
-blogAnimationStyle.textContent = `
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
-  }
-`;
-document.head.appendChild(blogAnimationStyle);
-
 // IT Health Check booking functionality
 function openHealthCheck() {
   // This could open a calendar booking widget or redirect to scheduling page
@@ -368,55 +353,6 @@ function initCountdown() {
   setInterval(updateCountdown, 1000);
   updateCountdown(); // Initial call
 }
-
-// Initialize countdown when page loads
-document.addEventListener('DOMContentLoaded', initCountdown);
-
-// Smooth scrolling for anchor links
-document.addEventListener('DOMContentLoaded', function() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-  anchorLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-
-      // Skip if it's just "#" or if target doesn't exist
-      if (href === '#' || href === '#/') return;
-
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-
-        const offsetTop = target.offsetTop - 100; // Account for fixed nav
-
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
-
-        // Close mobile menu if open
-        const mobileMenu = document.querySelector('.main-menu');
-        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
-          mobileMenu.classList.remove('mobile-menu-open');
-        }
-      }
-    });
-  });
-});
-
-// Menu functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileToggle = document.querySelector('.mobile-menu-toggle');
-  const mainMenu = document.querySelector('.main-menu');
-
-  if (mobileToggle && mainMenu) {
-    mobileToggle.addEventListener('click', function() {
-      console.log('Menu toggle clicked');
-      mainMenu.classList.toggle('show');
-    });
-    console.log('Menu initialized successfully');
-  }
-});
 
 // Contact form functionality
 function submitContact(event) {
@@ -499,28 +435,53 @@ function copyToClipboard(text) {
   });
 }
 
-// Smooth scrolling for anchor links
+// Initialize all functionality when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  // Initialize countdown
+  initCountdown();
 
+  // Smooth scrolling for anchor links
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault();
+      const href = this.getAttribute('href');
 
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+      // Skip if it's just "#" or if target doesn't exist
+      if (href === '#' || href === '#/') return;
 
-      if (targetElement) {
-        targetElement.scrollIntoView({
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+
+        const offsetTop = target.offsetTop - 100; // Account for fixed nav
+
+        window.scrollTo({
+          top: offsetTop,
           behavior: 'smooth'
         });
+
+        // Close mobile menu if open
+        const mobileMenu = document.querySelector('.main-menu');
+        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
+          mobileMenu.classList.remove('mobile-menu-open');
+        }
       }
     });
   });
-});
 
-// Add fade-in animation to sections
-document.addEventListener('DOMContentLoaded', function() {
+  // Menu functionality
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const mainMenu = document.querySelector('.main-menu');
+
+  if (mobileToggle && mainMenu) {
+    mobileToggle.addEventListener('click', function() {
+      console.log('Menu toggle clicked');
+      mainMenu.classList.toggle('mobile-menu-open');
+    });
+    console.log('Menu initialized successfully');
+  }
+
+  // Add fade-in animation to sections
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -537,10 +498,8 @@ document.addEventListener('DOMContentLoaded', function() {
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
   });
-});
 
-// Enhanced navigation highlighting
-document.addEventListener('DOMContentLoaded', function() {
+  // Enhanced navigation highlighting
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = document.querySelectorAll('.nav-link');
 
@@ -550,12 +509,9 @@ document.addEventListener('DOMContentLoaded', function() {
       link.classList.add('active');
     }
   });
-});
 
-// Add loading state to forms
-document.addEventListener('DOMContentLoaded', function() {
+  // Add loading state to forms
   const forms = document.querySelectorAll('form');
-
   forms.forEach(form => {
     form.addEventListener('submit', function() {
       const submitButton = form.querySelector('button[type="submit"]');
@@ -572,15 +528,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
 
-// Add custom styling for specific elements
-document.addEventListener('DOMContentLoaded', function() {
   // Add custom styling to hero elements
   const hero = document.querySelector('.hero');
   if (hero) {
-    const heroStyle = document.createElement('style');
-    heroStyle.textContent = `
+    const heroCustomStyle = document.createElement('style');
+    heroCustomStyle.textContent = `
       .hero {
         position: relative;
         overflow: hidden;
@@ -602,6 +555,21 @@ document.addEventListener('DOMContentLoaded', function() {
         z-index: 2;
       }
     `;
-    document.head.appendChild(heroStyle);
+    document.head.appendChild(heroCustomStyle);
   }
+
+  // Add fade-in animation for blog posts
+  const blogAnimationStyles = document.createElement('style');
+  blogAnimationStyles.textContent = `
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
+    }
+  `;
+  document.head.appendChild(blogAnimationStyles);
 });
