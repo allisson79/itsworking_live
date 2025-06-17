@@ -207,74 +207,117 @@ function filterBlog(category) {
   });
 }
 
-// Blog functionality
-//function filterBlog(category) {
-//  const posts = document.querySelectorAll('.blog-post');
-//  const buttons = document.querySelectorAll('.blog-category-btn');
-//
-//  // Update active button
-//  buttons.forEach(btn => {
-//    btn.classList.remove('active');
-//    btn.style.background = 'transparent';
-//    btn.style.color = '#0043a8';
-//  });
-//
-//  // Set active button
-//  event.target.classList.add('active');
-//  event.target.style.background = '#0043a8';
-//  event.target.style.color = 'white';
-//
-//  // Filter posts
-//  posts.forEach(post => {
-//    if (category === 'all' || post.dataset.category === category) {
-//      post.style.display = 'block';
-//      post.style.animation = 'fadeIn 0.5s ease';
-//    } else {
-//      post.style.display = 'none';
-//    }
-//  });
-//}
-//
-//function openBlogPost(postId) {
-//  // Map post IDs to actual file names
-//  const postMap = {
-//    'phishing-trondheim': 'blog-post-phishing.html',
-//    'backup-strategi': 'blog-post-backup.html',
-//    'fiber-utbygging': 'blog-post-fiber.html',
-//    'passord-sikkerhet': 'blog-post-passord.html',
-//    'hjemmekontor-sikkerhet': 'blog-post-hjemmekontor.html',
-//    'gdpr-endringer': 'blog-post-gdpr.html'
-//  };
-//
-//  const fileName = postMap[postId];
-//  if (fileName) {
-//    window.location.href = fileName;
-//  } else {
-//    alert('Denne artikkelen kommer snart!');
-//  }
-//}
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Menu initialized successfully');
 
-// Blog post sharing functionality
-//function shareOnEmail() {
-//  const subject = encodeURIComponent(document.title);
-//  const body = encodeURIComponent(`Sjekk ut denne nyttige IT-artikkelen: ${window.location.href}`);
-//  window.location.href = `mailto:?subject=${subject}&body=${body}`;
-//}
-//
-//function copyLink() {
-//  navigator.clipboard.writeText(window.location.href).then(() => {
-//    alert('Lenke kopiert til utklippstavlen!');
-//  }).catch(() => {
-//    // Fallback for older browsers
-//    const textArea = document.createElement('textarea');
-//    textArea.value = window.location.href;
-//    document.body.appendChild(textArea);
-//    textArea.select();
-//    document.execCommand('copy');
-//    document.body.removeChild(textArea);
-//    alert('Lenke kopiert til utklippstavlen!');
-//  });
-//}
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const mainMenu = document.querySelector('.main-menu');
+
+  if (toggle && mainMenu) {
+    toggle.addEventListener('click', function() {
+      console.log('Menu toggle clicked');
+      mainMenu.classList.toggle('show');
+    });
+  }
+});
+
+// Add smooth scrolling to anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Blog category filtering
+function filterBlog(category) {
+  const posts = document.querySelectorAll('.blog-post');
+  const buttons = document.querySelectorAll('.blog-category-btn');
+
+  // Update active button
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // Update button styles
+  buttons.forEach(btn => {
+    if (btn.classList.contains('active')) {
+      btn.style.background = '#0043a8';
+      btn.style.color = 'white';
+    } else {
+      btn.style.background = 'transparent';
+      btn.style.color = '#0043a8';
+    }
+  });
+
+  // Filter posts
+  posts.forEach(post => {
+    if (category === 'all' || post.dataset.category === category) {
+      post.style.display = 'block';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+// Blog post navigation
+function openBlogPost(postId) {
+  const posts = {
+    'backup-regler': 'blog-post-backup.html',
+    'phishing-angrep': 'blog-post-phishing.html',
+    'passord-sikkerhet': 'blog-post-passord.html',
+    'hjemmekontor-sikkerhet': '#',
+    'microsoft-365': '#',
+    'gdpr-endringer': '#'
+  };
+
+  if (posts[postId] && posts[postId] !== '#') {
+    window.location.href = posts[postId];
+  } else {
+    alert('Dette blogginnlegget kommer snart!');
+  }
+}
+
+// Add hover effects to service cards
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      const cardStyle = this.style;
+      cardStyle.transform = 'translateY(-10px)';
+      cardStyle.boxShadow = '0 20px 40px rgba(0, 67, 168, 0.4)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+      const cardStyle = this.style;
+      cardStyle.transform = 'translateY(0)';
+      cardStyle.boxShadow = '0 8px 25px rgba(0, 67, 168, 0.2)';
+    });
+  });
+});
+
+// Add hover effects to partner cards
+document.addEventListener('DOMContentLoaded', function() {
+  const partnerCards = document.querySelectorAll('.partner-card');
+
+  partnerCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      const partnerStyle = this.style;
+      partnerStyle.background = 'rgba(30, 127, 216, 0.2)';
+      partnerStyle.transform = 'translateY(-5px)';
+    });
+
+    card.addEventListener('mouseleave', function() {
+      const partnerStyle = this.style;
+      partnerStyle.background = 'rgba(30, 127, 216, 0.1)';
+      partnerStyle.transform = 'translateY(0)';
+    });
+  });
+});
 
 // Add fade-in animation for blog posts
 const blogAnimationStyle = document.createElement('style');
@@ -332,25 +375,25 @@ document.addEventListener('DOMContentLoaded', initCountdown);
 // Smooth scrolling for anchor links
 document.addEventListener('DOMContentLoaded', function() {
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
-  
+
   anchorLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      
+
       // Skip if it's just "#" or if target doesn't exist
       if (href === '#' || href === '#/') return;
-      
+
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        
+
         const offsetTop = target.offsetTop - 100; // Account for fixed nav
-        
+
         window.scrollTo({
           top: offsetTop,
           behavior: 'smooth'
         });
-        
+
         // Close mobile menu if open
         const mobileMenu = document.querySelector('.main-menu');
         if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
