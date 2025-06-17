@@ -1,149 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="no">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Kontakt oss - Its Working</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-</head>
-
-<body>
-  <nav class="container-fluid">
-    <ul>
-      <li>
-        <strong><a href="index.html"><img src="its_working_logo_transparent.png" alt="Its Working - Hjem" /></a></strong>
-      </li>
-      <li>
-        <button class="mobile-menu-toggle" aria-label="Åpne meny">☰</button>
-      </li>
-    </ul>
-    <ul class="main-menu">
-      <li><a href="#" class="nav-link disabled">Tjenester</a></li>
-      <li><a href="#" class="nav-link disabled">Leverandører</a></li>
-      <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
-      <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
-      <li><a href="blog.html" class="nav-link">IT Tips</a></li>
-      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
-    </ul>
-  </nav>
-
-  <header style="background-image: url('hero_trondheim.jpg')" class="hero">
-    <div class="hero-overlay">
-      <h1>Kontakt oss</h1>
-      <p>Vi svarer personlig innen 4 timer i arbeidstiden. Har du akutt behov? Ring oss direkte.</p>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- Contact Form -->
-    <section id="contact-form" style="margin-bottom: 3rem;">
-      <h2 style="color: #1e7fd8;">Send oss en melding</h2>
-      <form action="#" method="POST" style="max-width: 600px;"">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-          <div>
-            <label for="name">Navn *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div>
-            <label for="company">Bedrift</label>
-            <input type="text" id="company" name="company">
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-          <div>
-            <label for="email">E-post *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div>
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-        </div>
-
-        <div style="margin-bottom: 1rem;">
-          <label for="interest">Hva kan vi hjelpe med?</label>
-          <select id="interest" name="interest">
-            <option value="">Velg tema...</option>
-            <option value="internett">Internett og fiber</option>
-            <option value="it-support">IT-support og drift</option>
-            <option value="sikkerhet">IT-sikkerhet</option>
-            <option value="tjenester">Generelle tjenester</option>
-            <option value="helsjesjekk">Gratis IT-helsesjekk</option>
-            <option value="annet">Annet</option>
-          </select>
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <label for="message">Melding *</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Fortell oss litt om dine behov eller utfordringer..."></textarea>
-        </div>
-
-        <button type="submit" style="background-color: #0043a8; border: 2px solid #0043a8; color: white; padding: 1rem 2rem; border-radius: 6px; font-weight: bold; cursor: pointer;">
-          Send melding
-        </button>
-      </form>
-    </section>
-
-    <hr style="margin: 3rem 0; border: none; height: 2px; background: linear-gradient(90deg, transparent, #004a99, transparent);">
-
-    <!-- Business Hours -->
-    <section id="business-hours" style="margin-bottom: 3rem;">
-      <h2 style="color: #1e7fd8;">Kontaktinformasjon</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div style="background: linear-gradient(135deg, #11181f, #1a2332); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #0043a8; border: 1px solid rgba(0, 67, 168, 0.3);">
-          <h3 style="margin-top: 0; color: #1e7fd8;">Vårt løfte til deg</h3>
-          <p style="color: #e9ecef;"><strong style="color: #1e7fd8;">Responstid:</strong> Maks 4 timer i arbeidstiden</p>
-          <p style="color: #e9ecef;"><strong style="color: #1e7fd8;">Akutte saker:</strong> Løses samme arbeidsdag</p>
-          <p style="color: #e9ecef;"><strong style="color: #1e7fd8;">Personlig oppfølging:</strong> Du snakker med fagpersonen som kan hjelpe</p>
-        </div>
-        
-        <div style="background: linear-gradient(135deg, #11181f, #1a2332); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e7fd8; border: 1px solid rgba(30, 127, 216, 0.3);">
-          <h3 style="margin-top: 0; color: #1e7fd8;">Kontaktinfo</h3>
-          <p style="color: #e9ecef;"><strong style="color: #1e7fd8;">E-post:</strong> <a href="mailto:kontakt@itsworking.no" style="color: #1e7fd8;">kontakt@itsworking.no</a></p>
-          <p style="color: #e9ecef;"><strong style="color: #1e7fd8;">Telefon:</strong> Kommer 25. juni</p>
-          <p style="color: #e9ecef;"><strong style="color: #1e7fd8;">Adresse:</strong> Trondheim sentrum</p>
-          <p style="color: #e9ecef;"><strong style="color: #1e7fd8;">Arbeidstid:</strong> Man-Fre 08:00-17:00</p>
-        </div>
-      </div>
-    </section>
-
-    
-
-    <!-- Newsletter Signup -->
-    <section id="newsletter" style="background: #0043a8; color: white; padding: 2rem; border-radius: 12px; text-align: center;">
-      <h2 style="color: white; margin-bottom: 1rem;">Bli med på reisen</h2>
-      <p style="margin-bottom: 1.5rem;">
-        Få beskjed når vi lanserer nye tjenester og dele nyttige IT-tips for små bedrifter.
-      </p>
-      <form action="#" method="POST" style="max-width: 400px; margin: 0 auto;">
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
-          <input type="email" name="newsletter_email" placeholder="Din e-postadresse" required 
-                 style="flex: 1; min-width: 250px; padding: 0.8rem; border: none; border-radius: 6px;">
-          <button type="submit" style="background: white; color: #0043a8; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: bold; cursor: pointer; white-space: nowrap;">
-            Meld meg på
-          </button>
-        </div>
-      </form>
-      <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">
-        Vi sender maksimalt én e-post per måned. Du kan melde deg av når som helst.
-      </p>
-    </section>
-  </main>
-
-  <footer class="container">
-    <small>
-      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
-      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a>
-    </small>
-  </footer>
-</body>
-
-</html>
 <!DOCTYPE html>
 <html lang="no">
 
@@ -186,11 +40,11 @@
   </header>
 
   <main class="container">
-    
+
     <!-- Contact Methods -->
     <section style="margin-bottom: 3rem;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        
+
         <div style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; text-align: center;">
           <h3 style="color: #1e7fd8; margin-bottom: 1rem;">📧 E-post</h3>
           <p style="color: #e9ecef; margin-bottom: 1.5rem;">For alle henvendelser og spørsmål</p>
@@ -221,7 +75,7 @@
     <!-- Contact Form -->
     <section style="background: linear-gradient(135deg, #11181f, #1a2332); border: 1px solid rgba(0, 67, 168, 0.3); border-radius: 12px; padding: 2rem; margin-bottom: 3rem;">
       <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 2rem;">Send oss en melding</h2>
-      
+
       <form onsubmit="submitContact(event)" style="max-width: 600px; margin: 0 auto;">
         <div style="margin-bottom: 1.5rem;">
           <label for="contact-name" style="color: #e9ecef; font-weight: bold; display: block; margin-bottom: 0.5rem;">Navn *</label>
