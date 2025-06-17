@@ -277,8 +277,8 @@ function filterBlog(category) {
 //}
 
 // Add fade-in animation for blog posts
-const style = document.createElement('style');
-style.textContent = `
+const blogAnimationStyle = document.createElement('style');
+blogAnimationStyle.textContent = `
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -289,7 +289,7 @@ style.textContent = `
     box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
   }
 `;
-document.head.appendChild(style);
+document.head.appendChild(blogAnimationStyle);
 
 // IT Health Check booking functionality
 function openHealthCheck() {
@@ -328,3 +328,35 @@ function initCountdown() {
 
 // Initialize countdown when page loads
 document.addEventListener('DOMContentLoaded', initCountdown);
+
+// Smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Skip if it's just "#" or if target doesn't exist
+      if (href === '#' || href === '#/') return;
+      
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        
+        const offsetTop = target.offsetTop - 100; // Account for fixed nav
+        
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        const mobileMenu = document.querySelector('.main-menu');
+        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
+          mobileMenu.classList.remove('mobile-menu-open');
+        }
+      }
+    });
+  });
+});
