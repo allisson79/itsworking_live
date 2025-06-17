@@ -403,3 +403,205 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const mainMenu = document.querySelector('.main-menu');
+
+  if (mobileToggle && mainMenu) {
+    mobileToggle.addEventListener('click', function() {
+      console.log('Menu toggle clicked');
+      mainMenu.classList.toggle('show');
+    });
+    console.log('Menu initialized successfully');
+  }
+});
+
+// Contact form functionality
+function submitContact(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  // Get form values
+  const name = formData.get('name');
+  const email = formData.get('email');
+  const company = formData.get('company') || 'Ikke oppgitt';
+  const phone = formData.get('phone') || 'Ikke oppgitt';
+  const subject = formData.get('subject');
+  const message = formData.get('message');
+
+  // Create email body
+  const emailBody = `
+Ny henvendelse fra kontaktskjema:
+
+Navn: ${name}
+E-post: ${email}
+Bedrift: ${company}
+Telefon: ${phone}
+Emne: ${subject}
+
+Melding:
+${message}
+
+---
+Sendt fra kontaktskjema på itsworking.no
+  `.trim();
+
+  // Create mailto link
+  const mailtoLink = `mailto:kontakt@itsworking.no?subject=Henvendelse: ${subject}&body=${encodeURIComponent(emailBody)}`;
+
+  // Open email client
+  window.location.href = mailtoLink;
+
+  // Show confirmation
+  alert('Takk for henvendelsen! Ditt e-postprogram åpnes nå. Vi svarer innen 4 timer i arbeidstiden.');
+
+  // Reset form
+  form.reset();
+}
+
+// Blog functionality
+function shareArticle(platform, url, title) {
+  let shareUrl;
+
+  switch(platform) {
+    case 'linkedin':
+      shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+      break;
+    case 'facebook':
+      shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      break;
+    case 'twitter':
+      shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+      break;
+    default:
+      return;
+  }
+
+  window.open(shareUrl, '_blank', 'width=600,height=400');
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    alert('Lenke kopiert til utklippstavlen!');
+  }).catch(function() {
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Lenke kopiert til utklippstavlen!');
+  });
+}
+
+// Smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
+
+// Add fade-in animation to sections
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(section);
+  });
+});
+
+// Enhanced navigation highlighting
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Add loading state to forms
+document.addEventListener('DOMContentLoaded', function() {
+  const forms = document.querySelectorAll('form');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', function() {
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Sender...';
+        submitButton.disabled = true;
+
+        // Re-enable after a delay (in case form submission fails)
+        setTimeout(() => {
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+        }, 3000);
+      }
+    });
+  });
+});
+
+// Add custom styling for specific elements
+document.addEventListener('DOMContentLoaded', function() {
+  // Add custom styling to hero elements
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const heroStyle = document.createElement('style');
+    heroStyle.textContent = `
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
+
+      .hero-overlay {
+        position: relative;
+        z-index: 2;
+      }
+    `;
+    document.head.appendChild(heroStyle);
+  }
+});
