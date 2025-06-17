@@ -1,3 +1,4 @@
+
 // Mobile performance optimizations
 (function() {
   'use strict';
@@ -33,7 +34,6 @@
     });
   }
 })();
-
 
 // Force dark mode only
 (function() {
@@ -207,21 +207,6 @@ function filterBlog(category) {
   });
 }
 
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Menu initialized successfully');
-
-  const toggle = document.querySelector('.mobile-menu-toggle');
-  const mainMenu = document.querySelector('.main-menu');
-
-  if (toggle && mainMenu) {
-    toggle.addEventListener('click', function() {
-      console.log('Menu toggle clicked');
-      mainMenu.classList.toggle('show');
-    });
-  }
-});
-
 // Add smooth scrolling to anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -232,36 +217,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-// Blog category filtering
-function filterBlog(category) {
-  const posts = document.querySelectorAll('.blog-post');
-  const buttons = document.querySelectorAll('.blog-category-btn');
-
-  // Update active button
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-
-  // Update button styles
-  buttons.forEach(btn => {
-    if (btn.classList.contains('active')) {
-      btn.style.background = '#0043a8';
-      btn.style.color = 'white';
-    } else {
-      btn.style.background = 'transparent';
-      btn.style.color = '#0043a8';
-    }
-  });
-
-  // Filter posts
-  posts.forEach(post => {
-    if (category === 'all' || post.dataset.category === category) {
-      post.style.display = 'block';
-    } else {
-      post.style.display = 'none';
-    }
-  });
-}
 
 // Blog post navigation
 function openBlogPost(postId) {
@@ -287,15 +242,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   serviceCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
-      const cardStyle = this.style;
-      cardStyle.transform = 'translateY(-10px)';
-      cardStyle.boxShadow = '0 20px 40px rgba(0, 67, 168, 0.4)';
+      const cardStyling = this.style;
+      cardStyling.transform = 'translateY(-10px)';
+      cardStyling.boxShadow = '0 20px 40px rgba(0, 67, 168, 0.4)';
     });
 
     card.addEventListener('mouseleave', function() {
-      const cardStyle = this.style;
-      cardStyle.transform = 'translateY(0)';
-      cardStyle.boxShadow = '0 8px 25px rgba(0, 67, 168, 0.2)';
+      const cardStyling = this.style;
+      cardStyling.transform = 'translateY(0)';
+      cardStyling.boxShadow = '0 8px 25px rgba(0, 67, 168, 0.2)';
     });
   });
 });
@@ -306,15 +261,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   partnerCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
-      const partnerStyle = this.style;
-      partnerStyle.background = 'rgba(30, 127, 216, 0.2)';
-      partnerStyle.transform = 'translateY(-5px)';
+      const partnerStyling = this.style;
+      partnerStyling.background = 'rgba(30, 127, 216, 0.2)';
+      partnerStyling.transform = 'translateY(-5px)';
     });
 
     card.addEventListener('mouseleave', function() {
-      const partnerStyle = this.style;
-      partnerStyle.background = 'rgba(30, 127, 216, 0.1)';
-      partnerStyle.transform = 'translateY(0)';
+      const partnerStyling = this.style;
+      partnerStyling.background = 'rgba(30, 127, 216, 0.1)';
+      partnerStyling.transform = 'translateY(0)';
     });
   });
 });
@@ -468,18 +423,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-  // Menu functionality
-  const mobileToggle = document.querySelector('.mobile-menu-toggle');
-  const mainMenu = document.querySelector('.main-menu');
-
-  if (mobileToggle && mainMenu) {
-    mobileToggle.addEventListener('click', function() {
-      console.log('Menu toggle clicked');
-      mainMenu.classList.toggle('mobile-menu-open');
-    });
-    console.log('Menu initialized successfully');
-  }
 
   // Add fade-in animation to sections
   const observer = new IntersectionObserver((entries) => {
