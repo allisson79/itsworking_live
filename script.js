@@ -1,4 +1,3 @@
-
 // Mobile performance optimizations
 (function() {
   'use strict';
@@ -218,23 +217,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Blog post navigation
-function openBlogPost(postId) {
-  const posts = {
-    'backup-regler': 'blog-post-backup.html',
-    'phishing-angrep': 'blog-post-phishing.html',
-    'passord-sikkerhet': 'blog-post-passord.html',
-    'hjemmekontor-sikkerhet': '#',
-    'microsoft-365': '#',
-    'gdpr-endringer': '#'
-  };
-
-  if (posts[postId] && posts[postId] !== '#') {
-    window.location.href = posts[postId];
-  } else {
-    alert('Dette blogginnlegget kommer snart!');
-  }
-}
+// Blog post navigation removed - blog moved to blog_backup folder
 
 // Add hover effects to service cards
 document.addEventListener('DOMContentLoaded', function() {
