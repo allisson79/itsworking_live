@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -9,7 +8,7 @@
   <meta name="description" content="Its Working AS - Lokal IT-partner i Trondheim. Microsoft 365, IT-drift, sikkerhet og fiber for SMB. Personlig service og rask respons." />
   <meta name="keywords" content="IT-support Trondheim, Microsoft 365, fiber, cybersikkerhet, IT-drift, SMB" />
   <title>Its Working – Trygg IT-partner i Trondheim</title>
-  
+
   <!-- Google Analytics 4 - Tracking Code -->
   <!-- Måler besøk, sidevisninger og brukeradferd for å optimalisere nettsiden -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -19,7 +18,7 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
-  
+
   <!-- Hotjar Tracking Code - Heatmaps og brukeropptak -->
   <!-- Viser hvordan brukere navigerer og interagerer med nettsiden -->
   <script>
@@ -32,12 +31,12 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
-  
+
   <!-- Cloudflare Web Analytics -->
   <!-- Måler nettstedets ytelse, lasterider og core web vitals -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "552aeb15dd7e42f1a6dc51292935b1fb"}'></script>
   <!-- End Cloudflare Web Analytics -->
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
@@ -61,32 +60,78 @@
       <li><a href="#partnere" class="nav-link">Partnere</a></li>
       <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
       <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
-      <li><a href="blog.html" class="nav-link">IT Tips</a></li>
       <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
     </ul>
   </nav>
 
   <header style="background-image: url('hero_trondheim.jpg')" class="hero">
     <div class="hero-overlay">
-      <h1>Din lokale IT-partner i Trondheim</h1>
-      <p>Vi hjelper små og mellomstore bedrifter med stabilt internett, sikker IT-drift og Microsoft 365 – levert med menneskelig kontakt og ekte ansvar.</p>
+      <h1>IT og internett – levert lokalt i Trondheim.</h1>
+      <p>Én fast kontakt, én lokal avdeling – ingen sentralbord, ingen fjernkonsulenter. Rask, personlig support og teknologi du kan stole på.</p>
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="#gratis-sjekk" style="background: #1e7fd8; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">🔍 Gratis IT-sjekk</a>
-        <a href="kontakt.html" style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid white; font-size: 1.1rem;">📞 Ring oss nå</a>
+        <a href="mailto:kontakt@itsworking.no?subject=Legg%20igjen%20nummer%20-%20jeg%20ringer%20deg&body=Hei%2C%0A%0AJeg%20ønsker%20å%20vite%20mer%20om%20fiberkampanjen.%20Du%20kan%20ringe%20meg%20på%3A%0A%0ATelefon%3A%20%0ANavn%3A%20%0ABedrift%3A%20%0ABeste%20tid%20å%20ringe%3A%20%0A%0ATusen%20takk!" style="background: #1e7fd8; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Legg igjen nummer – jeg ringer deg</a>
       </div>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); font-style: italic;">Kampanje med GlobalConnect – levert lokalt av Its Working. Gründeren tar kontakt personlig.</p>
     </div>
   </header>
 
   <main class="container">
     <!-- Tjenester section fjernet midlertidig -->
+    <!-- 
+    <section id="tjenester" style="margin: 4rem 0;">
+      <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 3rem;">Våre tjenester</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Fiber og internett</h3>
+          <p>Høyhastighets fiber med backup og redundans</p>
+          <ul>
+            <li>Opptil 1000/1000 Mbps</li>
+            <li>4G backup inkludert</li>
+            <li>24/7 overvåking</li>
+            <li>SLA 99,9% oppetid</li>
+          </ul>
+          <div class="price-tag">Fra 1.500 kr/mnd</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>Microsoft 365</h3>
+          <p>Komplett kontorpakke med sikkerhet</p>
+          <ul>
+            <li>Exchange Online</li>
+            <li>SharePoint og Teams</li>
+            <li>Avansert sikkerhet</li>
+            <li>24/7 support inkludert</li>
+          </ul>
+          <div class="price-tag">Fra 200 kr/bruker/mnd</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Cybersikkerhet</h3>
+          <p>Beskyttelse mot moderne trusler</p>
+          <ul>
+            <li>Endpoint Detection Response</li>
+            <li>E-post sikkerhet</li>
+            <li>Sikkerhetsopplæring</li>
+            <li>Kontinuerlig overvåking</li>
+          </ul>
+          <div class="price-tag">Fra 300 kr/bruker/mnd</div>
+        </div>
+
+      </div>
+    </section>
+    -->
 
     <!-- Partnere Section -->
     <section id="partnere" style="margin: 4rem 0; background: linear-gradient(135deg, #11181f, #1a2332); padding: 3rem 2rem; border-radius: 12px; border: 1px solid rgba(0, 67, 168, 0.3);">
       <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 2rem;">Vår teknologipartner</h2>
       <p style="text-align: center; color: #e9ecef; margin-bottom: 3rem; font-size: 1.1rem;">Vi samarbeider med Norges ledende fiberleverandør for å gi deg beste mulige internettløsninger</p>
-      
+
       <div style="display: flex; justify-content: center;">
-        
+
         <div class="partner-card" style="max-width: 400px;">
           <h3 style="color: #1e7fd8; margin-bottom: 1rem;">GlobalConnect</h3>
           <p style="color: #e9ecef;">Norges største fiberleverandør. Robust infrastruktur og 99,9% oppetid.</p>
@@ -100,7 +145,7 @@
       </div>
     </section>
 
-    
+
 
     <!-- Gratis IT-sjekk Section -->
     <section id="gratis-sjekk" style="background: linear-gradient(135deg, #0043a8, #1e7fd8); color: white; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin: 4rem 0;">
@@ -112,7 +157,7 @@
       <p style="margin-bottom: 1.5rem; font-size: 1.2rem;">
         Registrer deg nå og få en grundig vurdering av din IT-situasjon – helt kostnadsfritt og uten forpliktelser.
       </p>
-      
+
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; text-align: left;">
         <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px;">
           <h4 style="color: white; margin-bottom: 1rem;">🔍 Sikkerhetsvurdering</h4>
@@ -136,7 +181,7 @@
         <a href="mailto:kontakt@itsworking.no?subject=Forhåndsbestilling - Gratis IT-helsesjekk" style="background: white; color: #0043a8; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; margin-right: 1rem;">📧 Forhåndsbestill nå</a>
         <a href="tel:+4798850462" style="background: rgba(255,255,255,0.2); color: white; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid white; font-size: 1.2rem; display: inline-block;">📞 Spør om lansering</a>
       </div>
-      
+
       <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.9;">
         15-30 minutter • Ingen forpliktelser • Kun ærlige råd • Lanseres 25. juni 2025
       </p>
@@ -150,7 +195,7 @@
           "Etter mange år i IT-bransjen så jeg at noe viktig gikk tapt: den menneskelige kontakten. Små bedrifter ble behandlet som nummer i køsystemer, ikke som partnere med unike behov."
         </p>
         <p style="color: #e9ecef;">
-          <strong style="color: #1e7fd8;">Its Working</strong> er født ut av frustrasjonen over at teknologi skulle gjøre hverdagen enklere, men ofte gjør den motsatte. Vi har sett for mange bedrifter bli skuffet av leverandører som lover mye, men leverer lite oppfølging.
+          <strong style="color: #1e7fd8;">Its Working</strong> er født ut av frustrasjonen over at teknologi skulle gjøre hverdagen enklere, men ofte gjør det motsatte. Vi har sett for mange bedrifter bli skuffet av leverandører som lover mye, men leverer lite oppfølging.
         </p>
         <p style="text-align: center; font-weight: bold; color: #1e7fd8; margin-top: 1.5rem;">
           En partner som kjenner deg ved navn, svarer når du ringer, og har din suksess som sitt eget mål.
@@ -159,38 +204,43 @@
     </section>
 
     <!-- Why Choose Us Preview -->
-    <section style="text-align: center; margin: 4rem 0;">
-      <h2 style="color: #1e7fd8; margin-bottom: 2rem;">Hvorfor velge Its Working?</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-        
-        <div style="text-align: center;">
-          <div style="color: #1e7fd8; font-size: 3rem; margin-bottom: 1rem;">⚡</div>
-          <h3 style="color: #1e7fd8;">Rask respons</h3>
-          <p style="color: #e9ecef;">Maksimalt 4 timer på e-post. Akutte saker samme dag.</p>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="color: #1e7fd8; font-size: 3rem; margin-bottom: 1rem;">🏠</div>
-          <h3 style="color: #1e7fd8;">Lokal forankring</h3>
-          <p style="color: #e9ecef;">Basert i Trondheim. Vi forstår lokale bedrifters behov.</p>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="color: #1e7fd8; font-size: 3rem; margin-bottom: 1rem;">💎</div>
-          <h3 style="color: #1e7fd8;">Ærlig kommunikasjon</h3>
-          <p style="color: #e9ecef;">Ingen skjulte kostnader eller unødvendige oppgraderinger.</p>
-        </div>
-
-      </div>
+    <section id="hvorfor-oss" style="text-align: center; margin: 4rem 0;">
+      <h2 style="color: #1e7fd8; margin-bottom: 2rem;">Hvorfor velge oss?</h2>
+      <ul style="list-style: none; padding: 0; max-width: 600px; margin: 0 auto 2rem auto; text-align: left;">
+        <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem;">✅ Rask respons – vi svarer uten kø</li>
+        <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem;">✅ Levering på dagen – når det haster</li>
+        <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem;">✅ Full innsikt – du ser alt i vår kundeportal</li>
+        <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem;">✅ Ingen skjulte gebyrer eller overraskelser</li>
+        <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem;">✅ Smidig og personlig support – vi kjenner deg igjen</li>
+      </ul>
       <a href="hvorfor-velge-oss.html" style="background: #1e7fd8; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Les mer om hvorfor du bør velge oss</a>
     </section>
 
   </main>
 
+  <!-- Kontakt Section -->
+  <section id="kontakt" style="text-align: center; margin: 4rem 0; padding: 3rem 2rem; background: linear-gradient(135deg, #0043a8, #1e7fd8); color: white; border-radius: 12px;">
+    <div class="container">
+      <h2 style="color: white; margin-bottom: 1rem;">Klar for en enklere IT-hverdag?</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.2rem;">Vi finner riktig løsning på 5 minutter. Ingen binding. Ingen bullshit.</p>
+      <a href="mailto:kontakt@itsworking.no" style="background: white; color: #0043a8; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block;">Snakk med oss nå</a>
+    </div>
+  </section>
+
+  <!-- Gratis IT-sjekk CTA -->
+  <section id="gratis-sjekk-cta" style="background: linear-gradient(135deg, #11181f, #1a2332); border: 2px solid #1e7fd8; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin: 4rem 0; color: #e9ecef;">
+    <div class="container">
+      <h2 style="color: #1e7fd8; margin-bottom: 1rem; font-size: 2rem; font-weight: bold;">Gratis IT-sjekk – ingen forpliktelser</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.2rem; color: #e9ecef;">Vi ser raskt over nettet og løsningene dine, og gir deg konkrete forbedringsforslag – helt gratis.</p>
+      <a href="mailto:kontakt@itsworking.no?subject=Gratis IT-sjekk" style="background: #1e7fd8; color: white; padding: 1.5rem 3rem; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; transition: all 0.3s ease;">Book gratis kartlegging</a>
+    </div>
+  </section>
+
   <footer class="container">
     <small>
       <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
-      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a>
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a> •
+      Du kan også ringe oss direkte på <a href="tel:+4798850462">988 50 462</a>
     </small>
   </footer>
 </body>

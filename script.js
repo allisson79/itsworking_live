@@ -34,7 +34,6 @@
   }
 })();
 
-
 // Force dark mode only
 (function() {
   'use strict';
@@ -207,21 +206,6 @@ function filterBlog(category) {
   });
 }
 
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Menu initialized successfully');
-
-  const toggle = document.querySelector('.mobile-menu-toggle');
-  const mainMenu = document.querySelector('.main-menu');
-
-  if (toggle && mainMenu) {
-    toggle.addEventListener('click', function() {
-      console.log('Menu toggle clicked');
-      mainMenu.classList.toggle('show');
-    });
-  }
-});
-
 // Add smooth scrolling to anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -233,53 +217,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Blog category filtering
-function filterBlog(category) {
-  const posts = document.querySelectorAll('.blog-post');
-  const buttons = document.querySelectorAll('.blog-category-btn');
-
-  // Update active button
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-
-  // Update button styles
-  buttons.forEach(btn => {
-    if (btn.classList.contains('active')) {
-      btn.style.background = '#0043a8';
-      btn.style.color = 'white';
-    } else {
-      btn.style.background = 'transparent';
-      btn.style.color = '#0043a8';
-    }
-  });
-
-  // Filter posts
-  posts.forEach(post => {
-    if (category === 'all' || post.dataset.category === category) {
-      post.style.display = 'block';
-    } else {
-      post.style.display = 'none';
-    }
-  });
-}
-
-// Blog post navigation
-function openBlogPost(postId) {
-  const posts = {
-    'backup-regler': 'blog-post-backup.html',
-    'phishing-angrep': 'blog-post-phishing.html',
-    'passord-sikkerhet': 'blog-post-passord.html',
-    'hjemmekontor-sikkerhet': '#',
-    'microsoft-365': '#',
-    'gdpr-endringer': '#'
-  };
-
-  if (posts[postId] && posts[postId] !== '#') {
-    window.location.href = posts[postId];
-  } else {
-    alert('Dette blogginnlegget kommer snart!');
-  }
-}
+// Blog post navigation removed - blog moved to blog_backup folder
 
 // Add hover effects to service cards
 document.addEventListener('DOMContentLoaded', function() {
@@ -287,15 +225,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   serviceCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
-      const cardStyle = this.style;
-      cardStyle.transform = 'translateY(-10px)';
-      cardStyle.boxShadow = '0 20px 40px rgba(0, 67, 168, 0.4)';
+      const cardStyling = this.style;
+      cardStyling.transform = 'translateY(-10px)';
+      cardStyling.boxShadow = '0 20px 40px rgba(0, 67, 168, 0.4)';
     });
 
     card.addEventListener('mouseleave', function() {
-      const cardStyle = this.style;
-      cardStyle.transform = 'translateY(0)';
-      cardStyle.boxShadow = '0 8px 25px rgba(0, 67, 168, 0.2)';
+      const cardStyling = this.style;
+      cardStyling.transform = 'translateY(0)';
+      cardStyling.boxShadow = '0 8px 25px rgba(0, 67, 168, 0.2)';
     });
   });
 });
@@ -306,33 +244,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   partnerCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
-      const partnerStyle = this.style;
-      partnerStyle.background = 'rgba(30, 127, 216, 0.2)';
-      partnerStyle.transform = 'translateY(-5px)';
+      const partnerStyling = this.style;
+      partnerStyling.background = 'rgba(30, 127, 216, 0.2)';
+      partnerStyling.transform = 'translateY(-5px)';
     });
 
     card.addEventListener('mouseleave', function() {
-      const partnerStyle = this.style;
-      partnerStyle.background = 'rgba(30, 127, 216, 0.1)';
-      partnerStyle.transform = 'translateY(0)';
+      const partnerStyling = this.style;
+      partnerStyling.background = 'rgba(30, 127, 216, 0.1)';
+      partnerStyling.transform = 'translateY(0)';
     });
   });
 });
-
-// Add fade-in animation for blog posts
-const blogAnimationStyle = document.createElement('style');
-blogAnimationStyle.textContent = `
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
-  }
-`;
-document.head.appendChild(blogAnimationStyle);
 
 // IT Health Check booking functionality
 function openHealthCheck() {
@@ -342,6 +265,12 @@ function openHealthCheck() {
 
 // Countdown timer for launch date
 function initCountdown() {
+  // Only initialize if countdown element exists
+  const countdownElement = document.getElementById('countdown');
+  if (!countdownElement) {
+    return;
+  }
+
   const launchDate = new Date('2025-06-25T09:00:00').getTime();
 
   function updateCountdown() {
@@ -349,7 +278,7 @@ function initCountdown() {
     const distance = launchDate - now;
 
     if (distance < 0) {
-      document.getElementById('countdown').innerHTML = 'Vi er live!';
+      countdownElement.innerHTML = 'Vi er live!';
       return;
     }
 
@@ -358,10 +287,7 @@ function initCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const countdownElement = document.getElementById('countdown');
-    if (countdownElement) {
-      countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
-    }
+    countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
   }
 
   // Update countdown every second
@@ -369,13 +295,94 @@ function initCountdown() {
   updateCountdown(); // Initial call
 }
 
-// Initialize countdown when page loads
-document.addEventListener('DOMContentLoaded', initCountdown);
+// Contact form functionality
+function submitContact(event) {
+  event.preventDefault();
 
-// Smooth scrolling for anchor links
+  const form = event.target;
+  const formData = new FormData(form);
+
+  // Get form values
+  const name = formData.get('name');
+  const email = formData.get('email');
+  const company = formData.get('company') || 'Ikke oppgitt';
+  const phone = formData.get('phone') || 'Ikke oppgitt';
+  const subject = formData.get('subject');
+  const message = formData.get('message');
+
+  // Create email body
+  const emailBody = `
+Ny henvendelse fra kontaktskjema:
+
+Navn: ${name}
+E-post: ${email}
+Bedrift: ${company}
+Telefon: ${phone}
+Emne: ${subject}
+
+Melding:
+${message}
+
+---
+Sendt fra kontaktskjema på itsworking.no
+  `.trim();
+
+  // Create mailto link
+  const mailtoLink = `mailto:kontakt@itsworking.no?subject=Henvendelse: ${subject}&body=${encodeURIComponent(emailBody)}`;
+
+  // Open email client
+  window.location.href = mailtoLink;
+
+  // Show confirmation
+  alert('Takk for henvendelsen! Ditt e-postprogram åpnes nå. Vi svarer innen 4 timer i arbeidstiden.');
+
+  // Reset form
+  form.reset();
+}
+
+// Blog functionality
+function shareArticle(platform, url, title) {
+  let shareUrl;
+
+  switch(platform) {
+    case 'linkedin':
+      shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+      break;
+    case 'facebook':
+      shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      break;
+    case 'twitter':
+      shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+      break;
+    default:
+      return;
+  }
+
+  window.open(shareUrl, '_blank', 'width=600,height=400');
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    alert('Lenke kopiert til utklippstavlen!');
+  }).catch(function() {
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Lenke kopiert til utklippstavlen!');
+  });
+}
+
+// Initialize all functionality when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  // Initialize countdown
+  initCountdown();
 
+  // Smooth scrolling for anchor links
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -402,4 +409,96 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Add fade-in animation to sections
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(section);
+  });
+
+  // Enhanced navigation highlighting
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+
+  // Add loading state to forms
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', function() {
+      const submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Sender...';
+        submitButton.disabled = true;
+
+        // Re-enable after a delay (in case form submission fails)
+        setTimeout(() => {
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+        }, 3000);
+      }
+    });
+  });
+
+  // Add custom styling to hero elements
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const heroCustomStyle = document.createElement('style');
+    heroCustomStyle.textContent = `
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
+
+      .hero-overlay {
+        position: relative;
+        z-index: 2;
+      }
+    `;
+    document.head.appendChild(heroCustomStyle);
+  }
+
+  // Add fade-in animation for blog posts
+  const blogAnimationStyles = document.createElement('style');
+  blogAnimationStyles.textContent = `
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .blog-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 42, 92, 0.3);
+    }
+  `;
+  document.head.appendChild(blogAnimationStyles);
 });
