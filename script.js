@@ -282,6 +282,12 @@ function openHealthCheck() {
 
 // Countdown timer for launch date
 function initCountdown() {
+  // Only initialize if countdown element exists
+  const countdownElement = document.getElementById('countdown');
+  if (!countdownElement) {
+    return;
+  }
+
   const launchDate = new Date('2025-06-25T09:00:00').getTime();
 
   function updateCountdown() {
@@ -289,7 +295,7 @@ function initCountdown() {
     const distance = launchDate - now;
 
     if (distance < 0) {
-      document.getElementById('countdown').innerHTML = 'Vi er live!';
+      countdownElement.innerHTML = 'Vi er live!';
       return;
     }
 
@@ -298,10 +304,7 @@ function initCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const countdownElement = document.getElementById('countdown');
-    if (countdownElement) {
-      countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
-    }
+    countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
   }
 
   // Update countdown every second
