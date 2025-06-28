@@ -268,7 +268,8 @@ function initCountdown() {
   // Only initialize if countdown element exists
   const countdownElement = document.getElementById('countdown');
   if (!countdownElement) {
-    return;
+    // No countdown element found - this is normal for most pages
+    return null;
   }
 
   const launchDate = new Date('2025-06-25T09:00:00').getTime();
