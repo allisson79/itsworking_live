@@ -1,5 +1,9 @@
+/* DESIGN GUIDELINES
+ * - NO EMOJIS: Emojis look unprofessional and should never be used
+ * - Use descriptive text and proper typography instead
+ */
 
-/* Modern CSS Custom Properties for consistent theming */
+/* Dark theme overrides */
 :root {
   --primary-blue: #58a6ff;
   --primary-blue-dark: #1f6feb;
@@ -21,7 +25,7 @@
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   /* Enhanced gradients */
   --gradient-primary: linear-gradient(135deg, #1e7fd8 0%, #0043a8 50%, #1e7fd8 100%);
   --gradient-secondary: linear-gradient(135deg, #11181f 0%, #1a2332 50%, #21262d 100%);
