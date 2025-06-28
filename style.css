@@ -1,26 +1,129 @@
+
+/* Modern CSS Custom Properties for consistent theming */
+:root {
+  --primary-blue: #58a6ff;
+  --primary-blue-dark: #1f6feb;
+  --accent-blue: #79c0ff;
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --text-primary: #e6edf3;
+  --text-secondary: #c9d1d9;
+  --text-muted: #8b949e;
+  --border-subtle: rgba(30, 127, 216, 0.1);
+  --border-emphasis: rgba(30, 127, 216, 0.3);
+  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 20px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modern scroll behavior and selection */
+* {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.3);
+  color: var(--text-primary);
+}
+
+/* Floating animation for hero elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* Pulse animation for interactive elements */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Slide in from bottom animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient animation for hero text */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Scale and glow effect for buttons */
+@keyframes buttonGlow {
+  from {
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.6);
+  }
+}
+
+
 .hero {
   background-size: cover;
   background-position: center;
-  padding: 8rem 2rem;
+  background-attachment: fixed;
+  padding: 10rem 2rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, rgba(13, 17, 23, 0.7), rgba(0, 42, 92, 0.4)),
+    radial-gradient(ellipse at 30% 50%, rgba(30, 127, 216, 0.15) 0%, transparent 70%);
+  z-index: 1;
 }
 
 .hero-overlay {
   background: 
-    linear-gradient(135deg, rgba(0, 42, 92, 0.6), rgba(0, 0, 0, 0.4)),
-    radial-gradient(circle at 80% 20%, rgba(30, 127, 216, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(0, 42, 92, 0.1) 0%, transparent 50%);
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 10px;
+    linear-gradient(135deg, 
+      rgba(30, 127, 216, 0.1) 0%,
+      rgba(0, 67, 168, 0.05) 50%,
+      rgba(13, 17, 23, 0.1) 100%
+    );
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(230, 237, 243, 0.12);
+  padding: 3rem;
+  border-radius: 24px;
   text-align: center;
   animation: heroSlideUp 1s ease-out;
   position: relative;
+  z-index: 2;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Elegant hero-animasjon */
@@ -66,25 +169,35 @@
   50% { opacity: 0.6; }
 }
 
-/* Global font setting */
+/* Import Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Global font setting with improved hierarchy */
 * {
-  font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif;
+  box-sizing: border-box;
 }
 
-/* Dark mode only */
+/* Enhanced dark mode with modern gradients */
 html {
   font-size: 16px;
-  background: linear-gradient(135deg, #11181f, #1a2332);
+  background: 
+    radial-gradient(ellipse at top, rgba(30, 127, 216, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(0, 67, 168, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, #0d1117, #161b22, #21262d);
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  background: linear-gradient(135deg, #11181f, #1a2332);
-  color: #e9ecef;
+  background: transparent;
+  color: #e6edf3;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Mobile-first responsive design */
@@ -173,10 +286,31 @@ img {
 
 
 
-/* Navigation container */
+/* Enhanced navigation container */
 nav.container-fluid {
-  position: relative;
+  position: sticky;
+  top: 0;
   padding: 1.5rem 2rem;
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(13, 17, 23, 0.8);
+  border-bottom: 1px solid rgba(30, 127, 216, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav.container-fluid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(30, 127, 216, 0.02) 0%,
+    rgba(0, 67, 168, 0.01) 50%,
+    rgba(30, 127, 216, 0.02) 100%
+  );
+  z-index: -1;
 }
 
 /* Desktop logo optimization */
@@ -220,9 +354,48 @@ nav img {
   transition: all 0.3s ease !important;
 }
 
+/* Enhanced main container with better typography */
 main.container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Modern typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff, #e6edf3, #58a6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #58a6ff;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #79c0ff;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #c9d1d9;
+  margin-bottom: 1.5rem;
 }
 
 /* Desktop navigation - hidden by default, shown when hamburger is clicked */
@@ -844,17 +1017,42 @@ nav a.disabled:hover {
   }
 }
 
-/* Footer knapper - samme stil som før */
+/* Modern button styles */
 footer a {
-  padding: 0.6rem 1.2rem;
-  border: 2px solid #1e7fd8;
-  border-radius: 6px;
-  color: #1e7fd8 !important;
-  font-weight: bold;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid rgba(30, 127, 216, 0.4);
+  border-radius: 12px;
+  color: #58a6ff !important;
+  font-weight: 500;
   text-decoration: none;
-  background-color: transparent;
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, 
+    rgba(30, 127, 216, 0.1) 0%,
+    rgba(0, 67, 168, 0.05) 100%
+  );
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+footer a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(30, 127, 216, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+footer a:hover::before {
+  left: 100%;
 }
 
 footer a:hover {
@@ -904,16 +1102,25 @@ footer small {
   }
 }
 
-/* Service Cards */
+/* Enhanced Service Cards */
 .service-card {
-  background: linear-gradient(135deg, #11181f, #1a2332);
-  border: 1px solid rgba(30, 127, 216, 0.3);
-  border-radius: 12px;
-  padding: 2rem;
+  background: 
+    linear-gradient(135deg, 
+      rgba(22, 27, 34, 0.8) 0%,
+      rgba(33, 38, 45, 0.6) 100%
+    );
+  border: 1px solid rgba(30, 127, 216, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .service-card:hover {
