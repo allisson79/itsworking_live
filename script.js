@@ -272,7 +272,7 @@ function initCountdown() {
     return null;
   }
 
-  const launchDate = new Date('2025-06-25T09:00:00').getTime();
+  const launchDate = new Date('2025-08-15T09:00:00').getTime();
 
   function updateCountdown() {
     try {

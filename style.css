@@ -538,7 +538,7 @@ nav ul.main-menu.mobile-menu-open a.disabled {
 }
 
 nav ul.main-menu.mobile-menu-open a.disabled:after {
-  content: "Kommer 25. juni";
+  content: "Kommer 15. august";
   position: absolute;
   bottom: 0.4rem;
   left: 50%;
