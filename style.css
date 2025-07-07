@@ -1467,11 +1467,6 @@ li[style*="border-left"]:hover {
 }
 
 /* Rotating background animation */
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 .service-card {
   animation: slideInUp 0.6s ease-out;
 }
@@ -1487,6 +1482,3 @@ li[style*="border-left"]:hover {
 .service-card:nth-child(4) {
   animation-delay: 0.3s;
 }
-
-/* Blog functionality
-//function filterBlog(category) {
