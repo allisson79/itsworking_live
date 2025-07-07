@@ -18,18 +18,34 @@
 
   window.addEventListener('scroll', requestScrollTick, { passive: true });
 
-  // Prevent iOS bounce scrolling
+  // Prevent iOS bounce scrolling and improve touch handling
   document.addEventListener('touchmove', function(e) {
     if (e.target.closest('.mobile-menu-open')) {
       e.preventDefault();
     }
   }, { passive: false });
 
-  // Add loading optimization for images
+  // Optimize images for mobile
   if ('loading' in HTMLImageElement.prototype) {
     const images = document.querySelectorAll('img[data-src]');
     images.forEach(img => {
       img.src = img.dataset.src;
+    });
+  }
+
+  // Add mobile-specific optimizations
+  if (window.innerWidth <= 768) {
+    // Reduce animation complexity on mobile
+    document.documentElement.style.setProperty('--transition-fast', '0.15s ease');
+    document.documentElement.style.setProperty('--transition-medium', '0.2s ease');
+    
+    // Optimize touch interactions
+    document.body.style.touchAction = 'manipulation';
+    
+    // Prevent zoom on input focus (iOS)
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+      input.style.fontSize = '16px';
     });
   }
 })();

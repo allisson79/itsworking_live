@@ -265,12 +265,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Mobile-first responsive design */
+/* Mobile-first responsive design with performance optimizations */
 @media screen and (max-width: 768px) {
   html {
     font-size: 16px !important;
     -webkit-text-size-adjust: 100% !important;
     -ms-text-size-adjust: 100% !important;
+    scroll-behavior: smooth !important;
+    overscroll-behavior: contain !important;
   }
 
   body {
@@ -809,8 +811,8 @@ nav a.disabled:hover {
 
   /* Mobile-optimized hero section */
   .hero {
-    padding: 1.5rem 0.5rem !important;
-    min-height: 50vh !important;
+    padding: 2rem 1rem !important;
+    min-height: 60vh !important;
     background-attachment: scroll !important;
     background-size: cover !important;
     background-position: center !important;
@@ -867,9 +869,10 @@ nav a.disabled:hover {
 
   /* Mobile main content - optimized for readability */
   main.container {
-    padding: 1.5rem 0.8rem !important;
+    padding: 1rem 1rem !important;
     max-width: 100% !important;
-    line-height: 1.6 !important;
+    line-height: 1.7 !important;
+    margin: 0 auto !important;
   }
 
   main.container h2 {
@@ -920,16 +923,16 @@ nav a.disabled:hover {
 
   main.container li {
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0.8rem;
-    padding: 0.8rem 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 2.5rem;
     background: linear-gradient(135deg, #11181f, #1a2332);
     border-left: 4px solid #0043a8;
     border: 1px solid rgba(0, 67, 168, 0.3);
-    border-radius: 4px;
+    border-radius: 8px;
     position: relative;
-    padding-left: 2.5rem;
     color: #e9ecef;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
   main.container li:before {
@@ -1012,13 +1015,41 @@ nav a.disabled:hover {
   /* Improve mobile interaction feedback */
   button:active,
   a:active {
-    transform: scale(0.98) !important;
+    transform: scale(0.95) !important;
     transition: transform 0.1s ease !important;
+    background-color: rgba(30, 127, 216, 0.8) !important;
+  }
+
+  /* Enhanced touch targets */
+  button, 
+  a, 
+  input, 
+  textarea,
+  select {
+    min-height: 48px !important;
+    min-width: 48px !important;
+    touch-action: manipulation !important;
   }
 
   /* Prevent zoom on input focus on iOS */
   input, textarea, select {
     font-size: 16px !important;
+  }
+}
+
+/* Mobile scroll performance optimization */
+@media screen and (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: rgba(30, 127, 216, 0.3) !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+
+  /* Allow text selection for content */
+  p, li, span, h1, h2, h3, h4, h5, h6 {
+    -webkit-user-select: text !important;
+    user-select: text !important;
   }
 }
 
