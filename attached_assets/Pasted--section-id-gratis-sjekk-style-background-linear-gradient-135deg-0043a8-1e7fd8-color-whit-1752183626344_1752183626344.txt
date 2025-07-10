@@ -1,0 +1,70 @@
+<section id="gratis-sjekk" style="background: linear-gradient(135deg, #0043a8, #1e7fd8); color: white; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin: 4rem 0;">
+  <h2 style="color: white; margin-bottom: 1rem;">Gratis IT-helsesjekk – ærlig, personlig og helt uforpliktende</h2>
+
+  <p style="max-width: 700px; margin: 0 auto 2rem auto;">
+    Vi setter av 2 timer for å gå gjennom hele din IT-hverdag – uten kostnad og uten binding.
+    Du får ærlige råd, konkrete forslag og full oversikt over hva som fungerer – og hva som bør vurderes.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; text-align: left; max-width: 900px; margin: 0 auto 2rem auto;">
+    <div>
+      <h3 style="color: white; font-size: 1.2rem;">🔍 Hva vi ser på:</h3>
+      <ul style="padding-left: 1.2rem;">
+        <li>Nettverk, maskinvare og sikkerhet</li>
+        <li>Backup og gjenoppretting</li>
+        <li>Programvare og kostnadsnivå</li>
+        <li>Risiko og etterlevelse (GDPR/NIS2 – på overflatenivå)</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color: white; font-size: 1.2rem;">📋 Hva du får:</h3>
+      <ul style="padding-left: 1.2rem;">
+        <li>En tydelig vurdering av nåsituasjonen</li>
+        <li>Råd du kan bruke – med eller uten oss</li>
+        <li>Mulighet for referanser</li>
+        <li>Personlig oppfølging – ingen sentralbord, ingen salgspress</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="mailto:thomas@itsworking.no?subject=Gratis IT-helsesjekk – bestilling&body=Hei%2C%0AJeg%20ønsker%20en%20gratis%20IT-helsesjekk.%0A%0AFirma%3A%0ANavn%3A%0ATelefon%3A%0AForslag%20til%20tidspunkt%3A" style="background: white; color: #0043a8; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; margin-top: 1rem;">Bestill gratis IT-helsesjekk</a>
+
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.9);">Gjelder for SMB i Trondheimsområdet</p>
+
+  <!-- Les mer seksjon -->
+  <details style="margin-top: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <summary style="cursor: pointer; font-weight: bold; font-size: 1rem; color: white; text-decoration: underline; margin-bottom: 1rem;">Les mer om hva helsesjekken inneholder</summary>
+    <div style="text-align: left; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+      <p>En IT-helsesjekk fra Its Working er mer enn en sjekkliste – det er en personlig gjennomgang utført av folk som faktisk bryr seg. Du får ærlige svar, konkrete anbefalinger og null press.</p>
+      <p>Dette er noe vi gjør fordi vi mener at gode IT-løsninger starter med tillit – ikke salg.</p>
+
+      <p><strong>Hva vi går gjennom:</strong></p>
+      <ul>
+        <li>Maskinvare og nettverk: Hvordan står det til med utstyret ditt?</li>
+        <li>Programvare og lisenser: Har du kontroll – og betaler du for mer enn du bruker?</li>
+        <li>Sikkerhet: Antivirus, brannmur, backup, tilgangskontroll – vi ser på alt.</li>
+        <li>Backup og gjenoppretting: Kan du faktisk få tilbake det du mister?</li>
+        <li>Regelverk og risiko: Vi gir indikasjoner på GDPR- og NIS2-relevante områder</li>
+      </ul>
+
+      <p style="font-size: 0.85rem; opacity: 0.9;"><em>*Full gjennomgang krever egne prosjekter, men vi sier ærlig fra om vi ser risiko.</em></p>
+
+      <p><strong>Hva du får:</strong></p>
+      <ul>
+        <li>En forståelig rapport på hva som fungerer – og hva som bør gjøres</li>
+        <li>Ærlige tilbakemeldinger – også når ting er bra</li>
+        <li>En vurdering av om du får det du betaler for</li>
+        <li>Mulighet for referanser fra andre som har brukt denne tjenesten</li>
+        <li>Ingen binding. Ingen skjulte agendaer. Bare ærlige råd.</li>
+      </ul>
+
+      <p><strong>Hvorfor stole på oss?</strong></p>
+      <ul>
+        <li>Vi har over 20 års erfaring med SMB i Midt-Norge</li>
+        <li>Vi er lokale, til stede og tilgjengelige – og vi ringer deg tilbake</li>
+        <li>Vi følger opp personlig – ikke fra sentralbord</li>
+        <li>Vi tilbyr dette fordi vi vet det gir verdi, og fordi vi tror på langsiktige relasjoner</li>
+      </ul>
+    </div>
+  </details>
+</section>
