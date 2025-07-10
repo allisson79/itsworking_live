@@ -670,20 +670,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 800;
-  background: linear-gradient(135deg, 
-    var(--text-primary) 0%, 
-    var(--primary-blue-light) 25%, 
-    var(--accent-purple) 50%, 
-    var(--accent-cyan) 75%, 
-    var(--text-primary) 100%);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 8s ease-in-out infinite;
-  text-shadow: var(--text-shadow-strong);
-  line-height: 1.05;
+  font-weight: 700;
+  color: white;
+  text-shadow: none;
+  line-height: 1.1;
   margin-bottom: var(--space-xl);
 }
 
