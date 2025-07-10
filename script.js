@@ -18,18 +18,34 @@
 
   window.addEventListener('scroll', requestScrollTick, { passive: true });
 
-  // Prevent iOS bounce scrolling
+  // Prevent iOS bounce scrolling and improve touch handling
   document.addEventListener('touchmove', function(e) {
     if (e.target.closest('.mobile-menu-open')) {
       e.preventDefault();
     }
   }, { passive: false });
 
-  // Add loading optimization for images
+  // Optimize images for mobile
   if ('loading' in HTMLImageElement.prototype) {
     const images = document.querySelectorAll('img[data-src]');
     images.forEach(img => {
       img.src = img.dataset.src;
+    });
+  }
+
+  // Add mobile-specific optimizations
+  if (window.innerWidth <= 768) {
+    // Reduce animation complexity on mobile
+    document.documentElement.style.setProperty('--transition-fast', '0.15s ease');
+    document.documentElement.style.setProperty('--transition-medium', '0.2s ease');
+    
+    // Optimize touch interactions
+    document.body.style.touchAction = 'manipulation';
+    
+    // Prevent zoom on input focus (iOS)
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+      input.style.fontSize = '16px';
     });
   }
 })();
@@ -263,36 +279,69 @@ function openHealthCheck() {
   alert('IT-helsesjekk booking kommer snart! Kontakt oss på kontakt@itsworking.no i mellomtiden.');
 }
 
-// Countdown timer for launch date
+// Safe countdown timer for launch date
 function initCountdown() {
   // Only initialize if countdown element exists
   const countdownElement = document.getElementById('countdown');
   if (!countdownElement) {
-    return;
+    // No countdown element found - this is normal for most pages
+    return null;
   }
 
-  const launchDate = new Date('2025-06-25T09:00:00').getTime();
+  const launchDate = new Date('2025-08-15T09:00:00').getTime();
 
   function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = launchDate - now;
+    try {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
 
-    if (distance < 0) {
-      countdownElement.innerHTML = 'Vi er live!';
-      return;
+      if (distance < 0) {
+        countdownElement.innerHTML = 'Vi er live!';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
+    } catch (error) {
+      console.warn('Countdown update failed:', error);
     }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
   }
 
   // Update countdown every second
-  setInterval(updateCountdown, 1000);
+  const intervalId = setInterval(updateCountdown, 1000);
   updateCountdown(); // Initial call
+  
+  // Cleanup function
+  return () => clearInterval(intervalId);
+}
+
+// Add scroll-triggered animations
+function addScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Observe all sections and cards
+  const elementsToAnimate = document.querySelectorAll('section, .service-card, .partner-card, .testimonial-card');
+  elementsToAnimate.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    observer.observe(el);
+  });
 }
 
 // Contact form functionality
@@ -380,6 +429,9 @@ function copyToClipboard(text) {
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize countdown
   initCountdown();
+  
+  // Add scroll animations
+  addScrollAnimations();
 
   // Smooth scrolling for anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="mobile-web-app-capable" content="yes" />
   <title>Hvorfor velge oss - Its Working</title>
@@ -24,7 +24,7 @@
     </ul>
     <ul class="main-menu">
       <li><a href="#" class="nav-link disabled">Tjenester</a></li>
-      <li><a href="#" class="nav-link disabled">Leverandører</a></li>
+      <li><a href="index.html#partnere" class="nav-link">Partnere</a></li>
       <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
       <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
       <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
@@ -42,30 +42,76 @@
     <h2 style="color: #1e7fd8;">Teknologi som virker – mennesker som bryr seg</h2>
     <p style="color: #e9ecef;">Vi er et smidig selskap som gjør én ting: sørger for at IT‑hverdagen din er enkel og forutsigbar. Hos oss slipper du ventetid, skjulte gebyrer og runde svar.</p>
 
-    <hr style="margin: 2rem 0; border: none; height: 2px; background: linear-gradient(90deg, transparent, #004a99, transparent);">
+    <div style="margin: 3rem 0; height: 3px; background: linear-gradient(90deg, transparent, #1e7fd8, #0043a8, #1e7fd8, transparent); border-radius: 2px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shimmer-line 2s ease-in-out infinite;"></div>
+    </div>
 
-    <h3 style="color: #1e7fd8;">Rask respons uten kø</h3>
-    <ul>
-      <li>Ring eller chat – du får direkte kontakt med fagpersonen som kan hjelpe.</li>
-      <li>Akutte saker løses som regel samme arbeidsdag.</li>
+    <style>
+      @keyframes shimmer-line {
+        0% { left: -100%; }
+        100% { left: 100%; }
+      }
+    </style>
+
+    <h3 style="color: #1e7fd8; position: relative; padding-left: 2rem;">
+      <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; background: linear-gradient(135deg, #1e7fd8, #0043a8); border-radius: 50%; box-shadow: 0 0 10px rgba(30, 127, 216, 0.5);"></span>
+      Rask respons uten kø
+    </h3>
+    <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
+      <li style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.1), rgba(0, 67, 168, 0.05)); border-left: 4px solid #1e7fd8; padding: 1rem 1.5rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; position: relative; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+        <span style="position: absolute; left: -2px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #1e7fd8; border-radius: 50%;"></span>
+        Ring eller chat – du får direkte kontakt med fagpersonen som kan hjelpe.
+      </li>
+      <li style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.1), rgba(0, 67, 168, 0.05)); border-left: 4px solid #1e7fd8; padding: 1rem 1.5rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; position: relative; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;">
+        <span style="position: absolute; left: -2px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #1e7fd8; border-radius: 50%;"></span>
+        Akutte saker løses som regel samme arbeidsdag.
+      </li>
     </ul>
 
-    <h3 style="color: #1e7fd8;">Enkelt og åpent samarbeid</h3>
-    <ul>
-      <li style="color: #e9ecef;">Du får <strong style="color: #1e7fd8;">en egen portal</strong> som viser oppetid og eventuelle driftsavbrudd for løsningene dine – ingenting annet å forholde seg til.</li>
-      <li style="color: #e9ecef;">Vi gjør dokumentasjon, logg og faktura­grunnlag tilgjengelig for deg når du ønsker det – ingenting holdes tilbake.</li>
+    <h3 style="color: #1e7fd8; position: relative; padding-left: 2rem;">
+      <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; background: linear-gradient(135deg, #1e7fd8, #0043a8); border-radius: 50%; box-shadow: 0 0 10px rgba(30, 127, 216, 0.5);"></span>
+      Enkelt og åpent samarbeid
+    </h3>
+    <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
+      <li style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.1), rgba(0, 67, 168, 0.05)); border-left: 4px solid #1e7fd8; padding: 1rem 1.5rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; position: relative; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; color: #e9ecef;">
+        <span style="position: absolute; left: -2px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #1e7fd8; border-radius: 50%;"></span>
+        Du får <strong style="color: #1e7fd8;">en egen portal</strong> som viser oppetid og eventuelle driftsavbrudd for løsningene dine – ingenting annet å forholde seg til.
+      </li>
+      <li style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.1), rgba(0, 67, 168, 0.05)); border-left: 4px solid #1e7fd8; padding: 1rem 1.5rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; position: relative; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; color: #e9ecef;">
+        <span style="position: absolute; left: -2px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #1e7fd8; border-radius: 50%;"></span>
+        Vi gjør dokumentasjon, logg og faktura­grunnlag tilgjengelig for deg når du ønsker det – ingenting holdes tilbake.
+      </li>
     </ul>
 
-    <h3 style="color: #1e7fd8;">Ekte partnerskap – og rett pris</h3>
-    <ul>
-      <li style="color: #e9ecef;">Din fremdrift er vår fremdrift: vi legger langsiktige planer sammen med deg, ikke over hodet på deg.</li>
-      <li style="color: #e9ecef;">Når behovet ditt endrer seg, justerer vi prisen – nedover så vel som oppover.</li>
-      <li style="color: #e9ecef;">Vi tjener ikke penger på skjulte KPI‑påslag eller kunstige volumavtaler. Hos oss betaler du bare for faktisk verdi, ikke for omsetningsmål.</li>
+    <h3 style="color: #1e7fd8; position: relative; padding-left: 2rem;">
+      <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; background: linear-gradient(135deg, #1e7fd8, #0043a8); border-radius: 50%; box-shadow: 0 0 10px rgba(30, 127, 216, 0.5);"></span>
+      Ekte partnerskap – og rett pris
+    </h3>
+    <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
+      <li style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.1), rgba(0, 67, 168, 0.05)); border-left: 4px solid #1e7fd8; padding: 1rem 1.5rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; position: relative; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; color: #e9ecef;">
+        <span style="position: absolute; left: -2px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #1e7fd8; border-radius: 50%;"></span>
+        Din fremdrift er vår fremdrift: vi legger langsiktige planer sammen med deg, ikke over hodet på deg.
+      </li>
+      <li style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.1), rgba(0, 67, 168, 0.05)); border-left: 4px solid #1e7fd8; padding: 1rem 1.5rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; position: relative; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; color: #e9ecef;">
+        <span style="position: absolute; left: -2px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #1e7fd8; border-radius: 50%;"></span>
+        Når behovet ditt endrer seg, justerer vi prisen – nedover så vel som oppover.
+      </li>
+      <li style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.1), rgba(0, 67, 168, 0.05)); border-left: 4px solid #1e7fd8; padding: 1rem 1.5rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; position: relative; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; color: #e9ecef;">
+        <span style="position: absolute; left: -2px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #1e7fd8; border-radius: 50%;"></span>
+        Vi tjener ikke penger på skjulte KPI‑påslag eller kunstige volumavtaler. Hos oss betaler du bare for faktisk verdi, ikke for omsetningsmål.
+      </li>
     </ul>
 
-    <hr style="margin: 2rem 0; border: none; height: 2px; background: linear-gradient(90deg, transparent, #004a99, transparent);">
+    <div style="margin: 3rem 0; height: 3px; background: linear-gradient(90deg, transparent, #1e7fd8, #0043a8, #1e7fd8, transparent); border-radius: 2px; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shimmer-line 2s ease-in-out infinite;"></div>
+    </div>
 
-    <p style="font-size: 1.1rem; line-height: 1.6; margin-top: 2rem; color: #e9ecef;">Vi er liten nok til å kjenne deg ved navn, men stor nok til å løse utfordringene. Velg en IT‑partner som setter mennesker først og talljag sist – ikke en som måler alt i 1,7 milliarder i omsetning.</p>
+    <div style="background: linear-gradient(135deg, rgba(30, 127, 216, 0.15), rgba(0, 67, 168, 0.08)); border: 2px solid rgba(30, 127, 216, 0.3); border-radius: 16px; padding: 2.5rem; margin-top: 2rem; position: relative; overflow: hidden; backdrop-filter: blur(10px);">
+      <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent, rgba(30, 127, 216, 0.05), transparent); animation: rotate 12s linear infinite; opacity: 0.5;"></div>
+      <p style="font-size: 1.2rem; line-height: 1.7; margin: 0; color: #e9ecef; position: relative; z-index: 1; text-align: center; font-weight: 500;">
+        Vi er liten nok til å kjenne deg ved navn, men stor nok til å løse utfordringene. Velg en IT‑partner som setter mennesker først og talljag sist – ikke en som måler alt i 1,7 milliarder i omsetning.
+      </p>
+    </div>
   </main>
 
   <footer class="container">
