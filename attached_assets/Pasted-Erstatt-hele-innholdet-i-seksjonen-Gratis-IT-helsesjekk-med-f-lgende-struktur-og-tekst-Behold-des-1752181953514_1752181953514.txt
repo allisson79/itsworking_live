@@ -1,0 +1,45 @@
+Erstatt hele innholdet i seksjonen “Gratis IT-helsesjekk” med følgende struktur og tekst. Behold design og layoutstil fra nettsiden, men fjern de tidligere grafiske kortene og erstatt med ren, lettlest tekst og punktlister.
+
+Overskrift:
+Gratis IT-helsesjekk – ærlig, grundig og helt uten forpliktelser
+
+Innledning:
+En IT-helsesjekk fra Its Working er mer enn en sjekkliste – det er en personlig gjennomgang utført av folk som faktisk bryr seg. Du får ærlige svar, konkrete anbefalinger og null press.
+
+Dette er noe vi gjør fordi vi mener at gode IT-løsninger starter med tillit – ikke salg.
+
+Hva vi går gjennom:
+– Maskinvare og nettverk: Hvordan står det til med utstyret ditt?
+– Programvare og lisenser: Har du kontroll – og betaler du for mer enn du bruker?
+– Sikkerhet: Antivirus, brannmur, backup, tilgangskontroll – vi ser på alt.
+– Backup og gjenoppretting: Kan du faktisk få tilbake det du mister?
+– Regelverk og risiko: Vi gir indikasjoner på GDPR- og NIS2-relevante områder*
+
+<small>*Full gjennomgang krever egne prosjekter, men vi sier ærlig fra om vi ser risiko.</small>
+
+Hva du får:
+– En tydelig og forståelig rapport på hva som fungerer – og hva som bør gjøres
+– Ærlige tilbakemeldinger – også når ting er bra
+– En vurdering av om du faktisk får det du betaler for
+– Mulighet for referanser fra andre som har brukt denne tjenesten
+– Ingen binding. Ingen skjulte agendaer. Bare ærlige råd.
+
+Hvorfor stole på oss?
+– Vi har over 20 års erfaring med SMB i Midt-Norge
+– Vi er lokale, til stede og tilgjengelige – og vi ringer deg tilbake
+– Vi følger opp personlig – ikke fra sentralbord
+– Vi tilbyr dette fordi vi vet det gir verdi, og fordi vi tror på langsiktige relasjoner
+
+Kort oppsummert:
+– 2 timer, gratis og uforpliktende
+– Vi kommer til deg – fysisk oppmøte i Trondheim
+– Gjelder for små og mellomstore bedrifter i regionen
+
+CTA-knapp:
+Legg til en knapp nederst i seksjonen med teksten:
+Bestill gratis IT-helsesjekk
+
+Knappen skal bruke følgende lenke:
+mailto:thomas@itsworking.no?subject=Gratis IT-helsesjekk – bestilling&body=Hei%2C%0AJeg%20ønsker%20en%20gratis%20IT-helsesjekk.%0A%0AFirma%3A%0ANavn%3A%0ATelefon%3A%0AForslag%20til%20tidspunkt%3A
+
+Sørg for god spacing og lesbarhet. Ikke legg til ekstra grafiske bokser. Bruk tekst, luft og overskrifter for å skape struktur og tillit.
