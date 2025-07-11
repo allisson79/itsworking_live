@@ -1321,7 +1321,7 @@ section a[style*="background"]:hover {
 /* Footer styling - dark theme */
 footer {
   margin-top: 3rem;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   text-align: center;
   background: linear-gradient(135deg, #11181f, #1a2332);
   border-top: 2px solid rgba(30, 127, 216, 0.3);
@@ -1329,6 +1329,52 @@ footer {
 
 footer small {
   color: #e9ecef;
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1.6;
+}
+
+footer a {
+  color: #58a6ff !important;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(76, 154, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(76, 154, 255, 0.1);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+footer a:hover {
+  background: rgba(76, 154, 255, 0.2);
+  border-color: rgba(76, 154, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Mobile footer adjustments */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  footer small {
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  footer a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    padding: 0.8rem 1rem;
+  }
 }
 
 /* Dark styling for Pipedrive scheduler iframe */
