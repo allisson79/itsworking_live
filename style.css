@@ -468,27 +468,7 @@ img {
   height: auto;
 }
 
-/* Show hamburger menu on all screen sizes */
-.mobile-menu-toggle {
-  display: block !important;
-  background: #0043a8;
-  border: 2px solid #0043a8;
-  border-radius: 8px;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-  padding: 0.8rem 1rem;
-  font-weight: bold;
-  margin-left: auto !important;
-  position: relative;
-  z-index: 1002;
-  box-shadow: 0 4px 12px rgba(0, 67, 168, 0.4);
-  transition: all 0.3s ease;
-  line-height: 1;
-  min-width: 50px;
-  text-align: center;
-}
-
+/* Mobile menu toggle hover effect */
 .mobile-menu-toggle:hover {
   background-color: rgba(0, 67, 168, 0.8);
   transform: scale(1.05);
@@ -1852,35 +1832,46 @@ li[style*="border-left"]:hover {
 
 /* Mobile menu styles */
 .mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
+  display: block !important;
+  background: #0043a8;
+  border: 2px solid #0043a8;
+  border-radius: 8px;
+  font-size: 1.8rem;
   color: white;
-  font-size: 1.5rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  margin-left: auto !important;
+  position: relative;
+  z-index: 1002;
+  box-shadow: 0 4px 12px rgba(0, 67, 168, 0.4);
+  transition: all 0.3s ease;
+  line-height: 1;
+  min-width: 50px;
+  text-align: center;
 }
-
-@media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: block;
-  }
 
   .main-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(13, 20, 33, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 0 0 12px 12px;
-    padding: 1rem 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    top: calc(100% + 0.5rem);
+    right: 1rem;
+    left: auto;
+    width: calc(100vw - 2rem);
+    max-width: 400px;
+    background: linear-gradient(135deg, #004a99, #0043a8);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(240, 246, 255, 0.4);
+    border-radius: 16px;
+    flex-direction: column;
+    gap: 0;
+    padding: 1.5rem;
+    box-shadow: 0 12px 35px rgba(0, 42, 92, 0.4);
+    z-index: 1001;
   }
 
-  .main-menu.show {
-    display: block;
+  .main-menu.mobile-menu-open {
+    display: flex !important;
   }
 
   .main-menu li {
