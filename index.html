@@ -64,36 +64,76 @@
     </ul>
   </nav>
 
-  <header class="hero">
+  <header style="background-image: url('hero_trondheim.jpg')" class="hero">
     <div class="hero-overlay">
       <h1>IT og internett – levert lokalt i Trondheim.</h1>
       <p>Én fast kontakt, én lokal avdeling – ingen sentralbord, ingen fjernkonsulenter. Rask, personlig support og teknologi du kan stole på.</p>
-
-      <section class="hc-section">
-        <div class="hc-container">
-          <div class="hc-cards">
-            <div class="glass-card">
-              <a href="https://webforms.pipedrive.com/f/63tNcMkDNu3s5cZQ3EPP2MxLjsjxJhMBayoeAaD4Le4oTz3AkvD6dJh2av0E3nTbkn" target="_blank" class="btn-primary">
-                Legg igjen nummer – jeg ringer deg
-              </a>
-            </div>
-          </div>
-          <p class="hc-note">Kampanje med GlobalConnect – levert lokalt av Its Working. Gründeren tar kontakt personlig.</p>
-        </div>
-      </section>
+      <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://webforms.pipedrive.com/f/63tNcMkDNu3s5cZQ3EPP2MxLjsjxJhMBayoeAaD4Le4oTz3AkvD6dJh2av0E3nTbkn" target="_blank" style="background: #1e7fd8; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Legg igjen nummer – jeg ringer deg</a>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); font-style: italic;">Kampanje med GlobalConnect – levert lokalt av Its Working. Gründeren tar kontakt personlig.</p>
     </div>
   </header>
 
   <main class="container">
+    <!-- Tjenester section fjernet midlertidig -->
+    <!-- 
+    <section id="tjenester" style="margin: 4rem 0;">
+      <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 3rem;">Våre tjenester</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Fiber og internett</h3>
+          <p>Høyhastighets fiber med backup og redundans</p>
+          <ul>
+            <li>Opptil 1000/1000 Mbps</li>
+            <li>4G backup inkludert</li>
+            <li>24/7 overvåking</li>
+            <li>SLA 99,9% oppetid</li>
+          </ul>
+          <div class="price-tag">Fra 1.500 kr/mnd</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>Microsoft 365</h3>
+          <p>Komplett kontorpakke med sikkerhet</p>
+          <ul>
+            <li>Exchange Online</li>
+            <li>SharePoint og Teams</li>
+            <li>Avansert sikkerhet</li>
+            <li>24/7 support inkludert</li>
+          </ul>
+          <div class="price-tag">Fra 200 kr/bruker/mnd</div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Cybersikkerhet</h3>
+          <p>Beskyttelse mot moderne trusler</p>
+          <ul>
+            <li>Endpoint Detection Response</li>
+            <li>E-post sikkerhet</li>
+            <li>Sikkerhetsopplæring</li>
+            <li>Kontinuerlig overvåking</li>
+          </ul>
+          <div class="price-tag">Fra 300 kr/bruker/mnd</div>
+        </div>
+
+      </div>
+    </section>
+    -->
+
     <!-- Partnere Section -->
-    <section id="partnere" class="hc-section">
+    <section id="partnere">
       <div class="hc-container">
         <h2>Vår teknologipartner</h2>
         <p class="lead">Vi har levert fiber fra GlobalConnect i Trondheim i over 14 år. Det gir oss full kontroll på hele leveransen – fra bestilling til montering og drift. Vi kjenner folka som kommer – og de kjenner oss.</p>
 
         <div class="hc-cards">
           <div class="glass-card">
-            <img src="gc-logo-hor-white.png" alt="GlobalConnect Logo">
+            <img src="gc-logo-hor-white.png" alt="GlobalConnect Logo" style="height: 60px; max-width: 100%; object-fit: contain; filter: brightness(1.1); margin-bottom: 1rem;">
             <p>Norges største fiberleverandør med robust infrastruktur og 99,9% oppetid</p>
           </div>
           <div class="glass-card">Fiber til bedrift</div>
@@ -108,80 +148,82 @@
           <div class="glass-card">Vi er fysisk til stede ved installasjon – og sjekker at alt virker, helt kostnadsfritt</div>
         </div>
 
-        <p class="hc-note">Levert lokalt av Its Working med personlig oppfølging og rask support</p>
+        <p class="note">Levert lokalt av Its Working med personlig oppfølging og rask support</p>
       </div>
     </section>
 
     <!-- Free Health Check Section -->
-    <section id="gratis-sjekk" class="hc-section">
+    <section id="gratis-sjekk">
       <div class="hc-container">
         <h2>Gratis IT-helsesjekk – ærlig, personlig og helt uforpliktende</h2>
         <p class="lead">En 2-timers gjennomgang av hele din IT-hverdag – levert gratis og personlig i Trondheimsområdet. Du får ærlige råd, full innsikt og null binding.</p>
 
         <div class="hc-cards">
-          <div class="glass-card">Maskinvare og nettverk</div>
-          <div class="glass-card">Programvare og kostnader</div>
-          <div class="glass-card">Sikkerhet og backup</div>
-          <div class="glass-card">GDPR/NIS2 – enkel risikovurdering</div>
-          <div class="glass-card">Tydelige tilbakemeldinger</div>
-          <div class="glass-card">Mulighet for referanser</div>
+          <div class="hc-card">✔ Maskinvare og nettverk</div>
+          <div class="hc-card">✔ Programvare og kostnader</div>
+          <div class="hc-card">✔ Sikkerhet og backup</div>
+          <div class="hc-card">✔ GDPR/NIS2 – enkel risikovurdering</div>
+          <div class="hc-card">✔ Tydelige tilbakemeldinger</div>
+          <div class="hc-card">✔ Mulighet for referanser</div>
         </div>
 
-        <div class="hc-cta">
-          <a href="mailto:thomas@itsworking.no?subject=Gratis%20IT-helsesjekk%20bestilling" class="btn-primary">
-            Bestill gratis IT-helsesjekk
-          </a>
-        </div>
-        <p class="hc-note">2 timer, helt uten binding – vi kommer til deg i Trondheim</p>
+        <a href="mailto:thomas@itsworking.no?subject=Gratis%20IT-helsesjekk%20bestilling" class="btn btn-primary hc-cta">
+          Bestill gratis IT-helsesjekk
+        </a>
+        <p class="note">2 timer, helt uten binding – vi kommer til deg i Trondheim</p>
         <a href="#mer-it-sjekk" class="hc-more">Les mer om hva helsesjekken inkluderer →</a>
 
         <details id="mer-it-sjekk">
           <summary>Hva vi går gjennom og hva du får</summary>
-          <div class="details-content">
-            <div class="intro-text">
-              <p>En IT-helsesjekk fra Its Working er mer enn en sjekkliste – det er en personlig gjennomgang utført av folk som faktisk bryr seg. Du får ærlige svar, konkrete anbefalinger og null press.</p>
-              <p>Dette er noe vi gjør fordi vi mener at gode IT-løsninger starter med tillit – ikke salg.</p>
+          <div style="padding: 2rem 0;">
+            <div style="margin-bottom: 3rem;">
+              <p style="color: #e9ecef; font-size: 1.1rem; margin: 0 auto 2rem auto; text-align: center;">
+                En IT-helsesjekk fra Its Working er mer enn en sjekkliste – det er en personlig gjennomgang utført av folk som faktisk bryr seg. Du får ærlige svar, konkrete anbefalinger og null press.
+              </p>
+              <p style="color: #e9ecef; font-size: 1.1rem; margin: 0 auto; text-align: center;">
+                Dette er noe vi gjør fordi vi mener at gode IT-løsninger starter med tillit – ikke salg.
+              </p>
             </div>
 
-            <div class="details-section">
-              <h3>Detaljert gjennomgang:</h3>
-              <ul class="details-list">
-                <li>Maskinvare og nettverk: Hvordan står det til med utstyret ditt?</li>
-                <li>Programvare og lisenser: Har du kontroll – og betaler du for mer enn du bruker?</li>
-                <li>Sikkerhet: Antivirus, brannmur, backup, tilgangskontroll – vi ser på alt.</li>
-                <li>Backup og gjenoppretting: Kan du faktisk få tilbake det du mister?</li>
-                <li>Regelverk og risiko: Vi gir indikasjoner på GDPR- og NIS2-relevante områder*</li>
+            <div style="margin-bottom: 3rem;">
+              <h3 style="color: #1e7fd8; margin-bottom: 1.5rem;">Detaljert gjennomgang:</h3>
+              <ul style="color: #e9ecef; font-size: 1.1rem; line-height: 1.8; list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">– Maskinvare og nettverk: Hvordan står det til med utstyret ditt?</li>
+                <li style="margin-bottom: 0.8rem;">– Programvare og lisenser: Har du kontroll – og betaler du for mer enn du bruker?</li>
+                <li style="margin-bottom: 0.8rem;">– Sikkerhet: Antivirus, brannmur, backup, tilgangskontroll – vi ser på alt.</li>
+                <li style="margin-bottom: 0.8rem;">– Backup og gjenoppretting: Kan du faktisk få tilbake det du mister?</li>
+                <li style="margin-bottom: 1rem;">– Regelverk og risiko: Vi gir indikasjoner på GDPR- og NIS2-relevante områder*</li>
               </ul>
-              <small>*Full gjennomgang krever egne prosjekter, men vi sier ærlig fra om vi ser risiko.</small>
+              <small style="color: #b8c5d1;">*Full gjennomgang krever egne prosjekter, men vi sier ærlig fra om vi ser risiko.</small>
             </div>
 
-            <div class="details-section">
-              <h3>Komplett oversikt over hva du får:</h3>
-              <ul class="details-list">
-                <li>En tydelig og forståelig rapport på hva som fungerer – og hva som bør gjøres</li>
-                <li>Ærlige tilbakemeldinger – også når ting er bra</li>
-                <li>En vurdering av om du faktisk får det du betaler for</li>
-                <li>Mulighet for referanser fra andre som har brukt denne tjenesten</li>
-                <li>Ingen binding. Ingen skjulte agendaer. Bare ærlige råd.</li>
-              </ul>
-            </div>
-
-            <div class="details-section">
-              <h3>Hvorfor stole på oss?</h3>
-              <ul class="details-list">
-                <li>Vi har over 20 års erfaring med SMB i Midt-Norge</li>
-                <li>Vi er lokale, til stede og tilgjengelige – og vi ringer deg tilbake</li>
-                <li>Vi følger opp personlig – ikke fra sentralbord</li>
-                <li>Vi tilbyr dette fordi vi vet det gir verdi, og fordi vi tror på langsiktige relasjoner</li>
+            <div style="margin-bottom: 3rem;">
+              <h3 style="color: #1e7fd8; margin-bottom: 1.5rem;">Komplett oversikt over hva du får:</h3>
+              <ul style="color: #e9ecef; font-size: 1.1rem; line-height: 1.8; list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">– En tydelig og forståelig rapport på hva som fungerer – og hva som bør gjøres</li>
+                <li style="margin-bottom: 0.8rem;">– Ærlige tilbakemeldinger – også når ting er bra</li>
+                <li style="margin-bottom: 0.8rem;">– En vurdering av om du faktisk får det du betaler for</li>
+                <li style="margin-bottom: 0.8rem;">– Mulighet for referanser fra andre som har brukt denne tjenesten</li>
+                <li style="margin-bottom: 0.8rem;">– Ingen binding. Ingen skjulte agendaer. Bare ærlige råd.</li>
               </ul>
             </div>
 
-            <div class="details-section">
-              <h3>Praktiske detaljer:</h3>
-              <ul class="details-list">
-                <li>2 timer, gratis og uforpliktende</li>
-                <li>Vi kommer til deg – fysisk oppmøte i Trondheim</li>
-                <li>Gjelder for små og mellomstore bedrifter i regionen</li>
+            <div style="margin-bottom: 3rem;">
+              <h3 style="color: #1e7fd8; margin-bottom: 1.5rem;">Hvorfor stole på oss?</h3>
+              <ul style="color: #e9ecef; font-size: 1.1rem; line-height: 1.8; list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">– Vi har over 20 års erfaring med SMB i Midt-Norge</li>
+                <li style="margin-bottom: 0.8rem;">– Vi er lokale, til stede og tilgjengelige – og vi ringer deg tilbake</li>
+                <li style="margin-bottom: 0.8rem;">– Vi følger opp personlig – ikke fra sentralbord</li>
+                <li style="margin-bottom: 0.8rem;">– Vi tilbyr dette fordi vi vet det gir verdi, og fordi vi tror på langsiktige relasjoner</li>
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+              <h3 style="color: #1e7fd8; margin-bottom: 1.5rem;">Praktiske detaljer:</h3>
+              <ul style="color: #e9ecef; font-size: 1.1rem; line-height: 1.8; list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">– 2 timer, gratis og uforpliktende</li>
+                <li style="margin-bottom: 0.8rem;">– Vi kommer til deg – fysisk oppmøte i Trondheim</li>
+                <li style="margin-bottom: 0.8rem;">– Gjelder for små og mellomstore bedrifter i regionen</li>
               </ul>
             </div>
           </div>
@@ -190,35 +232,42 @@
     </section>
 
     <!-- Founder's Story -->
-    <section id="founders-story" class="hc-section">
-      <div class="hc-container">
-        <h2>Hvorfor Its Working ble til</h2>
-        <p class="lead">Etter mange år i IT-bransjen så jeg at noe viktig gikk tapt: den menneskelige kontakten. Små bedrifter ble behandlet som nummer i køsystemer, ikke som partnere med unike behov.</p>
+    <section id="founders-story" style="margin: 4rem 0; background: linear-gradient(135deg, #11181f, #1a2332); padding: 3rem 2rem; border-radius: 16px; border: 2px solid rgba(30, 127, 216, 0.3); position: relative; overflow: hidden;">
+      <!-- Subtle background pattern -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(30, 127, 216, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0, 67, 168, 0.03) 0%, transparent 50%); pointer-events: none;"></div>
 
-        <div class="hc-cards">
-          <div class="glass-card">
-            <p>Its Working er født ut av frustrasjonen over at teknologi skulle gjøre hverdagen enklere, men ofte gjør det motsatte. Vi har sett for mange bedrifter bli skuffet av leverandører som lover mye, men leverer lite oppfølging.</p>
-          </div>
-          <div class="glass-card">
-            <p>En partner som kjenner deg ved navn, svarer når du ringer, og har din suksess som sitt eget mål.</p>
-          </div>
+      <div style="position: relative; z-index: 1;">
+        <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem);">Hvorfor Its Working ble til</h2>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 700px; margin: 0 auto;">
+          <p style="font-size: 1.1rem; font-style: italic; text-align: center; color: #b8c5d1; line-height: 1.6;">
+            "Etter mange år i IT-bransjen så jeg at noe viktig gikk tapt: den menneskelige kontakten. Små bedrifter ble behandlet som nummer i køsystemer, ikke som partnere med unike behov."
+          </p>
+          <p style="color: #e9ecef; font-size: 1.1rem; line-height: 1.6;">
+            <strong style="color: #1e7fd8;">Its Working</strong> er født ut av frustrasjonen over at teknologi skulle gjøre hverdagen enklere, men ofte gjør det motsatte. Vi har sett for mange bedrifter bli skuffet av leverandører som lover mye, men leverer lite oppfølging.
+          </p>
+          <p style="text-align: center; font-weight: bold; color: #1e7fd8; margin-top: 1.5rem; font-size: 1.1rem;">
+            En partner som kjenner deg ved navn, svarer når du ringer, og har din suksess som sitt eget mål.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Why Choose Us Preview -->
-    <section id="hvorfor-oss" class="hc-section">
-      <div class="hc-container">
-        <h2>Hvorfor velge oss?</h2>
-        <div class="hc-cards">
-          <div class="glass-card">Rask respons – vi svarer uten kø</div>
-          <div class="glass-card">Levering på dagen – når det haster</div>
-          <div class="glass-card">Full innsikt – du ser alt i vår kundeportal</div>
-          <div class="glass-card">Ingen skjulte gebyrer eller overraskelser</div>
-          <div class="glass-card">Smidig og personlig support – vi kjenner deg igjen</div>
-        </div>
-        <div class="hc-cta">
-          <a href="hvorfor-velge-oss.html" class="btn-primary">Les mer om hvorfor du bør velge oss</a>
+    <section id="hvorfor-oss" style="margin: 4rem 0; background: linear-gradient(135deg, #11181f, #1a2332); padding: 3rem 2rem; border-radius: 16px; border: 2px solid rgba(30, 127, 216, 0.3); position: relative; overflow: hidden;">
+      <!-- Subtle background pattern -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 80%, rgba(30, 127, 216, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0, 67, 168, 0.03) 0%, transparent 50%); pointer-events: none;"></div>
+
+      <div style="position: relative; z-index: 1;">
+        <h2 style="color: #1e7fd8; text-align: center; margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem);">Hvorfor velge oss?</h2>
+        <ul style="list-style: none; padding: 0; max-width: 700px; margin: 0 auto 2.5rem auto; text-align: left;">
+          <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">• Rask respons – vi svarer uten kø</li>
+          <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">• Levering på dagen – når det haster</li>
+          <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">• Full innsikt – du ser alt i vår kundeportal</li>
+          <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">• Ingen skjulte gebyrer eller overraskelser</li>
+          <li style="color: #e9ecef; margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">• Smidig og personlig support – vi kjenner deg igjen</li>
+        </ul>
+        <div style="text-align: center;">
+          <a href="hvorfor-velge-oss.html" style="background: #1e7fd8; color: white; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; transition: all 0.3s ease;">Les mer om hvorfor du bør velge oss</a>
         </div>
       </div>
     </section>
@@ -226,15 +275,15 @@
   </main>
 
   <!-- Kontakt Section -->
-  <section id="kontakt" class="hc-section">
-    <div class="hc-container">
-      <h2>Klar for en enklere IT-hverdag?</h2>
-      <p class="lead">Vi finner riktig løsning på 5 minutter. Ingen binding. Ingen bullshit.</p>
-      <div class="hc-cta">
-        <a href="mailto:kontakt@itsworking.no" class="btn-primary">Snakk med oss nå</a>
-      </div>
+  <section id="kontakt" style="text-align: center; margin: 4rem 0; padding: 3rem 2rem; background: linear-gradient(135deg, #0043a8, #1e7fd8); color: white; border-radius: 12px;">
+    <div class="container">
+      <h2 style="color: white; margin-bottom: 1rem;">Klar for en enklere IT-hverdag?</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.2rem;">Vi finner riktig løsning på 5 minutter. Ingen binding. Ingen bullshit.</p>
+      <a href="mailto:kontakt@itsworking.no" style="background: white; color: #0043a8; padding: 1.5rem 3rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block;">Snakk med oss nå</a>
     </div>
   </section>
+
+
 
   <footer class="container">
     <small>
