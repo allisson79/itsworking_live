@@ -699,82 +699,72 @@ p {
   border: 1px solid var(--border-subtle);
 }
 
-/* Desktop navigation - hidden by default, shown when hamburger is clicked */
+/* Mobile menu - hidden by default */
 .main-menu {
-  display: none !important;
-  position: absolute !important;
-  top: calc(100% + 0.5rem) !important;
-  right: 2rem !important;
-  width: 300px !important;
-  max-width: calc(100vw - 4rem) !important;
-  background: linear-gradient(135deg, #004a99, #0043a8) !important;
-  backdrop-filter: blur(15px) !important;
-  border: 2px solid rgba(240, 246, 255, 0.3) !important;
-  border-radius: 12px !important;
-  flex-direction: column !important;
-  gap: 0 !important;
-  padding: 1.5rem !important;
-  box-shadow: 0 12px 30px rgba(0, 74, 153, 0.4) !important;
-  z-index: 1001 !important;
-  list-style: none !important;
-  margin: 0 !important;
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  left: 1rem;
+  width: auto;
+  background: #004a99;
+  border: 2px solid rgba(240, 246, 255, 0.5);
+  border-radius: 12px;
+  padding: 1rem;
+  z-index: 2000;
+  list-style: none;
+  margin: 0.5rem 0 0 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Show menu when hamburger is clicked */
+/* Show menu when open class is added */
 .main-menu.mobile-menu-open {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  display: block;
 }
 
-/* Desktop menu items styling */
+/* Menu items */
 .main-menu li {
-  width: 100% !important;
-  margin: 0 !important;
-  list-style: none !important;
+  width: 100%;
+  margin: 0;
+  list-style: none;
 }
 
 .main-menu a {
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  padding: 1rem !important;
-  border: 2px solid #f0f6ff !important;
-  border-radius: 8px !important;
-  margin: 0.3rem 0 !important;
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  color: #f0f6ff !important;
-  background-color: rgba(240, 246, 255, 0.1) !important;
-  text-decoration: none !important;
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-  box-sizing: border-box !important;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: #f0f6ff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(240, 246, 255, 0.2);
+  transition: background-color 0.3s ease;
 }
 
 .main-menu a:hover {
-  background-color: #f0f6ff !important;
-  color: #004a99 !important;
-  transform: translateY(-1px) !important;
-  border-color: #f0f6ff !important;
+  background-color: rgba(240, 246, 255, 0.1);
+}
+
+.main-menu li:last-child a {
+  border-bottom: none;
 }
 
 .main-menu a.disabled {
-  padding: 1rem 1rem 2.2rem 1rem !important;
-  position: relative !important;
-  opacity: 0.8 !important;
+  position: relative;
+  padding-bottom: 2rem;
+  opacity: 0.8;
 }
 
 .main-menu a.disabled:after {
-  content: "Kommer 25. juni" !important;
-  position: absolute !important;
-  bottom: 0.4rem !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  font-size: 0.7rem !important;
-  color: #f0f6ff !important;
-  font-style: italic !important;
-  font-weight: normal !important;
+  content: "Kommer 25. juni";
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #f0f6ff;
+  font-style: italic;
+  font-weight: normal;
 }
 
 /* Konsistente navigasjonslenker */
