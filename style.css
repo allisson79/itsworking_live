@@ -211,21 +211,21 @@ textarea:focus {
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(76, 154, 255, 0.4), 0 0 40px rgba(76, 154, 255, 0.2);
+    box-shadow: var(--shadow-medium);
   }
   50% {
-    box-shadow: 0 0 40px rgba(76, 154, 255, 0.6), 0 0 80px rgba(76, 154, 255, 0.3);
+    box-shadow: var(--shadow-large);
   }
 }
 
 @keyframes borderGlow {
   0%, 100% {
     border-color: rgba(76, 154, 255, 0.3);
-    box-shadow: 0 0 20px rgba(76, 154, 255, 0.2);
+    box-shadow: var(--shadow-small);
   }
   50% {
-    border-color: rgba(76, 154, 255, 0.6);
-    box-shadow: 0 0 40px rgba(76, 154, 255, 0.4);
+    border-color: rgba(76, 154, 255, 0.5);
+    box-shadow: var(--shadow-medium);
   }
 }
 
@@ -329,10 +329,9 @@ textarea:focus {
   position: relative;
   z-index: 2;
   box-shadow: 
-    var(--shadow-huge),
+    var(--shadow-large),
     0 0 0 1px rgba(240, 246, 255, 0.1),
-    inset 0 1px 0 rgba(240, 246, 255, 0.2),
-    0 0 80px rgba(76, 154, 255, 0.2);
+    inset 0 1px 0 rgba(240, 246, 255, 0.2);
   transition: all var(--transition-medium);
   overflow: hidden;
   max-width: 900px;
@@ -349,7 +348,6 @@ textarea:focus {
   background: var(--gradient-border);
   border-radius: var(--radius-2xl);
   z-index: -1;
-  animation: borderGlow 3s ease-in-out infinite;
 }
 
 .hero-overlay::after {
@@ -1465,9 +1463,7 @@ section a[style*="background"] {
 .hero-overlay a:hover,
 section a[style*="background"]:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 
-    0 12px 35px rgba(30, 127, 216, 0.4),
-    0 0 30px rgba(30, 127, 216, 0.2);
+  box-shadow: 0 12px 35px rgba(30, 127, 216, 0.4);
 }
 
 /* Footer styling - dark theme */
@@ -1583,10 +1579,8 @@ footer small {
 .service-card:hover {
   transform: translateY(-12px) scale(1.03);
   box-shadow: 
-    var(--shadow-huge),
-    var(--shadow-medium),
+    var(--shadow-large),
     inset 0 1px 0 rgba(240, 246, 255, 0.2);
-  animation: glowPulse 2s ease-in-out infinite;
 }
 
 .service-card:hover::before {
@@ -1638,9 +1632,7 @@ footer small {
 
 .btn:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 
-    var(--shadow-large),
-    0 0 30px rgba(76, 154, 255, 0.4);
+  box-shadow: var(--shadow-large);
 }
 
 .btn:hover::before {
