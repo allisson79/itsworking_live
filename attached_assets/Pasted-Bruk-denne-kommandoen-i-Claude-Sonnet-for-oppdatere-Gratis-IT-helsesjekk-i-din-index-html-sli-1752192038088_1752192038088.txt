@@ -1,0 +1,94 @@
+Bruk denne kommandoen i Claude Sonnet for å oppdatere “Gratis IT-helsesjekk” i din `index.html`, slik at seksjonen får samme «glass-morphism» look og grid-layout som GlobalConnect-boksen:
+
+````
+Oppgave: Gjør “Gratis IT-helsesjekk”-seksjonen mer enhetlig og stilren ved å:
+
+1. Pakk hele innholdet (overskrift, ingress, kort-grid, knapp, note og “Les mer”) inn i en container med klassen `hc-container`:
+   ```html
+   <section id="gratis-sjekk">
+     <div class="hc-container">
+       <h2>Gratis IT-helsesjekk – ærlig, personlig og helt uforpliktende</h2>
+       <p class="lead">En 2-timers gjennomgang av hele din IT-hverdag – levert gratis og personlig i Trondheimsområdet. Du får ærlige råd, full innsikt og null binding.</p>
+
+       <div class="hc-cards">
+         <div class="hc-card">✔ Maskinvare og nettverk</div>
+         <div class="hc-card">✔ Programvare og kostnader</div>
+         <div class="hc-card">✔ Sikkerhet og backup</div>
+         <div class="hc-card">✔ GDPR/NIS2 – enkel risikovurdering</div>
+         <div class="hc-card">✔ Tydelige tilbakemeldinger</div>
+         <div class="hc-card">✔ Mulighet for referanser</div>
+       </div>
+
+       <a href="mailto:thomas@itsworking.no?subject=Gratis%20IT-helsesjekk%20bestilling" class="btn btn-primary hc-cta">
+         Bestill gratis IT-helsesjekk
+       </a>
+       <p class="note">2 timer, helt uten binding – vi kommer til deg i Trondheim</p>
+       <a href="#mer-it-sjekk" class="hc-more">Les mer om hva helsesjekken inkluderer &rarr;</a>
+
+       <details id="mer-it-sjekk">
+         <summary>Hva vi går gjennom og hva du får</summary>
+         <!-- Utvidet innhold her -->
+       </details>
+     </div>
+   </section>
+````
+
+2. Legg til følgende CSS nederst i `style.css`:
+
+   ```css
+   .hc-container {
+     max-width: 700px;
+     margin: 4rem auto;
+     padding: 2.5rem;
+     background: linear-gradient(135deg, rgba(17,24,31,0.9), rgba(26,35,50,0.9));
+     border: 2px solid rgba(30,127,216,0.3);
+     border-radius: 16px;
+     backdrop-filter: blur(10px) saturate(180%);
+     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+     text-align: center;
+   }
+   .hc-cards {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+     gap: 1rem;
+     margin: 2rem 0;
+   }
+   .hc-card {
+     background: rgba(30,127,216,0.1);
+     border: 1px solid rgba(30,127,216,0.4);
+     border-radius: 12px;
+     padding: 1.2rem;
+     color: #e9ecef;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   .hc-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 12px 24px rgba(30,127,216,0.3);
+   }
+   .hc-cta {
+     margin-top: 1.5rem;
+     padding: 1rem 2.5rem;
+     font-size: 1.1rem;
+   }
+   .note {
+     margin-top: 0.8rem;
+     font-size: 0.9rem;
+     color: rgba(255,255,255,0.7);
+   }
+   .hc-more {
+     display: inline-block;
+     margin-top: 1rem;
+     font-size: 0.95rem;
+     color: #1e7fd8;
+     text-decoration: underline;
+     transition: color 0.2s ease;
+   }
+   .hc-more:hover {
+     color: #66d9ff;
+   }
+   ```
+
+Kjør denne oppdateringen, så vil “Gratis IT-helsesjekk”-seksjonen matche designet og grid-layoutet til “Vår teknologipartner”-boksen.\`\`\`
