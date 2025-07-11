@@ -1,0 +1,143 @@
+TASK
+Rebuild the site’s mobile “hamburger” menu cleanly by replacing the old <nav> markup, removing all legacy menu CSS/JS, and then inserting a minimal, conflict-free implementation. You will modify these three files: index.html, style.css, and script.js.
+
+1) index.html
+Find and delete the entire existing <nav class="container-fluid">…</nav> block (including both <ul> lists and the old toggle button).
+
+Insert in its place this new markup immediately under <body>:
+
+html
+Kopier
+Rediger
+<nav class="navbar">
+  <div class="navbar__brand">
+    <a href="index.html">
+      <img src="its_working_logo_transparent.png" alt="Its Working" />
+    </a>
+    <button class="navbar__toggle" aria-label="Åpne meny" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+  </div>
+  <ul class="navbar__menu">
+    <li><a href="#" class="nav-link disabled">Tjenester</a></li>
+    <li><a href="#partnere" class="nav-link">Partnere</a></li>
+    <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
+    <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
+    <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+  </ul>
+</nav>
+2) style.css
+Remove every rule and media-query related to:
+
+.main-menu, .mobile-menu-toggle, .main-menu.show, and any old flex/grid toggling you used.
+
+Add the following CSS at the end of the file (or in your “components” section). This is the only hamburger‐menu code you need:
+
+css
+Kopier
+Rediger
+/* ── NAVBAR ───────────────────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(10,14,26,0.9);
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary-blue);
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px; height: 2px;
+  background: var(--primary-blue);
+  left: 0;
+}
+.hamburger::before { top: -6px; }
+.hamburger::after  { top:  6px; }
+
+.navbar__menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: block;
+  }
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(10,14,26,0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .navbar__menu.show {
+    display: flex;
+  }
+  .navbar__menu li + li {
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .navbar__menu a {
+    display: block;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+  }
+}
+3) script.js
+Delete all old menu-related code (anything that adds/removes .mobile-menu-open, custom click handlers, escape-key logic, etc.).
+
+Replace with this minimal toggle script:
+
+js
+Kopier
+Rediger
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.navbar__toggle');
+  const menu   = document.querySelector('.navbar__menu');
+
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    const expanded = menu.classList.contains('show');
+    toggle.setAttribute('aria-expanded', expanded);
+  });
+});
+Final Checklist
+index.html — only one <nav class="navbar">…</nav> block, no legacy <ul class="main-menu"> or .mobile-menu-toggle.
+
+style.css — only one set of .navbar, .hamburger, and media-query rules for the menu.
+
+script.js — single, concise event listener that toggles .show on .navbar__menu.
+
+Once you’ve done that, reload the page on mobile and desktop. The hamburger icon should appear only under 768px, and clicking it should cleanly toggle your menu without any leftover styles or conflicts.

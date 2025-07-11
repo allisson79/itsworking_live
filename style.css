@@ -699,8 +699,100 @@ p {
   border: 1px solid var(--border-subtle);
 }
 
-/* Mobile menu - hidden by default */
-@media (max-width: 768px) {
+/* Desktop navigation - show navigation links horizontally */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .main-menu {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-menu li {
+    margin: 0;
+    list-style: none;
+  }
+
+  .main-menu a {
+    color: #0043a8 !important;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #0043a8;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    background-color: transparent;
+    display: block;
+  }
+
+  .main-menu a:hover {
+    background-color: #0043a8;
+    color: #fff !important;
+  }
+
+  .main-menu a.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: transparent;
+    color: #0043a8 !important;
+    border: 2px solid #0043a8;
+    opacity: 0.7;
+    position: relative;
+    padding: 0.6rem 1.2rem 1.8rem 1.2rem;
+  }
+
+  .main-menu a.disabled:after {
+    content: "Kommer 25. juni";
+    position: absolute;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: #0043a8;
+    font-style: italic;
+    font-weight: normal;
+  }
+}
+
+/* Mobile burger menu styles - consolidated and clean */
+@media screen and (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block !important;
+    background: #0043a8;
+    border: 2px solid #0043a8;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    font-weight: bold;
+    margin-left: auto !important;
+    position: relative;
+    z-index: 1002;
+    box-shadow: 0 4px 12px rgba(0, 67, 168, 0.4);
+    transition: all 0.3s ease;
+    line-height: 1;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  .mobile-menu-toggle:hover {
+    background-color: rgba(0, 67, 168, 0.8);
+    transform: scale(1.05);
+  }
+
   .main-menu {
     display: none;
     position: absolute;
@@ -715,43 +807,45 @@ p {
     padding: 0;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  }
-
-  .main-menu.show {
-    display: flex;
     flex-direction: column;
   }
 
-  .main-menu.show li {
+  .main-menu.show {
+    display: flex !important;
+  }
+
+  .main-menu li {
     margin: 0;
     width: 100%;
+    padding: 0;
   }
 
-  .main-menu.show a {
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .main-menu a {
+    display: block;
+    padding: 1rem 2rem;
     color: white;
     text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
     text-align: center;
     font-weight: 600;
-    transition: background-color 0.3s ease;
   }
 
-  .main-menu.show a:hover {
-    background-color: rgba(240, 246, 255, 0.1);
+  .main-menu a:hover {
+    background-color: rgba(30, 127, 216, 0.2);
   }
 
-  .main-menu.show li:last-child a {
+  .main-menu li:last-child a {
     border-bottom: none;
   }
 
-  .main-menu.show a.disabled {
+  .main-menu a.disabled {
     position: relative;
     padding-bottom: 2.5rem;
     opacity: 0.8;
   }
 
-  .main-menu.show a.disabled:after {
+  .main-menu a.disabled:after {
     content: "Kommer 25. juni";
     position: absolute;
     bottom: 0.5rem;
@@ -1843,24 +1937,7 @@ li[style*="border-left"]:hover {
   text-align: center;
 }
 
-  .main-menu li {
-    margin: 0;
-    padding: 0;
-  }
 
-  .main-menu a {
-    display: block;
-    padding: 1rem 2rem;
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
-  }
-
-  .main-menu a:hover {
-    background-color: rgba(30, 127, 216, 0.2);
-  }
-}
 
 /* Unified Section and Component Styling */
 .hc-section {

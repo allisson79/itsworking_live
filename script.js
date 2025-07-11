@@ -66,12 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const mainMenu = document.querySelector('.main-menu');
 
-  console.log('Init hamburger:', !!menuToggle, !!mainMenu);
   if (!menuToggle || !mainMenu) return;
 
   menuToggle.addEventListener('click', e => {
     e.preventDefault();
-    console.log('Hamburger clicked');
     mainMenu.classList.toggle('show');
   });
 
@@ -80,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mainMenu.classList.contains('show') &&
         !menuToggle.contains(evt.target) &&
         !mainMenu.contains(evt.target)) {
-      console.log('Closing menu');
       mainMenu.classList.remove('show');
     }
   });
