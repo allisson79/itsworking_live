@@ -476,117 +476,20 @@ img {
 
 
 
-/* Advanced navigation with sophisticated glass morphism */
-nav.container-fluid {
-  position: sticky;
-  top: 0;
-  padding: var(--space-lg) var(--space-2xl);
-  backdrop-filter: blur(30px) saturate(200%) brightness(110%);
-  background: linear-gradient(135deg, 
-    rgba(10, 14, 26, 0.95) 0%,
-    rgba(15, 20, 25, 0.9) 50%,
-    rgba(22, 27, 34, 0.92) 100%
-  );
-  border-bottom: 1px solid var(--border-emphasis);
-  z-index: 1000;
-  transition: all var(--transition-medium);
-  box-shadow: 
-    var(--shadow-medium),
-    inset 0 1px 0 rgba(240, 246, 255, 0.08),
-    0 0 0 1px rgba(76, 154, 255, 0.1);
-  position: relative;
-  overflow: hidden;
+/* Logo styling for new navbar */
+.navbar img {
+  height: clamp(80px, 8vh, 120px);
+  max-width: 250px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
-nav.container-fluid::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--gradient-glass);
-  z-index: -1;
-}
-
-nav.container-fluid::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent,
-    rgba(76, 154, 255, 0.1),
-    transparent
-  );
-  transition: left 0.6s ease;
-  z-index: -1;
-}
-
-nav.container-fluid:hover {
-  background: linear-gradient(135deg, 
-    rgba(13, 17, 23, 0.95) 0%,
-    rgba(22, 27, 34, 0.9) 100%
-  );
-  border-bottom-color: rgba(30, 127, 216, 0.25);
-}
-
-nav.container-fluid::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, 
-    rgba(30, 127, 216, 0.02) 0%,
-    rgba(0, 67, 168, 0.01) 50%,
-    rgba(30, 127, 216, 0.02) 100%
-  );
-  z-index: -1;
-}
-
-/* Desktop logo optimization */
-@media screen and (min-width: 769px) {
-  nav img {
-    height: clamp(80px, 8vh, 120px) !important;
-    max-width: 250px !important;
+@media screen and (max-width: 768px) {
+  .navbar img {
+    height: clamp(60px, 10vh, 80px);
+    max-width: 200px;
   }
-
-  nav.container-fluid {
-    padding: 1rem 2rem;
-  }
-}
-
-/* Ensure first nav ul takes full width and positions items correctly */
-nav ul:first-child {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-/* Logo container */
-nav ul:first-child li:first-child {
-  flex: 0 0 auto;
-}
-
-/* Hamburger container - force to right */
-nav ul:first-child li:last-child {
-  flex: 0 0 auto;
-  margin-left: auto !important;
-}
-
-/* Logo styling - optimized for all screen sizes */
-nav img {
-  height: clamp(130px, 15vh, 250px) !important;
-  max-width: 400px !important;
-  width: auto !important;
-  object-fit: contain !important;
-  transition: all 0.3s ease !important;
 }
 
 /* Enhanced main container with better typography */
@@ -699,240 +602,89 @@ p {
   border: 1px solid var(--border-subtle);
 }
 
-/* Desktop navigation - show navigation links horizontally */
-@media (min-width: 769px) {
-  .mobile-menu-toggle {
-    display: none !important;
-  }
 
-  .main-menu {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    position: static;
-    background: none;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
-  }
 
-  .main-menu li {
-    margin: 0;
-    list-style: none;
-  }
-
-  .main-menu a {
-    color: #0043a8 !important;
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border: 2px solid #0043a8;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    background-color: transparent;
-    display: block;
-  }
-
-  .main-menu a:hover {
-    background-color: #0043a8;
-    color: #fff !important;
-  }
-
-  .main-menu a.disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    background-color: transparent;
-    color: #0043a8 !important;
-    border: 2px solid #0043a8;
-    opacity: 0.7;
-    position: relative;
-    padding: 0.6rem 1.2rem 1.8rem 1.2rem;
-  }
-
-  .main-menu a.disabled:after {
-    content: "Kommer 25. juni";
-    position: absolute;
-    bottom: 0.3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.65rem;
-    color: #0043a8;
-    font-style: italic;
-    font-weight: normal;
-  }
+/* ── NAVBAR ───────────────────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(10,14,26,0.9);
+  position: relative;
+  z-index: 1000;
 }
 
-/* Mobile burger menu styles - consolidated and clean */
-@media screen and (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: block !important;
-    background: #0043a8;
-    border: 2px solid #0043a8;
-    border-radius: 8px;
-    font-size: 1.8rem;
-    color: white;
-    cursor: pointer;
-    padding: 0.8rem 1rem;
-    font-weight: bold;
-    margin-left: auto !important;
-    position: relative;
-    z-index: 1002;
-    box-shadow: 0 4px 12px rgba(0, 67, 168, 0.4);
-    transition: all 0.3s ease;
-    line-height: 1;
-    min-width: 50px;
-    text-align: center;
-  }
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-  .mobile-menu-toggle:hover {
-    background-color: rgba(0, 67, 168, 0.8);
-    transform: scale(1.05);
-  }
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-  .main-menu {
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary-blue);
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px; height: 2px;
+  background: var(--primary-blue);
+  left: 0;
+}
+.hamburger::before { top: -6px; }
+.hamburger::after  { top:  6px; }
+
+.navbar__menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: block;
+  }
+  .navbar__menu {
     display: none;
+    flex-direction: column;
+    background: rgba(10,14,26,0.95);
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(13, 20, 33, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    flex-direction: column;
+    text-align: center;
   }
-
-  .main-menu.show {
-    display: flex !important;
+  .navbar__menu.show {
+    display: flex;
   }
-
-  .main-menu li {
-    margin: 0;
-    width: 100%;
-    padding: 0;
+  .navbar__menu li + li {
+    border-top: 1px solid rgba(255,255,255,0.1);
   }
-
-  .main-menu a {
+  .navbar__menu a {
     display: block;
     padding: 1rem 2rem;
     color: white;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
-    text-align: center;
-    font-weight: 600;
-  }
-
-  .main-menu a:hover {
-    background-color: rgba(30, 127, 216, 0.2);
-  }
-
-  .main-menu li:last-child a {
-    border-bottom: none;
-  }
-
-  .main-menu a.disabled {
-    position: relative;
-    padding-bottom: 2.5rem;
-    opacity: 0.8;
-  }
-
-  .main-menu a.disabled:after {
-    content: "Kommer 25. juni";
-    position: absolute;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.7rem;
-    color: #f0f6ff;
-    font-style: italic;
-    font-weight: normal;
   }
 }
 
-/* Konsistente navigasjonslenker */
-nav a:not(:has(img)) {
-  color: #0043a8 !important;
-  text-decoration: none;
-  padding: 0.6rem 1.2rem;
-  border: 2px solid #0043a8;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  background-color: transparent;
-}
 
-/* Logo link styling without border */
-nav a:has(img) {
-  border: none !important;
-  padding: 0;
-  background: none !important;
-}
 
-nav a:has(img):hover {
-  background: none !important;
-  border: none !important;
-}
 
-/* Hover-effekt for navigasjonslenker */
-nav a:not(:has(img)):hover {
-  background-color: #0043a8;
-  color: #fff !important;
-}
-
-/* Aktiv side markering */
-nav a.active {
-  background-color: #0043a8;
-  color: #fff !important;
-}
-
-/* Deaktivert knapp styling */
-nav a.disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-  background-color: transparent;
-  color: #0043a8 !important;
-  border: 2px solid #0043a8;
-  opacity: 0.7;
-  position: relative;
-  padding: 0.6rem 1.2rem 1.8rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* "Kommer 25. juni" tekst inne i knappen */
-nav a.disabled:after {
-  content: "Kommer 25. juni";
-  position: absolute;
-  bottom: 0.3rem;
-  font-size: 0.65rem;
-  color: #0043a8;
-  font-style: italic;
-  font-weight: normal;
-}
-
-nav a.disabled:hover {
-  background-color: transparent;
-  color: #0043a8 !important;
-}
-
-/* Remove conflicting mobile menu toggle rule */
-
-.mobile-menu-toggle:hover {
-  background-color: rgba(0, 67, 168, 0.8);
-  transform: scale(1.05);
-  transition: all 0.2s ease;
-}
 
 /* Mobile navigation - completely rebuilt for better UX */
 @media screen and (max-width: 768px) {

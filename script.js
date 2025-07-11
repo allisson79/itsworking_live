@@ -61,32 +61,17 @@
   localStorage.removeItem('theme');
 })();
 
-// Mobile menu toggle functionality - clean implementation
+// Clean navbar toggle functionality
 document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const mainMenu = document.querySelector('.main-menu');
+  const toggle = document.querySelector('.navbar__toggle');
+  const menu   = document.querySelector('.navbar__menu');
 
-  if (!menuToggle || !mainMenu) return;
+  if (!toggle || !menu) return;
 
-  menuToggle.addEventListener('click', e => {
-    e.preventDefault();
-    mainMenu.classList.toggle('show');
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', evt => {
-    if (mainMenu.classList.contains('show') &&
-        !menuToggle.contains(evt.target) &&
-        !mainMenu.contains(evt.target)) {
-      mainMenu.classList.remove('show');
-    }
-  });
-
-  // Close menu when pressing Escape key
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && mainMenu.classList.contains('show')) {
-      mainMenu.classList.remove('show');
-    }
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+    const expanded = menu.classList.contains('show');
+    toggle.setAttribute('aria-expanded', expanded);
   });
 });
 
