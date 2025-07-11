@@ -61,73 +61,37 @@
   localStorage.removeItem('theme');
 })();
 
-// Mobile menu toggle functionality - robust version
-(function() {
-  'use strict';
+// Mobile menu toggle functionality - clean implementation
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainMenu = document.querySelector('.main-menu');
 
-  let menuInitialized = false;
+  console.log('Init hamburger:', !!menuToggle, !!mainMenu);
+  if (!menuToggle || !mainMenu) return;
 
-  function initializeMenu() {
-    if (menuInitialized) return;
+  menuToggle.addEventListener('click', e => {
+    e.preventDefault();
+    console.log('Hamburger clicked');
+    mainMenu.classList.toggle('show');
+  });
 
-    try {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const mainMenu = document.querySelector('.main-menu');
-
-      if (!menuToggle || !mainMenu) {
-        console.log('Menu elements not found, retrying...');
-        setTimeout(initializeMenu, 200);
-        return;
-      }
-
-      menuInitialized = true;
-      console.log('Menu initialized successfully');
-
-      // Toggle menu on button click
-      menuToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Menu toggle clicked');
-        mainMenu.classList.toggle('mobile-menu-open');
-        console.log('Menu classes:', mainMenu.className);
-      });
-
-      // Close menu when clicking outside (optimized for mobile)
-      document.addEventListener('touchstart', function(event) {
-        if (mainMenu.classList.contains('mobile-menu-open')) {
-          if (!menuToggle.contains(event.target) && !mainMenu.contains(event.target)) {
-            mainMenu.classList.remove('mobile-menu-open');
-          }
-        }
-      }, { passive: true });
-
-      document.addEventListener('click', function(event) {
-        if (mainMenu.classList.contains('mobile-menu-open')) {
-          if (!menuToggle.contains(event.target) && !mainMenu.contains(event.target)) {
-            mainMenu.classList.remove('mobile-menu-open');
-          }
-        }
-      });
-
-      // Close menu when pressing Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && mainMenu.classList.contains('mobile-menu-open')) {
-          mainMenu.classList.remove('mobile-menu-open');
-        }
-      });
-
-    } catch (error) {
-      console.error('Error initializing menu:', error);
+  // Close menu when clicking outside
+  document.addEventListener('click', evt => {
+    if (mainMenu.classList.contains('show') &&
+        !menuToggle.contains(evt.target) &&
+        !mainMenu.contains(evt.target)) {
+      console.log('Closing menu');
+      mainMenu.classList.remove('show');
     }
-  }
+  });
 
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeMenu);
-  } else {
-    initializeMenu();
-  }
-})();
+  // Close menu when pressing Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && mainMenu.classList.contains('show')) {
+      mainMenu.classList.remove('show');
+    }
+  });
+});
 
 // FAQ toggle functionality
 function toggleFAQ(element) {
