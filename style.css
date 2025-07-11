@@ -836,7 +836,8 @@ p {
   nav img {
     height: clamp(140px, 22vh, 280px) !important;
     max-width: 90vw !important;
-    width: auto !important;
+    width:```python
+ auto !important;
     object-fit: contain !important;
     transition: all 0.3s ease !important;
   }
@@ -1361,13 +1362,13 @@ footer a:hover {
   footer {
     padding: 1.5rem 1rem;
   }
-  
+
   footer small {
     flex-direction: column;
     gap: 0.8rem;
     font-size: 0.9rem;
   }
-  
+
   footer a {
     display: block;
     width: 100%;
@@ -1942,6 +1943,7 @@ li[style*="border-left"]:hover {
   margin-top: 1.5rem;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .btn-primary {
@@ -2255,19 +2257,19 @@ li[style*="border-left"]:hover {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
   }
-  
+
   .why-card {
     padding: 1.2rem;
   }
-  
+
   .why-card i {
     font-size: 1.8rem;
   }
-  
+
   .why-card h3 {
     font-size: 1.2rem;
   }
-  
+
   .why-card p {
     font-size: 0.9rem;
   }
