@@ -1584,7 +1584,7 @@ footer small {
   transform: translateY(-12px) scale(1.03);
   box-shadow: 
     var(--shadow-huge),
-    var(--shadow-glow),
+    var(--shadow-medium),
     inset 0 1px 0 rgba(240, 246, 255, 0.2);
   animation: glowPulse 2s ease-in-out infinite;
 }
@@ -1675,7 +1675,7 @@ footer small {
 .btn-outline:hover {
   background: var(--primary-blue);
   color: var(--text-inverse);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-medium);
 }
 
 .service-card:hover::after {
@@ -2281,7 +2281,7 @@ li[style*="border-left"]:hover {
 
 .hc-cards--select .glass-card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-medium);
   background: rgba(30, 127, 216, 0.15);
   border-color: rgba(30, 127, 216, 0.6);
 }
