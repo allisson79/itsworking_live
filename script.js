@@ -72,9 +72,10 @@
 
     try {
       const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const mainMenu = document.querySelector('ul.main-menu');
+      const mainMenu = document.querySelector('.main-menu');
 
       if (!menuToggle || !mainMenu) {
+        console.log('Menu elements not found, retrying...');
         setTimeout(initializeMenu, 200);
         return;
       }
@@ -86,7 +87,9 @@
       menuToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
+        console.log('Menu toggle clicked');
         mainMenu.classList.toggle('mobile-menu-open');
+        console.log('Menu classes:', mainMenu.className);
       });
 
       // Close menu when clicking outside (optimized for mobile)
