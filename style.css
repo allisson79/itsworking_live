@@ -701,35 +701,40 @@ p {
 
 /* Desktop navigation - hidden by default, shown when hamburger is clicked */
 .main-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 2rem;
-  width: 300px;
-  max-width: calc(100vw - 4rem);
-  background: linear-gradient(135deg, #004a99, #0043a8);
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(240, 246, 255, 0.3);
-  border-radius: 12px;
-  flex-direction: column;
-  gap: 0;
-  padding: 1.5rem;
-  box-shadow: 0 12px 30px rgba(0, 74, 153, 0.4);
-  z-index: 1001;
+  display: none !important;
+  position: absolute !important;
+  top: calc(100% + 0.5rem) !important;
+  right: 2rem !important;
+  width: 300px !important;
+  max-width: calc(100vw - 4rem) !important;
+  background: linear-gradient(135deg, #004a99, #0043a8) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 2px solid rgba(240, 246, 255, 0.3) !important;
+  border-radius: 12px !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 12px 30px rgba(0, 74, 153, 0.4) !important;
+  z-index: 1001 !important;
+  list-style: none !important;
+  margin: 0 !important;
 }
 
 /* Show menu when hamburger is clicked */
 .main-menu.mobile-menu-open {
   display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Desktop menu items styling */
-.main-menu.mobile-menu-open li {
-  width: 100%;
-  margin: 0;
+.main-menu li {
+  width: 100% !important;
+  margin: 0 !important;
+  list-style: none !important;
 }
 
-.main-menu.mobile-menu-open a {
+.main-menu a {
   display: block !important;
   width: 100% !important;
   text-align: center !important;
@@ -747,19 +752,20 @@ p {
   box-sizing: border-box !important;
 }
 
-.main-menu.mobile-menu-open a:hover {
+.main-menu a:hover {
   background-color: #f0f6ff !important;
   color: #004a99 !important;
   transform: translateY(-1px) !important;
   border-color: #f0f6ff !important;
 }
 
-.main-menu.mobile-menu-open a.disabled {
+.main-menu a.disabled {
   padding: 1rem 1rem 2.2rem 1rem !important;
   position: relative !important;
+  opacity: 0.8 !important;
 }
 
-.main-menu.mobile-menu-open a.disabled:after {
+.main-menu a.disabled:after {
   content: "Kommer 25. juni" !important;
   position: absolute !important;
   bottom: 0.4rem !important;
