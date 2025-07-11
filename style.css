@@ -1912,7 +1912,7 @@ li[style*="border-left"]:hover {
 
 .glass-card h3 {
   margin: 0 0 0.5rem 0;
-  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   font-weight: 600;
   color: #66d9ff;
   z-index: 1;
@@ -1921,8 +1921,8 @@ li[style*="border-left"]:hover {
 
 .glass-card p {
   margin: 0;
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
-  line-height: 1.5;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  line-height: 1.4;
   color: #c9d1d9;
   z-index: 1;
   position: relative;
@@ -2115,13 +2115,13 @@ li[style*="border-left"]:hover {
   }
 
   .glass-card h3 {
-    font-size: 1.15rem;
+    font-size: 1rem;
     margin-bottom: 0.6rem;
   }
 
   .glass-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .btn-primary {
