@@ -14,20 +14,16 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <nav class="container-fluid">
-    <ul>
-      <li>
-        <strong>
-          <a href="index.html">
-            <img src="its_working_logo_transparent.png" alt="Its Working - Hjem" />
-          </a>
-        </strong>
-      </li>
-      <li>
-        <button class="mobile-menu-toggle" aria-label="Åpne meny">☰</button>
-      </li>
-    </ul>
-    <ul class="main-menu">
+  <nav class="navbar">
+    <div class="navbar__brand">
+      <a href="index.html">
+        <img src="its_working_logo_transparent.png" alt="Its Working - Hjem" />
+      </a>
+      <button class="navbar__toggle" aria-label="Åpne meny" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+    <ul class="navbar__menu">
       <li><a href="#" class="nav-link disabled">Tjenester</a></li>
       <li><a href="index.html#partnere" class="nav-link">Partnere</a></li>
       <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
