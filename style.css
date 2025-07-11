@@ -1852,7 +1852,7 @@ li[style*="border-left"]:hover {
 }
 
   .main-menu {
-    display: none;
+    display: none !important;
     position: absolute;
     top: calc(100% + 0.5rem);
     right: 1rem;
