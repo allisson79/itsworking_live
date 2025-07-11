@@ -699,6 +699,73 @@ p {
   border: 1px solid var(--border-subtle);
 }
 
+/* Desktop navigation - show navigation links horizontally */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .main-menu {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-menu li {
+    margin: 0;
+    list-style: none;
+  }
+
+  .main-menu a {
+    color: #0043a8 !important;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #0043a8;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    background-color: transparent;
+    display: block;
+  }
+
+  .main-menu a:hover {
+    background-color: #0043a8;
+    color: #fff !important;
+  }
+
+  .main-menu a.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: transparent;
+    color: #0043a8 !important;
+    border: 2px solid #0043a8;
+    opacity: 0.7;
+    position: relative;
+    padding: 0.6rem 1.2rem 1.8rem 1.2rem;
+  }
+
+  .main-menu a.disabled:after {
+    content: "Kommer 25. juni";
+    position: absolute;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: #0043a8;
+    font-style: italic;
+    font-weight: normal;
+  }
+}
+
 /* Mobile menu - hidden by default */
 @media (max-width: 768px) {
   .main-menu {
@@ -761,6 +828,26 @@ p {
     color: #f0f6ff;
     font-style: italic;
     font-weight: normal;
+  }
+
+  .mobile-menu-toggle {
+    display: block !important;
+    background: #0043a8;
+    border: 2px solid #0043a8;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    font-weight: bold;
+    margin-left: auto !important;
+    position: relative;
+    z-index: 1002;
+    box-shadow: 0 4px 12px rgba(0, 67, 168, 0.4);
+    transition: all 0.3s ease;
+    line-height: 1;
+    min-width: 50px;
+    text-align: center;
   }
 }
 
