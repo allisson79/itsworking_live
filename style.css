@@ -766,7 +766,7 @@ p {
   }
 }
 
-/* Mobile menu - hidden by default */
+/* Mobile menu styles - contained within mobile media query */
 @media (max-width: 768px) {
   .main-menu {
     display: none;
@@ -782,43 +782,45 @@ p {
     padding: 0;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  }
-
-  .main-menu.show {
-    display: flex;
     flex-direction: column;
   }
 
-  .main-menu.show li {
+  .main-menu.show {
+    display: flex !important;
+  }
+
+  .main-menu li {
     margin: 0;
     width: 100%;
+    padding: 0;
   }
 
-  .main-menu.show a {
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .main-menu a {
+    display: block;
+    padding: 1rem 2rem;
     color: white;
     text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
     text-align: center;
     font-weight: 600;
-    transition: background-color 0.3s ease;
   }
 
-  .main-menu.show a:hover {
-    background-color: rgba(240, 246, 255, 0.1);
+  .main-menu a:hover {
+    background-color: rgba(30, 127, 216, 0.2);
   }
 
-  .main-menu.show li:last-child a {
+  .main-menu li:last-child a {
     border-bottom: none;
   }
 
-  .main-menu.show a.disabled {
+  .main-menu a.disabled {
     position: relative;
     padding-bottom: 2.5rem;
     opacity: 0.8;
   }
 
-  .main-menu.show a.disabled:after {
+  .main-menu a.disabled:after {
     content: "Kommer 25. juni";
     position: absolute;
     bottom: 0.5rem;
@@ -1930,24 +1932,7 @@ li[style*="border-left"]:hover {
   text-align: center;
 }
 
-  .main-menu li {
-    margin: 0;
-    padding: 0;
-  }
-
-  .main-menu a {
-    display: block;
-    padding: 1rem 2rem;
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
-  }
-
-  .main-menu a:hover {
-    background-color: rgba(30, 127, 216, 0.2);
-  }
-}
+  
 
 /* Unified Section and Component Styling */
 .hc-section {
