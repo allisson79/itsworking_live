@@ -38,10 +38,10 @@
     // Reduce animation complexity on mobile
     document.documentElement.style.setProperty('--transition-fast', '0.15s ease');
     document.documentElement.style.setProperty('--transition-medium', '0.2s ease');
-    
+
     // Optimize touch interactions
     document.body.style.touchAction = 'manipulation';
-    
+
     // Prevent zoom on input focus (iOS)
     const inputs = document.querySelectorAll('input, textarea, select');
     inputs.forEach(input => {
@@ -263,7 +263,7 @@ function initCountdown() {
   // Update countdown every second
   const intervalId = setInterval(updateCountdown, 1000);
   updateCountdown(); // Initial call
-  
+
   // Cleanup function
   return () => clearInterval(intervalId);
 }
@@ -378,7 +378,7 @@ function copyToClipboard(text) {
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize countdown
   initCountdown();
-  
+
   // Add scroll animations
   addScrollAnimations();
 
