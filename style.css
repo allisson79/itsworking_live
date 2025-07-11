@@ -2264,17 +2264,19 @@ li[style*="border-left"]:hover {
 
 /* Featured card styling */
 .hc-featured-card {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  padding: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  padding: 3rem;
   background: var(--gradient-glass);
-  border: 2px solid;
+  border: 3px solid;
   border-image: var(--gradient-border) 1;
   border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-large);
+  box-shadow: var(--shadow-huge), var(--shadow-glow);
   text-align: center;
   position: relative;
   overflow: hidden;
+  transform: translateY(0);
+  transition: all var(--transition-medium);
 }
 
 .hc-featured-card::before {
@@ -2316,6 +2318,20 @@ li[style*="border-left"]:hover {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(30, 127, 216, 0.2);
+  position: relative;
+}
+
+.hc-cards--select::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
 }
 
 .hc-cards--select .glass-card {
