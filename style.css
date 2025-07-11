@@ -1842,17 +1842,17 @@ li[style*="border-left"]:hover {
 
 .hc-container h2 {
   color: #1e7fd8;
-  margin-bottom: 1rem;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
   position: relative;
   z-index: 1;
 }
 
 .hc-container .lead {
   color: #e9ecef;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
   position: relative;
   z-index: 1;
 }
@@ -1870,18 +1870,18 @@ li[style*="border-left"]:hover {
   background: rgba(30,127,216,0.1);
   border: 1px solid rgba(30,127,216,0.4);
   border-radius: 12px;
-  padding: 1.2rem;
+  padding: 1.5rem;
   color: #e9ecef;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.8rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  min-height: 80px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  min-height: 120px;
   position: relative;
   overflow: hidden;
 }
@@ -1910,10 +1910,20 @@ li[style*="border-left"]:hover {
   left: 100%;
 }
 
+.glass-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 600;
+  color: #66d9ff;
+  z-index: 1;
+  position: relative;
+}
+
 .glass-card p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  line-height: 1.5;
+  color: #c9d1d9;
   z-index: 1;
   position: relative;
 }
@@ -2090,22 +2100,33 @@ li[style*="border-left"]:hover {
 @media screen and (max-width: 768px) {
   .hc-container {
     margin: 2rem 1rem;
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
 
   .hc-cards {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .glass-card {
-    padding: 1rem;
-    font-size: 0.85rem;
+    padding: 1.3rem;
+    font-size: 0.9rem;
+    min-height: 100px;
+  }
+
+  .glass-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .glass-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .btn-primary {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+    font-size: 1.05rem;
+    padding: 0.9rem 1.8rem;
   }
 
   .details-section {
