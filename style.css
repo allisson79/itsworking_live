@@ -2040,3 +2040,30 @@ li[style*="border-left"]:hover {
 .hc-more:hover {
   color: #66d9ff;
 }
+
+.glass-card {
+  background: rgba(30,127,216,0.1);
+  border: 1px solid rgba(30,127,216,0.4);
+  border-radius: 12px;
+  padding: 1.2rem;
+  color: #e9ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(30,127,216,0.3);
+}
+
+.glass-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
