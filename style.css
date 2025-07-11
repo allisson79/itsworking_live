@@ -2237,27 +2237,122 @@ li[style*="border-left"]:hover {
     margin: 2rem 1rem;
     padding: 1.5rem;
   }
-  
+
   .hc-cards {
     grid-template-columns: 1fr;
     gap: 0.8rem;
   }
-  
+
   .glass-card {
     padding: 1rem;
     font-size: 0.85rem;
   }
-  
+
   .btn-primary {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
-  
+
   .details-section {
     text-align: left;
   }
-  
+
   .intro-text p {
     text-align: left;
+  }
+}
+
+/* Featured card styling */
+.hc-featured-card {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 2.5rem;
+  background: var(--gradient-glass);
+  border: 2px solid;
+  border-image: var(--gradient-border) 1;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-large);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hc-featured-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-border);
+  border-radius: var(--radius-2xl);
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.hc-featured-card img {
+  height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: brightness(1.1);
+  z-index: 1;
+  position: relative;
+}
+
+.hc-featured-card p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+  z-index: 1;
+  position: relative;
+}
+
+/* Selectable grid styling */
+.hc-cards--select {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hc-cards--select .glass-card {
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.hc-cards--select .glass-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-glow);
+  background: rgba(30, 127, 216, 0.15);
+  border-color: rgba(30, 127, 216, 0.6);
+}
+
+.hc-cards--select .glass-card:active {
+  transform: translateY(-2px) scale(1.01);
+  transition: all var(--transition-fast);
+}
+
+/* Mobile responsiveness for featured card */
+@media screen and (max-width: 768px) {
+  .hc-featured-card {
+    margin: 0 auto 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .hc-featured-card img {
+    height: 60px;
+  }
+
+  .hc-featured-card p {
+    font-size: 1rem;
+  }
+
+  .hc-cards--select {
+    grid-template-columns: 1fr;
   }
 }
