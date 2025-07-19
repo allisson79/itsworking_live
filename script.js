@@ -245,7 +245,7 @@ function initCountdown() {
       const distance = launchDate - now;
 
       if (distance < 0) {
-        countdownElement.innerHTML = 'Vi er live!';
+        countdownElement.textContent = 'Vi er live!';
         return;
       }
 
@@ -254,7 +254,7 @@ function initCountdown() {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
+      countdownElement.textContent = `${days}d ${hours}t ${minutes}m ${seconds}s`;
     } catch (error) {
       console.warn('Countdown update failed:', error);
     }
