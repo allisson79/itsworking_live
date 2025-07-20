@@ -448,6 +448,169 @@ body {
   textarea {
     min-height: 44px !important;
     min-width: 44px !important;
+    touch-action: manipulation !important;
+  }
+
+  /* Mobile navbar optimizations */
+  .navbar {
+    padding: 0.75rem 1rem !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    backdrop-filter: blur(20px) !important;
+    background: rgba(10, 14, 26, 0.95) !important;
+  }
+
+  .navbar img {
+    height: clamp(60px, 8vh, 100px) !important;
+    max-width: 60vw !important;
+  }
+
+  /* Mobile menu improvements */
+  .navbar__menu {
+    right: 1rem !important;
+    min-width: calc(100vw - 2rem) !important;
+    max-width: 350px !important;
+    top: calc(100% + 0.5rem) !important;
+  }
+
+  .navbar__menu a {
+    padding: 1rem 1.5rem !important;
+    font-size: 1.1rem !important;
+    min-height: 56px !important;
+  }
+
+  /* Hero section mobile optimization */
+  .hero {
+    min-height: 60vh !important;
+    padding: 2rem 1rem !important;
+    background-attachment: scroll !important;
+  }
+
+  .hero-overlay {
+    padding: 1.5rem !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .hero-overlay h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero-overlay p {
+    font-size: clamp(1rem, 4vw, 1.2rem) !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Mobile card grid */
+  .hc-cards {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  .glass-card {
+    padding: 1.25rem !important;
+    min-height: auto !important;
+    text-align: left !important;
+  }
+
+  .glass-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .glass-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Mobile button optimization */
+  .btn-primary {
+    width: 100% !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Mobile container spacing */
+  .hc-container {
+    margin: 2rem 0.5rem !important;
+    padding: 1.5rem !important;
+    max-width: calc(100vw - 1rem) !important;
+  }
+
+  .hc-container h2 {
+    font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+    text-align: center !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .hc-container .lead {
+    font-size: clamp(1rem, 4vw, 1.2rem) !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Mobile typography */
+  main.container {
+    padding: 1rem 0.5rem !important;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    text-align: center !important;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
+  }
+
+  p {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem) !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Mobile details section */
+  .details-content {
+    padding: 1rem 0 !important;
+  }
+
+  .details-section {
+    margin-bottom: 2rem !important;
+  }
+
+  .details-list {
+    font-size: 0.9rem !important;
+  }
+
+  .details-list li {
+    padding-left: 1.2rem !important;
+    margin-bottom: 0.7rem !important;
+  }
+
+  /* Mobile footer */
+  footer {
+    padding: 1.5rem 1rem !important;
+  }
+
+  footer small {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  footer a {
+    display: block !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    padding: 0.8rem 1rem !important;
+    margin: 0.25rem auto !important;
   }
 }
 
@@ -633,11 +796,6 @@ p {
 }
 
 .navbar__toggle {
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
-.navbar__toggle {
   display: block;
   background: var(--primary-blue);
   border: 2px solid var(--primary-blue);
@@ -646,9 +804,12 @@ p {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(76, 154, 255, 0.3);
-  min-width: auto;
-  width: auto;
-  max-width: none;
+  min-width: 48px;
+  min-height: 48px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  position: relative;
+  z-index: 1002;
 }
 
 .navbar__toggle:hover {
@@ -758,7 +919,7 @@ p {
 
 
 
-/* Mobile navigation - completely rebuilt for better UX */
+/* Mobile performance optimizations */
 @media screen and (max-width: 768px) {
   /* Prevent horizontal scrolling */
   html, body {
@@ -768,11 +929,6 @@ p {
     position: relative !important;
   }
 
-  * {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
   /* Ensure all containers respect mobile boundaries */
   .container, .container-fluid, main, section, div {
     max-width: 100% !important;
@@ -780,34 +936,29 @@ p {
     box-sizing: border-box !important;
   }
 
-  body {
-    font-size: 1rem !important;
-    line-height: 1.7;
+  /* Optimize touch interactions */
+  * {
+    -webkit-tap-highlight-color: rgba(76, 154, 255, 0.3) !important;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
   }
 
-  /* Hamburger-meny synlig på mobil */
-  .mobile-menu-toggle {
-    display: block !important;
-    background: #0043a8;
-    border: 2px solid #0043a8;
-    color: white;
-    font-size: 1.8rem;
-    padding: 1rem 1.2rem;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: auto !important;
-    position: relative;
-    z-index: 1002;
-    min-width: 60px;
-    min-height: 60px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 67, 168, 0.3);
+  /* Allow text selection for content */
+  p, li, span, h1, h2, h3, h4, h5, h6 {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    -webkit-touch-callout: default;
   }
 
-  .mobile-menu-toggle:hover {
-    background-color: #0043a8;
-    color: white;
+  /* Improve tap targets */
+  button, a, input, textarea, select {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Prevent zoom on input focus (iOS) */
+  input, textarea, select {
+    font-size: 16px !important;
   }
 
   /* Navigation layout for mobil */
