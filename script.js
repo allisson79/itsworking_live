@@ -145,19 +145,7 @@
   localStorage.removeItem('theme');
 })();
 
-// Clean navbar toggle functionality
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.navbar__toggle');
-  const menu   = document.querySelector('.navbar__menu');
-
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-    const expanded = menu.classList.contains('show');
-    toggle.setAttribute('aria-expanded', expanded);
-  });
-});
+// This functionality is handled in the enhanced navbar toggle section above
 
 // FAQ toggle functionality
 function toggleFAQ(element) {
@@ -487,9 +475,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close mobile menu if open
-        const mobileMenu = document.querySelector('.main-menu');
-        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
-          mobileMenu.classList.remove('mobile-menu-open');
+        const mobileMenu = document.querySelector('.navbar__menu');
+        if (mobileMenu && mobileMenu.classList.contains('show')) {
+          mobileMenu.classList.remove('show');
         }
       }
     });

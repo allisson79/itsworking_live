@@ -643,7 +643,7 @@ img {
 .navbar img {
   height: clamp(120px, 12vh, 180px);
   max-width: 350px;
-  width: auto;
+  width: auto !important;
   object-fit: contain;
   transition: all 0.3s ease;
 }
@@ -944,7 +944,7 @@ p {
   }
 
   /* Allow text selection for content */
-  p, li, span, h1, h2, h3, h4, h5, h6 {
+  p, li, span, h1, h2, h3, h4, h5, h5 {
     -webkit-user-select: text !important;
     user-select: text !important;
     -webkit-touch-callout: default;
@@ -987,8 +987,7 @@ p {
   nav img {
     height: clamp(140px, 22vh, 280px) !important;
     max-width: 90vw !important;
-    width:```python
- auto !important;
+    width: auto !important;
     object-fit: contain !important;
     transition: all 0.3s ease !important;
   }
@@ -1770,6 +1769,7 @@ footer a:hover {
   content: "✓";
   position: absolute;
   left: 0;
+```text
   color: #28a745;
   font-weight: bold;
 }
