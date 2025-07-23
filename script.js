@@ -201,10 +201,18 @@ function copyLink() {
 }
 
 function openBlogPost(postId) {
+  // Validate postId to prevent open redirect attacks
+  const allowedPostIds = ['phishing-trondheim', 'backup-strategi', 'passord-sikkerhet', 'fiber-utbygging', 'hjemmekontor-sikkerhet', 'gdpr-endringer'];
+  
+  if (!allowedPostIds.includes(postId)) {
+    console.warn('Invalid post ID:', postId);
+    return;
+  }
+
   const postUrls = {
-    'phishing-trondheim': 'blog-post-phishing.html',
-    'backup-strategi': 'blog-post-backup.html',
-    'passord-sikkerhet': 'blog-post-passord.html',
+    'phishing-trondheim': 'blog_backup/blog-post-phishing.html',
+    'backup-strategi': 'blog_backup/blog-post-backup.html',
+    'passord-sikkerhet': 'blog_backup/blog-post-passord.html',
     'fiber-utbygging': '#', // Placeholder - post doesn't exist yet
     'hjemmekontor-sikkerhet': '#', // Placeholder - post doesn't exist yet
     'gdpr-endringer': '#' // Placeholder - post doesn't exist yet
@@ -212,7 +220,12 @@ function openBlogPost(postId) {
 
   const url = postUrls[postId];
   if (url && url !== '#') {
-    window.location.href = url;
+    // Only allow relative URLs to prevent external redirects
+    if (!url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('//')) {
+      window.location.href = url;
+    } else {
+      console.warn('External URL blocked for security:', url);
+    }
   } else {
     alert('Denne artikkelen kommer snart!');
   }
@@ -326,6 +339,7 @@ function initCountdown() {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+      // Use textContent to prevent XSS attacks
       countdownElement.textContent = `${days}d ${hours}t ${minutes}m ${seconds}s`;
     } catch (error) {
       console.warn('Countdown update failed:', error);
