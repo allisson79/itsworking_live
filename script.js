@@ -1,11 +1,14 @@
-// Mobile performance optimizations
+// Mobile performance and accessibility optimizations
 (function() {
   'use strict';
+
+  // Mobile detection
+  const isMobile = window.innerWidth <= 768;
+  const isTouch = 'ontouchstart' in window;
 
   // Optimize scroll performance on mobile
   let ticking = false;
   function updateScrollPosition() {
-    // Add any scroll-based animations here
     ticking = false;
   }
 
@@ -16,14 +19,21 @@
     }
   }
 
+  // Use passive listeners for better performance
   window.addEventListener('scroll', requestScrollTick, { passive: true });
 
-  // Prevent iOS bounce scrolling and improve touch handling
-  document.addEventListener('touchmove', function(e) {
-    if (e.target.closest('.mobile-menu-open')) {
-      e.preventDefault();
+  // Prevent menu body scroll when mobile menu is open
+  function toggleBodyScroll(disable) {
+    if (disable) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     }
-  }, { passive: false });
+  }
 
   // Optimize images for mobile
   if ('loading' in HTMLImageElement.prototype) {
@@ -34,20 +44,94 @@
   }
 
   // Add mobile-specific optimizations
-  if (window.innerWidth <= 768) {
+  if (isMobile) {
     // Reduce animation complexity on mobile
     document.documentElement.style.setProperty('--transition-fast', '0.15s ease');
     document.documentElement.style.setProperty('--transition-medium', '0.2s ease');
+    document.documentElement.style.setProperty('--transition-slow', '0.3s ease');
 
     // Optimize touch interactions
     document.body.style.touchAction = 'manipulation';
 
-    // Prevent zoom on input focus (iOS)
+    // Prevent zoom on input focus (iOS Safari)
     const inputs = document.querySelectorAll('input, textarea, select');
     inputs.forEach(input => {
       input.style.fontSize = '16px';
+      input.addEventListener('focus', function() {
+        this.style.fontSize = '16px';
+      }, { passive: true });
     });
+
+    // Add visual feedback for touch
+    document.addEventListener('touchstart', function(e) {
+      if (e.target.matches('button, a, [role="button"]')) {
+        e.target.style.transform = 'scale(0.95)';
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+      if (e.target.matches('button, a, [role="button"]')) {
+        setTimeout(() => {
+          e.target.style.transform = '';
+        }, 100);
+      }
+    }, { passive: true });
   }
+
+  // Enhanced navbar toggle for mobile
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.navbar__toggle');
+    const menu = document.querySelector('.navbar__menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isOpen = menu.classList.contains('show');
+        
+        if (isOpen) {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggleBodyScroll(false);
+        } else {
+          menu.classList.add('show');
+          toggle.setAttribute('aria-expanded', 'true');
+          if (isMobile) {
+            toggleBodyScroll(true);
+          }
+        }
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggleBodyScroll(false);
+        }
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('show')) {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggleBodyScroll(false);
+          toggle.focus();
+        }
+      });
+
+      // Close menu when clicking nav links
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggleBodyScroll(false);
+        });
+      });
+    }
+  });
 })();
 
 // Force dark mode only
@@ -61,19 +145,7 @@
   localStorage.removeItem('theme');
 })();
 
-// Clean navbar toggle functionality
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.navbar__toggle');
-  const menu   = document.querySelector('.navbar__menu');
-
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-    const expanded = menu.classList.contains('show');
-    toggle.setAttribute('aria-expanded', expanded);
-  });
-});
+// This functionality is handled in the enhanced navbar toggle section above
 
 // FAQ toggle functionality
 function toggleFAQ(element) {
@@ -129,10 +201,18 @@ function copyLink() {
 }
 
 function openBlogPost(postId) {
+  // Validate postId to prevent open redirect attacks
+  const allowedPostIds = ['phishing-trondheim', 'backup-strategi', 'passord-sikkerhet', 'fiber-utbygging', 'hjemmekontor-sikkerhet', 'gdpr-endringer'];
+  
+  if (!allowedPostIds.includes(postId)) {
+    console.warn('Invalid post ID:', postId);
+    return;
+  }
+
   const postUrls = {
-    'phishing-trondheim': 'blog-post-phishing.html',
-    'backup-strategi': 'blog-post-backup.html',
-    'passord-sikkerhet': 'blog-post-passord.html',
+    'phishing-trondheim': 'blog_backup/blog-post-phishing.html',
+    'backup-strategi': 'blog_backup/blog-post-backup.html',
+    'passord-sikkerhet': 'blog_backup/blog-post-passord.html',
     'fiber-utbygging': '#', // Placeholder - post doesn't exist yet
     'hjemmekontor-sikkerhet': '#', // Placeholder - post doesn't exist yet
     'gdpr-endringer': '#' // Placeholder - post doesn't exist yet
@@ -140,7 +220,12 @@ function openBlogPost(postId) {
 
   const url = postUrls[postId];
   if (url && url !== '#') {
-    window.location.href = url;
+    // Only allow relative URLs to prevent external redirects
+    if (!url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('//')) {
+      window.location.href = url;
+    } else {
+      console.warn('External URL blocked for security:', url);
+    }
   } else {
     alert('Denne artikkelen kommer snart!');
   }
@@ -245,7 +330,7 @@ function initCountdown() {
       const distance = launchDate - now;
 
       if (distance < 0) {
-        countdownElement.innerHTML = 'Vi er live!';
+        countdownElement.textContent = 'Vi er live!';
         return;
       }
 
@@ -254,7 +339,8 @@ function initCountdown() {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdownElement.innerHTML = `${days}d ${hours}t ${minutes}m ${seconds}s`;
+      // Use textContent to prevent XSS attacks
+      countdownElement.textContent = `${days}d ${hours}t ${minutes}m ${seconds}s`;
     } catch (error) {
       console.warn('Countdown update failed:', error);
     }
@@ -403,9 +489,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close mobile menu if open
-        const mobileMenu = document.querySelector('.main-menu');
-        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
-          mobileMenu.classList.remove('mobile-menu-open');
+        const mobileMenu = document.querySelector('.navbar__menu');
+        if (mobileMenu && mobileMenu.classList.contains('show')) {
+          mobileMenu.classList.remove('show');
         }
       }
     });
