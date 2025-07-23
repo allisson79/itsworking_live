@@ -780,25 +780,25 @@ p {
   justify-content: space-between;
   padding: 1rem 2rem;
   background: rgba(10,14,26,0.9);
-  position: relative;
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
 .navbar__brand {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
+  flex-shrink: 0;
 }
 
 .navbar__brand a {
-  flex-shrink: 0;
-  flex-grow: 0;
+  display: flex;
+  align-items: center;
 }
 
 .navbar__toggle {
-  display: block;
+  display: none;
   background: var(--primary-blue);
   border: 2px solid var(--primary-blue);
   border-radius: 8px;
@@ -809,7 +809,6 @@ p {
   min-width: 48px;
   min-height: 48px;
   flex-shrink: 0;
-  flex-grow: 0;
   position: relative;
   z-index: 1002;
 }
@@ -839,82 +838,119 @@ p {
 .hamburger::before { top: -6px; }
 .hamburger::after  { top:  6px; }
 
+/* Desktop horizontal menu */
 .navbar__menu {
-  display: none;
-  flex-direction: column;
-  background: linear-gradient(135deg, rgba(10,14,26,0.95), rgba(22,27,34,0.95));
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(76, 154, 255, 0.3);
-  border-radius: 16px;
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 2rem;
-  min-width: 300px;
-  padding: 1.5rem;
-  box-shadow: 0 12px 35px rgba(0, 42, 92, 0.4);
-  z-index: 1001;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   list-style: none;
   margin: 0;
-  gap: 0.5rem;
-}
-
-.navbar__menu.show {
-  display: flex;
+  padding: 0;
+  gap: 2rem;
+  background: transparent;
+  position: static;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .navbar__menu li {
   margin: 0;
-  width: 100%;
+  width: auto;
 }
 
 .navbar__menu a {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 1.1rem;
-  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
   margin: 0;
   border-radius: 8px;
   font-weight: 600;
-  background: rgba(240, 246, 255, 0.15);
-  border: 2px solid rgba(240, 246, 255, 0.3);
+  background: transparent;
+  border: 2px solid transparent;
   color: #f0f6ff;
-  transition: all 0.2s ease;
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-height: auto;
+  box-shadow: none;
   box-sizing: border-box;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .navbar__menu a:hover {
-  background: rgba(240, 246, 255, 0.25);
-  border-color: rgba(76, 154, 255, 0.5);
-  transform: translateY(-2px);
+  background: rgba(76, 154, 255, 0.15);
+  border-color: rgba(76, 154, 255, 0.3);
+  transform: translateY(-1px);
+  color: var(--accent-blue);
 }
 
 .navbar__menu a:active {
   transform: scale(0.98);
-  background: rgba(240, 246, 255, 0.35);
+  background: rgba(76, 154, 255, 0.25);
 }
 
-.navbar__menu a.disabled {
-  opacity: 0.6;
-  position: relative;
-  padding-bottom: 2.5rem;
+.navbar__menu a.active {
+  background: rgba(76, 154, 255, 0.2);
+  border-color: rgba(76, 154, 255, 0.4);
+  color: var(--accent-blue);
 }
 
-.navbar__menu a.disabled:after {
-  content: "Kommer snart";
-  position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.8rem;
-  color: var(--primary-blue);
-  font-style: italic;
-  font-weight: normal;
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .navbar__brand {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgba(10,14,26,0.95), rgba(22,27,34,0.95));
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(76, 154, 255, 0.3);
+    border-radius: 16px;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 2rem;
+    min-width: 300px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 35px rgba(0, 42, 92, 0.4);
+    z-index: 1001;
+    gap: 0.5rem;
+  }
+
+  .navbar__menu.show {
+    display: flex;
+  }
+
+  .navbar__menu li {
+    width: 100%;
+  }
+
+  .navbar__menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(240, 246, 255, 0.15);
+    border: 2px solid rgba(240, 246, 255, 0.3);
+    min-height: 48px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar__menu a:hover {
+    background: rgba(240, 246, 255, 0.25);
+    border-color: rgba(76, 154, 255, 0.5);
+    transform: translateY(-2px);
+  }
 }
 
 
