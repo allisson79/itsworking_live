@@ -530,11 +530,13 @@ body {
   /* Mobile button optimization */
   .btn-primary {
     width: 100% !important;
+    max-width: 300px !important;
     padding: 1rem 1.5rem !important;
     font-size: 1.1rem !important;
     text-align: center !important;
     display: block !important;
     box-sizing: border-box !important;
+    margin: 0 auto !important;
   }
 
   /* Mobile container spacing */
@@ -2095,6 +2097,9 @@ li[style*="border-left"]:hover {
   position: relative;
   z-index: 1;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-primary {
