@@ -1191,12 +1191,16 @@ p {
     flex-direction: column !important;
     gap: 0.8rem !important;
     margin-top: 1rem !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .hero-overlay a {
     display: block !important;
     width: 100% !important;
+    max-width: 300px !important;
     padding: 0.8rem 1rem !important;
+    text-align: center !important;
 
 /* Additional mobile overflow prevention */
 @media screen and (max-width: 768px) {
@@ -2377,6 +2381,10 @@ li[style*="border-left"]:hover {
 
 .hero .hc-cards {
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .hero .glass-card {
@@ -2384,6 +2392,10 @@ li[style*="border-left"]:hover {
   border: none;
   padding: 0;
   min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .hero .btn-primary {
