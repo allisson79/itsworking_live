@@ -84,6 +84,17 @@
     const menu = document.querySelector('.navbar__menu');
 
     if (toggle && menu) {
+      // Improve touch responsiveness
+      toggle.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        toggle.style.transform = 'scale(0.95)';
+      }, { passive: false });
+
+      toggle.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        toggle.style.transform = 'scale(1)';
+      }, { passive: false });
+
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
