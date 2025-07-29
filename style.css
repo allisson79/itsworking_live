@@ -1912,7 +1912,6 @@ footer a:hover {
   content: "✓";
   position: absolute;
   left: 0;
-```text
   color: #28a745;
   font-weight: bold;
 }
@@ -2484,9 +2483,20 @@ li[style*="border-left"]:hover {
 /* Why Choose Us Section - Redesigned */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
+}
+
+.why-icon {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1;
 }
 
 .why-card {
