@@ -78,27 +78,31 @@
     }, { passive: true });
   }
 
-  // Simple mobile menu toggle
+  // Enhanced mobile menu toggle
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.navbar__toggle');
     const menu = document.querySelector('.navbar__menu');
 
     if (toggle && menu) {
-      console.log('Mobile menu elements found');
+      console.log('Mobile menu initialized');
       
-      toggle.addEventListener('click', () => {
-        console.log('Toggle clicked');
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         
         const isOpen = menu.classList.contains('mobile-open');
-        console.log('Menu is open:', isOpen);
         
         if (isOpen) {
           menu.classList.remove('mobile-open');
           toggle.textContent = '☰';
+          toggle.setAttribute('aria-expanded', 'false');
+          toggleBodyScroll(false);
           console.log('Menu closed');
         } else {
           menu.classList.add('mobile-open');
           toggle.textContent = '✕';
+          toggle.setAttribute('aria-expanded', 'true');
+          toggleBodyScroll(true);
           console.log('Menu opened');
         }
       });
@@ -108,11 +112,26 @@
         link.addEventListener('click', () => {
           menu.classList.remove('mobile-open');
           toggle.textContent = '☰';
+          toggle.setAttribute('aria-expanded', 'false');
+          toggleBodyScroll(false);
         });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+          if (menu.classList.contains('mobile-open')) {
+            menu.classList.remove('mobile-open');
+            toggle.textContent = '☰';
+            toggle.setAttribute('aria-expanded', 'false');
+            toggleBodyScroll(false);
+          }
+        }
       });
 
       // Initialize
       toggle.textContent = '☰';
+      toggle.setAttribute('aria-expanded', 'false');
     }
   });
 })();
