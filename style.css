@@ -920,6 +920,7 @@ p {
   opacity: 1 !important;
   visibility: visible !important;
   z-index: 99999 !important;
+  display: flex !important;
 }
 
 .mobile-menu-content {
@@ -940,6 +941,7 @@ p {
 
 .mobile-menu-overlay.active .mobile-menu-content {
   transform: scale(1) !important;
+  opacity: 1 !important;
 }
 
 .mobile-menu-header {
