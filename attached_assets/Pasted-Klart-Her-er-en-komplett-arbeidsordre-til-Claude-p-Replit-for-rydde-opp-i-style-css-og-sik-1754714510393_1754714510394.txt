@@ -1,0 +1,141 @@
+Klart. Her er en **komplett arbeidsordre til Claude på Replit** for å rydde opp i `style.css` og sikre at hamburger-menyen **alltid** vises når `mobile-open` er satt. Kopiér alt under og lim inn i Claude.
+
+---
+
+**Claude-ordre: “Consolidate & Fix mobile menu CSS (authoritative override)”**
+
+**Mål:**
+
+* Én (1) konsolidert mobil-definisjon for `.navbar__menu`.
+* `display:none` som default på mobil, og `display:flex !important` når `.mobile-open` er aktiv.
+* Ingen andre mobil-regler for `.navbar__menu` som kan overstyre dette.
+* Toggle-knapp synlig kun på mobil, skjult på desktop.
+
+---
+
+### 1) Rydding i `style.css`
+
+**A. Finn og fjern/kommenter ut alle andre mobil-blokker som setter regler på `.navbar__menu` eller `.navbar__menu.mobile-open`.**
+
+* Søk etter:
+
+  * `@media`-blokker med `(max-width: 768px)` **som inneholder** `.navbar__menu`
+  * Alle forekomster av `.navbar__menu { ... }` eller `.navbar__menu.mobile-open { ... }` **inni** slike mobil-blokker
+* Behold gjerne øvrig styling (farger, padding osv.) et annet sted, men **ikke** la det stå igjen flere `display:`-regler for `.navbar__menu` i andre mobil-blokker.
+* Fjern også eventuelle *legacy* mønstre (hvis de finnes): `nav ul:last-child.mobile-menu-open { ... }`.
+
+**B. Sørg for at det ikke finnes noen `display: none !important;` på `.navbar__menu` utenfor sluttblokken vi legger inn.**
+
+* Hvis du finner det, fjern/kommenter ut.
+
+---
+
+### 2) Legg inn **autoritativ sluttblokk** (lim inn helt nederst i `style.css`)
+
+> Denne blokken skal ligge **aller sist** i `style.css` slik at den vinner alle spesifisitets-/rekkefølge-konflikter.
+
+```css
+/* ==== AUTHORITATIVE MOBILE NAV OVERRIDE – KEEP THIS AT EOF ==== */
+
+/* Desktop (≥769px): meny horisontal, toggle skjules */
+@media (min-width: 769px) {
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .navbar__toggle {
+    display: none !important;
+  }
+}
+
+/* Mobil (≤768px): meny skjult by default, vises kun med .mobile-open */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    background: #4c9aff;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 12px 16px;
+    z-index: 1001; /* over menu-container */
+  }
+
+  /* DEFAULT: skjult */
+  .navbar__menu {
+    display: none !important;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    /* Flytende container (tilpass ved behov) */
+    position: fixed;
+    top: 80px;       /* justér etter header-høyde */
+    left: 1rem;
+    right: 1rem;
+    z-index: 1000;
+
+    /* Stil – behold/tilpass til deres design */
+    background: #1a2332;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #4c9aff;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.4);
+  }
+
+  /* ÅPEN: vises */
+  .navbar__menu.mobile-open {
+    display: flex !important;
+  }
+
+  .navbar__menu li {
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+  .navbar__menu li:last-child { margin-bottom: 0; }
+
+  .navbar__menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem;
+    background: rgba(76, 154, 255, 0.1);
+    border: 1px solid rgba(76, 154, 255, 0.3);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #f0f6ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  .navbar__menu a:hover {
+    background: rgba(76, 154, 255, 0.2);
+    border-color: rgba(76, 154, 255, 0.5);
+    transform: translateY(-2px);
+  }
+}
+/* ==== END AUTHORITATIVE MOBILE NAV OVERRIDE ==== */
+```
+
+---
+
+### 3) Verifikasjon (QA)
+
+* Sett nettleseren i mobilbredde (≤768 px).
+* Trykk ☰ → meny vises (Computed `display` = `flex`).
+* Trykk lenke med `href="#seksjon"` → smooth scroll + meny lukkes.
+* Klikk utenfor meny → meny lukkes.
+* Desktop (≥769 px): Meny horisontal, toggle skjules.
+
+**Hvis meny fortsatt ikke vises:**
+
+* Sjekk i DevTools “Computed” for `.navbar__menu.mobile-open` at `display` faktisk er `flex`, og at **ingen annen regel etter EOF-blokken** overstyrer dette.
+* Bekreft at `script.js` toggler `mobile-open` på `<ul class="navbar__menu">` og at `aria-expanded` endres på knappen.
+
+**Slutt.**
