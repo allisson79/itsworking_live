@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SmartFiber - Its Working</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .onepage-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .section-spacing {
+      padding: 3rem 0;
+    }
+
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #0043a8, transparent);
+      margin: 3rem 0;
+    }
+
+    .highlight-box {
+      background: #f8f9fa;
+      border: 2px solid #0043a8;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .onepage-nav img {
+        height: 100px !important;
+      }
+
+      .section-spacing {
+        margin: 2rem 0;
+        padding: 2rem 0;
+      }
+
+      .price-table th,
+      .price-table td {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- NAVIGASJON -->
+  <nav class="onepage-nav container-fluid">
+    <ul>
+      <li>
+        <strong><a href="index.html"><img src="its_working_logo_transparent.png" alt="Its Working - Hjem" style="height: 150px" /></a></strong>
+      </li>
+      <li>
+        <button class="mobile-menu-toggle" aria-label="Åpne meny">☰</button>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="#hjem" class="nav-link">Hjem</a></li>
+      <li><a href="#fordeler" class="nav-link">Fordeler</a></li>
+      <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- HJEM SEKSJON -->
+  <section id="hjem">
+    <header style="background-image: url('hero_trondheim.jpg')" class="hero">
+      <div class="hero-overlay">
+        <h1>SmartFiber for restaurant og uteliv</h1>
+        <p>Komplett IT-løsning med lynrask fiber, sikker betaling og automatisk backup – alt du trenger for smidig drift.</p>
+      </div>
+    </header>
+
+    <main class="container section-spacing">
+      <h2>Alt du trenger i én pakke</h2>
+      <p>SmartFiber er utviklet spesielt for restaurant- og utelivsbransjen i Trondheim. Med GlobalConnects robuste infrastruktur og Its Workings lokale service får du en komplett løsning som dekker alle dine IT-behov.</p>
+
+      <div class="highlight-box">
+        <h3>Lokal forankring – trygg og rask service</h3>
+        <p>Its Working AS kjenner restaurant- og utelivsbransjen i Trondheim og tilbyr personlig oppfølging og rask respons. Med GlobalConnects robuste infrastruktur får du det beste fra to verdener: moderne teknologi og lokal tilstedeværelse.</p>
+      </div>
+    </main>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- FORDELER SEKSJON -->
+  <section id="fordeler">
+    <header style="background-image: url('velge oss.png')" class="hero">
+      <div class="hero-overlay">
+        <h1>Fordeler for din bedrift</h1>
+        <p>SmartFiber gir deg alt du trenger for smidig drift i restaurant- og utelivsbransjen</p>
+      </div>
+    </header>
+
+    <main class="container section-spacing">
+      <h3>Høy oppetid og driftssikkerhet</h3>
+      <p>Lynrask fiber med automatisk 4G-backup sikrer kontinuerlig drift – selv ved linjebrudd.</p>
+
+      <h3>Sikker betaling og personvern</h3>
+      <p>Innebygd brannmur og datakryptering gir trygg kortbruk og full GDPR-samsvar.</p>
+
+      <h3>Eget gjestenettverk</h3>
+      <p>Separat og sikkert WiFi for gjester – uten å kompromittere driftsnettverket.</p>
+
+      <h3>Skalerbar og fleksibel</h3>
+      <p>Enkel utvidelse og tilpasning når virksomheten vokser eller endrer behov.</p>
+
+      <h3>Enkel administrasjon</h3>
+      <p>Automatisk vedlikehold og oppdateringer – krever ingen IT-kompetanse fra din side.</p>
+    </main>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- KONTAKT SEKSJON -->
+  <section id="kontakt">
+    <main class="container section-spacing">
+      <h2>Kontakt oss</h2>
+      <p>Vil du vite mer om SmartFiber? Ta kontakt for en uforpliktende samtale.</p>
+
+      <div class="highlight-box">
+        <p><strong>E-post:</strong> <a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a></p>
+        <p><strong>Telefon:</strong> Kommer snart</p>
+        <p><strong>Adresse:</strong> Trondheim</p>
+      </div>
+    </main>
+  </section>
+
+  <footer class="container">
+    <small>
+      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a>
+    </small>
+  </footer>
+</body>
+</html>
