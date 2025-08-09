@@ -84,12 +84,15 @@
     const menu = document.querySelector('.navbar__menu');
 
     if (toggle && menu) {
-      console.log('Mobile menu initialized');
+      console.log('Mobile menu elements found');
       
       toggle.addEventListener('click', () => {
-        console.log('Menu toggle clicked');
+        console.log('Toggle clicked');
         
-        if (menu.classList.contains('mobile-open')) {
+        const isOpen = menu.classList.contains('mobile-open');
+        console.log('Menu is open:', isOpen);
+        
+        if (isOpen) {
           menu.classList.remove('mobile-open');
           toggle.textContent = '☰';
           console.log('Menu closed');
@@ -108,7 +111,7 @@
         });
       });
 
-      // Initialize toggle text
+      // Initialize
       toggle.textContent = '☰';
     }
   });
