@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Page loaded - mobile menu removed');
+  console.log('Page loaded - all mobile menu functionality removed');
 });
