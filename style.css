@@ -952,6 +952,7 @@ p {
   }
 
   .navbar__menu {
+    display: none;
     position: absolute;
     top: calc(100% + 0.5rem);
     right: 1rem;
@@ -975,6 +976,7 @@ p {
   }
 
   .navbar__menu.show {
+    display: flex !important;
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
