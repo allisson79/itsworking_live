@@ -84,33 +84,36 @@
     const menu = document.querySelector('.navbar__menu');
 
     if (toggle && menu) {
+      console.log('Mobile menu elements found'); // Debug log
+      
       // Add click event listener for hamburger menu
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         
+        console.log('Toggle clicked'); // Debug log
+        
         const isOpen = menu.classList.contains('show');
+        console.log('Menu is open:', isOpen); // Debug log
         
         if (isOpen) {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
           toggleBodyScroll(false);
-          // Reset hamburger animation
           toggle.classList.remove('active');
+          console.log('Menu closed'); // Debug log
         } else {
           menu.classList.add('show');
           toggle.setAttribute('aria-expanded', 'true');
-          if (isMobile) {
-            toggleBodyScroll(true);
-          }
-          // Animate hamburger to X
+          toggleBodyScroll(true);
           toggle.classList.add('active');
+          console.log('Menu opened'); // Debug log
         }
       });
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
-        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        if (!toggle.contains(e.target) && !menu.contains(e.target) && menu.classList.contains('show')) {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
           toggle.classList.remove('active');
@@ -138,6 +141,8 @@
           toggleBodyScroll(false);
         });
       });
+    } else {
+      console.log('Mobile menu elements not found:', { toggle, menu }); // Debug log
     }
   });
 })();

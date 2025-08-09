@@ -970,12 +970,15 @@ p {
     gap: 0.5rem;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
   }
 
   .navbar__menu.show {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
   }
 
   .navbar__menu li {
