@@ -84,17 +84,7 @@
     const menu = document.querySelector('.navbar__menu');
 
     if (toggle && menu) {
-      // Improve touch responsiveness
-      toggle.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        toggle.style.transform = 'scale(0.95)';
-      }, { passive: false });
-
-      toggle.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        toggle.style.transform = 'scale(1)';
-      }, { passive: false });
-
+      // Add click event listener for hamburger menu
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -105,12 +95,16 @@
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
           toggleBodyScroll(false);
+          // Reset hamburger animation
+          toggle.classList.remove('active');
         } else {
           menu.classList.add('show');
           toggle.setAttribute('aria-expanded', 'true');
           if (isMobile) {
             toggleBodyScroll(true);
           }
+          // Animate hamburger to X
+          toggle.classList.add('active');
         }
       });
 
@@ -119,6 +113,7 @@
         if (!toggle.contains(e.target) && !menu.contains(e.target)) {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('active');
           toggleBodyScroll(false);
         }
       });
@@ -128,6 +123,7 @@
         if (e.key === 'Escape' && menu.classList.contains('show')) {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('active');
           toggleBodyScroll(false);
           toggle.focus();
         }
@@ -138,6 +134,7 @@
         link.addEventListener('click', () => {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('active');
           toggleBodyScroll(false);
         });
       });
