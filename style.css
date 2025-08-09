@@ -938,10 +938,6 @@ p {
   }
 }
 
-
-
-
-
 /* Mobile performance and UX optimizations */
 @media screen and (max-width: 768px) {
   html {
@@ -1056,7 +1052,7 @@ p {
   }
 }
 
-/* Modern button styles */
+/* Modern Button styles */
 footer a {
   padding: 1rem 2rem;
   border: 2px solid rgba(30, 127, 216, 0.5);

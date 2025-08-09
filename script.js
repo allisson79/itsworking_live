@@ -1,72 +1,41 @@
 
-// Clean Mobile Navigation Script
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Mobile menu initialized');
-
   const toggleBtn = document.querySelector('.navbar__toggle');
   const menu = document.querySelector('.navbar__menu');
 
   if (!toggleBtn || !menu) {
-    console.warn('Navigation elements not found');
+    console.warn('Menu elements not found');
     return;
   }
 
-  // Toggle menu function
-  const toggleMenu = () => {
-    const isOpen = menu.classList.contains('mobile-open');
-    if (isOpen) {
-      menu.classList.remove('mobile-open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      console.log('Menu closed');
-    } else {
-      menu.classList.add('mobile-open');
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      console.log('Menu opened');
-    }
-  };
-
-  // Close menu function
-  const closeMenu = () => {
-    menu.classList.remove('mobile-open');
-    toggleBtn.setAttribute('aria-expanded', 'false');
-  };
-
-  // Toggle button click
   toggleBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    console.log('Menu toggle clicked');
-    toggleMenu();
-  });
-
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
-      if (menu.classList.contains('mobile-open')) {
-        closeMenu();
-      }
+    menu.classList.toggle('mobile-open');
+    
+    if (menu.classList.contains('mobile-open')) {
+      console.log('Menu opened');
+      document.body.style.overflow = 'hidden'; // Prevent scroll
+    } else {
+      console.log('Menu closed');
+      document.body.style.overflow = ''; // Restore scroll
     }
   });
 
-  // Close on navigation click
+  // Close menu when clicking a link
   menu.addEventListener('click', (e) => {
     if (e.target.tagName === 'A') {
-      closeMenu();
+      menu.classList.remove('mobile-open');
+      document.body.style.overflow = '';
+      console.log('Menu closed via link click');
     }
   });
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-        closeMenu();
-      }
-    });
+  // Close menu when clicking outside (on the overlay)
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) {
+      menu.classList.remove('mobile-open');
+      document.body.style.overflow = '';
+      console.log('Menu closed via overlay click');
+    }
   });
-
-  // Initialize aria state
-  toggleBtn.setAttribute('aria-expanded', 'false');
 });
