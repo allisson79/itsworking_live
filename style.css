@@ -904,55 +904,55 @@ p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 14, 26, 0.98);
-  backdrop-filter: blur(20px);
-  z-index: 9999;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 99999;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: 2rem;
+  padding: 1rem;
 }
 
 .mobile-menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-  z-index: 9999;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 99999 !important;
 }
 
 .mobile-menu-content {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 400px;
-  padding: 1rem;
+  max-width: 350px;
+  padding: 2rem;
   position: relative;
-  transform: translateY(-30px);
+  transform: scale(0.8);
   transition: transform 0.3s ease;
-  background: rgba(15, 20, 25, 0.95);
-  border-radius: 16px;
-  border: 2px solid rgba(76, 154, 255, 0.3);
-  margin: 0 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  background: #1a1a2e;
+  border-radius: 20px;
+  border: 3px solid #4c9aff;
+  margin: 0;
+  box-shadow: 0 0 50px rgba(76, 154, 255, 0.5);
 }
 
 .mobile-menu-overlay.active .mobile-menu-content {
-  transform: translateY(0);
+  transform: scale(1) !important;
 }
 
 .mobile-menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(76, 154, 255, 0.2);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #4c9aff;
 }
 
 .mobile-menu-header img {
-  height: 40px;
+  height: 50px;
   width: auto;
 }
 
@@ -1010,28 +1010,29 @@ p {
 /* Mobile Navigation Links */
 .mobile-menu-nav {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem 0;
-  margin: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .mobile-nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-  background: rgba(76, 154, 255, 0.1);
-  border: 1px solid rgba(76, 154, 255, 0.3);
-  border-radius: 12px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1.5rem !important;
+  background: #4c9aff !important;
+  border: 2px solid #66d9ff !important;
+  border-radius: 15px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
 .mobile-nav-link::before {
@@ -1087,24 +1088,25 @@ p {
 
 /* Mobile Menu Footer */
 .mobile-menu-footer {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(76, 154, 255, 0.2);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #4c9aff;
 }
 
 .mobile-contact-btn {
-  display: block;
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(135deg, #4c9aff, #0066cc);
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
+  display: block !important;
+  width: 100% !important;
+  padding: 1.5rem !important;
+  background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 15px !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
 .mobile-contact-btn:hover {
