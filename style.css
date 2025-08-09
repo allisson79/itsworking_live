@@ -878,13 +878,16 @@ p {
     box-shadow: 0 8px 32px rgba(0,0,0,0.5);
     border: 2px solid rgba(76, 154, 255, 0.4);
     gap: 0;
+    z-index: 9999;
     
     /* Start completely hidden */
-    display: none;
+    display: none !important;
   }
 
   .navbar__menu.mobile-open {
     display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .navbar__menu li {
