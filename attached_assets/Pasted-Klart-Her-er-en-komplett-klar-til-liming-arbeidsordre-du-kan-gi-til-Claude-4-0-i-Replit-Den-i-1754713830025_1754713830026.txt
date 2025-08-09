@@ -1,0 +1,223 @@
+Klart. Her er en **komplett, klar-til-liming arbeidsordre** du kan gi til Claude 4.0 i Replit. Den inkluderer målbildet, konkrete filendringer, midlertidig debug-telemetri, og akseptansekriterier. Copy-paste alt under inn i Claude.
+
+---
+
+**Claude-ordre: “Fix & Verify – Mobile hamburger menu (Replit)”**
+
+**Mål:**
+
+* Menyen skal åpne/lukke på mobil ved trykk på ☰.
+* Menyen skal lukkes ved klikk på menypunkt (interne ankere) og ved klikk utenfor.
+* `aria-expanded` oppdateres korrekt.
+* CSS-konflikter elimineres.
+* Debug-telemetri viser at skriptet er lastet og hvilken `display` menyen faktisk har.
+
+---
+
+### 1) `details.html` – verifiser markup for nav
+
+Finn navigasjonsdelen og sørg for **identisk** markup på toggle og meny:
+
+```html
+<button class="navbar__toggle" type="button" aria-label="Åpne meny" aria-controls="primary-nav" aria-expanded="false">☰</button>
+
+<ul id="primary-nav" class="navbar__menu">
+  <!-- menyelementer -->
+</ul>
+```
+
+> NB: Klassen **må** være `navbar__menu` på UL, og knappen **må** være `navbar__toggle`. Ikke dupliser alternative menycontainere.
+
+---
+
+### 2) `script.js` – erstatt hele filen med verifisert implementasjon + debug
+
+Erstatt alt innhold i `script.js` med følgende:
+
+```javascript
+// script.js — mobilnavigasjon + smooth scroll + diagnostikk
+document.addEventListener('DOMContentLoaded', () => {
+  const ts = new Date().toISOString();
+  console.log('[NAV] script.js LOADED', ts);
+
+  const toggleBtn = document.querySelector('.navbar__toggle');
+  const menu = document.querySelector('.navbar__menu');
+
+  if (!toggleBtn || !menu) {
+    console.warn('[NAV] Missing structure:', { hasToggle: !!toggleBtn, hasMenu: !!menu });
+    return;
+  }
+
+  // Utility: sync aria
+  const setExpanded = (isOpen) => toggleBtn.setAttribute('aria-expanded', String(isOpen));
+
+  const openMenu  = () => { menu.classList.add('mobile-open');  setExpanded(true);  diag('open');  };
+  const closeMenu = () => { menu.classList.remove('mobile-open'); setExpanded(false); diag('close'); };
+  const toggleMenu = () => (menu.classList.contains('mobile-open') ? closeMenu() : openMenu());
+
+  // Diagnostikk: logg computed style for å avdekke CSS-konflikter
+  function diag(action) {
+    try {
+      const cs = getComputedStyle(menu);
+      console.log('[NAV]', action, {
+        classList: menu.className,
+        display: cs.display,
+        position: cs.position,
+        mqMobile: matchMedia('(max-width: 768px)').matches
+      });
+    } catch (e) {}
+  }
+
+  // Toggle via knapp
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleMenu();
+  });
+
+  // Lukk ved klikk utenfor
+  document.addEventListener('click', (e) => {
+    const outside = !menu.contains(e.target) && !toggleBtn.contains(e.target);
+    if (outside && menu.classList.contains('mobile-open')) closeMenu();
+  });
+
+  // Smooth scroll + lukk ved intern ankerlenke
+  const isInternal = (a) =>
+    a.hash && a.getAttribute('href')?.startsWith('#') && document.getElementById(a.hash.slice(1));
+
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      if (!isInternal(a)) return;
+      e.preventDefault();
+      document.getElementById(a.hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (menu.classList.contains('mobile-open')) closeMenu();
+    });
+  });
+
+  // Init
+  setExpanded(menu.classList.contains('mobile-open'));
+  diag('init');
+});
+```
+
+---
+
+### 3) `style.css` – rydde legacy og sikre visning
+
+**A.** Fjern/kommenter ut ALLE regler for det gamle mønsteret, f.eks.:
+
+```css
+/* LEGACY – skal fjernes */
+nav ul:last-child.mobile-menu-open { /* ... gamle regler ... */ }
+```
+
+**B.** Legg til/oppdater **helt nederst** i `style.css` (slik at det vinner spesifisitetskampen):
+
+```css
+/* --- Mobilmeny: konsistent toggling og visning --- */
+
+/* Desktop: meny er synlig horisontalt, toggle skjules (juster breakpoint ved behov) */
+@media (min-width: 769px) {
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .navbar__toggle {
+    display: none;
+  }
+}
+
+/* Mobil: meny skjult som default, vises kun med .mobile-open */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    /* Hvis menyen overlapper annet innhold, anbefales en flytende container: */
+    position: fixed;
+    top: 80px;      /* juster etter header-høyde */
+    left: 1rem;
+    right: 1rem;
+    z-index: 9999;
+
+    /* Valgfri styling – behold eller fjern etter design: */
+    background: #1a2332;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #4c9aff;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.4);
+  }
+
+  .navbar__menu.mobile-open {
+    display: flex !important; /* kritisk for å slå gjennom evt. eldre regler */
+  }
+
+  .navbar__menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.2rem;
+  }
+}
+```
+
+> Hvis dere allerede har egne farger/spacing: behold eksisterende verdier, men **ikke** fjern `display:none` og `display:flex !important`-mønsteret.
+
+---
+
+### 4) Restart & cache-flush
+
+* Restart Replit-appen.
+* I nettleseren: **Hard Reload** (Cmd+Shift+R / Ctrl+F5).
+* Verifiser i Console at linjen
+  `"[NAV] script.js LOADED"`
+  vises ved last, og at `diag`-logger viser `display: "flex"` når menyen er åpen.
+
+---
+
+### 5) Akseptansekriterier (QA)
+
+1. **Mobil (≤768px):** Trykk ☰ → meny vises. Trykk igjen → meny skjules.
+2. **Lenkeklikk (internt anker):** Smooth scroll, meny lukkes automatisk.
+3. **Klikk utenfor meny:** Meny lukkes.
+4. **A11y:** `aria-expanded` toggles `true/false` i DevTools Elements.
+5. **Desktop (≥769px):** Meny er synlig horisontalt; toggle skjules.
+
+---
+
+### 6) Hvis meny fortsatt ikke vises
+
+Logg følgende i Console for å isolere konflikt (lim inn og kjør):
+
+```js
+const btn = document.querySelector('.navbar__toggle');
+const menu = document.querySelector('.navbar__menu');
+console.log('exists', {btn: !!btn, menu: !!menu, className: menu?.className});
+btn?.click();
+console.log('after click', {
+  hasMobileOpen: menu?.classList.contains('mobile-open'),
+  computedDisplay: menu ? getComputedStyle(menu).display : 'no-menu',
+  mqMobile: matchMedia('(max-width: 768px)').matches
+});
+```
+
+Del outputen. Vi identifiserer og fjerner den presise CSS-reglen som overstyrer `display:flex`.
+
+**Slutt.**
+
+---
+
+Gi meg en status etter at Claude har kjørt dette. Hvis Console viser at `computedDisplay` fortsatt ikke er `flex` ved åpen meny, gir du meg nøyaktig CSS-linje som vinner i “Computed”-panelet, så leverer jeg en målrettet patch.
