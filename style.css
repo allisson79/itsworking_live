@@ -869,7 +869,7 @@ p {
 .hamburger-line {
   width: 24px;
   height: 3px;
-  background: var(--primary-blue);
+  background: #4c9aff;
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
@@ -880,7 +880,7 @@ p {
 }
 
 .mobile-menu-toggle:hover .hamburger-line {
-  background: var(--accent-blue);
+  background: #66d9ff;
 }
 
 /* Menu toggle animation when active */
@@ -913,8 +913,8 @@ p {
 }
 
 .mobile-menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .mobile-menu-content {
@@ -930,7 +930,7 @@ p {
 }
 
 .mobile-menu-overlay.active .mobile-menu-content {
-  transform: translateY(0);
+  transform: translateY(0) !important;
 }
 
 .mobile-menu-header {
@@ -980,7 +980,7 @@ p {
   left: 50%;
   width: 20px;
   height: 2px;
-  background: var(--primary-blue);
+  background: #4c9aff;
   border-radius: 1px;
   transition: all 0.3s ease;
 }
@@ -995,7 +995,7 @@ p {
 
 .mobile-menu-close:hover .close-icon::before,
 .mobile-menu-close:hover .close-icon::after {
-  background: var(--accent-blue);
+  background: #66d9ff;
 }
 
 /* Mobile Navigation Links */
@@ -1003,24 +1003,25 @@ p {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .mobile-nav-link {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 1rem;
   padding: 1.2rem 1.5rem;
   background: rgba(76, 154, 255, 0.08);
   border: 1px solid rgba(76, 154, 255, 0.2);
   border-radius: 16px;
-  color: var(--text-primary);
+  color: #f0f6ff !important;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
+  min-height: 60px;
 }
 
 .mobile-nav-link::before {
@@ -1043,7 +1044,7 @@ p {
 }
 
 .mobile-nav-link:hover {
-  background: rgba(76, 154, 255, 0.15);
+  background: rgba(76, 154, 255, 0.15) !important;
   border-color: rgba(76, 154, 255, 0.4);
   transform: translateX(8px) scale(1.02);
   box-shadow: 0 8px 25px rgba(76, 154, 255, 0.2);
@@ -1063,11 +1064,11 @@ p {
 
 .nav-text {
   flex: 1;
-  color: var(--text-primary);
+  color: #f0f6ff !important;
 }
 
 .nav-arrow {
-  color: var(--primary-blue);
+  color: #4c9aff;
   font-size: 1.2rem;
   font-weight: bold;
   transition: transform 0.3s ease;
@@ -1075,7 +1076,7 @@ p {
 
 .mobile-nav-link:hover .nav-arrow {
   transform: translateX(4px);
-  color: var(--accent-blue);
+  color: #66d9ff;
 }
 
 /* Mobile Menu Footer */
@@ -1089,8 +1090,8 @@ p {
   display: block;
   width: 100%;
   padding: 1.2rem;
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
-  color: white;
+  background: linear-gradient(135deg, #4c9aff, #0066cc);
+  color: white !important;
   text-decoration: none;
   border-radius: 16px;
   text-align: center;
@@ -1103,7 +1104,7 @@ p {
 .mobile-contact-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(76, 154, 255, 0.4);
-  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
+  background: linear-gradient(135deg, #0066cc, #4c9aff);
 }
 
 /* Mobile styles */
@@ -1118,19 +1119,19 @@ p {
   }
 
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important;
   }
 
   .navbar__menu {
-    display: none;
+    display: none !important;
   }
 }
 
 /* Prevent body scroll when menu is open */
 body.mobile-menu-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
 }
 
 /* Mobile performance and UX optimizations */
