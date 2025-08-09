@@ -922,15 +922,17 @@ p {
 .mobile-menu-content {
   display: flex !important;
   flex-direction: column !important;
-  height: 100% !important;
+  height: 100vh !important;
   padding: 2rem 1.5rem !important;
   max-width: 400px !important;
   margin: 0 auto !important;
   position: relative !important;
-  transform: translateY(50px) !important;
+  transform: translateY(0) !important;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   visibility: visible !important;
   opacity: 1 !important;
+  z-index: 10000 !important;
+  overflow-y: auto !important;
 }
 
 .mobile-menu-overlay.active .mobile-menu-content {
@@ -1006,12 +1008,15 @@ p {
 
 /* Mobile Navigation Links */
 .mobile-menu-nav {
-  flex: 1;
+  flex: 1 !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 1rem !important;
-  padding: 1rem 0 !important;
+  padding: 2rem 0 !important;
   margin: 0 !important;
+  width: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .mobile-nav-link {
@@ -1019,9 +1024,9 @@ p {
   align-items: center !important;
   justify-content: space-between !important;
   gap: 1rem !important;
-  padding: 1.5rem 2rem !important;
-  background: rgba(76, 154, 255, 0.15) !important;
-  border: 2px solid rgba(76, 154, 255, 0.3) !important;
+  padding: 1.5rem !important;
+  background: rgba(76, 154, 255, 0.2) !important;
+  border: 2px solid rgba(76, 154, 255, 0.4) !important;
   border-radius: 12px !important;
   color: #ffffff !important;
   text-decoration: none !important;
@@ -1029,10 +1034,13 @@ p {
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
   position: relative !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   min-height: 60px !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
 }
 
 .mobile-nav-link::before {
@@ -1066,6 +1074,10 @@ p {
   color: #ffffff !important;
   font-size: 1.2rem !important;
   font-weight: 600 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  position: relative !important;
 }
 
 .nav-arrow {
@@ -1073,6 +1085,10 @@ p {
   font-size: 1.3rem !important;
   font-weight: bold !important;
   transition: transform 0.3s ease !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  position: relative !important;
 }
 
 .mobile-nav-link:hover {
