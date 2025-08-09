@@ -21,6 +21,11 @@
       <a href="index.html">
         <img src="its_working_logo_transparent.png" alt="Its Working">
       </a>
+      <button class="mobile-menu-toggle" aria-label="Åpne meny" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
     <ul class="navbar__menu">
       <li><a href="#gratis-sjekk" class="nav-link">Tjenester</a></li>
@@ -29,6 +34,50 @@
       <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
       <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
     </ul>
+
+    <!-- Modern Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+      <div class="mobile-menu-content">
+        <div class="mobile-menu-header">
+          <img src="its_working_logo_transparent.png" alt="Its Working" />
+          <button class="mobile-menu-close" aria-label="Lukk meny">
+            <span class="close-icon"></span>
+          </button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="#gratis-sjekk" class="mobile-nav-link">
+            <span class="nav-icon">🎯</span>
+            <span class="nav-text">Tjenester</span>
+            <span class="nav-arrow">→</span>
+          </a>
+          <a href="index.html#partnere" class="mobile-nav-link">
+            <span class="nav-icon">🤝</span>
+            <span class="nav-text">Partnere</span>
+            <span class="nav-arrow">→</span>
+          </a>
+          <a href="hvorfor-velge-oss.html" class="mobile-nav-link">
+            <span class="nav-icon">⭐</span>
+            <span class="nav-text">Hvorfor oss</span>
+            <span class="nav-arrow">→</span>
+          </a>
+          <a href="om-oss.html" class="mobile-nav-link">
+            <span class="nav-icon">👥</span>
+            <span class="nav-text">Om oss</span>
+            <span class="nav-arrow">→</span>
+          </a>
+          <a href="kontakt.html" class="mobile-nav-link">
+            <span class="nav-icon">📞</span>
+            <span class="nav-text">Kontakt</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <a href="tel:+4798850462" class="mobile-contact-btn">
+            Ring oss: 988 50 462
+          </a>
+        </div>
+      </div>
+    </div>
   </nav>
 
   <main class="container">
