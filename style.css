@@ -866,11 +866,13 @@ p {
   }
 
   .navbar__menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 80px;
     left: 1rem;
     right: 1rem;
-    background: rgba(26, 35, 50, 0.95);
+    width: calc(100vw - 2rem);
+    max-width: 400px;
+    background: rgba(26, 35, 50, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 2rem;
@@ -879,15 +881,19 @@ p {
     border: 2px solid rgba(76, 154, 255, 0.4);
     gap: 0;
     z-index: 9999;
+    margin: 0 auto;
     
     /* Start completely hidden */
-    display: none !important;
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
   }
 
   .navbar__menu.mobile-open {
     display: flex !important;
     opacity: 1 !important;
-    visibility: visible !important;
+    transform: translateY(0) !important;
   }
 
   .navbar__menu li {
