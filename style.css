@@ -323,7 +323,7 @@ textarea:focus {
   box-shadow: none;
   animation: none;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   overflow: hidden;
 }
 
@@ -906,7 +906,7 @@ p {
   height: 100vh;
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
-  z-index: 99999;
+  z-index: 999999 !important;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -919,7 +919,7 @@ p {
 .mobile-menu-overlay.active {
   opacity: 1 !important;
   visibility: visible !important;
-  z-index: 99999 !important;
+  z-index: 999999 !important;
   display: flex !important;
 }
 
