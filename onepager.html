@@ -52,6 +52,19 @@
     }
   </style>
   <script src="script.js" defer></script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script>
+    // Last kun analytics på produksjonsdomene
+    if (location.hostname.endsWith('itsworking.no')) {
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+      s.setAttribute("data-cf-beacon", '{"token":"552aeb15dd7e42f1a6dc51292935b1fb"}');
+      document.head.appendChild(s);
+    }
+  </script>
+  <!-- End Cloudflare Web Analytics -->
 </head>
 
 <body>
