@@ -801,7 +801,7 @@ p {
 
 
 
-/* Simple Working Navbar */
+/* Super Simple Working Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -820,12 +820,6 @@ p {
   flex-shrink: 0;
 }
 
-.navbar__brand a {
-  display: flex;
-  align-items: center;
-}
-
-/* Toggle button - hidden on desktop */
 .navbar__toggle {
   display: none;
   background: #4c9aff;
@@ -838,7 +832,6 @@ p {
   font-weight: bold;
 }
 
-/* Desktop menu */
 .navbar__menu {
   display: flex;
   list-style: none;
@@ -861,7 +854,7 @@ p {
   color: #66d9ff;
 }
 
-/* Mobile Menu */
+/* Mobile styles */
 @media screen and (max-width: 768px) {
   .navbar__brand {
     width: 100%;
@@ -869,7 +862,7 @@ p {
   }
 
   .navbar__toggle {
-    display: block;
+    display: block !important;
   }
 
   .navbar__menu {
@@ -877,23 +870,31 @@ p {
     top: 100%;
     left: 1rem;
     right: 1rem;
-    background: #1a2332;
+    background: rgba(26, 35, 50, 0.95);
+    backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-    border: 2px solid rgba(76, 154, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    border: 2px solid rgba(76, 154, 255, 0.4);
+    gap: 0;
     
-    /* Initially hidden */
-    display: none;
+    /* Start hidden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
   }
 
   .navbar__menu.mobile-open {
-    display: flex;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
   }
 
   .navbar__menu li {
-    margin-bottom: 0.75rem;
+    margin: 0 0 1rem 0;
+    width: 100%;
   }
 
   .navbar__menu li:last-child {
@@ -904,17 +905,19 @@ p {
     display: block;
     width: 100%;
     text-align: center;
-    padding: 1rem;
+    padding: 1.2rem;
     background: rgba(76, 154, 255, 0.1);
     border: 1px solid rgba(76, 154, 255, 0.3);
     border-radius: 8px;
     font-size: 1.1rem;
     color: #f0f6ff;
+    box-sizing: border-box;
   }
 
   .navbar__menu a:hover {
     background: rgba(76, 154, 255, 0.2);
     border-color: rgba(76, 154, 255, 0.5);
+    transform: translateY(-2px);
   }
 }
 
