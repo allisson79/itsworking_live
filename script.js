@@ -85,13 +85,13 @@
 
     if (toggle && menu) {
       console.log('Mobile menu initialized');
-      
+
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        
+
         const isOpen = menu.classList.contains('mobile-open');
-        
+
         if (isOpen) {
           menu.classList.remove('mobile-open');
           toggle.textContent = '☰';
@@ -107,26 +107,12 @@
         }
       });
 
-      // Close menu when clicking a link
+      // Close menu on link click
       menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           menu.classList.remove('mobile-open');
           toggle.textContent = '☰';
-          toggle.setAttribute('aria-expanded', 'false');
-          toggleBodyScroll(false);
         });
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-          if (menu.classList.contains('mobile-open')) {
-            menu.classList.remove('mobile-open');
-            toggle.textContent = '☰';
-            toggle.setAttribute('aria-expanded', 'false');
-            toggleBodyScroll(false);
-          }
-        }
       });
 
       // Initialize
@@ -205,7 +191,7 @@ function copyLink() {
 function openBlogPost(postId) {
   // Validate postId to prevent open redirect attacks
   const allowedPostIds = ['phishing-trondheim', 'backup-strategi', 'passord-sikkerhet', 'fiber-utbygging', 'hjemmekontor-sikkerhet', 'gdpr-endringer'];
-  
+
   if (!allowedPostIds.includes(postId)) {
     console.warn('Invalid post ID:', postId);
     return;
