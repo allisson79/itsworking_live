@@ -879,17 +879,12 @@ p {
     border: 2px solid rgba(76, 154, 255, 0.4);
     gap: 0;
     
-    /* Start hidden */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: all 0.3s ease;
+    /* Start completely hidden */
+    display: none;
   }
 
   .navbar__menu.mobile-open {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
+    display: flex !important;
   }
 
   .navbar__menu li {
