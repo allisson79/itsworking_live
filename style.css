@@ -952,7 +952,7 @@ p {
   }
 
   .navbar__menu {
-    display: flex;
+    display: none;
     flex-direction: column;
     background: linear-gradient(135deg, rgba(10,14,26,0.98), rgba(22,27,34,0.98));
     backdrop-filter: blur(20px);
@@ -968,16 +968,14 @@ p {
     box-shadow: 0 12px 35px rgba(0, 42, 92, 0.6);
     z-index: 1001;
     gap: 0.5rem;
-    opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    visibility: hidden;
   }
 
   .navbar__menu.show {
+    display: flex;
     opacity: 1;
     transform: translateY(0);
-    visibility: visible;
   }
 
   .navbar__menu li {
