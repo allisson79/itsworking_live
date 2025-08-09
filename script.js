@@ -78,71 +78,38 @@
     }, { passive: true });
   }
 
-  // Enhanced navbar toggle for mobile
+  // Simple mobile menu toggle
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.navbar__toggle');
     const menu = document.querySelector('.navbar__menu');
 
     if (toggle && menu) {
-      console.log('Mobile menu elements found'); // Debug log
+      console.log('Mobile menu initialized');
       
-      // Add click event listener for hamburger menu
-      toggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+      toggle.addEventListener('click', () => {
+        console.log('Menu toggle clicked');
         
-        console.log('Toggle clicked'); // Debug log
-        
-        const isOpen = menu.classList.contains('show');
-        console.log('Menu is open:', isOpen); // Debug log
-        
-        if (isOpen) {
-          menu.classList.remove('show');
-          toggle.setAttribute('aria-expanded', 'false');
-          toggleBodyScroll(false);
-          toggle.classList.remove('active');
-          console.log('Menu closed'); // Debug log
+        if (menu.classList.contains('mobile-open')) {
+          menu.classList.remove('mobile-open');
+          toggle.textContent = '☰';
+          console.log('Menu closed');
         } else {
-          menu.classList.add('show');
-          toggle.setAttribute('aria-expanded', 'true');
-          toggleBodyScroll(true);
-          toggle.classList.add('active');
-          console.log('Menu opened'); // Debug log
+          menu.classList.add('mobile-open');
+          toggle.textContent = '✕';
+          console.log('Menu opened');
         }
       });
 
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!toggle.contains(e.target) && !menu.contains(e.target) && menu.classList.contains('show')) {
-          menu.classList.remove('show');
-          toggle.setAttribute('aria-expanded', 'false');
-          toggle.classList.remove('active');
-          toggleBodyScroll(false);
-        }
-      });
-
-      // Close menu on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && menu.classList.contains('show')) {
-          menu.classList.remove('show');
-          toggle.setAttribute('aria-expanded', 'false');
-          toggle.classList.remove('active');
-          toggleBodyScroll(false);
-          toggle.focus();
-        }
-      });
-
-      // Close menu when clicking nav links
+      // Close menu when clicking a link
       menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          menu.classList.remove('show');
-          toggle.setAttribute('aria-expanded', 'false');
-          toggle.classList.remove('active');
-          toggleBodyScroll(false);
+          menu.classList.remove('mobile-open');
+          toggle.textContent = '☰';
         });
       });
-    } else {
-      console.log('Mobile menu elements not found:', { toggle, menu }); // Debug log
+
+      // Initialize toggle text
+      toggle.textContent = '☰';
     }
   });
 })();
