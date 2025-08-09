@@ -84,41 +84,39 @@
     const menu = document.querySelector('.navbar__menu');
 
     if (toggle && menu) {
-      // Improve touch responsiveness
-      toggle.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        toggle.style.transform = 'scale(0.95)';
-      }, { passive: false });
-
-      toggle.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        toggle.style.transform = 'scale(1)';
-      }, { passive: false });
-
+      console.log('Mobile menu elements found'); // Debug log
+      
+      // Add click event listener for hamburger menu
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         
+        console.log('Toggle clicked'); // Debug log
+        
         const isOpen = menu.classList.contains('show');
+        console.log('Menu is open:', isOpen); // Debug log
         
         if (isOpen) {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
           toggleBodyScroll(false);
+          toggle.classList.remove('active');
+          console.log('Menu closed'); // Debug log
         } else {
           menu.classList.add('show');
           toggle.setAttribute('aria-expanded', 'true');
-          if (isMobile) {
-            toggleBodyScroll(true);
-          }
+          toggleBodyScroll(true);
+          toggle.classList.add('active');
+          console.log('Menu opened'); // Debug log
         }
       });
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
-        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        if (!toggle.contains(e.target) && !menu.contains(e.target) && menu.classList.contains('show')) {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('active');
           toggleBodyScroll(false);
         }
       });
@@ -128,6 +126,7 @@
         if (e.key === 'Escape' && menu.classList.contains('show')) {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('active');
           toggleBodyScroll(false);
           toggle.focus();
         }
@@ -138,9 +137,12 @@
         link.addEventListener('click', () => {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('active');
           toggleBodyScroll(false);
         });
       });
+    } else {
+      console.log('Mobile menu elements not found:', { toggle, menu }); // Debug log
     }
   });
 })();

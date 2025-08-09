@@ -852,6 +852,7 @@ p {
   height: 2px;
   background: white;
   position: relative;
+  transition: all 0.3s ease;
 }
 .hamburger::before,
 .hamburger::after {
@@ -865,6 +866,19 @@ p {
 }
 .hamburger::before { top: -6px; }
 .hamburger::after  { top:  6px; }
+
+/* Hamburger animation when active */
+.navbar__toggle.active .hamburger {
+  background: transparent;
+}
+.navbar__toggle.active .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.navbar__toggle.active .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
 
 /* Desktop horizontal menu */
 .navbar__menu {
@@ -940,22 +954,31 @@ p {
   .navbar__menu {
     display: none;
     flex-direction: column;
-    background: linear-gradient(135deg, rgba(10,14,26,0.95), rgba(22,27,34,0.95));
+    background: linear-gradient(135deg, rgba(10,14,26,0.98), rgba(22,27,34,0.98));
     backdrop-filter: blur(20px);
     border: 2px solid rgba(76, 154, 255, 0.3);
     border-radius: 16px;
     position: absolute;
     top: calc(100% + 0.5rem);
-    right: 2rem;
-    min-width: 300px;
+    right: 1rem;
+    left: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
     padding: 1.5rem;
-    box-shadow: 0 12px 35px rgba(0, 42, 92, 0.4);
+    box-shadow: 0 12px 35px rgba(0, 42, 92, 0.6);
     z-index: 1001;
     gap: 0.5rem;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
   }
 
   .navbar__menu.show {
-    display: flex;
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
   }
 
   .navbar__menu li {
@@ -1191,12 +1214,16 @@ p {
     flex-direction: column !important;
     gap: 0.8rem !important;
     margin-top: 1rem !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .hero-overlay a {
     display: block !important;
     width: 100% !important;
+    max-width: 300px !important;
     padding: 0.8rem 1rem !important;
+    text-align: center !important;
 
 /* Additional mobile overflow prevention */
 @media screen and (max-width: 768px) {
@@ -1908,7 +1935,6 @@ footer a:hover {
   content: "✓";
   position: absolute;
   left: 0;
-```text
   color: #28a745;
   font-weight: bold;
 }
@@ -2377,6 +2403,10 @@ li[style*="border-left"]:hover {
 
 .hero .hc-cards {
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .hero .glass-card {
@@ -2384,6 +2414,10 @@ li[style*="border-left"]:hover {
   border: none;
   padding: 0;
   min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .hero .btn-primary {
@@ -2472,7 +2506,7 @@ li[style*="border-left"]:hover {
 /* Why Choose Us Section - Redesigned */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
 }
