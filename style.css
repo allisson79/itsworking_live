@@ -967,14 +967,16 @@ p {
     z-index: 9999;
     gap: 0.5rem;
     flex-direction: column;
-    display: flex;
-    transform: scale(0) translateY(-100px);
-    transform-origin: top center;
-    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
   }
 
   .navbar__menu.show {
-    transform: scale(1) translateY(0) !important;
+    height: auto !important;
+    min-height: 300px !important;
+    display: flex !important;
   }
 
   .navbar__menu li {
