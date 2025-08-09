@@ -953,7 +953,7 @@ p {
 
   .navbar__menu {
     position: fixed;
-    top: calc(var(--navbar-height, 80px) + 0.5rem);
+    top: calc(80px + 0.5rem);
     right: 1rem;
     left: 1rem;
     max-width: 400px;
@@ -967,20 +967,14 @@ p {
     z-index: 9999;
     gap: 0.5rem;
     flex-direction: column;
-    transform: translateY(-20px);
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    display: none;
+    display: flex;
+    transform: scale(0) translateY(-100px);
+    transform-origin: top center;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .navbar__menu.show {
-    display: flex !important;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    visibility: visible !important;
-    pointer-events: all !important;
+    transform: scale(1) translateY(0) !important;
   }
 
   .navbar__menu li {
@@ -1035,7 +1029,7 @@ p {
   }
 
   /* Allow text selection for content */
-  p, li, span, h1, h2, h3, h4, h5, h5 {
+  p, li, span, h1, h2, h3, h4, h5, h6 {
     -webkit-user-select: text !important;
     user-select: text !important;
     -webkit-touch-callout: default;
@@ -1371,7 +1365,6 @@ p {
     border: 1px solid rgba(0, 67, 168, 0.3);
     border-radius: 8px;
     position: relative;
-    color: #e9ecef;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
