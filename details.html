@@ -10,6 +10,21 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https:; font-src 'self' https://cdn.jsdelivr.net;" />
   <title>Gratis IT-helsesjekk - Its Working</title>
 
+  <!-- Cloudflare Web Analytics - Only loads on production domain -->
+  <script>
+    // Kun last analytics på produksjonsdomenet for å unngå CORS-feil i dev
+    if (location.hostname === 'itsworking.no' || location.hostname.endsWith('.itsworking.no')) {
+      (function() {
+        var s = document.createElement('script');
+        s.defer = true;
+        s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+        s.setAttribute("data-cf-beacon", '{"token":"552aeb15dd7e42f1a6dc51292935b1fb"}');
+        document.head.appendChild(s);
+      })();
+    }
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+
   <link rel="stylesheet" href="pico.min.css" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
@@ -44,28 +59,23 @@
           </button>
         </div>
         <nav class="mobile-menu-nav">
-          <a href="#gratis-sjekk" class="mobile-nav-link">
-            <span class="nav-icon">🎯</span>
+          <a href="index.html#gratis-sjekk" class="mobile-nav-link">
             <span class="nav-text">Tjenester</span>
             <span class="nav-arrow">→</span>
           </a>
           <a href="index.html#partnere" class="mobile-nav-link">
-            <span class="nav-icon">🤝</span>
             <span class="nav-text">Partnere</span>
             <span class="nav-arrow">→</span>
           </a>
           <a href="hvorfor-velge-oss.html" class="mobile-nav-link">
-            <span class="nav-icon">⭐</span>
             <span class="nav-text">Hvorfor oss</span>
             <span class="nav-arrow">→</span>
           </a>
           <a href="om-oss.html" class="mobile-nav-link">
-            <span class="nav-icon">👥</span>
             <span class="nav-text">Om oss</span>
             <span class="nav-arrow">→</span>
           </a>
           <a href="kontakt.html" class="mobile-nav-link">
-            <span class="nav-icon">📞</span>
             <span class="nav-text">Kontakt</span>
             <span class="nav-arrow">→</span>
           </a>
