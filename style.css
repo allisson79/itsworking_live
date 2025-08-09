@@ -867,53 +867,74 @@ p {
   }
 
   .navbar__menu {
-    display: none;
-    position: fixed;
-    top: 80px;
-    left: 1rem;
-    right: 1rem;
-    background: #1a2332;
-    flex-direction: column;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
-    border: 1px solid #4c9aff;
-    gap: 0.5rem;
-    z-index: 9999;
+    display: none !important;
+    position: fixed !important;
+    top: 100px !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    width: calc(100vw - 2rem) !important;
+    background: rgba(26, 35, 50, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    flex-direction: column !important;
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7) !important;
+    border: 2px solid #4c9aff !important;
+    gap: 0.8rem !important;
+    z-index: 99999 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    max-width: 400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    animation: slideDown 0.3s ease-out !important;
   }
 
   .navbar__menu.mobile-open {
     display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .navbar__menu li {
-    margin: 0 0 1rem 0;
-    width: 100%;
-  }
-
-  .navbar__menu li:last-child {
-    margin-bottom: 0;
+    margin: 0 !important;
+    width: 100% !important;
+    list-style: none !important;
   }
 
   .navbar__menu a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 1.2rem;
-    background: rgba(76, 154, 255, 0.1);
-    border: 1px solid rgba(76, 154, 255, 0.3);
-    border-radius: 8px;
-    font-size: 1.1rem;
-    color: #f0f6ff;
-    box-sizing: border-box;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1rem 1.5rem !important;
+    background: rgba(76, 154, 255, 0.15) !important;
+    border: 1px solid rgba(76, 154, 255, 0.4) !important;
+    border-radius: 8px !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: #f0f6ff !important;
+    box-sizing: border-box !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .navbar__menu a:hover {
-    background: rgba(76, 154, 255, 0.2);
-    border-color: rgba(76, 154, 255, 0.5);
-    transform: translateY(-2px);
+    background: rgba(76, 154, 255, 0.3) !important;
+    border-color: rgba(76, 154, 255, 0.7) !important;
+    transform: translateY(-2px) !important;
+    color: white !important;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 }
 
