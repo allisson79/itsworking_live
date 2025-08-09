@@ -1,0 +1,195 @@
+<body class="dark-mode">
+  <nav class="navbar">
+    <div class="navbar__brand">
+      <a href="index.html">
+        <img src="its_working_logo_transparent.png" alt="Its Working">
+      </a>
+      <button class="navbar__toggle" aria-label="Åpne meny" aria-expanded="false">☰</button>
+    </div>
+    <ul class="navbar__menu">
+      <li><a href="#gratis-sjekk" class="nav-link">Tjenester</a></li>
+      <li><a href="#partnere" class="nav-link">Partnere</a></li>
+      <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
+      <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <header style="background-image: url('hero_trondheim.jpg')" class="hero">
+    <div class="hero-overlay">
+      <h1>IT og internett – levert lokalt i Trondheim.</h1>
+      <p>Én fast kontakt, én lokal avdeling – ingen sentralbord, ingen fjernkonsulenter. Rask, personlig support og teknologi du kan stole på.</p>
+
+      <div class="hc-cards">
+        <div class="glass-card">
+          <a href="https://webforms.pipedrive.com/f/63tNcMkDNu3s5cZQ3EPP2MxLjsjxJhMBayoeAaD4Le4oTz3AkvD6dJh2av0E3nTbkn" target="_blank" class="btn-primary">
+            Legg igjen nummer – jeg ringer deg
+          </a>
+        </div>
+      </div>
+      <p class="hc-note">Kampanje med GlobalConnect – levert lokalt av Its Working. Gründeren tar kontakt personlig.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Partnere Section -->
+    <section id="partnere" class="hc-section animate-in" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+      <div class="hc-container">
+        <h2>Vår teknologipartner</h2>
+        <p class="lead">Vi har levert fiber fra GlobalConnect i Trondheim i over 14 år. Det gir oss full kontroll på hele leveransen – fra bestilling til montering og drift. Vi kjenner folka som kommer – og de kjenner oss.</p>
+
+        <!-- SERVICES AND BENEFITS GRID -->
+        <div class="hc-cards hc-cards--select">
+          <div class="glass-card" style="grid-column: span 2;">
+            <img src="gc-logo-hor-white.png" alt="GlobalConnect Logo" style="height: 40px; margin-bottom: 0.5rem;">
+            <p>Norges største fiberleverandør med robust infrastruktur og 99,9% oppetid</p>
+          </div>
+          <div class="glass-card">Fiber til bedrift</div>
+          <div class="glass-card">24/7 NOC-support</div>
+          <div class="glass-card">Redundante forbindelser</div>
+          <div class="glass-card">Personlig kontakt – vi følger deg hele veien</div>
+          <div class="glass-card">Rask installasjon – vi kjenner montørene som gjør jobben</div>
+          <div class="glass-card">14 års erfaring med GlobalConnect i Trondheim</div>
+          <div class="glass-card">Norges største fibernett – levert lokalt</div>
+          <div class="glass-card">4G-backup og 24/7 driftsovervåking inkludert</div>
+          <div class="glass-card">Ingen overraskelser – du får alt forklart før vi setter i gang</div>
+          <div class="glass-card">Vi er fysisk til stede ved installasjon – kostnadsfritt</div>
+        </div>
+
+        <p class="hc-note">Levert lokalt av Its Working med personlig oppfølging og rask support</p>
+      </div>
+    </section>
+
+    <!-- Free Health Check Section -->
+    <section id="gratis-sjekk" class="hc-section" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s;">
+      <div class="hc-container">
+        <h2>Gratis IT-helsesjekk – ærlig, personlig og helt uforpliktende</h2>
+        <p class="lead">En 2-timers gjennomgang av hele din IT-hverdag – levert gratis og personlig i Trondheimsområdet. Du får ærlige råd, full innsikt og null binding.</p>
+
+        <div class="hc-cards">
+          <div class="glass-card">Maskinvare og nettverk</div>
+          <div class="glass-card">Programvare og kostnader</div>
+          <div class="glass-card">Sikkerhet og backup</div>
+          <div class="glass-card">GDPR/NIS2 – enkel risikovurdering</div>
+          <div class="glass-card">Tydelige tilbakemeldinger</div>
+          <div class="glass-card">Mulighet for referanser</div>
+        </div>
+
+        <div class="hc-cta">
+          <a href="mailto:thomas@itsworking.no?subject=Gratis%20IT-helsesjekk%20bestilling" class="btn-primary">
+            Bestill gratis IT-helsesjekk
+          </a>
+        </div>
+        <p class="hc-note">2 timer, helt uten binding – vi kommer til deg i Trondheim</p>
+        <a href="#mer-it-sjekk" class="hc-more">Les mer om hva helsesjekken inkluderer →</a>
+
+        <details id="mer-it-sjekk">
+          <summary>Hva vi går gjennom og hva du får</summary>
+          <div class="details-content">
+            <div class="intro-text">
+              <p>En IT-helsesjekk fra Its Working er mer enn en sjekkliste – det er en personlig gjennomgang utført av folk som faktisk bryr seg. Du får ærlige svar, konkrete anbefalinger og null press.</p>
+              <p>Dette er noe vi gjør fordi vi mener at gode IT-løsninger starter med tillit – ikke salg.</p>
+            </div>
+
+            <div class="details-section">
+              <h3>Detaljert gjennomgang:</h3>
+              <ul class="details-list">
+                <li>Maskinvare og nettverk: Hvordan står det til med utstyret ditt?</li>
+                <li>Programvare og lisenser: Har du kontroll – og betaler du for mer enn du bruker?</li>
+                <li>Sikkerhet: Antivirus, brannmur, backup, tilgangskontroll – vi ser på alt.</li>
+                <li>Backup og gjenoppretting: Kan du faktisk få tilbake det du mister?</li>
+                <li>Regelverk og risiko: Vi gir indikasjoner på GDPR- og NIS2-relevante områder*</li>
+              </ul>
+              <small>*Full gjennomgang krever egne prosjekter, men vi sier ærlig fra om vi ser risiko.</small>
+            </div>
+
+            <div class="details-section">
+              <h3>Komplett oversikt over hva du får:</h3>
+              <ul class="details-list">
+                <li>En tydelig og forståelig rapport på hva som fungerer – og hva som bør gjøres</li>
+                <li>Ærlige tilbakemeldinger – også når ting er bra</li>
+                <li>En vurdering av om du faktisk får det du betaler for</li>
+                <li>Mulighet for referanser fra andre som har brukt denne tjenesten</li>
+                <li>Ingen binding. Ingen skjulte agendaer. Bare ærlige råd.</li>
+              </ul>
+            </div>
+
+            <div class="details-section">
+              <h3>Hvorfor stole på oss?</h3>
+              <ul class="details-list">
+                <li>Vi har over 20 års erfaring med SMB i Midt-Norge</li>
+                <li>Vi er lokale, til stede og tilgjengelige – og vi ringer deg tilbake</li>
+                <li>Vi følger opp personlig – ikke fra sentralbord</li>
+                <li>Vi tilbyr dette fordi vi vet det gir verdi, og fordi vi tror på langsiktige relasjoner</li>
+              </ul>
+            </div>
+
+            <div class="details-section">
+              <h3>Praktiske detaljer:</h3>
+              <ul class="details-list">
+                <li>2 timer, gratis og uforpliktende</li>
+                <li>Vi kommer til deg – fysisk oppmøte i Trondheim</li>
+                <li>Gjelder for små og mellomstore bedrifter i regionen</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Founder's Story -->
+    <section id="founders-story" class="hc-section" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s;">
+      <div class="hc-container">
+        <h2>Hvorfor Its Working ble til</h2>
+        <p class="lead">Etter mange år i IT-bransjen så jeg at noe viktig gikk tapt: den menneskelige kontakten. Små bedrifter ble behandlet som nummer i køsystemer, ikke som partnere med unike behov.</p>
+
+        <div class="hc-cards">
+          <div class="glass-card">
+            <p>Its Working er født ut av frustrasjonen over at teknologi skulle gjøre hverdagen enklere, men ofte gjør det motsatte. Vi har sett for mange bedrifter bli skuffet av leverandører som lover mye, men leverer lite oppfølging.</p>
+          </div>
+          <div class="glass-card">
+            <p>En partner som kjenner deg ved navn, svarer når du ringer, og har din suksess som sitt eget mål.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Preview -->
+    <section id="hvorfor-oss" class="hc-section" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s;">
+      <div class="hc-container">
+        <h2>Hvorfor velge oss?</h2>
+        <div class="hc-cards">
+          <div class="glass-card">Rask respons – vi svarer uten kø</div>
+          <div class="glass-card">Levering på dagen – når det haster</div>
+          <div class="glass-card">Full innsikt – du ser alt i vår kundeportal</div>
+          <div class="glass-card">Ingen skjulte gebyrer eller overraskelser</div>
+          <div class="glass-card">Smidig og personlig support – vi kjenner deg igjen</div>
+        </div>
+        <div class="hc-cta">
+          <a href="hvorfor-velge-oss.html" class="btn-primary">Les mer om hvorfor du bør velge oss</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Kontakt Section -->
+  <section id="kontakt" class="hc-section" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s;">
+    <div class="hc-container">
+      <h2>Klar for en enklere IT-hverdag?</h2>
+      <p class="lead">Vi finner riktig løsning på 5 minutter. Ingen binding. Ingen bullshit.</p>
+      <div class="hc-cta">
+        <a href="mailto:kontakt@itsworking.no" class="btn-primary">Snakk med oss nå</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container">
+    <small>
+      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a> •
+      <a href="tel:+4798850462">988 50 462</a>
+    </small>
+  </footer>
+
+</body>
