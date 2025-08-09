@@ -952,12 +952,6 @@ p {
   }
 
   .navbar__menu {
-    display: none;
-    flex-direction: column;
-    background: linear-gradient(135deg, rgba(10,14,26,0.98), rgba(22,27,34,0.98));
-    backdrop-filter: blur(20px);
-    border: 2px solid rgba(76, 154, 255, 0.3);
-    border-radius: 16px;
     position: absolute;
     top: calc(100% + 0.5rem);
     right: 1rem;
@@ -965,20 +959,26 @@ p {
     max-width: 400px;
     margin: 0 auto;
     padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(10,14,26,0.98), rgba(22,27,34,0.98));
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(76, 154, 255, 0.3);
+    border-radius: 16px;
     box-shadow: 0 12px 35px rgba(0, 42, 92, 0.6);
     z-index: 1001;
     gap: 0.5rem;
+    flex-direction: column;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
   }
 
   .navbar__menu.show {
-    display: flex !important;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    visibility: visible !important;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: all;
   }
 
   .navbar__menu li {
