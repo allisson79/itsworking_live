@@ -1,0 +1,160 @@
+Perfekt – her får du hele oppdraget som én samlet arbeidsordre du kan lime rett inn til Claude 4.0 på Replit.
+Dette inneholder både **ny `script.js`** og **CSS-oppryddingen** i én kjøreplan.
+
+---
+
+**Kommando til Claude 4.0:**
+
+> **Oppgave:** Fiks hamburger-meny i mobilversjon slik at den åpner/lukker korrekt, lukkes automatisk ved lenkeklikk, har oppdatert `aria`-støtte, og fjern gammel ubrukt CSS.
+>
+> **Filer som skal endres:**
+> – `script.js` (erstatt hele innholdet)
+> – `details.html` (små HTML-attributter)
+> – `style.css` (rydd bort legacy-selektor og legg til oppdatert mobil-CSS)
+>
+> ---
+>
+> **1. Endre `details.html`**
+> Finn navigasjonsdelen og endre til:
+>
+> ```html
+> <button class="navbar__toggle" type="button" aria-label="Åpne meny" aria-controls="primary-nav" aria-expanded="false">☰</button>
+> <ul id="primary-nav" class="navbar__menu">
+>   ...
+> </ul>
+> ```
+>
+> ---
+>
+> **2. Erstatt hele `script.js` med dette:**
+>
+> ```javascript
+> // script.js — mobilnavigasjon + smooth scroll
+> document.addEventListener('DOMContentLoaded', () => {
+>   const toggleBtn = document.querySelector('.navbar__toggle');
+>   const menu = document.querySelector('.navbar__menu');
+>
+>   if (!toggleBtn || !menu) return;
+>
+>   const setExpanded = (isOpen) => {
+>     toggleBtn.setAttribute('aria-expanded', String(isOpen));
+>   };
+>
+>   const openMenu = () => {
+>     menu.classList.add('mobile-open');
+>     setExpanded(true);
+>   };
+>
+>   const closeMenu = () => {
+>     menu.classList.remove('mobile-open');
+>     setExpanded(false);
+>   };
+>
+>   const toggleMenu = () => {
+>     if (menu.classList.contains('mobile-open')) {
+>       closeMenu();
+>     } else {
+>       openMenu();
+>     }
+>   };
+>
+>   toggleBtn.addEventListener('click', (e) => {
+>     e.preventDefault();
+>     toggleMenu();
+>   });
+>
+>   document.addEventListener('click', (e) => {
+>     const clickedInsideMenu = menu.contains(e.target);
+>     const clickedToggle = toggleBtn.contains(e.target);
+>     if (!clickedInsideMenu && !clickedToggle && menu.classList.contains('mobile-open')) {
+>       closeMenu();
+>     }
+>   });
+>
+>   const isInternalAnchor = (a) =>
+>     a.hash &&
+>     a.getAttribute('href') &&
+>     a.getAttribute('href').startsWith('#') &&
+>     document.getElementById(a.hash.slice(1));
+>
+>   const anchorLinks = Array.from(document.querySelectorAll('a[href^="#"]'));
+>   anchorLinks.forEach((a) => {
+>     a.addEventListener('click', (e) => {
+>       if (!isInternalAnchor(a)) return;
+>       e.preventDefault();
+>       const target = document.getElementById(a.hash.slice(1));
+>       if (!target) return;
+>       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+>       if (menu.classList.contains('mobile-open')) {
+>         closeMenu();
+>       }
+>     });
+>   });
+>
+>   setExpanded(menu.classList.contains('mobile-open'));
+> });
+> ```
+>
+> ---
+>
+> **3. Endre `style.css`**
+>
+> 1. Søk opp og **slett/kommenter ut** alle regler med `nav ul:last-child.mobile-menu-open { ... }` – disse brukes ikke lenger.
+> 2. Legg til/oppdater nederst i filen:
+>
+> ```css
+> /* --- Mobilmeny: konsistent toggling --- */
+> .navbar__toggle {
+>   display: none; /* default skjult på desktop */
+> }
+>
+> @media (min-width: 769px) {
+>   .navbar__menu {
+>     display: flex;
+>     align-items: center;
+>     gap: 1rem;
+>   }
+>   .navbar__toggle {
+>     display: none;
+>   }
+> }
+>
+> @media (max-width: 768px) {
+>   .navbar__toggle {
+>     display: inline-flex;
+>     align-items: center;
+>     justify-content: center;
+>     cursor: pointer;
+>     min-width: 44px;
+>     min-height: 44px;
+>     border: 0;
+>     background: transparent;
+>     color: inherit;
+>   }
+>
+>   .navbar__menu {
+>     display: none;
+>     flex-direction: column;
+>     gap: 0.5rem;
+>   }
+>
+>   .navbar__menu.mobile-open {
+>     display: flex !important;
+>   }
+> }
+> ```
+>
+> ---
+>
+> **Mål/QA etter endring:**
+>
+> * På mobil (<768px): ☰ åpner/lukker meny med riktig visning.
+> * Menyen lukkes ved klikk på lenke eller utenfor menyen.
+> * `aria-expanded` oppdateres korrekt.
+> * På desktop (≥769px): Menyen er alltid synlig, toggle er skjult.
+>
+> **Slutt.**
+
+---
+
+Vil du at jeg også legger ved dette som en **ferdig `.diff`-patch** slik at Claude kan bruke “Apply Patch”-kommandoen direkte i Replit? Da slipper du manuell kopiering inn i hver fil.
