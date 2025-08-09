@@ -863,11 +863,15 @@ p {
   }
 
   .navbar__toggle {
-    display: none;
+    display: none !important;
   }
 
   .navbar__menu {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
   }
 }
 
