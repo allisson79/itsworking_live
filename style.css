@@ -995,75 +995,45 @@ p {
 
 
 
-  /* Skjul standard meny på mobil */
-  nav ul:last-child {
-    display: none !important;
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    right: 1rem;
-    left: auto;
-    width: calc(100vw - 2rem);
-    max-width: 400px;
-    background: linear-gradient(135deg, #004a99, #0043a8);
-    backdrop-filter: blur(20px);
-    border: 2px solid rgba(240, 246, 255, 0.4);
-    border-radius: 16px;
+  /* --- Mobilmeny: konsistent toggling --- */
+.navbar__toggle {
+  display: none; /* default skjult på desktop */
+}
+
+@media (min-width: 769px) {
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .navbar__toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+  }
+
+  .navbar__menu {
+    display: none;
     flex-direction: column;
-    gap: 0;
-    padding: 1.5rem;
-    box-shadow: 0 12px 35px rgba(0, 42, 92, 0.4);
-    z-index: 1001;
+    gap: 0.5rem;
   }
 
-  /* Vis meny når åpen */
-  nav ul:last-child.mobile-menu-open {
+  .navbar__menu.mobile-open {
     display: flex !important;
   }
-
-  nav ul:last-child.mobile-menu-open li {
-    margin: 0;
-    width: 100%;
-  }
-
-  nav ul.main-menu.mobile-menu-open a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(0, 67, 168, 0.1);
-    margin: 0;
-  }
-
-  nav ul.main-menu.mobile-menu-open a:last-child {
-    border-bottom: none;
-  }
-
-  /* Mobilmeny lenker - optimert for touch */
-  nav ul.main-menu.mobile-menu-open a {
-    display: flex !important;
-    width: 100% !important;
-    text-align: center !important;
-    font-size: 1.1rem !important;
-    padding: 1rem 1.5rem !important;
-    margin: 0.3rem 0 !important;
-    border-radius: 8px !important;
-    font-weight: 600 !important;
-    background: rgba(240, 246, 255, 0.15) !important;
-    border: 2px solid rgba(240, 246, 255, 0.3) !important;
-    color: #f0f6ff !important;
-    transition: all 0.2s ease !important;
-    min-height: 48px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
-    box-sizing: border-box !important;
-    text-decoration: none !important;
-  }
-
-  nav ul.main-menu.mobile-menu-open a:active {
-    transform: scale(0.98) !important;
-    background: rgba(240, 246, 255, 0.25) !important;
-  }
+}
 
   nav a:not(:has(img)):hover,
   nav a:not(:has(img)):active {
