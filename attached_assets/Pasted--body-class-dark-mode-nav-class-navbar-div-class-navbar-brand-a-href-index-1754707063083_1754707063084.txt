@@ -1,63 +1,10 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes, viewport-fit=cover, shrink-to-fit=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="description" content="Its Working AS - Lokal IT-partner i Trondheim. Microsoft 365, IT-drift, sikkerhet og fiber for SMB. Personlig service og rask respons." />
-  <meta name="keywords" content="IT-support Trondheim, Microsoft 365, fiber, cybersikkerhet, IT-drift, SMB" />
-  <meta name="csrf-token" content="generated-csrf-token-placeholder" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://static.hotjar.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https:; font-src 'self' https://cdn.jsdelivr.net;" />
-  <title>Its Working – Trygg IT-partner i Trondheim</title>
-
-  <!-- Google Analytics 4 - Tracking Code -->
-  <!-- TODO: Replace G-XXXXXXXXXX with your actual Google Analytics tracking ID -->
-  <!-- Måler besøk, sidevisninger og brukeradferd for å optimalisere nettsiden -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
-
-  <!-- Hotjar Tracking Code - Heatmaps og brukeropptak -->
-  <!-- TODO: Replace 1234567 with your actual Hotjar site ID -->
-  <!-- Viser hvordan brukere navigerer og interagerer med nettsiden -->
-  <!--
-  <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1234567,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-  -->
-
-  <!-- Cloudflare Web Analytics -->
-  <!-- Måler nettstedets ytelse, lasterider og core web vitals -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "552aeb15dd7e42f1a6dc51292935b1fb"}'></script>
-  <!-- End Cloudflare Web Analytics -->
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" integrity="sha384-pNf9Ub6vGmY0++EBjTBdWVHo/m1D/vGPTFBGNmqCjFP8LHVJ7LjjF8BhHjGGzZ5l" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-</head>
-<body>
+<body class="dark-mode">
   <nav class="navbar">
     <div class="navbar__brand">
       <a href="index.html">
-        <img src="its_working_logo_transparent.png" alt="Its Working" />
+        <img src="its_working_logo_transparent.png" alt="Its Working">
       </a>
-      <button class="navbar__toggle" aria-label="Åpne meny" aria-expanded="false">
-        ☰
-      </button>
+      <button class="navbar__toggle" aria-label="Åpne meny" aria-expanded="false">☰</button>
     </div>
     <ul class="navbar__menu">
       <li><a href="#gratis-sjekk" class="nav-link">Tjenester</a></li>
@@ -86,7 +33,7 @@
 
   <main class="container">
     <!-- Partnere Section -->
-    <section id="partnere" class="hc-section">
+    <section id="partnere" class="hc-section animate-in" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
       <div class="hc-container">
         <h2>Vår teknologipartner</h2>
         <p class="lead">Vi har levert fiber fra GlobalConnect i Trondheim i over 14 år. Det gir oss full kontroll på hele leveransen – fra bestilling til montering og drift. Vi kjenner folka som kommer – og de kjenner oss.</p>
@@ -94,7 +41,7 @@
         <!-- SERVICES AND BENEFITS GRID -->
         <div class="hc-cards hc-cards--select">
           <div class="glass-card" style="grid-column: span 2;">
-            <img src="gc-logo-hor-white.png" alt="GlobalConnect Logo" style="height: 40px; margin-bottom: 0.5rem;" />
+            <img src="gc-logo-hor-white.png" alt="GlobalConnect Logo" style="height: 40px; margin-bottom: 0.5rem;">
             <p>Norges største fiberleverandør med robust infrastruktur og 99,9% oppetid</p>
           </div>
           <div class="glass-card">Fiber til bedrift</div>
@@ -114,7 +61,7 @@
     </section>
 
     <!-- Free Health Check Section -->
-    <section id="gratis-sjekk" class="hc-section">
+    <section id="gratis-sjekk" class="hc-section animate-in" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
       <div class="hc-container">
         <h2>Gratis IT-helsesjekk – ærlig, personlig og helt uforpliktende</h2>
         <p class="lead">En 2-timers gjennomgang av hele din IT-hverdag – levert gratis og personlig i Trondheimsområdet. Du får ærlige råd, full innsikt og null binding.</p>
@@ -191,7 +138,7 @@
     </section>
 
     <!-- Founder's Story -->
-    <section id="founders-story" class="hc-section">
+    <section id="founders-story" class="hc-section animate-in" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
       <div class="hc-container">
         <h2>Hvorfor Its Working ble til</h2>
         <p class="lead">Etter mange år i IT-bransjen så jeg at noe viktig gikk tapt: den menneskelige kontakten. Små bedrifter ble behandlet som nummer i køsystemer, ikke som partnere med unike behov.</p>
@@ -208,7 +155,7 @@
     </section>
 
     <!-- Why Choose Us Preview -->
-    <section id="hvorfor-oss" class="hc-section">
+    <section id="hvorfor-oss" class="hc-section animate-in" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
       <div class="hc-container">
         <h2>Hvorfor velge oss?</h2>
         <div class="hc-cards">
@@ -227,7 +174,7 @@
   </main>
 
   <!-- Kontakt Section -->
-  <section id="kontakt" class="hc-section">
+  <section id="kontakt" class="hc-section animate-in" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
     <div class="hc-container">
       <h2>Klar for en enklere IT-hverdag?</h2>
       <p class="lead">Vi finner riktig løsning på 5 minutter. Ingen binding. Ingen bullshit.</p>
@@ -244,5 +191,5 @@
       <a href="tel:+4798850462">988 50 462</a>
     </small>
   </footer>
+
 </body>
-</html>
