@@ -1,60 +1,63 @@
-// script.js — mobilnavigasjon + smooth scroll
+
+// script.js — mobilnavigasjon + smooth scroll + diagnostikk
 document.addEventListener('DOMContentLoaded', () => {
+  const ts = new Date().toISOString();
+  console.log('[NAV] script.js LOADED', ts);
+
   const toggleBtn = document.querySelector('.navbar__toggle');
   const menu = document.querySelector('.navbar__menu');
 
-  if (!toggleBtn || !menu) return;
+  if (!toggleBtn || !menu) {
+    console.warn('[NAV] Missing structure:', { hasToggle: !!toggleBtn, hasMenu: !!menu });
+    return;
+  }
 
-  const setExpanded = (isOpen) => {
-    toggleBtn.setAttribute('aria-expanded', String(isOpen));
-  };
+  // Utility: sync aria
+  const setExpanded = (isOpen) => toggleBtn.setAttribute('aria-expanded', String(isOpen));
 
-  const openMenu = () => {
-    menu.classList.add('mobile-open');
-    setExpanded(true);
-  };
+  const openMenu  = () => { menu.classList.add('mobile-open');  setExpanded(true);  diag('open');  };
+  const closeMenu = () => { menu.classList.remove('mobile-open'); setExpanded(false); diag('close'); };
+  const toggleMenu = () => (menu.classList.contains('mobile-open') ? closeMenu() : openMenu());
 
-  const closeMenu = () => {
-    menu.classList.remove('mobile-open');
-    setExpanded(false);
-  };
+  // Diagnostikk: logg computed style for å avdekke CSS-konflikter
+  function diag(action) {
+    try {
+      const cs = getComputedStyle(menu);
+      console.log('[NAV]', action, {
+        classList: menu.className,
+        display: cs.display,
+        position: cs.position,
+        mqMobile: matchMedia('(max-width: 768px)').matches
+      });
+    } catch (e) {}
+  }
 
-  // Toggle ved klikk på hamburger
+  // Toggle via knapp
   toggleBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const isOpen = menu.classList.contains('mobile-open');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    toggleMenu();
   });
 
   // Lukk ved klikk utenfor
   document.addEventListener('click', (e) => {
-    if (!toggleBtn.contains(e.target) && !menu.contains(e.target)) {
-      closeMenu();
-    }
+    const outside = !menu.contains(e.target) && !toggleBtn.contains(e.target);
+    if (outside && menu.classList.contains('mobile-open')) closeMenu();
   });
 
-  // Lukk ved lenkeklikk
-  menu.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-      closeMenu();
-    }
-  });
+  // Smooth scroll + lukk ved intern ankerlenke
+  const isInternal = (a) =>
+    a.hash && a.getAttribute('href')?.startsWith('#') && document.getElementById(a.hash.slice(1));
 
-  // Smooth scroll for anker-lenker
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      if (!isInternal(a)) return;
+      e.preventDefault();
+      document.getElementById(a.hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (menu.classList.contains('mobile-open')) closeMenu();
     });
   });
+
+  // Init
+  setExpanded(menu.classList.contains('mobile-open'));
+  diag('init');
 });
