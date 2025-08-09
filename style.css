@@ -867,24 +867,22 @@ p {
 
   .navbar__menu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(26, 35, 50, 0.98);
-    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 80px;
+    left: 1rem;
+    right: 1rem;
+    background: #1a2332;
     flex-direction: column;
-    padding: 1.5rem;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-    border: 2px solid rgba(76, 154, 255, 0.4);
-    border-top: none;
-    gap: 0;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    border: 1px solid #4c9aff;
+    gap: 0.5rem;
     z-index: 9999;
   }
 
   .navbar__menu.mobile-open {
-    display: flex;
+    display: flex !important;
   }
 
   .navbar__menu li {
