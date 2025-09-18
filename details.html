@@ -10,74 +10,28 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https:; font-src 'self' https://cdn.jsdelivr.net;" />
   <title>Gratis IT-helsesjekk - Its Working</title>
 
+  <!-- Cloudflare Web Analytics - Only loads on production domain -->
+  <script>
+    // Kun last analytics på produksjonsdomenet for å unngå CORS-feil i dev
+    if (location.hostname === 'itsworking.no' || location.hostname.endsWith('.itsworking.no')) {
+      (function() {
+        var s = document.createElement('script');
+        s.defer = true;
+        s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+        s.setAttribute("data-cf-beacon", '{"token":"552aeb15dd7e42f1a6dc51292935b1fb"}');
+        document.head.appendChild(s);
+      })();
+    }
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+
   <link rel="stylesheet" href="pico.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <script src="js/nav-loader.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar__brand">
-      <a href="index.html">
-        <img src="its_working_logo_transparent.png" alt="Its Working">
-      </a>
-      <button class="mobile-menu-toggle" aria-label="Åpne meny" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-    </div>
-    <ul class="navbar__menu">
-      <li><a href="#gratis-sjekk" class="nav-link">Tjenester</a></li>
-      <li><a href="index.html#partnere" class="nav-link">Partnere</a></li>
-      <li><a href="hvorfor-velge-oss.html" class="nav-link">Hvorfor oss</a></li>
-      <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
-      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
-    </ul>
-
-    <!-- Modern Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-      <div class="mobile-menu-content">
-        <div class="mobile-menu-header">
-          <img src="its_working_logo_transparent.png" alt="Its Working" />
-          <button class="mobile-menu-close" aria-label="Lukk meny">
-            <span class="close-icon"></span>
-          </button>
-        </div>
-        <nav class="mobile-menu-nav">
-          <a href="#gratis-sjekk" class="mobile-nav-link">
-            <span class="nav-icon">🎯</span>
-            <span class="nav-text">Tjenester</span>
-            <span class="nav-arrow">→</span>
-          </a>
-          <a href="index.html#partnere" class="mobile-nav-link">
-            <span class="nav-icon">🤝</span>
-            <span class="nav-text">Partnere</span>
-            <span class="nav-arrow">→</span>
-          </a>
-          <a href="hvorfor-velge-oss.html" class="mobile-nav-link">
-            <span class="nav-icon">⭐</span>
-            <span class="nav-text">Hvorfor oss</span>
-            <span class="nav-arrow">→</span>
-          </a>
-          <a href="om-oss.html" class="mobile-nav-link">
-            <span class="nav-icon">👥</span>
-            <span class="nav-text">Om oss</span>
-            <span class="nav-arrow">→</span>
-          </a>
-          <a href="kontakt.html" class="mobile-nav-link">
-            <span class="nav-icon">📞</span>
-            <span class="nav-text">Kontakt</span>
-            <span class="nav-arrow">→</span>
-          </a>
-        </nav>
-        <div class="mobile-menu-footer">
-          <a href="tel:+4798850462" class="mobile-contact-btn">
-            Ring oss: 988 50 462
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div id="nav-root"></div>
 
   <main class="container">
     <section id="gratis-sjekk" class="hc-section">
