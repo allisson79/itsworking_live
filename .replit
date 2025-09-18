@@ -8,7 +8,8 @@ packages = ["static-web-server"]
 
 [deployment]
 publicDir = "."
-deploymentTarget = "static"
+deploymentTarget = "autoscale"
+run = ["python", "-m", "http.server", "5000"]
 
 [workflows]
 runButton = "Project"
@@ -65,12 +66,12 @@ localPort = 5000
 externalPort = 3002
 
 [[ports]]
-localPort = 36243
-externalPort = 3000
+localPort = 34849
+externalPort = 3001
 
 [[ports]]
-localPort = 44319
-externalPort = 3001
+localPort = 36243
+externalPort = 3000
 
 [agent]
 expertMode = true
