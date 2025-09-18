@@ -11,13 +11,13 @@ Preferred communication style: Simple, everyday language.
 ## System Architecture
 
 ### Frontend Architecture
-The website is built as a static HTML/CSS/JavaScript application with a modern, responsive design:
+The website is built as a static HTML/CSS/JavaScript application with a clean, simplified design:
 
-- **Multi-page Structure**: Separate HTML files for different sections (index.html, om-oss.html, hvorfor-velge-oss.html, kontakt.html, details.html, onepager.html)
-- **CSS Framework**: Uses Pico CSS as a base framework (pico.min.css) with extensive custom styling
+- **Single-page Structure**: Consolidated one-page design with smooth scrolling navigation to sections (Hjem, Tjenester, Om oss, Kontakt)
+- **CSS Framework**: Uses Pico CSS as a base framework (pico.min.css) with custom styling for glass morphism effects
 - **Responsive Design**: Mobile-first approach with sophisticated glass morphism effects and dark theme
-- **Component-based Navigation**: Shared navigation loaded via JavaScript (nav-loader.js)
-- **Modern Visual Design**: Emphasis on glassmorphism, smooth animations, and professional typography
+- **Simple Navigation**: Sticky navigation bar with CSS smooth scrolling, no JavaScript dependencies
+- **Modern Visual Design**: Streamlined glassmorphism design with essential content and clear calls-to-action
 
 ### Styling and Design System
 - **Dark Theme**: Sophisticated color palette with primary blues, glass effects, and depth layers
