@@ -33,51 +33,55 @@
 <body>
   <div id="nav-root"></div>
 
-  <main>
-    <section class="section section--narrow">
-      <h1>Kontakt oss</h1>
-      <p>Vi svarer raskt og løser problemstillinger uten unødig ventetid. Ta kontakt for en uforpliktende prat.</p>
+  <main class="container">
+    <section class="hc-section">
+      <div class="hc-container">
+        <h1>Kontakt oss</h1>
+        <p>Vi svarer raskt og løser problemstillinger uten unødig ventetid. Ta kontakt for en uforpliktende prat.</p>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h2>E-post</h2>
-          <p><a href="mailto:post@itsworking.no">post@itsworking.no</a></p>
+        <div class="hc-cards">
+          <div class="glass-card">
+            <h2>E-post</h2>
+            <p><a href="mailto:post@itsworking.no">post@itsworking.no</a></p>
+          </div>
+          <div class="glass-card">
+            <h2>Telefon</h2>
+            <p><a href="tel:+4798850462">+47 988 50 462</a></p>
+          </div>
+          <div class="glass-card">
+            <h2>Adresse</h2>
+            <p>Trondheim, Norge</p>
+          </div>
         </div>
-        <div class="contact-card">
-          <h2>Telefon</h2>
-          <p><a href="tel:+4798850462">+47 988 50 462</a></p>
-        </div>
-        <div class="contact-card">
-          <h2>Adresse</h2>
-          <p>Trondheim, Norge</p>
-        </div>
+
+        <hr class="divider" />
+
+        <h2>Kontakt­skjema</h2>
+        <form class="form" action="mailto:post@itsworking.no" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label for="name">Navn</label>
+            <input id="name" name="name" type="text" placeholder="Ditt navn" required />
+          </div>
+          <div class="form-row">
+            <label for="email">E-post</label>
+            <input id="email" name="email" type="email" placeholder="din@epost.no" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Melding</label>
+            <textarea id="message" name="message" rows="6" placeholder="Hvordan kan vi hjelpe?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
       </div>
-
-      <hr class="divider" />
-
-      <h2>Kontakt­skjema</h2>
-      <form class="form" action="mailto:post@itsworking.no" method="post" enctype="text/plain">
-        <div class="form-row">
-          <label for="name">Navn</label>
-          <input id="name" name="name" type="text" placeholder="Ditt navn" required />
-        </div>
-        <div class="form-row">
-          <label for="email">E-post</label>
-          <input id="email" name="email" type="email" placeholder="din@epost.no" required />
-        </div>
-        <div class="form-row">
-          <label for="message">Melding</label>
-          <textarea id="message" name="message" rows="6" placeholder="Hvordan kan vi hjelpe?" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer__inner">
-      <p>© Its Working AS – Stabilt internett, raskt og enkelt.</p>
-    </div>
+  <footer class="container">
+    <small>
+      <a href="Personvernerklering.pdf" target="_blank">Personvern</a> •
+      <a href="mailto:kontakt@itsworking.no">Kontakt oss</a> •
+      <a href="tel:+4798850462">988 50 462</a>
+    </small>
   </footer>
 </body>
 </html>
