@@ -801,17 +801,42 @@ p {
 }
 
 .navbar__menu a {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
   font-weight: 600;
+  font-size: 1rem;
   color: #f0f6ff;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(76, 154, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__menu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
 }
 
 .navbar__menu a:hover {
-  background: rgba(76, 154, 255, 0.15);
-  color: #66d9ff;
+  background: linear-gradient(135deg, rgba(76, 154, 255, 0.3), rgba(30, 127, 216, 0.2));
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 154, 255, 0.3);
+  border-color: rgba(76, 154, 255, 0.5);
+}
+
+.navbar__menu a:hover::before {
+  left: 100%;
 }
 
 /* Modern Mobile Menu System */
