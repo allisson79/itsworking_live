@@ -21,67 +21,10 @@
 
   <link rel="stylesheet" href="pico.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .simple-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: rgba(0, 67, 168, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 1rem 0;
-      text-align: center;
-      margin: 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    .simple-nav h3 {
-      margin: 0;
-      color: white;
-      font-size: 1.5rem;
-    }
-    .simple-nav nav {
-      margin-top: 0.5rem;
-    }
-    .simple-nav nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-    .simple-nav nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    #hjem {
-      margin-top: 0;
-      padding-top: 0;
-    }
-    .hero {
-      margin-top: 0;
-      position: relative;
-    }
-  </style>
+  
 </head>
 <body>
-  <div class="simple-nav">
-    <h3>Its Working</h3>
-    <nav>
-      <a href="#hjem">Hjem</a>
-      <a href="#tjenester">Tjenester</a>
-      <a href="#om-oss">Om oss</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </div>
+  <div id="nav-root"></div>
 
   <section id="hjem">
     <header style="background-image: url('hero_trondheim.jpg')" class="hero">
