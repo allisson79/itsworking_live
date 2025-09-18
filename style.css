@@ -274,7 +274,7 @@ textarea:focus {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 12rem 2rem;
+  padding: 8rem 2rem 4rem 2rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -283,6 +283,7 @@ textarea:focus {
   overflow: hidden;
   min-height: 100vh;
   z-index: 1;
+  margin-top: 0;
 }
 
 .hero::before {
@@ -336,43 +337,6 @@ textarea:focus {
   z-index: 1;
 }
 
-/* Hero section styling */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-.hero-overlay {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-}
-
-.hero-overlay h1 {
-  color: white;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  text-shadow: none;
-}
-
-.hero-overlay p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
 
 /* Import enhanced Google Fonts for superior typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
