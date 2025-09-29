@@ -4,9 +4,22 @@
 
 This is a static website for Its Working AS, a Norwegian IT services company based in Trondheim. The website serves as their digital presence to showcase IT services, fiber internet solutions, and partnerships with technology providers like GlobalConnect. The site focuses on local, personal IT support for small and medium-sized businesses (SMB) in the Trondheim region.
 
+**Recent Improvements (September 2025):**
+- Fixed critical navigation issues and 404 errors
+- Added comprehensive SEO optimization with structured data
+- Implemented performance improvements with resource preloading
+- Updated contact information to verified addresses (kontakt@itsworking.no)
+- Added prominent news about office relocation to Klingenberggården
+- Eliminated duplicate content across pages with unique CTAs
+- Ensured all contact methods are functional (no fake forms)
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+**Critical Requirements:**
+- No synthetic/mock data allowed (testimonials, user examples, etc.)
+- All contact details must be verified and functional
+- Professional language only - no unprofessional terms
 
 ## System Architecture
 
