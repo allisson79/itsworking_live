@@ -38,10 +38,6 @@ waitForPort = 5000
 localPort = 80
 externalPort = 80
 
-[[ports]]
-localPort = 5000
-externalPort = 80
-
 [agent]
 expertMode = true
 integrations = ["python_openai_ai_integrations:1.0.0"]
