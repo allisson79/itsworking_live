@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, Response
 from openai import OpenAI
 import os
 
@@ -10,6 +10,14 @@ client = OpenAI(
     base_url=os.environ.get("AI_INTEGRATIONS_OPENAI_BASE_URL"),
 )
 
+@app.after_request
+def add_header(response):
+    """Add headers to prevent caching"""
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '0'
+    return response
+
 @app.route('/')
 def serve_index():
     """Serve the main website"""
@@ -18,7 +26,9 @@ def serve_index():
 @app.route('/<path:path>')
 def serve_static(path):
     """Serve static files"""
-    if path and '.' in path:
+    if path.startswith('api/'):
+        return Response('Not Found', status=404)
+    if path and os.path.exists(path):
         return send_from_directory('.', path)
     return send_from_directory('.', 'index.html')
 
