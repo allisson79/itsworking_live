@@ -68,4 +68,4 @@ def health():
 
 if __name__ == '__main__':
     # Bind to 0.0.0.0:5000 as required by Replit
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
