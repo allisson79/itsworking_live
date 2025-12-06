@@ -4,7 +4,6 @@ modules = ["web", "python-3.11"]
 
 [nix]
 channel = "stable-24_11"
-packages = ["static-web-server"]
 
 [deployment]
 publicDir = "."
@@ -13,28 +12,6 @@ run = ["python", "-m", "http.server", "5000"]
 
 [workflows]
 runButton = "Project"
-
-[[workflows.workflow]]
-name = "Serve static"
-mode = "parallel"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "echo \"Starting static web server...\""
-waitForPort = 5000
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "static-web-server -p 5000 -d ."
-
-[[workflows.workflow]]
-name = "Serve Website"
-author = 43468941
-mode = "sequential"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "static-web-server -p 5000 -d ."
 
 [[workflows.workflow]]
 name = "Project"
