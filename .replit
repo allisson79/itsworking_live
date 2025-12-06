@@ -4,6 +4,7 @@ modules = ["web", "python-3.11"]
 
 [nix]
 channel = "stable-24_11"
+packages = ["static-web-server"]
 
 [deployment]
 publicDir = "."
@@ -12,6 +13,28 @@ run = ["python", "-m", "http.server", "5000"]
 
 [workflows]
 runButton = "Project"
+
+[[workflows.workflow]]
+name = "Serve static"
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"Starting static web server...\""
+waitForPort = 5000
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "static-web-server -p 5000 -d ."
+
+[[workflows.workflow]]
+name = "Serve Website"
+author = 43468941
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "static-web-server -p 5000 -d ."
 
 [[workflows.workflow]]
 name = "Project"
@@ -26,13 +49,13 @@ args = "Web Server"
 name = "Web Server"
 author = "agent"
 
-[workflows.workflow.metadata]
-outputType = "webview"
-
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "gunicorn --bind 0.0.0.0:5000 --reuse-port app:app"
+args = "python -m http.server 5000"
 waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
 
 [[ports]]
 localPort = 80
@@ -40,12 +63,11 @@ externalPort = 80
 
 [[ports]]
 localPort = 5000
-externalPort = 5000
+externalPort = 3002
 
 [[ports]]
-localPort = 42663
-externalPort = 3001
+localPort = 36243
+externalPort = 3000
 
 [agent]
 expertMode = true
-integrations = ["python_openai_ai_integrations:1.0.0"]

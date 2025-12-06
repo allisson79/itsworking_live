@@ -21,27 +21,15 @@ Preferred communication style: Simple, everyday language.
 - All contact details must be verified and functional
 - Professional language only - no unprofessional terms
 
-**Recent Addition (December 2025):**
-- AI Assistant chat widget integrated using OpenAI API through Replit AI Integrations
-- Flask backend added to serve static content and handle API requests
-- Chat interface available via floating widget in bottom-right corner
-
 ## System Architecture
 
-### Backend Architecture (NEW)
-- **Flask Web Server**: Python Flask application running on port 5000
-- **Static File Serving**: Flask serves all HTML, CSS, and JavaScript files
-- **API Endpoint**: `/api/chat` POST endpoint handles AI conversation requests
-- **OpenAI Integration**: Uses OpenAI API through Replit AI Integrations (no personal API key required)
-
 ### Frontend Architecture
-The website is built as an HTML/CSS/JavaScript application with integrated AI chat:
+The website is built as a static HTML/CSS/JavaScript application with a clean, simplified design:
 
 - **Single-page Structure**: Consolidated one-page design with smooth scrolling navigation to sections (Hjem, Tjenester, Om oss, Kontakt)
 - **CSS Framework**: Uses Pico CSS as a base framework (pico.min.css) with custom styling for glass morphism effects
 - **Responsive Design**: Mobile-first approach with sophisticated glass morphism effects and dark theme
 - **Simple Navigation**: Sticky navigation bar with CSS smooth scrolling, no JavaScript dependencies
-- **AI Chat Widget**: Floating chat assistant in bottom-right corner for visitor engagement
 - **Modern Visual Design**: Streamlined glassmorphism design with essential content and clear calls-to-action
 
 ### Styling and Design System
@@ -52,12 +40,10 @@ The website is built as an HTML/CSS/JavaScript application with integrated AI ch
 - **Grid Layouts**: CSS Grid for responsive card layouts and content organization
 
 ### JavaScript Architecture
-- **Modular Scripts**: Separate files for different functionality (script.js, nav-loader.js, chat.js)
-- **Chat Assistant Class**: Encapsulated ChatAssistant class managing conversation state and UI
+- **Modular Scripts**: Separate files for different functionality (script.js, nav-loader.js)
 - **Mobile Menu Logic**: Complex hamburger menu implementation with overlay system
 - **Event-driven**: DOM manipulation based on user interactions
 - **Analytics Integration**: Conditional loading of analytics scripts based on domain
-- **API Communication**: Asynchronous fetch requests to Flask backend for AI responses
 
 ### Content Management
 - **Static Content**: All content is hardcoded in HTML files
@@ -73,14 +59,9 @@ The website is built as an HTML/CSS/JavaScript application with integrated AI ch
 
 ## External Dependencies
 
-### Backend
-- **Flask 3.1.2**: Web framework for serving static files and handling API requests
-- **OpenAI Python SDK 2.9.0**: Client library for OpenAI API communication
-- **Python 3.11**: Runtime environment
-
-### Frontend
-- **CSS Frameworks**: Pico CSS v1.5.13 base framework with custom styling (style.css)
-- **Custom CSS**: Glass morphism effects, dark theme, and chat widget styling
+### CSS Frameworks
+- **Pico CSS v1.5.13**: Base CSS framework for consistent styling and components
+- **Custom CSS**: Extensive custom styling system (style.css) with dark theme and glass morphism effects
 
 ### Analytics and Tracking
 - **Cloudflare Web Analytics**: Privacy-focused analytics with conditional loading
