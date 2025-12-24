@@ -1,9 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { CheckCircle, Shield, Server, Headphones, MapPin, Phone, Clock, Monitor, Wifi, Cloud, Lock } from "lucide-react";
-import trondheimImage from "@assets/stock_images/trondheim_norway_cit_f5d021b7.jpg";
-import officeImage from "@assets/stock_images/modern_office_worksp_053aff88.jpg";
-import thomasImage from "@assets/ChatGPT_Image_24._des._2025,_00_38_50_1766533647606.png";
 
 export default function Home() {
   return (
@@ -23,9 +20,6 @@ export default function Home() {
                   Ta kontakt
                 </Link>
               </div>
-            </div>
-            <div className="hero-card-image">
-              <img src={trondheimImage} alt="Trondheim" />
             </div>
           </div>
         </div>
@@ -80,9 +74,6 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="about-image">
-              <img src={officeImage} alt="Moderne arbeidsområde" className="rounded-image" />
-            </div>
           </div>
         </div>
       </section>
@@ -98,9 +89,6 @@ export default function Home() {
               <p>
                 Du forholder deg til én fast kontaktperson som tar ansvar og er tilgjengelig på kort varsel – uten mellomledd eller supportnummer.
               </p>
-            </div>
-            <div className="personal-partner-image">
-              <img src={thomasImage} alt="Thomas Allisson, Its Working" />
             </div>
           </div>
         </div>

@@ -92,9 +92,6 @@ export default function About() {
                 Den lokale tilstedeværelsen gjør det enkelt å være tett på kundene – både i hverdagen og når situasjonen krever rask handling.
               </p>
             </div>
-            <div className="about-image">
-              <img src={trondheimImage} alt="Trondheim sentrum" className="rounded-image" />
-            </div>
           </div>
         </div>
       </section>
@@ -102,9 +99,6 @@ export default function About() {
       <section className="section-padding section-white">
         <div className="container">
           <div className="contact-local-section">
-            <div className="contact-local-image">
-              <img src={thomasImage} alt="Thomas Allisson" className="rounded-image" />
-            </div>
             <div className="contact-local-text">
               <h2>Kontakt</h2>
               <p>

@@ -105,9 +105,6 @@ export default function Technology() {
       <section className="section-padding section-white">
         <div className="container">
           <div className="contact-local-section">
-            <div className="contact-local-image">
-              <img src={trondheimOverviewImage} alt="Trondheim sentrum" className="rounded-image" />
-            </div>
             <div className="contact-local-text">
               <h2>Kontakt og lokal forankring</h2>
               <p>
