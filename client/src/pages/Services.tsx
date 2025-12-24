@@ -1,7 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { CheckCircle, Wifi, Globe, Shield, Monitor, Phone, Mail } from "lucide-react";
-import trondheimImage from "@assets/e7dd1b0c-2db8-41bb-ae53-0f8e21c833e3_1766546409937.png";
 
 export default function Services() {
   return (
@@ -15,9 +14,6 @@ export default function Services() {
               <p className="hero-subtitle">
                 Praktiske IT-tjenester for små og mellomstore bedrifter – levert med én fast kontaktperson og ansvar samlet ett sted.
               </p>
-            </div>
-            <div className="hero-card-image">
-              <img src={trondheimImage} alt="Trondheim sentrum" />
             </div>
           </div>
         </div>
