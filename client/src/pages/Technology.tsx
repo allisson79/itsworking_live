@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { CheckCircle, Network, Shield, Phone, Mail, MapPin } from "lucide-react";
+import trondheimImage from "@assets/trondheim_norway_cit_f5d021b7_1766592784887.jpg";
 
 export default function Technology() {
   return (
@@ -105,6 +106,9 @@ export default function Technology() {
       <section className="section-padding section-white">
         <div className="container">
           <div className="contact-local-section">
+            <div className="contact-local-image">
+              <img src={trondheimImage} alt="Trondheim sentrum" className="rounded-image" />
+            </div>
             <div className="contact-local-text">
               <h2>Kontakt og lokal forankring</h2>
               <p>

@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
+import trondheimImage from "@assets/trondheim_norway_cit_f5d021b7_1766592784887.jpg";
 
 export default function About() {
   return (
@@ -91,6 +92,9 @@ export default function About() {
               <p>
                 Den lokale tilstedeværelsen gjør det enkelt å være tett på kundene – både i hverdagen og når situasjonen krever rask handling.
               </p>
+            </div>
+            <div className="about-image">
+              <img src={trondheimImage} alt="Trondheim sentrum" className="rounded-image" />
             </div>
           </div>
         </div>
