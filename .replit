@@ -1,6 +1,6 @@
 
 entrypoint = "index.html"
-modules = ["web", "python-3.11"]
+modules = ["web", "python-3.11", "nodejs-20"]
 
 [nix]
 channel = "stable-24_11"
@@ -20,19 +20,19 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Web Server"
+args = "Dev Server"
 
 [[workflows.workflow]]
-name = "Web Server"
+name = "Dev Server"
 author = "agent"
-
-[workflows.workflow.metadata]
-outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python -m http.server 5000"
+args = "npm run dev"
 waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
 
 [[ports]]
 localPort = 80
@@ -40,15 +40,7 @@ externalPort = 80
 
 [[ports]]
 localPort = 5000
-externalPort = 5000
-
-[[ports]]
-localPort = 35703
-externalPort = 5173
-
-[[ports]]
-localPort = 36243
-externalPort = 6000
+externalPort = 80
 
 [agent]
 expertMode = true

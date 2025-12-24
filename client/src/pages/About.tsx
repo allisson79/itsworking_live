@@ -1,8 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
-import thomasImage from "@assets/ChatGPT_Image_24._des._2025,_00_38_50_1766533647606.png";
-import trondheimImage from "@assets/e7dd1b0c-2db8-41bb-ae53-0f8e21c833e3_1766546409937.png";
 
 export default function About() {
   return (
@@ -16,9 +14,6 @@ export default function About() {
               <p className="hero-subtitle">
                 Its Working er et lokalt IT-selskap i Trondheim, etablert for å levere stabile, ærlige og forståelige IT-tjenester til små og mellomstore bedrifter.
               </p>
-            </div>
-            <div className="hero-card-image">
-              <img src={thomasImage} alt="Thomas Allisson, Its Working" />
             </div>
           </div>
         </div>

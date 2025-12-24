@@ -1,8 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { CheckCircle, Network, Shield, Phone, Mail, MapPin } from "lucide-react";
-import trondheimOverviewImage from "@assets/e7dd1b0c-2db8-41bb-ae53-0f8e21c833e3_1766546409937.png";
-import thomasImage from "@assets/ChatGPT_Image_24._des._2025,_00_38_50_1766533647606.png";
 
 export default function Technology() {
   return (
@@ -16,9 +14,6 @@ export default function Technology() {
               <p className="hero-subtitle">
                 Etablert teknologi og profesjonelle partnere gir deg stabilitet og sikkerhet – med én kontaktperson som tar ansvar for helheten.
               </p>
-            </div>
-            <div className="hero-card-image">
-              <img src={trondheimOverviewImage} alt="Trondheim sentrum" />
             </div>
           </div>
         </div>
@@ -35,9 +30,6 @@ export default function Technology() {
               <p>
                 Den underliggende infrastrukturen leveres gjennom nøye utvalgte teknologipartnere. Dette gir tilgang på robuste og velprøvde løsninger, samtidig som ansvaret er samlet ett sted.
               </p>
-            </div>
-            <div className="about-image">
-              <img src={thomasImage} alt="Thomas Allisson, Its Working" className="rounded-image" />
             </div>
           </div>
         </div>
