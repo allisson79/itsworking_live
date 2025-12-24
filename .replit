@@ -7,7 +7,7 @@ channel = "stable-24_11"
 
 [deployment]
 publicDir = "."
-deploymentTarget = "autoscale"
+deploymentTarget = "static"
 run = ["python", "-m", "http.server", "5000"]
 
 [workflows]
@@ -40,11 +40,15 @@ externalPort = 80
 
 [[ports]]
 localPort = 5000
-externalPort = 80
+externalPort = 5000
+
+[[ports]]
+localPort = 35703
+externalPort = 5173
 
 [[ports]]
 localPort = 36243
-externalPort = 3000
+externalPort = 6000
 
 [agent]
 expertMode = true
