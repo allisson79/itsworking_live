@@ -33,6 +33,7 @@ export default defineConfig({
   },
   server: {
     middlewareMode: true,
+    allowedHosts: true,
     fs: {
       strict: true,
       deny: ["**/.*"],
