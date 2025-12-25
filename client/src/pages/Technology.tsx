@@ -2,6 +2,7 @@ import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { CheckCircle, Network, Shield, Phone, Mail, MapPin } from "lucide-react";
 import trondheimImage from "@assets/trondheim_norway_cit_f5d021b7_1766592784887.jpg";
+import officeImage from "@assets/modern_office_worksp_3425d166_1766592784888.jpg";
 
 export default function Technology() {
   return (
@@ -15,6 +16,9 @@ export default function Technology() {
               <p className="hero-subtitle">
                 Etablert teknologi og profesjonelle partnere gir deg stabilitet og sikkerhet – med én kontaktperson som tar ansvar for helheten.
               </p>
+            </div>
+            <div className="hero-card-image">
+              <img src={officeImage} alt="Profesjonelt IT-miljø" />
             </div>
           </div>
         </div>
