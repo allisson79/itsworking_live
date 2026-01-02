@@ -6,7 +6,6 @@ modules = ["web", "python-3.11", "nodejs-20"]
 channel = "stable-24_11"
 
 [deployment]
-publicDir = "."
 deploymentTarget = "autoscale"
 run = ["node", "dist/index.cjs"]
 build = ["npm", "run", "build"]
