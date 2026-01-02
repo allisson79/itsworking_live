@@ -1,5 +1,6 @@
 import * as esbuild from "esbuild";
 import { rm } from "fs/promises";
+import { builtinModules } from "module";
 
 async function build() {
   await rm("dist", { recursive: true, force: true });
@@ -11,6 +12,10 @@ async function build() {
     format: "esm",
     outfile: "dist/index.mjs",
     target: "node20",
+    external: [
+      ...builtinModules,
+      ...builtinModules.map((m) => `node:${m}`),
+    ],
     define: {
       "process.env.NODE_ENV": '"production"',
     },
