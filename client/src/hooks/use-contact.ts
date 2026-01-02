@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { api, type InsertContactMessage } from "@shared/routes";
-import { useToast } from "@/components/ui/use-toast"; // Assuming this exists from shadcn, otherwise remove
+import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
 export function useContactForm() {

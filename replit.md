@@ -2,16 +2,12 @@
 
 ## Overview
 
-This is a static website for Its Working AS, a Norwegian IT services company based in Trondheim. The website serves as their digital presence to showcase IT services, fiber internet solutions, and partnerships with technology providers like GlobalConnect. The site focuses on local, personal IT support for small and medium-sized businesses (SMB) in the Trondheim region.
+This is a professional website for Its Working AS, a Norwegian IT services company based in Trondheim. The website serves as their digital presence to showcase IT services, fiber internet solutions, and partnerships with technology providers like GlobalConnect. The site focuses on local, personal IT support for small and medium-sized businesses (SMB) in the Trondheim region.
 
-**Recent Improvements (September 2025):**
-- Fixed critical navigation issues and 404 errors
-- Added comprehensive SEO optimization with structured data
-- Implemented performance improvements with resource preloading
-- Updated contact information to verified addresses (kontakt@itsworking.no)
-- Added prominent news about office relocation to Klingenberggården
-- Eliminated duplicate content across pages with unique CTAs
-- Ensured all contact methods are functional (no fake forms)
+**Recent Updates (January 2026):**
+- Set up PostgreSQL database for contact form submissions
+- Fixed missing image reference on Technology page
+- All pages fully functional with working contact form
 
 ## User Preferences
 
@@ -23,65 +19,57 @@ Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-### Frontend Architecture
-The website is built as a static HTML/CSS/JavaScript application with a clean, simplified design:
+### Tech Stack
+- **Frontend**: React 18 with TypeScript, Tailwind CSS, Radix UI components
+- **Backend**: Express.js with TypeScript
+- **Database**: PostgreSQL with Drizzle ORM
+- **Bundler**: Vite
+- **Routing**: Wouter (client-side)
 
-- **Single-page Structure**: Consolidated one-page design with smooth scrolling navigation to sections (Hjem, Tjenester, Om oss, Kontakt)
-- **CSS Framework**: Uses Pico CSS as a base framework (pico.min.css) with custom styling for glass morphism effects
-- **Responsive Design**: Mobile-first approach with sophisticated glass morphism effects and dark theme
-- **Simple Navigation**: Sticky navigation bar with CSS smooth scrolling, no JavaScript dependencies
-- **Modern Visual Design**: Streamlined glassmorphism design with essential content and clear calls-to-action
+### Project Structure
+```
+client/
+  src/
+    components/     # React components including UI library
+    pages/          # Page components (Home, Services, About, Contact, Technology)
+    hooks/          # Custom React hooks
+    lib/            # Utilities and query client
+  public/           # Static assets (images)
+server/
+  index.ts          # Express server entry
+  routes.ts         # API routes
+  storage.ts        # Database storage layer
+  db.ts             # Database connection
+shared/
+  schema.ts         # Drizzle schema definitions
+  routes.ts         # Shared route definitions
+```
 
-### Styling and Design System
-- **Dark Theme**: Sophisticated color palette with primary blues, glass effects, and depth layers
-- **CSS Variables**: Comprehensive design system using CSS custom properties for colors, shadows, borders, and spacing
-- **Mobile Navigation**: Hamburger menu system with overlay for mobile devices
-- **Glass Morphism**: Extensive use of backdrop filters and semi-transparent elements
-- **Grid Layouts**: CSS Grid for responsive card layouts and content organization
+### Pages
+- **Home (/)**: Hero section, services overview, about company
+- **Services (/tjenester)**: Detailed IT services (Fiber, WiFi, Security, Microsoft 365)
+- **Technology (/teknologi)**: Technology partners (GlobalConnect, Digiflow)
+- **About (/om-oss)**: Company story and philosophy
+- **Contact (/kontakt)**: Contact form and company information
 
-### JavaScript Architecture
-- **Modular Scripts**: Separate files for different functionality (script.js, nav-loader.js)
-- **Mobile Menu Logic**: Complex hamburger menu implementation with overlay system
-- **Event-driven**: DOM manipulation based on user interactions
-- **Analytics Integration**: Conditional loading of analytics scripts based on domain
+### Database Schema
+- **contact_messages**: Stores contact form submissions (name, email, company, message)
 
-### Content Management
-- **Static Content**: All content is hardcoded in HTML files
-- **Norwegian Language**: All content is in Norwegian (no)
-- **SEO Optimized**: Proper meta tags, structured content, and semantic HTML
-- **Accessibility**: ARIA labels, semantic markup, and keyboard navigation support
+### Running the Project
+- **Development**: `npm run dev` - Starts Express server with Vite middleware
+- **Database**: `npm run db:push` - Push schema changes to database
+- **Build**: `npm run build` - Build for production
 
-### Performance and Security
-- **Content Security Policy**: Basic CSP headers for security
-- **Conditional Analytics**: Analytics only load on production domains
-- **Optimized Assets**: Minified CSS frameworks and optimized images
-- **Mobile Performance**: Touch-action optimizations and efficient mobile interactions
-
-## External Dependencies
-
-### CSS Frameworks
-- **Pico CSS v1.5.13**: Base CSS framework for consistent styling and components
-- **Custom CSS**: Extensive custom styling system (style.css) with dark theme and glass morphism effects
-
-### Analytics and Tracking
-- **Cloudflare Web Analytics**: Privacy-focused analytics with conditional loading
-- **Google Analytics 4**: (Commented out, ready for implementation)
-- **Hotjar**: (Commented out, ready for heatmap and user behavior tracking)
-
-### Third-party Services
-- **Pipedrive Web Forms**: Lead capture forms integrated for contact collection
-- **Email Integration**: Direct mailto links for contact functionality
-- **GlobalConnect Partnership**: Featured technology partner for fiber services
-
-### Browser APIs and Standards
-- **Intersection Observer**: Potential use for animations and scroll effects
-- **CSS Custom Properties**: Extensive use of CSS variables
-- **ES6+ JavaScript**: Modern JavaScript features and DOM APIs
-- **Service Worker Ready**: Architecture supports PWA implementation
+### External Dependencies
+- **Radix UI**: Accessible component primitives
+- **Lucide React**: Icon library
+- **React Hook Form + Zod**: Form handling and validation
+- **TanStack Query**: Data fetching and caching
 
 ### Domain and Hosting
 - **Production Domain**: itsworking.no
-- **Development Environment**: Replit-compatible structure
-- **Static Hosting**: Designed for deployment on static hosting platforms
+- **Contact Email**: kontakt@itsworking.no
+- **Phone**: 988 50 462
+- **Address**: Fjordgata 43, 7010 Trondheim (Klingenberggården)
 
 The architecture prioritizes maintainability, performance, and user experience while supporting the company's local, personal approach to IT services in the Trondheim market.

@@ -1,8 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { CheckCircle, Shield, Server, Headphones, MapPin, Phone, Clock, Monitor, Wifi, Cloud, Lock } from "lucide-react";
-import trondheimImage from "@assets/trondheim_norway_cit_f5d021b7_1766592784887.jpg";
-import officeImage from "@assets/modern_office_worksp_053aff88_1766592784888.jpg";
 
 export default function Home() {
   return (
@@ -24,7 +22,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-card-image">
-              <img src={trondheimImage} alt="Trondheim" />
+              <img src="/trondheim_city.jpg" alt="Trondheim" />
             </div>
           </div>
         </div>
@@ -80,7 +78,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="about-image">
-              <img src={officeImage} alt="Moderne arbeidsområde" className="rounded-image" />
+              <img src="/modern_office_01.jpg" alt="Moderne arbeidsområde" className="rounded-image" />
             </div>
           </div>
         </div>

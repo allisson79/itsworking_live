@@ -1,8 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { CheckCircle, Network, Shield, Phone, Mail, MapPin } from "lucide-react";
-import trondheimImage from "@assets/trondheim_norway_cit_f5d021b7_1766592784887.jpg";
-import officeImage from "@assets/modern_office_worksp_3425d166_1766592784888.jpg";
 
 export default function Technology() {
   return (
@@ -18,7 +16,7 @@ export default function Technology() {
               </p>
             </div>
             <div className="hero-card-image">
-              <img src={officeImage} alt="Profesjonelt IT-miljø" />
+              <img src="/modern_office_01.jpg" alt="Profesjonelt IT-miljø" />
             </div>
           </div>
         </div>
@@ -111,7 +109,7 @@ export default function Technology() {
         <div className="container">
           <div className="contact-local-section">
             <div className="contact-local-image">
-              <img src={trondheimImage} alt="Trondheim sentrum" className="rounded-image" />
+              <img src="/trondheim_city.jpg" alt="Trondheim sentrum" className="rounded-image" />
             </div>
             <div className="contact-local-text">
               <h2>Kontakt og lokal forankring</h2>

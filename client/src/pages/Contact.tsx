@@ -47,6 +47,10 @@ export default function Contact() {
               <h2>Kontaktinformasjon</h2>
               <p>Vi holder til i Trondheim og betjener bedrifter i hele regionen.</p>
 
+              <div className="contact-image-location">
+                <img src="/oversikt_kontoret.png" alt="Its Working kontor - Klingenberggården" />
+              </div>
+
               <div className="contact-details">
                 <div className="contact-item">
                   <div className="contact-icon-wrapper">

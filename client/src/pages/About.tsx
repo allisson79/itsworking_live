@@ -1,8 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
-import trondheimImage from "@assets/trondheim_norway_cit_f5d021b7_1766592784887.jpg";
-import businessImage from "@assets/professional_busines_90e205b8_1766592784888.jpg";
 
 export default function About() {
   return (
@@ -18,7 +16,7 @@ export default function About() {
               </p>
             </div>
             <div className="hero-card-image">
-              <img src={businessImage} alt="Profesjonell IT-partner" />
+              <img src="/ProfilbildeThomas.png" alt="Thomas Allisson - Its Working" />
             </div>
           </div>
         </div>
@@ -98,7 +96,7 @@ export default function About() {
               </p>
             </div>
             <div className="about-image">
-              <img src={trondheimImage} alt="Trondheim sentrum" className="rounded-image" />
+              <img src="/trondheim_city.jpg" alt="Trondheim sentrum" className="rounded-image" />
             </div>
           </div>
         </div>
