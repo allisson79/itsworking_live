@@ -14,7 +14,7 @@ export function Header() {
     <header className="header">
       <div className="container header-content">
         <Link href="/" className="logo">
-          Its Working
+          <img src="/Its_Working_Logo_(Nettsted)_1767073223673.png" alt="Its Working" />
         </Link>
 
         <button 

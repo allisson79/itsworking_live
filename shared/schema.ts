@@ -11,7 +11,11 @@ export const contactMessages = pgTable("contact_messages", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertContactMessageSchema = createInsertSchema(contactMessages).omit({
+export const insertContactMessageSchema = createInsertSchema(contactMessages).extend({
+  name: z.string().min(2, "Navn må være minst 2 tegn"),
+  email: z.string().email("Ugyldig e-postadresse"),
+  message: z.string().min(10, "Meldingen må være minst 10 tegn"),
+}).omit({
   id: true,
   createdAt: true,
 });

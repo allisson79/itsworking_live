@@ -6,7 +6,9 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-column">
-          <h3>Its Working AS</h3>
+          <Link href="/" className="logo" style={{ display: 'block', marginBottom: '1rem', maxWidth: '200px' }}>
+            <img src="/Its_Working_Logo_(Nettsted)_1767073223673.png" alt="Its Working" />
+          </Link>
           <p>
             Profesjonell IT-drift for små og mellomstore bedrifter. 
             Vi sørger for at teknologien din bare fungerer.

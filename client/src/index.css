@@ -159,10 +159,15 @@ img {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -1115,6 +1120,19 @@ img {
 .contact-note {
   font-size: 0.85rem;
   color: var(--text-gray);
+}
+
+.contact-image-location {
+  margin: 32px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-image-location img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Success State */
