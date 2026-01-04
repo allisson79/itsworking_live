@@ -24,6 +24,19 @@ export const api = {
       },
     },
   },
+  status: {
+    get: {
+      method: 'GET' as const,
+      path: '/api/status',
+      responses: {
+        200: z.object({
+          status: z.string(),
+          timestamp: z.string(),
+          environment: z.string(),
+        }),
+      },
+    },
+  },
 };
 
 export function buildUrl(path: string, params?: Record<string, string | number>): string {
