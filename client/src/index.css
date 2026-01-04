@@ -1213,7 +1213,7 @@ img {
 }
 
 .btn-secondary:hover {
-  background-color: #d6e8f7;
+  filter: brightness(0.95);
 }
 
 .btn-full {
