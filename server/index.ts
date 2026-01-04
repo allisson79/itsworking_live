@@ -43,6 +43,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Health check endpoint for Replit
+app.get("/_health", (_req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
