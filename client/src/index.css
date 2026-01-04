@@ -33,6 +33,9 @@
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  
+  /* Grid item min width */
+  --grid-item-min: 200px;
 }
 
 /* Global Reset & Base Styles */
@@ -563,7 +566,7 @@ img {
 
 .responsibility-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-min), 1fr));
   gap: var(--spacing-lg);
   justify-items: center;
   max-width: 900px;
