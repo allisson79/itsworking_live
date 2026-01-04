@@ -4,11 +4,3 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
-
-# Prevent accidentally created files from environment variables or commands
-PORT=*
-
-# Ignore npm-style version-suffixed files (e.g., rest-express@1.0.0, package@2.1.0-alpha)
-# These are sometimes created by accident from npm commands or script errors
-*@[0-9]*.[0-9]*.[0-9]*
-*@[0-9]*.[0-9]*.[0-9]*-*
