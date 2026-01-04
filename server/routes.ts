@@ -9,14 +9,6 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   
-  app.get(api.status.get.path, (_req, res) => {
-    res.status(200).json({
-      status: "live",
-      timestamp: new Date().toISOString(),
-      environment: process.env.NODE_ENV || "development",
-    });
-  });
-  
   app.post(api.contact.create.path, async (req, res) => {
     try {
       const input = api.contact.create.input.parse(req.body);
