@@ -1565,6 +1565,35 @@ img {
   transform: translateY(0);
 }
 
+/* Contact card with small photo */
+.contact-card-with-photo {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  max-width: 700px;
+}
+
+.contact-photo-small {
+  flex-shrink: 0;
+}
+
+.contact-photo-small img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 2px 8px rgba(0, 74, 153, 0.15);
+}
+
+.contact-card-content {
+  flex: 1;
+}
+
+.contact-card-content h2 {
+  margin-bottom: 8px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .header-content {
@@ -1774,5 +1803,17 @@ img {
   .newsletter-form {
     max-width: 300px;
     margin: 0 auto;
+  }
+
+  /* Contact card mobile */
+  .contact-card-with-photo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .contact-card-content .contact-inline-item {
+    justify-content: center;
   }
 }
