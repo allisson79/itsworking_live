@@ -63,6 +63,11 @@ export function log(message: string, source = "express") {
  * Request-logging (kun API)
  */
 app.use((req, res, next) => {
+  // Only add logging overhead for API routes
+  if (!req.path.startsWith("/api")) {
+    return next();
+  }
+
   const start = Date.now();
   const reqPath = req.path;
   let capturedJsonResponse: Record<string, any> | undefined;
@@ -75,13 +80,14 @@ app.use((req, res, next) => {
 
   res.on("finish", () => {
     const duration = Date.now() - start;
-    if (reqPath.startsWith("/api")) {
-      let logLine = `${req.method} ${reqPath} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      }
-      log(logLine);
+    let logLine = `${req.method} ${reqPath} ${res.statusCode} in ${duration}ms`;
+    // Only stringify small responses to avoid performance hit
+    if (capturedJsonResponse) {
+      const responseStr = JSON.stringify(capturedJsonResponse);
+      // Limit logged response size to 500 chars to avoid slowdown with large responses
+      logLine += ` :: ${responseStr.length > 500 ? responseStr.substring(0, 500) + '...' : responseStr}`;
     }
+    log(logLine);
   });
 
   next();

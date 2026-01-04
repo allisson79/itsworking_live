@@ -1,14 +1,15 @@
 import { Link, useLocation } from "wouter";
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import { Menu, X } from "lucide-react";
 
-export function Header() {
+export const Header = memo(function Header() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
-  const isActive = (path: string) => location === path ? "nav-link active" : "nav-link";
+  const isActive = useCallback((path: string) => location === path ? "nav-link active" : "nav-link", [location]);
 
   return (
     <header className="header">
@@ -26,23 +27,23 @@ export function Header() {
         </button>
 
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link href="/" className={isActive("/")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/" className={isActive("/")} onClick={closeMenu}>
             Hjem
           </Link>
-          <Link href="/tjenester" className={isActive("/tjenester")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/tjenester" className={isActive("/tjenester")} onClick={closeMenu}>
             Tjenester
           </Link>
-          <Link href="/teknologi" className={isActive("/teknologi")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/teknologi" className={isActive("/teknologi")} onClick={closeMenu}>
             Teknologi & Partnere
           </Link>
-          <Link href="/om-oss" className={isActive("/om-oss")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/om-oss" className={isActive("/om-oss")} onClick={closeMenu}>
             Om oss
           </Link>
-          <Link href="/kontakt" className={isActive("/kontakt")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/kontakt" className={isActive("/kontakt")} onClick={closeMenu}>
             Kontakt
           </Link>
         </nav>
       </div>
     </header>
   );
-}
+});

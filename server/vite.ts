@@ -31,6 +31,36 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use(vite.middlewares);
 
+  // Cache the template path to avoid repeated path.resolve calls
+  const clientTemplatePath = path.resolve(
+    import.meta.dirname,
+    "..",
+    "client",
+    "index.html",
+  );
+
+  // Cache template in development with file watcher for invalidation
+  let cachedTemplate: string | null = null;
+  let templateMtime: number = 0;
+
+  const getTemplate = async (): Promise<string> => {
+    try {
+      const stats = await fs.promises.stat(clientTemplatePath);
+      const currentMtime = stats.mtimeMs;
+      
+      // Reload template if it changed or not cached
+      if (!cachedTemplate || currentMtime !== templateMtime) {
+        cachedTemplate = await fs.promises.readFile(clientTemplatePath, "utf-8");
+        templateMtime = currentMtime;
+      }
+      
+      return cachedTemplate;
+    } catch (error) {
+      // Fallback to reading directly if cache fails
+      return fs.promises.readFile(clientTemplatePath, "utf-8");
+    }
+  };
+
   app.get("*", async (req, res, next) => {
     const url = req.originalUrl;
 
@@ -41,19 +71,7 @@ export async function setupVite(server: Server, app: Express) {
     }
 
     try {
-      const clientTemplate = path.resolve(
-        import.meta.dirname,
-        "..",
-        "client",
-        "index.html",
-      );
-
-      // always reload the index.html file from disk incase it changes
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${Date.now()}"`,
-      );
+      const template = await getTemplate();
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ 
         "Content-Type": "text/html",
