@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container footer-grid">
         <div className="footer-column">
           <Link href="/" className="logo" style={{ display: 'block', marginBottom: '1rem', maxWidth: '200px' }}>
-            <img src="/Its_Working_transparent_1767491280441.png" alt="Its Working" />
+            <img src="/Its Working trans1test.png" alt="Its Working" />
           </Link>
           <p>
             Profesjonell IT-drift for små og mellomstore bedrifter. 
