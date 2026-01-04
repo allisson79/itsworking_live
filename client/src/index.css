@@ -13,9 +13,9 @@
   --border-color: #d0dce8;
   --success: #28a745;
   --error: #dc3545;
-  
+
   --font-main: 'Montserrat', sans-serif;
-  
+
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 32px;
@@ -51,6 +51,7 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -189,7 +190,7 @@ img {
 .logo img {
   height: 100%;
   width: auto;
-  min-width: 150px;
+  min-width: 130px;
   object-fit: contain;
 }
 
@@ -255,7 +256,7 @@ img {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.05fr 0.95fr;
   overflow: hidden;
 }
 
@@ -579,6 +580,7 @@ img {
   gap: 10px;
   font-weight: 500;
   color: var(--text-dark);
+  justify-content: center;
 }
 
 /* Personal Partner Section */
@@ -1211,7 +1213,7 @@ img {
 }
 
 .btn-secondary:hover {
-  background-color: #d6e8f7;
+  filter: brightness(0.95);
 }
 
 .btn-full {
@@ -1243,40 +1245,11 @@ img {
 /* Responsive */
 @media (max-width: 768px) {
   .header-content {
-    padding: 0 var(--spacing-md);
-  }
-  
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    padding: var(--spacing-md);
-    box-shadow: var(--shadow-md);
-    text-align: center;
-  }
-  
-  .nav-links.open {
-    display: flex;
+    height: 78px;
   }
 
-  .mobile-menu-btn {
-    display: block;
-  }
-  
-  .hero h1,
-  .hero-text h1,
-  .hero-card-content h1 {
-    font-size: 1.9rem;
-  }
-  
-  .hero-subtitle,
-  .hero-text .hero-subtitle,
-  .hero-card-content .hero-subtitle {
-    font-size: 1rem;
+  .logo {
+    height: 56px;
   }
 
   .hero-card {
@@ -1284,8 +1257,7 @@ img {
   }
 
   .hero-card-content {
-    padding: 32px 24px;
-    order: 2;
+    padding: 40px 22px;
   }
 
   .hero-card-image {
@@ -1293,17 +1265,10 @@ img {
     order: 1;
   }
 
-  .hero-content,
-  .about-content,
-  .about-offset,
-  .local-content,
-  .local-content-alt,
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .about-offset {
-    padding: var(--spacing-lg);
+  .responsibility-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+    justify-items: start;
   }
 
   .section-overlap {
