@@ -1,17 +1,27 @@
 import { Link, useLocation } from "wouter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 export function Header() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const isActive = (path: string) => location === path ? "nav-link active" : "nav-link";
 
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? "header-scrolled" : ""}`}>
       <div className="container header-content">
         <Link href="/" className="logo">
           <img src="/Its%20Working%20trans1test.png" alt="Its Working" />

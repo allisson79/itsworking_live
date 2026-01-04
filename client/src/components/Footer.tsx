@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Facebook } from "lucide-react";
+import { Newsletter } from "./Newsletter";
 
 export function Footer() {
   return (
@@ -13,6 +14,14 @@ export function Footer() {
             Profesjonell IT-drift for små og mellomstore bedrifter. 
             Vi sørger for at teknologien din bare fungerer.
           </p>
+          <div className="social-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin size={20} />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Facebook size={20} />
+            </a>
+          </div>
         </div>
         
         <div className="footer-column">
@@ -41,6 +50,14 @@ export function Footer() {
               <a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a>
             </li>
           </ul>
+        </div>
+
+        <div className="footer-column">
+          <h3>Nyhetsbrev</h3>
+          <p style={{ fontSize: '0.9rem', marginBottom: '12px' }}>
+            Få tips og nyheter om IT direkte i innboksen.
+          </p>
+          <Newsletter />
         </div>
       </div>
       <div className="container" style={{ marginTop: '32px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', fontSize: '0.9rem' }}>
