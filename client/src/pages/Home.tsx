@@ -1,5 +1,4 @@
 import { Layout } from "@/components/Layout";
-import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Link } from "wouter";
@@ -150,10 +149,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </AnimatedSection>
-
-      <AnimatedSection delay={100}>
-        <Testimonials />
       </AnimatedSection>
 
       <AnimatedSection delay={100}>
