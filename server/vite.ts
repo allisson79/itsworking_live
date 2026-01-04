@@ -40,14 +40,6 @@ export async function setupVite(server: Server, app: Express) {
       return next();
     }
 
-    // Serve HTML for browser requests (text/html or */* which means "accept anything")
-    const acceptHeader = req.get("accept") || "";
-    const acceptsHtml = acceptHeader.toLowerCase().includes("text/html") || 
-                        acceptHeader.includes("*/*");
-    if (!acceptsHtml) {
-      return next();
-    }
-
     try {
       const clientTemplate = path.resolve(
         import.meta.dirname,
