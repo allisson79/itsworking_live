@@ -1,19 +1,22 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { ReactNode } from "react";
+import { ReactNode, memo } from "react";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-export function Layout({ children }: LayoutProps) {
+const layoutStyle = { minHeight: "100vh", display: "flex", flexDirection: "column" } as const;
+const mainStyle = { flex: 1 } as const;
+
+export const Layout = memo(function Layout({ children }: LayoutProps) {
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+    <div style={layoutStyle}>
       <Header />
-      <main style={{ flex: 1 }}>
+      <main style={mainStyle}>
         {children}
       </main>
       <Footer />
     </div>
   );
-}
+});

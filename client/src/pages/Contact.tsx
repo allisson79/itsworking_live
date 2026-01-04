@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { Mail, MapPin, Phone, CheckCircle, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,14 +20,16 @@ export default function Contact() {
     }
   });
 
-  const onSubmit = (data: InsertContactMessage) => {
+  const onSubmit = useCallback((data: InsertContactMessage) => {
     contactMutation.mutate(data, {
       onSuccess: () => {
         setSubmitted(true);
         form.reset();
       }
     });
-  };
+  }, [contactMutation, form]);
+
+  const handleNewMessage = useCallback(() => setSubmitted(false), []);
 
   return (
     <Layout>
@@ -94,7 +96,7 @@ export default function Contact() {
                   <p>Vi har mottatt meldingen din og tar kontakt med deg så snart som mulig.</p>
                   <button 
                     className="btn btn-secondary" 
-                    onClick={() => setSubmitted(false)}
+                    onClick={handleNewMessage}
                     data-testid="button-new-message"
                   >
                     Send ny melding
