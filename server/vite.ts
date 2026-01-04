@@ -31,8 +31,13 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use(vite.middlewares);
 
-  app.use("*", async (req, res, next) => {
+  app.get("*", async (req, res, next) => {
     const url = req.originalUrl;
+
+    // Skip Replit internal endpoints and non-HTML requests
+    if (url.startsWith("/_repl") || !req.accepts("html")) {
+      return next();
+    }
 
     try {
       const clientTemplate = path.resolve(
