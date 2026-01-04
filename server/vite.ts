@@ -34,8 +34,15 @@ export async function setupVite(server: Server, app: Express) {
   app.get("*", async (req, res, next) => {
     const url = req.originalUrl;
 
-    // Skip Replit internal endpoints and non-HTML requests
-    if (url.startsWith("/_repl") || !req.accepts("html")) {
+    // Skip Replit internal endpoints
+    const replitPaths = ["/_repl", "/__repl", "/_replpanel", "/_proxy", "/_debug", "/_health", "/_shortlink"];
+    if (replitPaths.some(path => url.startsWith(path))) {
+      return next();
+    }
+
+    // Only serve HTML if explicitly requested (not Accept: */*)
+    const acceptHeader = req.get("accept") || "";
+    if (!acceptHeader.toLowerCase().includes("text/html")) {
       return next();
     }
 
