@@ -40,9 +40,11 @@ export async function setupVite(server: Server, app: Express) {
       return next();
     }
 
-    // Only serve HTML if explicitly requested (not Accept: */*)
+    // Serve HTML for browser requests (text/html or */* which means "accept anything")
     const acceptHeader = req.get("accept") || "";
-    if (!acceptHeader.toLowerCase().includes("text/html")) {
+    const acceptsHtml = acceptHeader.toLowerCase().includes("text/html") || 
+                        acceptHeader.includes("*/*");
+    if (!acceptsHtml) {
       return next();
     }
 
