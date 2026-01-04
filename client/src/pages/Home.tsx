@@ -1,6 +1,8 @@
 import { Layout } from "@/components/Layout";
+import { Testimonials } from "@/components/Testimonials";
+import { FAQ } from "@/components/FAQ";
 import { Link } from "wouter";
-import { CheckCircle, Shield, Server, Headphones, MapPin, Phone, Clock, Monitor, Wifi, Cloud, Lock } from "lucide-react";
+import { CheckCircle, Shield, Server, Headphones, Monitor, Wifi, Cloud, Lock } from "lucide-react";
 
 export default function Home() {
   return (
@@ -141,7 +143,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <Testimonials />
+
+      <FAQ />
+
+      <section className="section-padding section-light">
         <div className="container">
           <div className="cta-box">
             <h2>Klar for enklere IT?</h2>
