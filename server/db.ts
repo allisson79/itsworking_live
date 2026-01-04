@@ -28,14 +28,14 @@ function ensureDb() {
 }
 
 export const pool = new Proxy({} as pg.Pool, {
-  get(target, prop) {
+  get(_target, prop) {
     const { pool } = ensureDb();
     return Reflect.get(pool, prop);
   }
 });
 
 export const db = new Proxy({} as ReturnType<typeof drizzle>, {
-  get(target, prop) {
+  get(_target, prop) {
     const { db } = ensureDb();
     return Reflect.get(db, prop);
   }
