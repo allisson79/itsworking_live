@@ -14,7 +14,7 @@ export function Header() {
     <header className="header">
       <div className="container header-content">
         <Link href="/" className="logo">
-          <img src="/Its_Working_transparent_1767491280441.png" alt="Its Working" />
+          <img src="/Its Working trans1test.png" alt="Its Working" />
         </Link>
 
         <button 
