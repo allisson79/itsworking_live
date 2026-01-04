@@ -4,3 +4,7 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Prevent accidentally created files from environment variables or commands
+PORT=*
+*@[0-9]*.[0-9]*.[0-9]*
