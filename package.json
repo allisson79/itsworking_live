@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development tsx server/index.ts",
+    "dev": "lsof -ti:5000 | xargs -r kill -9 2>/dev/null; NODE_ENV=development tsx server/index.ts",
     "build": "tsx script/build.ts",
     "start": "NODE_ENV=production tsx dist/server/index.ts",
     "db:push": "drizzle-kit push"
