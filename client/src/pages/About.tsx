@@ -5,26 +5,21 @@ import { Phone, Mail, MapPin } from "lucide-react";
 export default function About() {
   return (
     <Layout>
-      <section className="hero-elevated">
+      <section className="page-hero">
         <div className="container">
-          <div className="hero-card">
-            <div className="hero-card-content">
-              <p className="hero-tagline">Om Its Working</p>
-              <h1>Et personlig IT-selskap bygget på erfaring</h1>
-              <p className="hero-subtitle">
-                Its Working er et lokalt IT-selskap i Trondheim, etablert for å levere stabile, ærlige og forståelige IT-tjenester til små og mellomstore bedrifter.
-              </p>
-            </div>
-            <div className="hero-card-image">
-              <img src="/ProfilbildeThomas.png" alt="Thomas Allisson - Its Working" />
-            </div>
-          </div>
+          <h1>Om Its Working</h1>
+          <p>
+            Et personlig IT-selskap bygget på erfaring
+          </p>
         </div>
       </section>
 
-      <section className="section-padding section-white section-overlap">
+      <section className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
+            <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
+              Its Working er et lokalt IT-selskap i Trondheim, etablert for å levere stabile, ærlige og forståelige IT-tjenester til små og mellomstore bedrifter.
+            </p>
             <h2>Erfaringen som formet Its Working</h2>
             <p>
               Its Working er etablert av Thomas Allisson, med bakgrunn som gründer og lang erfaring fra IT-bransjen.
@@ -71,14 +66,24 @@ export default function About() {
 
       <section className="section-padding section-white">
         <div className="container">
-          <div className="about-section-text">
-            <h2>Én kontaktperson. Ett ansvar.</h2>
-            <p>
-              Som kunde hos Its Working forholder du deg til én fast kontaktperson som tar ansvar for rådgivning, oppsett, drift og oppfølging av IT-miljøet.
-            </p>
-            <p>
-              Den tekniske infrastrukturen leveres gjennom nøye utvalgte samarbeidspartnere, men ansvaret er alltid samlet hos Its Working.
-            </p>
+          <div className="about-content">
+            <div className="about-text">
+              <h2>Én kontaktperson. Ett ansvar.</h2>
+              <p>
+                Som kunde hos Its Working forholder du deg til én fast kontaktperson som tar ansvar for rådgivning, oppsett, drift og oppfølging av IT-miljøet.
+              </p>
+              <p>
+                Den tekniske infrastrukturen leveres gjennom nøye utvalgte samarbeidspartnere, men ansvaret er alltid samlet hos Its Working.
+              </p>
+            </div>
+            <div className="about-image">
+              <img 
+                src="/ProfilbildeThomas.png" 
+                alt="Thomas Allisson - Its Working" 
+                className="rounded-image"
+                style={{ maxWidth: '280px' }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -104,36 +109,36 @@ export default function About() {
 
       <section className="section-padding section-white">
         <div className="container">
-          <div className="contact-local-section">
-            <div className="contact-local-text">
-              <h2>Kontakt</h2>
-              <p>
-                Har du spørsmål eller ønsker en uforpliktende prat, er du velkommen til å ta direkte kontakt.
-              </p>
-              
-              <div className="contact-details-compact">
-                <div className="contact-person">
-                  <strong>Thomas Allisson</strong>
-                </div>
-                <div className="contact-inline-item">
+          <div className="about-section-text" style={{ textAlign: 'center' }}>
+            <h2>Ta kontakt</h2>
+            <p>
+              Har du spørsmål eller ønsker en uforpliktende prat, er du velkommen til å ta direkte kontakt.
+            </p>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', marginTop: '32px' }}>
+              <div className="contact-person" style={{ fontSize: '1.25rem' }}>
+                <strong>Thomas Allisson</strong>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div className="contact-inline-item" style={{ justifyContent: 'center' }}>
                   <Mail size={18} className="icon-primary" />
                   <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
                 </div>
-                <div className="contact-inline-item">
+                <div className="contact-inline-item" style={{ justifyContent: 'center' }}>
                   <Phone size={18} className="icon-primary" />
                   <a href="tel:+4798850462">988 50 462</a>
                 </div>
-                <div className="contact-inline-item">
+                <div className="contact-inline-item" style={{ justifyContent: 'center' }}>
                   <MapPin size={18} className="icon-primary" />
                   <span>Fjordgata 43, 7010 Trondheim – 2. etasje</span>
                 </div>
               </div>
               
-              <p className="contact-availability">
+              <p className="contact-availability" style={{ marginTop: '8px' }}>
                 Tilgjengelig på kort varsel
               </p>
               
-              <div style={{ marginTop: '24px' }}>
+              <div style={{ marginTop: '16px' }}>
                 <Link href="/kontakt" className="btn" data-testid="link-contact-about">
                   Send melding
                 </Link>
