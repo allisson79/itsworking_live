@@ -21,10 +21,18 @@
   --spacing-lg: 32px;
   --spacing-xl: 64px;
   
-  --container-width: 1100px;
+  /* Modern container width */
+  --container-width: 1200px;
   
-  --shadow-sm: 0 2px 4px rgba(0, 74, 153, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 74, 153, 0.1);
+  /* Consistent radius tokens */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Neutral modern shadows (no blue tint) */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* Global Reset & Base Styles */
@@ -55,7 +63,7 @@ h3 { font-size: 1.25rem; }
 
 p {
   margin-bottom: var(--spacing-md);
-  color: var(--text-dark);
+  color: var(--text-gray);
 }
 
 a {
@@ -85,14 +93,22 @@ img {
   background-color: var(--primary);
   color: var(--text-light);
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
   background-color: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(0, 74, 153, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .btn:disabled {
@@ -144,7 +160,9 @@ img {
 
 /* Layout Components */
 .header {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
@@ -155,13 +173,13 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 160px;
+  height: 90px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  height: 140px;
+  height: 70px;
   min-width: 200px;
 }
 
@@ -231,15 +249,15 @@ img {
 
 .hero-card {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 74, 153, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   overflow: hidden;
 }
 
 .hero-card-content {
-  padding: 48px 44px;
+  padding: 56px 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -256,8 +274,8 @@ img {
   font-size: 1.05rem;
   color: var(--text-gray);
   margin: 0 0 var(--spacing-lg) 0;
-  max-width: 440px;
-  line-height: 1.65;
+  max-width: 480px;
+  line-height: 1.7;
 }
 
 .hero-tagline {
@@ -274,16 +292,29 @@ img {
 
 .hero-card-image {
   position: relative;
-  min-height: 340px;
+  min-height: 380px;
+}
+
+.hero-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 74, 153, 0.02) 0%, rgba(0, 74, 153, 0.06) 100%);
+  pointer-events: none;
 }
 
 .hero-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 30%;
   position: absolute;
   inset: 0;
+  transition: transform 0.3s ease;
+}
+
+.hero-card-image:hover img {
+  transform: scale(1.02);
 }
 
 /* Hero Section - Split Layout (legacy) */
@@ -322,7 +353,7 @@ img {
   max-height: 300px;
   width: auto;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   opacity: 0.9;
 }
 
@@ -357,9 +388,15 @@ img {
 .service-card {
   background: #fff;
   padding: var(--spacing-lg);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  border-left: 4px solid var(--primary);
+  border: 1px solid rgba(0, 74, 153, 0.08);
+  transition: all 0.2s ease;
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .service-card h3 {
@@ -376,7 +413,7 @@ img {
   width: 56px;
   height: 56px;
   background-color: var(--primary-light);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -402,7 +439,7 @@ img {
 }
 
 .rounded-image {
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
 }
 
@@ -525,10 +562,12 @@ img {
 }
 
 .responsibility-list {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-xl);
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .responsibility-list li {
@@ -581,7 +620,7 @@ img {
 
 /* Offset & Depth Layouts */
 .section-overlap {
-  margin-top: -40px;
+  margin-top: -30px;
   position: relative;
   z-index: 1;
 }
@@ -589,8 +628,8 @@ img {
 .about-offset {
   background: #fff;
   padding: var(--spacing-xl);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 74, 153, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
 .section-header-offset {
@@ -613,8 +652,8 @@ img {
 .cta-box {
   background: #fff;
   padding: var(--spacing-xl);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 74, 153, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   max-width: 640px;
 }
 
@@ -656,8 +695,8 @@ img {
   gap: var(--spacing-xl);
   background: #fff;
   padding: var(--spacing-xl);
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
 .contact-info-block {
@@ -686,7 +725,7 @@ img {
   width: 100%;
   padding: 12px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   font-family: var(--font-main);
   font-size: 1rem;
 }
@@ -707,7 +746,7 @@ img {
   background-color: #d4edda;
   color: #155724;
   padding: var(--spacing-md);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-bottom: var(--spacing-md);
   border: 1px solid #c3e6cb;
 }
@@ -722,10 +761,16 @@ img {
 .partner-card {
   background: #fff;
   padding: var(--spacing-lg);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   text-align: center;
-  border-bottom: 3px solid var(--primary-light);
+  border: 1px solid rgba(0, 74, 153, 0.08);
+  transition: all 0.2s ease;
+}
+
+.partner-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .partner-card h3 {
@@ -756,7 +801,7 @@ img {
 .value-card {
   background: var(--primary-light);
   padding: var(--spacing-lg);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   text-align: center;
 }
 
@@ -775,7 +820,7 @@ img {
 .partner-badge {
   background: linear-gradient(135deg, var(--primary-light) 0%, #fff 100%);
   padding: 48px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
@@ -826,7 +871,7 @@ img {
 .partner-block {
   background: var(--primary-light);
   padding: var(--spacing-lg);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 
 .partner-block h3 {
@@ -887,9 +932,15 @@ img {
 .partner-card-large {
   background: #fff;
   padding: var(--spacing-lg);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  border-left: 4px solid var(--primary);
+  border: 1px solid rgba(0, 74, 153, 0.08);
+  transition: all 0.2s ease;
+}
+
+.partner-card-large:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .partner-card-header {
@@ -1003,7 +1054,7 @@ img {
   width: 64px;
   height: 64px;
   background: var(--primary);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1126,7 +1177,7 @@ img {
 
 .contact-image-location {
   margin: 32px 0;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
 }
@@ -1173,7 +1224,7 @@ img {
   padding: 12px;
   background-color: #f8d7da;
   color: #721c24;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-bottom: 16px;
 }
 
@@ -1235,7 +1286,7 @@ img {
   }
 
   .hero-card-image {
-    min-height: 200px;
+    min-height: 240px;
     order: 1;
   }
 
@@ -1253,7 +1304,7 @@ img {
   }
 
   .section-overlap {
-    margin-top: -24px;
+    margin-top: -20px;
   }
 
   .hero-image {
