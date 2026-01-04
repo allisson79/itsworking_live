@@ -5,13 +5,19 @@ import { createServer } from "http";
 import path from "path";
 
 const app = express();
+const httpServer = createServer(app);
 
+const isProd = process.env.NODE_ENV === "production";
+
+/**
+ * Viktig:
+ * - Assets fra attached_assets brukes kun av Replit
+ * - Må aldri kollidere med Vite /dist/assets
+ */
 app.use(
-  "/assets",
+  "/attached_assets",
   express.static(path.resolve(process.cwd(), "attached_assets")),
 );
-
-const httpServer = createServer(app);
 
 declare module "http" {
   interface IncomingMessage {
@@ -40,6 +46,9 @@ export function log(message: string, source = "express") {
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
+/**
+ * Request-logging (kun API)
+ */
 app.use((req, res, next) => {
   const start = Date.now();
   const reqPath = req.path;
@@ -68,17 +77,24 @@ app.use((req, res, next) => {
 (async () => {
   await registerRoutes(httpServer, app);
 
+  /**
+   * API error handler
+   */
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
-
     res.status(status).json({ message });
-    throw err;
   });
 
-  if (process.env.NODE_ENV === "production") {
+  /**
+   * 🚨 HER VAR FEILEN TIDLIGERE 🚨
+   * Nå er dev og prod 100 % gjensidig utelukkende
+   */
+  if (isProd) {
+    log("Starting in PRODUCTION mode");
     serveStatic(app);
   } else {
+    log("Starting in DEVELOPMENT mode (Vite)");
     const { setupVite } = await import("./vite");
     await setupVite(httpServer, app);
   }
