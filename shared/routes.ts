@@ -30,8 +30,8 @@ export const api = {
       path: '/api/status',
       responses: {
         200: z.object({
-          status: z.string(),
-          timestamp: z.string(),
+          status: z.enum(['live', 'maintenance', 'down']),
+          timestamp: z.string().datetime(),
           environment: z.string(),
         }),
       },

@@ -30,13 +30,13 @@ function ensureDb() {
 export const pool = new Proxy({} as pg.Pool, {
   get(target, prop) {
     const { pool } = ensureDb();
-    return (pool as any)[prop];
+    return Reflect.get(pool, prop);
   }
 });
 
 export const db = new Proxy({} as ReturnType<typeof drizzle>, {
   get(target, prop) {
     const { db } = ensureDb();
-    return (db as any)[prop];
+    return Reflect.get(db, prop);
   }
 });
