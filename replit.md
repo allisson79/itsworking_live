@@ -8,6 +8,7 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Set up PostgreSQL database for contact form submissions
 - Fixed missing image reference on Technology page
 - All pages fully functional with working contact form
+- Added `/api/status` endpoint for integration health checks
 
 ## User Preferences
 
@@ -54,6 +55,15 @@ shared/
 
 ### Database Schema
 - **contact_messages**: Stores contact form submissions (name, email, company, message)
+
+### API Endpoints
+- **GET /api/status**: Returns the current status of the integration
+  - Response: `{ status: "live", timestamp: "ISO-8601", environment: "production|development" }`
+  - No authentication required
+  - Used for health checks and monitoring
+- **POST /api/contact**: Submit contact form
+  - Requires: name, email, company (optional), message
+  - Returns: 201 with created message or error
 
 ### Running the Project
 - **Development**: `npm run dev` - Starts Express server with Vite middleware
