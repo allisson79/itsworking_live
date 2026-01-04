@@ -1,0 +1,60 @@
+Overview
+An automatic (or manual) connection to a workspace folder lets you save a change that you make in DevTools to a local copy of the same file on your computer. For example, suppose:
+
+You have the source code for your site on your desktop.
+You're running a local web server from the source code directory, so that the site is accessible at localhost:PORT and that also serves a simple JSON file with metadata (described later).
+You've got localhost:PORT open in Google Chrome, and you're using DevTools to change the site's CSS.
+With a workspace folder connected, the changes that you make in the Sources panel to CSS, HTML, and JavaScript files are saved to the source code on your computer. However, DevTools doesn't save changes to DOM that you make in the Elements panel.
+
+Moreover, DevTools is usually able to map the optimized code back to your original source code with the help of source maps.
+
+Generate metadata for a connection
+To let DevTools discover your workspace folder automatically, generate a random version 4 UUID and put it in the following JSON file:
+
+
+{
+  "workspace": {
+    "uuid": "UUID",
+    "root": "path/to/project/root/folder"
+  }
+}
+Then place the JSON file in path/to/project/root/folder/.well-known/appspecific/com.chrome.devtools.json.
+
+Lastly, run your local HTTP server and make sure to serve the JSON file too.
+
+Alternatively, you can skip this step and manually set up a folder connection.
+
+Connect a workspace folder
+Note: This and next steps use the Automatic Workspace Folders Demo to showcase the feature.
+To connect a folder:
+
+In Chrome, navigate to your locally-hosted page (in this example, at localhost:8000) and open DevTools.
+In Sources > Workspace, click Connect next to your folder.
+
+The Connect button next to the folder in the Workspace tab.
+
+When prompted, click Edit files to allow DevTools access to your folder.
+
+Prompt to let DevTools access the folder.
+
+Once connected, you can open the folder in the Workspaces tab.
+
+A workspace folder, connected and opened.
+
+The Workspace tab shows you a green dot next to HTML, CSS, and JavaScript files. These green dots mean that DevTools has established a mapping between the network resources of the page, and the files in the folder.
+
+Save a change back to source folder
+You can save changes to any CSS, HTML, and JavaScript files in the connected workspace folder.
+
+Save changes to CSS
+Tip: With a connected workspace folder, the AI assistance panel can automatically save CSS changes to your sources.
+To save changes to CSS:
+
+Open a CSS file from your connected workspace folder in Sources > Workspaces.
+Make a change to your CSS.
+
+Note: A change applies to the page live but not to the source yet.
+Save the change, for example, by pressing Ctrl / Cmd + S and see the applied change back in your source file. The Sources panel shows you a green dot next to the filename.
+
+Note: You don't need to reload the page to apply and save CSS changes.
+To learn the workflow, watch the video:
