@@ -1,14 +1,13 @@
-
-entrypoint = "index.html"
-modules = ["web", "python-3.11", "nodejs-20"]
+modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-24_11"
+packages = ["psmisc", "lsof"]
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["node", "dist/index.cjs"]
 build = ["npm", "run", "build"]
+run = ["npm", "run", "start"]
 
 [workflows]
 runButton = "Project"
@@ -17,6 +16,13 @@ runButton = "Project"
 name = "Project"
 mode = "parallel"
 author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run start"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
@@ -34,9 +40,9 @@ waitForPort = 5000
 [workflows.workflow.metadata]
 outputType = "webview"
 
-[agent]
-expertMode = true
-
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[agent]
+expertMode = true
