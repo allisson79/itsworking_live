@@ -35,6 +35,14 @@ app.use(
 
 app.use(express.urlencoded({ extended: false }));
 
+// Debug middleware to log ALL requests (temporary for debugging)
+app.use((req, res, next) => {
+  if (req.path.startsWith("/_") || req.path.startsWith("/__")) {
+    console.log(`[DEBUG] ${req.method} ${req.path} Accept: ${req.get("accept")?.substring(0, 50) || "none"}`);
+  }
+  next();
+});
+
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
