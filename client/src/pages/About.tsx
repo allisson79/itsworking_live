@@ -66,24 +66,14 @@ export default function About() {
 
       <section className="section-padding section-white">
         <div className="container">
-          <div className="about-content">
-            <div className="about-text">
-              <h2>Én kontaktperson. Ett ansvar.</h2>
-              <p>
-                Som kunde hos Its Working forholder du deg til én fast kontaktperson som tar ansvar for rådgivning, oppsett, drift og oppfølging av IT-miljøet.
-              </p>
-              <p>
-                Den tekniske infrastrukturen leveres gjennom nøye utvalgte samarbeidspartnere, men ansvaret er alltid samlet hos Its Working.
-              </p>
-            </div>
-            <div className="about-image">
-              <img 
-                src="/ProfilbildeThomas.png" 
-                alt="Thomas Allisson - Its Working" 
-                className="rounded-image"
-                style={{ maxWidth: '280px' }}
-              />
-            </div>
+          <div className="about-section-text">
+            <h2>Én kontaktperson. Ett ansvar.</h2>
+            <p>
+              Som kunde hos Its Working forholder du deg til én fast kontaktperson som tar ansvar for rådgivning, oppsett, drift og oppfølging av IT-miljøet.
+            </p>
+            <p>
+              Den tekniske infrastrukturen leveres gjennom nøye utvalgte samarbeidspartnere, men ansvaret er alltid samlet hos Its Working.
+            </p>
           </div>
         </div>
       </section>
@@ -109,36 +99,42 @@ export default function About() {
 
       <section className="section-padding section-white">
         <div className="container">
-          <div className="about-section-text" style={{ textAlign: 'center' }}>
-            <h2>Ta kontakt</h2>
-            <p>
-              Har du spørsmål eller ønsker en uforpliktende prat, er du velkommen til å ta direkte kontakt.
-            </p>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', marginTop: '32px' }}>
-              <div className="contact-person" style={{ fontSize: '1.25rem' }}>
+          <div className="contact-card-with-photo">
+            <div className="contact-photo-small">
+              <img 
+                src="/ProfilbildeThomas.png" 
+                alt="Thomas Allisson" 
+              />
+            </div>
+            <div className="contact-card-content">
+              <h2>Ta kontakt</h2>
+              <p>
+                Har du spørsmål eller ønsker en uforpliktende prat, er du velkommen til å ta direkte kontakt.
+              </p>
+              
+              <div className="contact-person" style={{ marginTop: '16px', marginBottom: '12px' }}>
                 <strong>Thomas Allisson</strong>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div className="contact-inline-item" style={{ justifyContent: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <div className="contact-inline-item">
                   <Mail size={18} className="icon-primary" />
                   <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
                 </div>
-                <div className="contact-inline-item" style={{ justifyContent: 'center' }}>
+                <div className="contact-inline-item">
                   <Phone size={18} className="icon-primary" />
                   <a href="tel:+4798850462">988 50 462</a>
                 </div>
-                <div className="contact-inline-item" style={{ justifyContent: 'center' }}>
+                <div className="contact-inline-item">
                   <MapPin size={18} className="icon-primary" />
-                  <span>Fjordgata 43, 7010 Trondheim – 2. etasje</span>
+                  <span>Fjordgata 43, 7010 Trondheim</span>
                 </div>
               </div>
               
-              <p className="contact-availability" style={{ marginTop: '8px' }}>
+              <p className="contact-availability">
                 Tilgjengelig på kort varsel
               </p>
               
-              <div style={{ marginTop: '16px' }}>
+              <div style={{ marginTop: '20px' }}>
                 <Link href="/kontakt" className="btn" data-testid="link-contact-about">
                   Send melding
                 </Link>
