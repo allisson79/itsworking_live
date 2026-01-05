@@ -114,7 +114,9 @@ export default function Contact() {
                     <label htmlFor="name">Navn *</label>
                     <input 
                       id="name" 
+                      name="name"
                       type="text" 
+                      autoComplete="name"
                       placeholder="Ditt navn"
                       data-testid="input-name"
                       {...form.register("name")}
@@ -129,7 +131,9 @@ export default function Contact() {
                     <label htmlFor="email">E-post *</label>
                     <input 
                       id="email" 
+                      name="email"
                       type="email" 
+                      autoComplete="email"
                       placeholder="din@epost.no"
                       data-testid="input-email"
                       {...form.register("email")}
@@ -144,7 +148,9 @@ export default function Contact() {
                     <label htmlFor="company">Bedrift</label>
                     <input 
                       id="company" 
+                      name="company"
                       type="text" 
+                      autoComplete="organization"
                       placeholder="Firmanavn AS"
                       data-testid="input-company"
                       {...form.register("company")}
@@ -156,7 +162,9 @@ export default function Contact() {
                     <label htmlFor="message">Melding *</label>
                     <textarea 
                       id="message" 
+                      name="message"
                       rows={5} 
+                      autoComplete="off"
                       placeholder="Hva kan vi hjelpe deg med?"
                       data-testid="input-message"
                       {...form.register("message")}
