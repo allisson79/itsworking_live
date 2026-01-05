@@ -40,3 +40,13 @@
 ## Assumptions
 - This site must load fast, rank well, and look professional.
 - Simplicity beats sophistication.
+
+## Routing & URLs
+- Use exact paths as served by the server.
+- Preserve `.html` extensions if present.
+- Do not change navigation links that cause routing errors.
+  
+## Forms & Accessibility
+- All form fields must have id, name, and appropriate autocomplete attributes.
+- Do not remove labels or accessibility-related attributes.
+
