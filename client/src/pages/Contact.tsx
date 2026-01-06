@@ -54,8 +54,13 @@ export default function Contact() {
               <h2>Kontaktinformasjon</h2>
               <p>Vi holder til i Trondheim og betjener bedrifter i hele regionen.</p>
 
-              <div className="contact-image-location">
-                <img src="/oversikt_kontoret.png" alt="Its Working kontor - Klingenberggården" />
+              <div className="contact-person-primary">
+                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-primary-photo" />
+                <div className="contact-person-primary-info">
+                  <p className="contact-person-primary-name">Thomas Allisson</p>
+                  <p className="contact-person-primary-role">Én fast kontaktperson</p>
+                  <p className="contact-person-primary-location">Trondheim</p>
+                </div>
               </div>
 
               <div className="contact-details">
@@ -87,15 +92,6 @@ export default function Contact() {
                     <h4>E-post</h4>
                     <p><a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a></p>
                   </div>
-                </div>
-              </div>
-
-              <div className="contact-person-card">
-                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-photo" />
-                <div className="contact-person-info">
-                  <p className="contact-person-name">Thomas Allisson</p>
-                  <p className="contact-person-role">Én fast kontaktperson</p>
-                  <p className="contact-person-location">Trondheim</p>
                 </div>
               </div>
             </div>
