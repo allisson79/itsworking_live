@@ -33,16 +33,21 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="page-hero">
+      <section className="hero-elevated">
         <div className="container">
-          <h1>Kontakt oss</h1>
-          <p>
-            Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
-          </p>
+          <div className="hero-card">
+            <div className="hero-card-content">
+              <p className="hero-tagline">Ta kontakt</p>
+              <h1>Kontakt oss</h1>
+              <p className="hero-subtitle">
+                Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <section className="section-padding section-white section-overlap">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
