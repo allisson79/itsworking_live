@@ -2,9 +2,9 @@ import { memo, useCallback, useState, type ChangeEvent, type FormEvent } from "r
 
 const formStyle = { display: "flex", flexDirection: "column", gap: "10px" } as const;
 const labelStyle = { fontSize: "0.9rem", color: "rgba(255,255,255,0.85)" } as const;
-const inputStyle = { padding: "12px", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.2)", backgroundColor: "rgba(255,255,255,0.95)", color: "#0f1f2e", fontSize: "0.95rem" } as const;
-const buttonStyle = { padding: "12px", borderRadius: "10px", border: "none", backgroundColor: "#ffffff", color: "var(--primary)", fontWeight: 600, cursor: "pointer", transition: "background-color 0.2s ease" } as const;
-const successMessageStyle = { color: "#d1fae5", fontSize: "0.9rem", marginTop: "4px" } as const;
+const inputStyle = { padding: "12px", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.2)", backgroundColor: "var(--text-light)", color: "var(--text-dark)", fontSize: "0.95rem" } as const;
+const buttonStyle = { padding: "12px", borderRadius: "10px", border: "none", backgroundColor: "var(--text-light)", color: "var(--primary)", fontWeight: 600, cursor: "pointer", transition: "background-color 0.2s ease" } as const;
+const successMessageStyle = { color: "var(--text-light)", fontSize: "0.9rem", marginTop: "4px" } as const;
 
 export const Newsletter = memo(function Newsletter() {
   const [email, setEmail] = useState("");
@@ -45,7 +45,7 @@ export const Newsletter = memo(function Newsletter() {
         Meld meg på
       </button>
       {submitted && (
-        <p style={successMessageStyle}>
+        <p style={successMessageStyle} aria-live="polite">
           Takk! Du er registrert.
         </p>
       )}

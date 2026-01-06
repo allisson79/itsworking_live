@@ -29,10 +29,10 @@ export const Footer = memo(function Footer() {
             Vi sørger for at teknologien din bare fungerer.
           </p>
           <div style={socialLinksStyle}>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={socialIconStyle}>
+            <a href="https://www.linkedin.com/company/its-working-as" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={socialIconStyle}>
               <Linkedin size={20} />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={socialIconStyle}>
+            <a href="https://www.facebook.com/ItsWorkingAS" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={socialIconStyle}>
               <Facebook size={20} />
             </a>
           </div>
