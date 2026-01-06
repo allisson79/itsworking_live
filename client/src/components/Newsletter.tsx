@@ -19,9 +19,7 @@ export const Newsletter = memo(function Newsletter() {
   }, [email]);
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    if (submitted) {
-      setSubmitted(false);
-    }
+    setSubmitted(false);
     setEmail(event.target.value);
   }, [submitted]);
 
@@ -46,7 +44,7 @@ export const Newsletter = memo(function Newsletter() {
       </button>
       {submitted && (
         <p style={successMessageStyle} aria-live="polite">
-          Takk! Du er registrert.
+          Takk! Vi lagrer e-posten din lokalt. Ta gjerne kontakt på kontakt@itsworking.no for rask respons.
         </p>
       )}
     </form>

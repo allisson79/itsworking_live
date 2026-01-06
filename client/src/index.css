@@ -245,6 +245,19 @@ img {
   text-decoration: underline;
 }
 
+.footer .social-icon {
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.footer .social-icon:hover,
+.footer .social-icon:focus-visible {
+  background-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 2px;
+}
+
 /* Hero Section - Elevated Card Layout */
 .hero-elevated {
   background-color: var(--primary-light);
