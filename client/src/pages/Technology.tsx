@@ -142,7 +142,7 @@ export default function Technology() {
                 Tilgjengelig på kort varsel
               </p>
               
-              <div style={{ marginTop: '24px' }}>
+              <div className="cta-box-action">
                 <Link href="/kontakt" className="btn" data-testid="link-contact-technology">
                   Send melding
                 </Link>

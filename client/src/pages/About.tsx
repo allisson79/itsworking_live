@@ -132,7 +132,7 @@ export default function About() {
               Tilgjengelig på kort varsel
             </p>
             
-            <div style={{ marginTop: '24px' }}>
+            <div className="cta-box-action">
               <Link href="/kontakt" className="btn" data-testid="link-contact-about">
                 Send melding
               </Link>
