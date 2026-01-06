@@ -183,7 +183,7 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 90px;
   min-width: 200px;
 }
 
@@ -1288,7 +1288,7 @@ img {
   }
 
   .logo {
-    height: 56px;
+    height: 68px;
   }
 
   .hero-card {
