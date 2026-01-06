@@ -54,36 +54,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding section-light">
-        <div className="container">
-          <div className="about-content">
-            <div className="about-text">
-              <h2>En enklere hverdag</h2>
-              <p>
-                For mange bedrifter er IT en kilde til frustrasjon. Nedetid, sikkerhetstrusler og systemer som ikke snakker sammen stjeler verdifull tid.
-              </p>
-              <p>
-                Hos <strong>Its Working</strong> er vår filosofi enkel: Du skal ikke trenge å tenke på IT. Vi leverer løsninger som er usynlige i hverdagen, men som gir deg kraften du trenger for å vokse.
-              </p>
-              <ul className="check-list">
-                <li>
-                  <CheckCircle size={20} className="icon-primary" /> <span>Rask og personlig support</span>
-                </li>
-                <li>
-                  <CheckCircle size={20} className="icon-primary" /> <span>Forutsigbare kostnader</span>
-                </li>
-                <li>
-                  <CheckCircle size={20} className="icon-primary" /> <span>Sikkerhet i høysetet</span>
-                </li>
-              </ul>
-            </div>
-            <div className="about-image">
-              <img src="/modern_office_01.jpg" alt="Moderne arbeidsområde" className="rounded-image" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section-padding section-white">
         <div className="container">
           <div className="personal-partner-content">
@@ -142,6 +112,36 @@ export default function Home() {
       </section>
 
       <section className="section-padding section-white">
+        <div className="container">
+          <div className="about-content">
+            <div className="about-text">
+              <h2>En enklere hverdag</h2>
+              <p>
+                For mange bedrifter er IT en kilde til frustrasjon. Nedetid, sikkerhetstrusler og systemer som ikke snakker sammen stjeler verdifull tid.
+              </p>
+              <p>
+                Hos <strong>Its Working</strong> er vår filosofi enkel: Du skal ikke trenge å tenke på IT. Vi leverer løsninger som er usynlige i hverdagen, men som gir deg kraften du trenger for å vokse.
+              </p>
+              <ul className="check-list">
+                <li>
+                  <CheckCircle size={20} className="icon-primary" /> <span>Rask og personlig support</span>
+                </li>
+                <li>
+                  <CheckCircle size={20} className="icon-primary" /> <span>Forutsigbare kostnader</span>
+                </li>
+                <li>
+                  <CheckCircle size={20} className="icon-primary" /> <span>Sikkerhet i høysetet</span>
+                </li>
+              </ul>
+            </div>
+            <div className="about-image">
+              <img src="/modern_office_01.jpg" alt="Moderne arbeidsområde" className="rounded-image" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding section-light">
         <div className="container">
           <div className="cta-box">
             <h2>Klar for enklere IT?</h2>
