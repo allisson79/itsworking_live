@@ -170,11 +170,11 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <section className="section-padding section-light">
         <div className="container">
-          <div className="cta-section">
+          <div className="cta-box">
             <h2>Vil du vite mer?</h2>
-            <p>
+            <p className="section-intro">
               Ta gjerne kontakt for en uforpliktende prat om hvordan Its Working kan hjelpe din bedrift.
             </p>
             <div className="cta-contact">
@@ -187,7 +187,7 @@ export default function Services() {
                 <a href="tel:+4798850462">988 50 462</a>
               </div>
             </div>
-            <div style={{ marginTop: '24px' }}>
+            <div className="cta-box-action">
               <Link href="/kontakt" className="btn" data-testid="link-contact-services">
                 Send melding
               </Link>

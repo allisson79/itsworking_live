@@ -1,30 +1,22 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { CookieConsent } from "./CookieConsent";
-import { ScrollToTop } from "./ScrollToTop";
-import { ReactNode, useEffect } from "react";
-import { useLocation } from "wouter";
+import { ReactNode, memo } from "react";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-export function Layout({ children }: LayoutProps) {
-  const [location] = useLocation();
+const layoutStyle = { minHeight: "100vh", display: "flex", flexDirection: "column" } as const;
+const mainStyle = { flex: 1 } as const;
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location]);
-
+export const Layout = memo(function Layout({ children }: LayoutProps) {
   return (
-    <div className="page-wrapper">
+    <div style={layoutStyle}>
       <Header />
-      <main className="main-content">
+      <main style={mainStyle}>
         {children}
       </main>
       <Footer />
-      <CookieConsent />
-      <ScrollToTop />
     </div>
   );
-}
+});

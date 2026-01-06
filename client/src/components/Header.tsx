@@ -1,27 +1,25 @@
 import { Link, useLocation } from "wouter";
-import { useState, useEffect } from "react";
+import { useState, useCallback, memo, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 
-export function Header() {
+export const Header = memo(function Header() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const isActive = (path: string) => location === path ? "nav-link active" : "nav-link";
+  // Memoize navigation links to avoid recalculating on every render
+  const navLinks = useMemo(() => ({
+    home: location === "/" ? "nav-link active" : "nav-link",
+    services: location === "/tjenester" ? "nav-link active" : "nav-link",
+    technology: location === "/teknologi" ? "nav-link active" : "nav-link",
+    about: location === "/om-oss" ? "nav-link active" : "nav-link",
+    contact: location === "/kontakt" ? "nav-link active" : "nav-link",
+  }), [location]);
 
   return (
-    <header className={`header ${isScrolled ? "header-scrolled" : ""}`}>
+    <header className="header">
       <div className="container header-content">
         <Link href="/" className="logo">
           <img src="/Its%20Working%20trans1test.png" alt="Its Working" />
@@ -36,23 +34,23 @@ export function Header() {
         </button>
 
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link href="/" className={isActive("/")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/" className={navLinks.home} onClick={closeMenu}>
             Hjem
           </Link>
-          <Link href="/tjenester" className={isActive("/tjenester")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/tjenester" className={navLinks.services} onClick={closeMenu}>
             Tjenester
           </Link>
-          <Link href="/teknologi" className={isActive("/teknologi")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/teknologi" className={navLinks.technology} onClick={closeMenu}>
             Teknologi & Partnere
           </Link>
-          <Link href="/om-oss" className={isActive("/om-oss")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/om-oss" className={navLinks.about} onClick={closeMenu}>
             Om oss
           </Link>
-          <Link href="/kontakt" className={isActive("/kontakt")} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/kontakt" className={navLinks.contact} onClick={closeMenu}>
             Kontakt
           </Link>
         </nav>
       </div>
     </header>
   );
-}
+});

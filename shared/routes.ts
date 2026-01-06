@@ -24,6 +24,19 @@ export const api = {
       },
     },
   },
+  status: {
+    get: {
+      method: 'GET' as const,
+      path: '/api/status',
+      responses: {
+        200: z.object({
+          status: z.enum(['live', 'maintenance', 'down']),
+          timestamp: z.string().datetime(),
+          environment: z.string(),
+        }),
+      },
+    },
+  },
 };
 
 export function buildUrl(path: string, params?: Record<string, string | number>): string {

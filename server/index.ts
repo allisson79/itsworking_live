@@ -10,9 +10,7 @@ const httpServer = createServer(app);
 const isProd = process.env.NODE_ENV === "production";
 
 /**
- * Viktig:
- * - Assets fra attached_assets brukes kun av Replit
- * - Må aldri kollidere med Vite /dist/assets
+ * Replit-only assets
  */
 app.use(
   "/attached_assets",
@@ -35,15 +33,20 @@ app.use(
 
 app.use(express.urlencoded({ extended: false }));
 
-// Debug middleware to log ALL requests (temporary for debugging)
-app.use((req, res, next) => {
+/**
+ * Debug logging (limited)
+ */
+app.use((req, _res, next) => {
   if (req.path.startsWith("/_") || req.path.startsWith("/__")) {
-    console.log(`[DEBUG] ${req.method} ${req.path} Accept: ${req.get("accept")?.substring(0, 50) || "none"}`);
+    console.log(
+      `[DEBUG] ${req.method} ${req.path} Accept: ${
+        req.get("accept")?.substring(0, 50) || "none"
+      }`,
+    );
   }
   next();
 });
 
-// Health check endpoint for Replit
 app.get("/_health", (_req, res) => {
   res.status(200).json({ status: "ok" });
 });
@@ -60,28 +63,35 @@ export function log(message: string, source = "express") {
 }
 
 /**
- * Request-logging (kun API)
+ * API request logging only
  */
 app.use((req, res, next) => {
+  if (!req.path.startsWith("/api")) return next();
+
   const start = Date.now();
   const reqPath = req.path;
   let capturedJsonResponse: Record<string, any> | undefined;
 
   const originalResJson = res.json.bind(res);
-  res.json = function(bodyJson: any) {
+  res.json = function (bodyJson: any) {
     capturedJsonResponse = bodyJson;
     return originalResJson(bodyJson);
   };
 
   res.on("finish", () => {
     const duration = Date.now() - start;
-    if (reqPath.startsWith("/api")) {
-      let logLine = `${req.method} ${reqPath} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      }
-      log(logLine);
+    let logLine = `${req.method} ${reqPath} ${res.statusCode} in ${duration}ms`;
+
+    if (capturedJsonResponse) {
+      const responseStr = JSON.stringify(capturedJsonResponse);
+      logLine += ` :: ${
+        responseStr.length > 500
+          ? responseStr.substring(0, 500) + "..."
+          : responseStr
+      }`;
     }
+
+    log(logLine);
   });
 
   next();
@@ -90,21 +100,26 @@ app.use((req, res, next) => {
 (async () => {
   await registerRoutes(httpServer, app);
 
-  /**
-   * API error handler
-   */
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
     res.status(status).json({ message });
   });
 
-  /**
-   * 🚨 HER VAR FEILEN TIDLIGERE 🚨
-   * Nå er dev og prod 100 % gjensidig utelukkende
-   */
   if (isProd) {
     log("Starting in PRODUCTION mode");
+
+    /**
+     * 🔥 DETTE VAR MANGLENDE 🔥
+     * Server vanlige statiske filer (bilder etc.)
+     */
+    app.use(
+      express.static(path.join(process.cwd(), "client/public")),
+    );
+
+    /**
+     * Server ferdig bygget frontend
+     */
     serveStatic(app);
   } else {
     log("Starting in DEVELOPMENT mode (Vite)");

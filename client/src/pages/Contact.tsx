@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { Mail, MapPin, Phone, CheckCircle, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,35 +20,47 @@ export default function Contact() {
     }
   });
 
-  const onSubmit = (data: InsertContactMessage) => {
+  const onSubmit = useCallback((data: InsertContactMessage) => {
     contactMutation.mutate(data, {
       onSuccess: () => {
         setSubmitted(true);
         form.reset();
       }
     });
-  };
+  }, [contactMutation, form]);
+
+  const handleNewMessage = useCallback(() => setSubmitted(false), []);
 
   return (
     <Layout>
-      <section className="page-hero">
+      <section className="hero-elevated">
         <div className="container">
-          <h1>Kontakt oss</h1>
-          <p>
-            Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
-          </p>
+          <div className="hero-card">
+            <div className="hero-card-content">
+              <p className="hero-tagline">Ta kontakt</p>
+              <h1>Kontakt oss</h1>
+              <p className="hero-subtitle">
+                Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <section className="section-padding section-white section-overlap">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
               <h2>Kontaktinformasjon</h2>
               <p>Vi holder til i Trondheim og betjener bedrifter i hele regionen.</p>
 
-              <div className="contact-image-location">
-                <img src="/oversikt_kontoret.png" alt="Its Working kontor - Klingenberggården" />
+              <div className="contact-person-primary">
+                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-primary-photo" />
+                <div className="contact-person-primary-info">
+                  <p className="contact-person-primary-name">Thomas Allisson</p>
+                  <p className="contact-person-primary-role">Én fast kontaktperson</p>
+                  <p className="contact-person-primary-location">Trondheim</p>
+                </div>
               </div>
 
               <div className="contact-details">
@@ -94,7 +106,7 @@ export default function Contact() {
                   <p>Vi har mottatt meldingen din og tar kontakt med deg så snart som mulig.</p>
                   <button 
                     className="btn btn-secondary" 
-                    onClick={() => setSubmitted(false)}
+                    onClick={handleNewMessage}
                     data-testid="button-new-message"
                   >
                     Send ny melding
@@ -112,7 +124,9 @@ export default function Contact() {
                     <label htmlFor="name">Navn *</label>
                     <input 
                       id="name" 
+                      name="name"
                       type="text" 
+                      autoComplete="name"
                       placeholder="Ditt navn"
                       data-testid="input-name"
                       {...form.register("name")}
@@ -127,7 +141,9 @@ export default function Contact() {
                     <label htmlFor="email">E-post *</label>
                     <input 
                       id="email" 
+                      name="email"
                       type="email" 
+                      autoComplete="email"
                       placeholder="din@epost.no"
                       data-testid="input-email"
                       {...form.register("email")}
@@ -142,7 +158,9 @@ export default function Contact() {
                     <label htmlFor="company">Bedrift</label>
                     <input 
                       id="company" 
+                      name="company"
                       type="text" 
+                      autoComplete="organization"
                       placeholder="Firmanavn AS"
                       data-testid="input-company"
                       {...form.register("company")}
@@ -154,7 +172,9 @@ export default function Contact() {
                     <label htmlFor="message">Melding *</label>
                     <textarea 
                       id="message" 
+                      name="message"
                       rows={5} 
+                      autoComplete="off"
                       placeholder="Hva kan vi hjelpe deg med?"
                       data-testid="input-message"
                       {...form.register("message")}
