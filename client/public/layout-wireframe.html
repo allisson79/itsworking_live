@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout Wireframe</title>
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --accent: #0f766e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    header, footer {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    nav .links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: center;
+    }
+    .hero h1 { margin: 0 0 12px; font-size: 32px; }
+    .hero p { margin: 0 0 16px; color: var(--muted); }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .section h2 { margin: 0; }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fbfbfc;
+    }
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    label { font-weight: 600; }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font: inherit;
+    }
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    small { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav>
+        <div><strong>Logo</strong></div>
+        <div class="links">
+          <span>Hjem</span><span>Tjenester</span><span>Teknologi</span><span>Om oss</span><span>Kontakt</span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p style="margin:0; color: var(--muted);">Subheading / eyebrow</p>
+        <h1>Hero heading with clear value prop</h1>
+        <p>Supporting copy with 2–3 lines max. Keep width to ~65–75 characters for readability.</p>
+        <div class="cta-row">
+          <a class="btn" href="#">Primary CTA</a>
+          <a class="btn secondary" href="#">Secondary link</a>
+        </div>
+      </div>
+      <div style="min-height:200px; border:1px dashed var(--border); border-radius:12px; background:#fbfbfc; display:flex; align-items:center; justify-content:center;">Image / illustration</div>
+    </section>
+
+    <section class="section">
+      <h2>Key responsibilities</h2>
+      <div class="card-grid">
+        <div class="card">Item with icon + short label</div>
+        <div class="card">Item with icon + short label</div>
+        <div class="card">Item with icon + short label</div>
+        <div class="card">Item with icon + short label</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Two-column story</h2>
+      <div class="two-col">
+        <div>
+          <p>Left-aligned paragraph text. Keep spacing consistent (64–80px sections on desktop, 40–56px on mobile).</p>
+          <p>Use clear bullet lists where helpful.</p>
+        </div>
+        <div style="border:1px dashed var(--border); border-radius:12px; min-height:160px; background:#fbfbfc;"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Service cards</h2>
+      <div class="card-grid">
+        <div class="card">
+          <strong>Service title</strong>
+          <p>Short 2–3 line description.</p>
+        </div>
+        <div class="card">
+          <strong>Service title</strong>
+          <p>Short 2–3 line description.</p>
+        </div>
+        <div class="card">
+          <strong>Service title</strong>
+          <p>Short 2–3 line description.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div>
+        <h2>Contact info</h2>
+        <p>Address, phone, and email stacked on mobile; two columns on desktop.</p>
+        <p><strong>Thomas Allisson</strong><br/>Fjordgata 43, 7010 Trondheim<br/>988 50 462<br/>kontakt@itsworking.no</p>
+      </div>
+      <div>
+        <h2>Contact form</h2>
+        <form>
+          <div>
+            <label for="name">Navn</label>
+            <input id="name" type="text" placeholder="Ditt navn" />
+          </div>
+          <div>
+            <label for="email">E-post</label>
+            <input id="email" type="email" placeholder="din@epost.no" />
+          </div>
+          <div>
+            <label for="company">Bedrift</label>
+            <input id="company" type="text" placeholder="Firmanavn AS" />
+          </div>
+          <div>
+            <label for="message">Melding</label>
+            <textarea id="message" rows="4" placeholder="Hva kan vi hjelpe deg med?"></textarea>
+          </div>
+          <button class="btn" type="button">Send melding</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-cols">
+        <div><strong>Logo + blurb</strong><br/><small>Short credibility text.</small></div>
+        <div><strong>Snarveier</strong><br/><small>Link list</small></div>
+        <div><strong>Kontakt</strong><br/><small>Address, phone, email</small></div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
