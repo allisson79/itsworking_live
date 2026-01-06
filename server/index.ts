@@ -108,18 +108,6 @@ app.use((req, res, next) => {
 
   if (isProd) {
     log("Starting in PRODUCTION mode");
-
-    /**
-     * 🔥 DETTE VAR MANGLENDE 🔥
-     * Server vanlige statiske filer (bilder etc.)
-     */
-    app.use(
-      express.static(path.join(process.cwd(), "client/public")),
-    );
-
-    /**
-     * Server ferdig bygget frontend
-     */
     serveStatic(app);
   } else {
     log("Starting in DEVELOPMENT mode (Vite)");
