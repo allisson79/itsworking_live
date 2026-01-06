@@ -50,6 +50,7 @@
 - Never introduce new claims, promises, pricing, or guarantees.
 - Never switch to first-person voice unless explicitly requested.
 
+Home hero copy is approved and should not be modified unless explicitly requested.
   
 ## Forms & Accessibility
 - All form fields must have id, name, and appropriate autocomplete attributes.
