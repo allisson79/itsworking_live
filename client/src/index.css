@@ -23,4 +23,245 @@ img {
 }
 
 /* =========================
-   LAY
+   LAYOUT
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 64px 0;
+}
+
+.section-white {
+  background: #ffffff;
+}
+
+.section-light {
+  background: #f1f7ff;
+}
+
+.section-overlap {
+  margin-top: -32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.site-header .logo img {
+  height: 44px; /* <-- VIKTIG */
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .site-header .logo img {
+    height: 36px;
+  }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #0b4ea2;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #093f84;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero-elevated {
+  background: #f1f7ff;
+  padding: 64px 0 96px;
+}
+
+.hero-card {
+  background: #ffffff;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hero-card-content {
+  padding: 56px;
+}
+
+.hero-tagline {
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.hero-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   RESPONSIBILITY LIST
+========================= */
+.responsibility-section h2 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.responsibility-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.responsibility-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .responsibility-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   PARTNER LOGOS (VIKTIG)
+========================= */
+.partner-logos-section {
+  text-align: center;
+}
+
+.partner-logos-subtitle {
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.partner-logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+}
+
+.partner-logo {
+  height: 56px;          /* <-- HER ER STØRRELSEN */
+  width: auto;
+  opacity: 0.85;
+  filter: grayscale(100%);
+  transition: all 0.2s ease;
+}
+
+.partner-logo:hover {
+  opacity: 1;
+  filter: none;
+}
+
+@media (max-width: 768px) {
+  .partner-logo {
+    height: 40px;
+  }
+}
+
+/* =========================
+   PERSONAL PARTNER
+========================= */
+.personal-partner-content {
+  max-width: 720px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.rounded-image {
+  border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   CTA BOX
+========================= */
+.cta-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
