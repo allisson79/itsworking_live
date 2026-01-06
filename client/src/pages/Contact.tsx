@@ -89,6 +89,15 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
+
+              <div className="contact-person-card">
+                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-photo" />
+                <div className="contact-person-info">
+                  <p className="contact-person-name">Thomas Allisson</p>
+                  <p className="contact-person-role">Én fast kontaktperson</p>
+                  <p className="contact-person-location">Trondheim</p>
+                </div>
+              </div>
             </div>
 
             <div className="contact-form-container">

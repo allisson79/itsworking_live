@@ -1193,6 +1193,48 @@ img {
   display: block;
 }
 
+/* Contact Person Card */
+.contact-person-card {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-person-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.contact-person-info {
+  flex: 1;
+}
+
+.contact-person-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.contact-person-role {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  margin-bottom: 2px;
+}
+
+.contact-person-location {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin: 0;
+}
+
 /* Success State */
 .success-state {
   text-align: center;
@@ -1353,5 +1395,16 @@ img {
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-sm);
+  }
+
+  .contact-person-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .contact-person-photo {
+    width: 90px;
+    height: 90px;
   }
 }
