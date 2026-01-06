@@ -10,10 +10,10 @@ export default function Home() {
           <div className="hero-card">
             <div className="hero-card-content">
               <p className="hero-tagline">Lokal IT-partner i Trondheim</p>
-              <h1>IT som bare fungerer</h1>
+              <h1>IT-partner i Trondheim som bare fungerer</h1>
               <p className="hero-subtitle">
-                Vi tar oss av IT, slik at små og mellomstore bedrifter får mer tid til å drive sin virksomhet. 
-                Trygt, stabilt og profesjonelt.
+                Vi tar oss av IT for små og mellomstore bedrifter i Trondheim og regionen. 
+                Med én fast kontaktperson får du trygg, stabil og profesjonell IT-drift.
               </p>
               <div className="hero-cta">
                 <Link href="/kontakt" className="btn" data-testid="link-contact-cta">
