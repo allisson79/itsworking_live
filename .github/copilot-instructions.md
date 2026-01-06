@@ -45,6 +45,11 @@
 - Use exact paths as served by the server.
 - Preserve `.html` extensions if present.
 - Do not change navigation links that cause routing errors.
+
+## Copy changes are allowed ONLY inside the hero and must be minimal.
+- Never introduce new claims, promises, pricing, or guarantees.
+- Never switch to first-person voice unless explicitly requested.
+
   
 ## Forms & Accessibility
 - All form fields must have id, name, and appropriate autocomplete attributes.
