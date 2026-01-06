@@ -12,11 +12,13 @@ export const Newsletter = memo(function Newsletter() {
 
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!email.trim()) return;
+    const formData = new FormData(event.currentTarget);
+    const emailValue = ((formData.get("email") as string) || "").trim();
+    if (!emailValue) return;
 
     setSubmitted(true);
     setEmail("");
-  }, [email]);
+  }, []);
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSubmitted(false);
