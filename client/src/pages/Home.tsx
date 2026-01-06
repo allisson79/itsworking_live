@@ -63,10 +63,10 @@ export default function Home() {
             </p>
             <div className="partner-logos-grid">
               <div className="partner-logo-item">
-                <img src="/logo-globalconnect.svg" alt="GlobalConnect" />
+                <img src="/gc-logo-hor-blue.png" alt="GlobalConnect" />
               </div>
               <div className="partner-logo-item">
-                <img src="/Logo-Digiflow-AS.svg" alt="Digiflow AS" />
+                <img src="/Logo-Digiflow-AS.png" alt="Digiflow AS" />
               </div>
             </div>
           </div>
