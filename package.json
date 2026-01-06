@@ -54,7 +54,7 @@
     "drizzle-orm": "^0.45.1",
     "drizzle-zod": "^0.5.1",
     "embla-carousel-react": "^8.6.0",
-    "esbuild": "^0.19.0",
+    "esbuild": "^0.25.12",
     "express": "^4.19.2",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.453.0",
