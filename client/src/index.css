@@ -183,7 +183,7 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  height: 90px;
+  height: 105px;
   min-width: 200px;
 }
 
@@ -1281,6 +1281,45 @@ img {
   to { transform: rotate(360deg); }
 }
 
+/* Partner Logos Section */
+.partner-logos-section {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.partner-logos-section h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.partner-logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.partner-logo-item {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  filter: grayscale(100%);
+}
+
+.partner-logo-item:hover {
+  opacity: 0.8;
+}
+
+.partner-logo-item img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .header-content {
@@ -1288,7 +1327,7 @@ img {
   }
 
   .logo {
-    height: 68px;
+    height: 72px;
   }
 
   .hero-card {
@@ -1405,5 +1444,13 @@ img {
   .contact-person-primary-photo {
     width: 80px;
     height: 80px;
+  }
+
+  .partner-logos-grid {
+    gap: var(--spacing-lg);
+  }
+
+  .partner-logo-item img {
+    height: 32px;
   }
 }

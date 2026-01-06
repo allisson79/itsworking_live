@@ -28,6 +28,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section-padding section-white">
+        <div className="container">
+          <div className="partner-logos-section">
+            <h3>Samarbeidspartnere</h3>
+            <div className="partner-logos-grid">
+              <div className="partner-logo-item">
+                <img src="/logo-globalconnect.svg" alt="GlobalConnect" />
+              </div>
+              <div className="partner-logo-item">
+                <img src="/Logo-Digiflow-AS.svg" alt="Digiflow AS" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding section-white section-overlap">
         <div className="container">
           <div className="responsibility-section">
