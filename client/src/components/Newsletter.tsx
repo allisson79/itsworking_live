@@ -13,7 +13,7 @@ export const Newsletter = memo(function Newsletter() {
   const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const emailValue = ((formData.get("email") as string) || "").trim();
+    const emailValue = (formData.get("email") as string)?.trim() || "";
     if (!emailValue) return;
 
     setSubmitted(true);
@@ -46,7 +46,7 @@ export const Newsletter = memo(function Newsletter() {
       </button>
       {submitted && (
         <p style={successMessageStyle} aria-live="polite">
-          Takk! Dette er en forhåndsvisning – e-posten sendes ikke automatisk. Kontakt oss på kontakt@itsworking.no for rask respons.
+          Takk! Dette er en forhåndsvisning – vi lagrer ikke e-posten. Kontakt oss på kontakt@itsworking.no.
         </p>
       )}
     </form>
