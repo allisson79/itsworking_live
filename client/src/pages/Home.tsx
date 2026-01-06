@@ -28,22 +28,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
-        <div className="container">
-          <div className="partner-logos-section">
-            <h3>Samarbeidspartnere</h3>
-            <div className="partner-logos-grid">
-              <div className="partner-logo-item">
-                <img src="/logo-globalconnect.svg" alt="GlobalConnect" />
-              </div>
-              <div className="partner-logo-item">
-                <img src="/Logo-Digiflow-AS.svg" alt="Digiflow AS" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section-padding section-white section-overlap">
         <div className="container">
           <div className="responsibility-section">
@@ -66,6 +50,25 @@ export default function Home() {
                 <span>Sky og Microsoft 365</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding section-light">
+        <div className="container">
+          <div className="partner-logos-section">
+            <h3>Samarbeidspartnere</h3>
+            <p className="partner-logos-subtitle">
+              Vi samarbeider med anerkjente leverandører for å sikre kvalitet, pålitelighet og trygg levering til våre kunder.
+            </p>
+            <div className="partner-logos-grid">
+              <div className="partner-logo-item">
+                <img src="/logo-globalconnect.svg" alt="GlobalConnect" />
+              </div>
+              <div className="partner-logo-item">
+                <img src="/Logo-Digiflow-AS.svg" alt="Digiflow AS" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

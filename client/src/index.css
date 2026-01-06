@@ -183,7 +183,7 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  height: 105px;
+  height: 120px;
   min-width: 200px;
 }
 
@@ -1284,38 +1284,47 @@ img {
 /* Partner Logos Section */
 .partner-logos-section {
   text-align: center;
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-xl) 0;
 }
 
 .partner-logos-section h3 {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-gray);
-  margin-bottom: var(--spacing-lg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.partner-logos-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  margin-bottom: var(--spacing-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .partner-logos-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-xl);
+  gap: 48px;
   flex-wrap: wrap;
 }
 
 .partner-logo-item {
-  opacity: 0.6;
+  opacity: 0.7;
   transition: opacity 0.2s ease;
   filter: grayscale(100%);
 }
 
 .partner-logo-item:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .partner-logo-item img {
-  height: 40px;
+  height: 50px;
   width: auto;
   object-fit: contain;
 }
@@ -1327,7 +1336,7 @@ img {
   }
 
   .logo {
-    height: 72px;
+    height: 80px;
   }
 
   .hero-card {
@@ -1451,6 +1460,6 @@ img {
   }
 
   .partner-logo-item img {
-    height: 32px;
+    height: 38px;
   }
 }
