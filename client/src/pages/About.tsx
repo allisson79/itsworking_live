@@ -104,40 +104,38 @@ export default function About() {
 
       <section className="section-padding section-white">
         <div className="container">
-          <div className="contact-local-section">
-            <div className="contact-local-text">
-              <h2>Kontakt</h2>
-              <p>
-                Har du spørsmål eller ønsker en uforpliktende prat, er du velkommen til å ta direkte kontakt.
-              </p>
-              
-              <div className="contact-details-compact">
-                <div className="contact-person">
-                  <strong>Thomas Allisson</strong>
-                </div>
-                <div className="contact-inline-item">
-                  <Mail size={18} className="icon-primary" />
-                  <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
-                </div>
-                <div className="contact-inline-item">
-                  <Phone size={18} className="icon-primary" />
-                  <a href="tel:+4798850462">988 50 462</a>
-                </div>
-                <div className="contact-inline-item">
-                  <MapPin size={18} className="icon-primary" />
-                  <span>Fjordgata 43, 7010 Trondheim – 2. etasje</span>
-                </div>
+          <div className="about-section-text">
+            <h2>Kontakt</h2>
+            <p>
+              Har du spørsmål eller ønsker en uforpliktende prat, er du velkommen til å ta direkte kontakt.
+            </p>
+            
+            <div className="contact-details-compact">
+              <div className="contact-person">
+                <strong>Thomas Allisson</strong>
               </div>
-              
-              <p className="contact-availability">
-                Tilgjengelig på kort varsel
-              </p>
-              
-              <div style={{ marginTop: '24px' }}>
-                <Link href="/kontakt" className="btn" data-testid="link-contact-about">
-                  Send melding
-                </Link>
+              <div className="contact-inline-item">
+                <Mail size={18} className="icon-primary" />
+                <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
               </div>
+              <div className="contact-inline-item">
+                <Phone size={18} className="icon-primary" />
+                <a href="tel:+4798850462">988 50 462</a>
+              </div>
+              <div className="contact-inline-item">
+                <MapPin size={18} className="icon-primary" />
+                <span>Fjordgata 43, 7010 Trondheim – 2. etasje</span>
+              </div>
+            </div>
+            
+            <p className="contact-availability">
+              Tilgjengelig på kort varsel
+            </p>
+            
+            <div className="cta-box-action">
+              <Link href="/kontakt" className="btn" data-testid="link-contact-about">
+                Send melding
+              </Link>
             </div>
           </div>
         </div>

@@ -33,24 +33,34 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="page-hero">
+      <section className="hero-elevated">
         <div className="container">
-          <h1>Kontakt oss</h1>
-          <p>
-            Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
-          </p>
+          <div className="hero-card">
+            <div className="hero-card-content">
+              <p className="hero-tagline">Ta kontakt</p>
+              <h1>Kontakt oss</h1>
+              <p className="hero-subtitle">
+                Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <section className="section-padding section-white section-overlap">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
               <h2>Kontaktinformasjon</h2>
               <p>Vi holder til i Trondheim og betjener bedrifter i hele regionen.</p>
 
-              <div className="contact-image-location">
-                <img src="/oversikt_kontoret.png" alt="Its Working kontor - Klingenberggården" />
+              <div className="contact-person-primary">
+                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-primary-photo" />
+                <div className="contact-person-primary-info">
+                  <p className="contact-person-primary-name">Thomas Allisson</p>
+                  <p className="contact-person-primary-role">Én fast kontaktperson</p>
+                  <p className="contact-person-primary-location">Trondheim</p>
+                </div>
               </div>
 
               <div className="contact-details">
