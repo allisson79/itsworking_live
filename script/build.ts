@@ -2,10 +2,6 @@ import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
-function run(cmd: string) {
-  execSync(cmd, { stdio: "inherit" });
-}
-
 function copyDir(src: string, dest: string) {
   fs.mkdirSync(dest, { recursive: true });
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
@@ -28,7 +24,7 @@ function build() {
   fs.mkdirSync(dist, { recursive: true });
 
   console.log("Building client...");
-  run("npx vite build");
+  execSync("npx vite build", { stdio: "inherit" });
   console.log("✅ Client build complete: dist/public");
 
   console.log("Copying server...");
