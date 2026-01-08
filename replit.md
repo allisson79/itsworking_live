@@ -81,7 +81,7 @@ shared/
 
 ### Domain and Hosting
 - **Production Domain**: itsworking.no
-- **Contact Email**: kontakt@itsworking.no
+- **Contact Email**: thomas@itsworking.no
 - **Phone**: 988 50 462
 - **Address**: Fjordgata 43, 7010 Trondheim (Klingenberggården)
 
