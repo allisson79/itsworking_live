@@ -19,7 +19,7 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - **Services**: tjenester.jpg
 - **Technology**: fjordgata.jpg
 - **About**: oversikt_kontoret.png
-- **Contact**: ProfilbildeThomas.png (positioned at center 25%)
+- **Contact**: ProfilbildeThomas.png (positioned at center 85% to show jacket/logo)
 
 ## User Preferences
 

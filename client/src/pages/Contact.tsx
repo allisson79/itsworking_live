@@ -39,7 +39,7 @@ export default function Contact() {
         description="Ta kontakt med Its Working i Trondheim. Ring 988 50 462 eller send oss en melding. Vi hjelper din bedrift med IT-løsninger."
         path="/kontakt"
       />
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/ProfilbildeThomas.png)', backgroundPosition: 'center 25%' }}>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/ProfilbildeThomas.png)', backgroundPosition: 'center 85%' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
