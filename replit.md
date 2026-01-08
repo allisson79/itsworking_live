@@ -9,6 +9,9 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Fixed missing image reference on Technology page
 - All pages fully functional with working contact form
 - Added `/api/status` endpoint for integration health checks
+- Added SEO metadata with Open Graph and Twitter card support on all pages
+- Created favicon (SVG, PNG, Apple touch icon)
+- Enhanced mobile responsiveness across all pages (header, navigation, footer, forms)
 
 ## User Preferences
 
