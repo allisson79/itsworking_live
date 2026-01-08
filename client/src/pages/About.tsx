@@ -1,10 +1,17 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function About() {
   return (
     <Layout>
+      <SEO
+        title="Om oss"
+        description="Its Working er et lokalt IT-selskap i Trondheim, etablert av Thomas Allisson. Vi leverer personlig IT-støtte til små og mellomstore bedrifter."
+        path="/om-oss"
+        image="/ProfilbildeThomas.png"
+      />
       <section className="hero-elevated">
         <div className="container">
           <div className="hero-card">

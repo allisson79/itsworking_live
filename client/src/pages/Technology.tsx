@@ -1,10 +1,16 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { CheckCircle, Network, Shield, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Technology() {
   return (
     <Layout>
+      <SEO
+        title="Teknologi og partnere"
+        description="Its Working samarbeider med GlobalConnect og Digiflow for å levere stabil fiber, nettverk og sikkerhet til bedrifter i Trondheim."
+        path="/teknologi"
+      />
       <section className="hero-elevated">
         <div className="container">
           <div className="hero-card">

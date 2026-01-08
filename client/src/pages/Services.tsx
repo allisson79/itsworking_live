@@ -1,10 +1,16 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { CheckCircle, Wifi, Globe, Shield, Monitor, Phone, Mail } from "lucide-react";
 
 export default function Services() {
   return (
     <Layout>
+      <SEO
+        title="Tjenester"
+        description="Fiber, nettverk, WiFi, IT-sikkerhet og Microsoft 365 for bedrifter i Trondheim. Profesjonelle IT-tjenester med personlig oppfølging."
+        path="/tjenester"
+      />
       <section className="hero-elevated">
         <div className="container">
           <div className="hero-card">
