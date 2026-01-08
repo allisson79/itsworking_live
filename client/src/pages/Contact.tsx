@@ -39,24 +39,21 @@ export default function Contact() {
         description="Ta kontakt med Its Working i Trondheim. Ring 988 50 462 eller send oss en melding. Vi hjelper din bedrift med IT-løsninger."
         path="/kontakt"
       />
-      <section className="hero-elevated">
-        <div className="container">
-          <div className="hero-card">
-            <div className="hero-card-content">
-              <p className="hero-tagline">Ta kontakt</p>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/ProfilbildeThomas.png)', backgroundPosition: 'center 25%' }}>
+        <div className="hero-overlay">
+          <div className="container">
+            <div className="hero-fullscreen-content">
+              <p className="hero-tagline-light">Ta kontakt</p>
               <h1>Kontakt oss</h1>
-              <p className="hero-subtitle">
+              <p className="hero-subtitle-light">
                 Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
               </p>
-            </div>
-            <div className="hero-card-image">
-              <img src="/oversikt_kontoret.png" alt="Kontoret til Its Working" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding section-white section-overlap">
+      <section className="section-padding section-white">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
