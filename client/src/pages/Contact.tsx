@@ -49,6 +49,9 @@ export default function Contact() {
                 Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
               </p>
             </div>
+            <div className="hero-card-image">
+              <img src="/oversikt_kontoret.png" alt="Kontoret til Its Working" />
+            </div>
           </div>
         </div>
       </section>
@@ -96,7 +99,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4>E-post</h4>
-                    <p><a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a></p>
+                    <p><a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a></p>
                   </div>
                 </div>
               </div>

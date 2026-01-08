@@ -49,7 +49,7 @@ export const Footer = memo(function Footer() {
             </li>
             <li style={contactItemStyle}>
               <Mail size={18} />
-              <a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a>
+              <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
             </li>
           </ul>
         </div>

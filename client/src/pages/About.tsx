@@ -103,7 +103,7 @@ export default function About() {
               </p>
             </div>
             <div className="about-image">
-              <img src="/trondheim_city.jpg" alt="Trondheim sentrum" className="rounded-image" />
+              <img src="/oversikt_kontoret.png" alt="Kontoret til Its Working" className="rounded-image" />
             </div>
           </div>
         </div>

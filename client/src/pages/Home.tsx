@@ -22,13 +22,13 @@ export default function Home() {
         image="/trondheim_city.jpg"
       />
       {/* HERO */}
-      <section className="hero-elevated">
-        <div className="container">
-          <div className="hero-card">
-            <div className="hero-card-content">
-              <p className="hero-tagline">Lokal IT-partner i Trondheim</p>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/trondheim_city.jpg)' }}>
+        <div className="hero-overlay">
+          <div className="container">
+            <div className="hero-fullscreen-content">
+              <p className="hero-tagline-light">Lokal IT-partner i Trondheim</p>
               <h1>IT-partner i Trondheim som bare fungerer</h1>
-              <p className="hero-subtitle">
+              <p className="hero-subtitle-light">
                 Vi tar oss av IT for små og mellomstore bedrifter i Trondheim og
                 regionen. Med én fast kontaktperson får du trygg, stabil og
                 profesjonell IT-drift.
@@ -38,13 +38,6 @@ export default function Home() {
                   Ta kontakt
                 </Link>
               </div>
-            </div>
-
-            <div className="hero-card-image">
-              <img
-                src="/trondheim_city.jpg"
-                alt="Trondheim"
-              />
             </div>
           </div>
         </div>
