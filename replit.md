@@ -12,6 +12,14 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Added SEO metadata with Open Graph and Twitter card support on all pages
 - Created favicon (SVG, PNG, Apple touch icon)
 - Enhanced mobile responsiveness across all pages (header, navigation, footer, forms)
+- Implemented fullscreen hero sections with background images on all pages
+
+### Hero Image Mapping
+- **Home**: trondheim_city.jpg
+- **Services**: tjenester.jpg
+- **Technology**: fjordgata.jpg
+- **About**: oversikt_kontoret.png
+- **Contact**: ProfilbildeThomas.png (positioned at center 25%)
 
 ## User Preferences
 
