@@ -11,13 +11,13 @@ export default function Services() {
         description="Fiber, nettverk, WiFi, IT-sikkerhet og Microsoft 365 for bedrifter i Trondheim. Profesjonelle IT-tjenester med personlig oppfølging."
         path="/tjenester"
       />
-      <section className="hero-elevated">
-        <div className="container">
-          <div className="hero-card">
-            <div className="hero-card-content">
-              <p className="hero-tagline">IT for SMB</p>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/tjenester.jpg)' }}>
+        <div className="hero-overlay">
+          <div className="container">
+            <div className="hero-fullscreen-content">
+              <p className="hero-tagline-light">IT for SMB</p>
               <h1>Tjenester</h1>
-              <p className="hero-subtitle">
+              <p className="hero-subtitle-light">
                 Praktiske IT-tjenester for små og mellomstore bedrifter – levert med én fast kontaktperson og ansvar samlet ett sted.
               </p>
             </div>
@@ -25,7 +25,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="section-padding section-white section-overlap">
+      <section className="section-padding section-white">
         <div className="container">
           <div className="service-detail-section">
             <div className="service-detail-icon">
@@ -186,7 +186,7 @@ export default function Services() {
             <div className="cta-contact">
               <div className="contact-inline-item">
                 <Mail size={18} className="icon-primary" />
-                <a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a>
+                <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
               </div>
               <div className="contact-inline-item">
                 <Phone size={18} className="icon-primary" />

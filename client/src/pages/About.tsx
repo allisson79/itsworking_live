@@ -12,24 +12,21 @@ export default function About() {
         path="/om-oss"
         image="/ProfilbildeThomas.png"
       />
-      <section className="hero-elevated">
-        <div className="container">
-          <div className="hero-card">
-            <div className="hero-card-content">
-              <p className="hero-tagline">Om Its Working</p>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/oversikt_kontoret.png)' }}>
+        <div className="hero-overlay">
+          <div className="container">
+            <div className="hero-fullscreen-content">
+              <p className="hero-tagline-light">Om Its Working</p>
               <h1>Et personlig IT-selskap bygget på erfaring</h1>
-              <p className="hero-subtitle">
+              <p className="hero-subtitle-light">
                 Its Working er et lokalt IT-selskap i Trondheim, etablert for å levere stabile, ærlige og forståelige IT-tjenester til små og mellomstore bedrifter.
               </p>
-            </div>
-            <div className="hero-card-image">
-              <img src="/ProfilbildeThomas.png" alt="Thomas Allisson - Its Working" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding section-white section-overlap">
+      <section className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
             <h2>Erfaringen som formet Its Working</h2>

@@ -11,24 +11,21 @@ export default function Technology() {
         description="Its Working samarbeider med GlobalConnect og Digiflow for å levere stabil fiber, nettverk og sikkerhet til bedrifter i Trondheim."
         path="/teknologi"
       />
-      <section className="hero-elevated">
-        <div className="container">
-          <div className="hero-card">
-            <div className="hero-card-content">
-              <p className="hero-tagline">Samarbeid og leveranse</p>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/fjordgata.jpg)' }}>
+        <div className="hero-overlay">
+          <div className="container">
+            <div className="hero-fullscreen-content">
+              <p className="hero-tagline-light">Samarbeid og leveranse</p>
               <h1>Teknologi & partnere</h1>
-              <p className="hero-subtitle">
+              <p className="hero-subtitle-light">
                 Etablert teknologi og profesjonelle partnere gir deg stabilitet og sikkerhet – med én kontaktperson som tar ansvar for helheten.
               </p>
-            </div>
-            <div className="hero-card-image">
-              <img src="/modern_office_01.jpg" alt="Profesjonelt IT-miljø" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding section-white section-overlap">
+      <section className="section-padding section-white">
         <div className="container">
           <div className="about-content">
             <div className="about-text">
@@ -132,7 +129,7 @@ export default function Technology() {
                 </div>
                 <div className="contact-inline-item">
                   <Mail size={18} className="icon-primary" />
-                  <a href="mailto:kontakt@itsworking.no">kontakt@itsworking.no</a>
+                  <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
                 </div>
                 <div className="contact-inline-item">
                   <Phone size={18} className="icon-primary" />
