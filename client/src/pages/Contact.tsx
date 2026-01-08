@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { useContactForm } from "@/hooks/use-contact";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -33,6 +34,11 @@ export default function Contact() {
 
   return (
     <Layout>
+      <SEO
+        title="Kontakt"
+        description="Ta kontakt med Its Working i Trondheim. Ring 988 50 462 eller send oss en melding. Vi hjelper din bedrift med IT-løsninger."
+        path="/kontakt"
+      />
       <section className="hero-elevated">
         <div className="container">
           <div className="hero-card">

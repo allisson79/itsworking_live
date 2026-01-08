@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import {
   CheckCircle,
@@ -14,6 +15,12 @@ import {
 export default function Home() {
   return (
     <Layout>
+      <SEO
+        title="Hjem"
+        description="Its Working er din lokale IT-partner i Trondheim. Vi tar oss av IT-drift, nettverk, sikkerhet og Microsoft 365 for små og mellomstore bedrifter."
+        path="/"
+        image="/trondheim_city.jpg"
+      />
       {/* HERO */}
       <section className="hero-elevated">
         <div className="container">
