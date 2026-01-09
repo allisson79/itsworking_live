@@ -61,7 +61,7 @@ export default function Contact() {
               <p>Vi holder til i Trondheim og betjener bedrifter i hele regionen.</p>
 
               <div className="contact-person-primary">
-                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-primary-photo" />
+                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-primary-photo" loading="lazy" />
                 <div className="contact-person-primary-info">
                   <p className="contact-person-primary-name">Thomas Allisson</p>
                   <p className="contact-person-primary-role">Én fast kontaktperson</p>

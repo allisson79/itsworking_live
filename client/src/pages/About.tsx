@@ -100,7 +100,7 @@ export default function About() {
               </p>
             </div>
             <div className="about-image">
-              <img src="/oversikt_kontoret.png" alt="Kontoret til Its Working" className="rounded-image" />
+              <img src="/oversikt_kontoret.png" alt="Kontoret til Its Working" className="rounded-image" loading="lazy" />
             </div>
           </div>
         </div>
