@@ -13,7 +13,7 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Created favicon (SVG, PNG, Apple touch icon)
 - Enhanced mobile responsiveness across all pages (header, navigation, footer, forms)
 - Implemented fullscreen hero sections with background images on all pages
-- Updated header logo to SVG format (60px desktop, 44px mobile)
+- Updated header logo to high-resolution PNG (1965x708, transparent background) for crisp display on mobile/retina screens (60px desktop, 44px mobile)
 - Centered all text across all pages for consistent presentation (service cards, about sections, partner cards, contact sections)
 - **Performance optimizations**: Added React.lazy() code splitting for all pages, lazy loading for below-the-fold images
 - **Navigation CTA**: "Kontakt oss" styled as prominent blue button in header (inspired by Digiflow)
