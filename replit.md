@@ -15,6 +15,7 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Implemented fullscreen hero sections with background images on all pages
 - Updated header logo to SVG format (60px desktop, 44px mobile)
 - Centered all text across all pages for consistent presentation (service cards, about sections, partner cards, contact sections)
+- **Performance optimizations**: Added React.lazy() code splitting for all pages, lazy loading for below-the-fold images
 
 ### Design Choices
 - **Text alignment**: All text is centered across the website for consistent presentation
