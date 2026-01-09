@@ -18,6 +18,13 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - **Performance optimizations**: Added React.lazy() code splitting for all pages, lazy loading for below-the-fold images
 - **Navigation CTA**: "Kontakt oss" styled as prominent blue button in header (inspired by Digiflow)
 - **Cookie consent**: Added GDPR-compliant cookie consent banner with preferences management
+- **UI Polish (January 2026)**:
+  - Scroll-aware sticky header with shadow on scroll
+  - Subtle zoom animation on hero background image
+  - Scroll-down indicator arrow in hero section
+  - Hover effects on service cards and buttons (lift + shadow)
+  - Restyled cookie banner - floating, dark background, more subtle
+  - Founder photo with "20+ års erfaring" experience badge in Personlig IT-partner section
 
 ### Design Choices
 - **Text alignment**: All text is centered across the website for consistent presentation
