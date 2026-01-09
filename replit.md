@@ -13,6 +13,7 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Created favicon (SVG, PNG, Apple touch icon)
 - Enhanced mobile responsiveness across all pages (header, navigation, footer, forms)
 - Implemented fullscreen hero sections with background images on all pages
+- Updated header logo to SVG format (60px desktop, 44px mobile)
 
 ### Hero Image Mapping
 - **Home**: trondheim_city.jpg
