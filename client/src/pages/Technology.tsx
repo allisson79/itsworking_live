@@ -62,17 +62,20 @@ export default function Technology() {
               <p>
                 Global Connect leverer markedsledende løsninger innen nettverk, WiFi og sikkerhet for SMB-markedet.
               </p>
-              <ul className="check-list-compact">
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Stabil og skalerbar infrastruktur</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Profesjonell overvåkning og sikkerhet</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Én ansvarlig leveranse gjennom Its Working</span>
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Stabil og skalerbar infrastruktur</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Profesjonell overvåkning og sikkerhet</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Én ansvarlig leveranse gjennom Its Working</span>
+                </div>
+              </div>
             </div>
             
             <div className="partner-card-large" data-testid="card-partner-digiflow">
@@ -86,14 +89,16 @@ export default function Technology() {
                 Gjennom samarbeidet med Digiflow har Its Working tilgang på moderne og velprøvde plattformer som støtter sikker og effektiv IT-drift.
               </p>
               <div className="partner-subheading">Plattformer og løsninger</div>
-              <ul className="check-list-compact">
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Microsoft 365</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Sikkerhetsløsninger fra anerkjente leverandører som Fortinet</span>
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Microsoft 365</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Sikkerhetsløsninger fra anerkjente leverandører som Fortinet</span>
+                </div>
+              </div>
               <p className="partner-note">
                 Its Working har ansvar for valg av løsning, oppsett, drift og oppfølging.
               </p>

@@ -41,24 +41,24 @@ export default function Services() {
               </p>
               
               <h3 className="service-subheading">Dette får du:</h3>
-              <ul className="check-list">
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Stabil og skalerbar fiberforbindelse</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Tilpasset kapasitet og redundans basert på virksomhetens behov</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Én ansvarlig leveranse gjennom Its Working</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Full oversikt gjennom en administrasjonsportal levert av Global Connect</span>
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Stabil og skalerbar fiberforbindelse</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Tilpasset kapasitet og redundans basert på virksomhetens behov</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Én ansvarlig leveranse gjennom Its Working</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Full oversikt gjennom en administrasjonsportal levert av Global Connect</span>
+                </div>
+              </div>
               
               <p className="service-closing">
                 Portalen gir deg som kunde god innsikt i tjenestene du mottar og en samlet oversikt på tvers av lokasjoner. Enten virksomheten har én eller mange lokasjoner, sikrer dette forutsigbarhet, kontroll og enkel oppfølging over tid.
@@ -81,24 +81,24 @@ export default function Services() {
               </p>
               
               <h3 className="service-subheading">Dette får du:</h3>
-              <ul className="check-list">
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Profesjonelle nettverks- og WiFi-løsninger tilpasset virksomhetens behov</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Sentralisert styring og overvåkning av nettverket</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Skalerbart oppsett som vokser med virksomheten</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Support og oppfølging gjennom Its Working</span>
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Profesjonelle nettverks- og WiFi-løsninger tilpasset virksomhetens behov</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Sentralisert styring og overvåkning av nettverket</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Skalerbart oppsett som vokser med virksomheten</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Support og oppfølging gjennom Its Working</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -117,20 +117,20 @@ export default function Services() {
               </p>
               
               <h3 className="service-subheading">Dette får du:</h3>
-              <ul className="check-list">
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Brannmur og endepunktssikkerhet fra anerkjente leverandører</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Tofaktor-autentisering og tilgangsstyring</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Regelmessig gjennomgang og oppfølging av sikkerhetsstatus</span>
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Brannmur og endepunktssikkerhet fra anerkjente leverandører</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Tofaktor-autentisering og tilgangsstyring</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Regelmessig gjennomgang og oppfølging av sikkerhetsstatus</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -149,24 +149,24 @@ export default function Services() {
               </p>
               
               <h3 className="service-subheading">Dette får du:</h3>
-              <ul className="check-list">
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Oppsett og drift av Microsoft 365</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>E-post, kalender og samhandlingsverktøy</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Sikker lagring og deling av filer</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
-                  <span>Brukerstøtte og lisensstyring</span>
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Oppsett og drift av Microsoft 365</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">E-post, kalender og samhandlingsverktøy</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Sikker lagring og deling av filer</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Brukerstøtte og lisensstyring</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
