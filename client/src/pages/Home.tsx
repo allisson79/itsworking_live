@@ -85,11 +85,13 @@ export default function Home() {
                 src="/gc-logo-hor-blue.png"
                 alt="GlobalConnect"
                 className="partner-logo"
+                loading="lazy"
               />
               <img
                 src="/Logo-Digiflow-AS.png"
                 alt="Digiflow AS"
                 className="partner-logo"
+                loading="lazy"
               />
             </div>
           </div>
@@ -184,6 +186,7 @@ export default function Home() {
                 src="/modern_office_01.jpg"
                 alt="Moderne kontormiljø"
                 className="rounded-image"
+                loading="lazy"
               />
             </div>
           </div>
