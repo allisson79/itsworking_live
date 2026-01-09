@@ -413,15 +413,15 @@ img {
 }
 
 .about-text {
-  text-align: left;
+  text-align: center;
 }
 
 .about-text h2 {
-  text-align: left;
+  text-align: center;
 }
 
 .about-text p {
-  text-align: left;
+  text-align: center;
   line-height: 1.7;
 }
 
@@ -774,6 +774,7 @@ img {
 
 .service-detail-content {
   width: 100%;
+  text-align: center;
 }
 
 .service-detail-content h2 {
@@ -784,6 +785,7 @@ img {
 
 .service-detail-content p {
   line-height: 1.7;
+  text-align: center;
 }
 
 .service-subheading {
@@ -824,17 +826,20 @@ img {
 .about-section-text {
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .about-section-text h2 {
   margin-top: 0;
   color: #0b4ea2;
   margin-bottom: 24px;
+  text-align: center;
 }
 
 .about-section-text p {
   line-height: 1.7;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .text-emphasis {
@@ -913,6 +918,7 @@ img {
 
 .partner-card-large p {
   line-height: 1.7;
+  text-align: center;
 }
 
 .partner-card-header {
@@ -1372,6 +1378,7 @@ img {
 .card-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
   list-style: none;
   padding: 0;
@@ -1380,13 +1387,16 @@ img {
 
 .card-list-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   padding: 18px 22px;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  width: 100%;
+  max-width: 500px;
 }
 
 .card-list-icon {
@@ -1404,6 +1414,7 @@ img {
   color: #334155;
   line-height: 1.6;
   font-weight: 500;
+  text-align: center;
 }
 
 .card-list-text strong {

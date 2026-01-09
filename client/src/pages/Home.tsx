@@ -168,17 +168,20 @@ export default function Home() {
                 IT skal ikke være en tidstyv. Vi leverer løsninger som bare
                 fungerer – slik at du kan fokusere på drift og vekst.
               </p>
-              <ul className="check-list">
-                <li>
-                  <CheckCircle size={20} /> Rask og personlig support
-                </li>
-                <li>
-                  <CheckCircle size={20} /> Forutsigbare kostnader
-                </li>
-                <li>
-                  <CheckCircle size={20} /> Sikkerhet i høysetet
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Rask og personlig support</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Forutsigbare kostnader</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Sikkerhet i høysetet</span>
+                </div>
+              </div>
             </div>
 
             <div className="about-image">
