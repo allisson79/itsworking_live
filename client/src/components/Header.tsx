@@ -9,13 +9,11 @@ export const Header = memo(function Header() {
   const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
-  // Memoize navigation links to avoid recalculating on every render
   const navLinks = useMemo(() => ({
     home: location === "/" ? "nav-link active" : "nav-link",
     services: location === "/tjenester" ? "nav-link active" : "nav-link",
     technology: location === "/teknologi" ? "nav-link active" : "nav-link",
     about: location === "/om-oss" ? "nav-link active" : "nav-link",
-    contact: location === "/kontakt" ? "nav-link active" : "nav-link",
   }), [location]);
 
   return (
@@ -46,8 +44,8 @@ export const Header = memo(function Header() {
           <Link href="/om-oss" className={navLinks.about} onClick={closeMenu}>
             Om oss
           </Link>
-          <Link href="/kontakt" className={navLinks.contact} onClick={closeMenu}>
-            Kontakt
+          <Link href="/kontakt" className="nav-btn-cta" onClick={closeMenu}>
+            Kontakt oss
           </Link>
         </nav>
       </div>
