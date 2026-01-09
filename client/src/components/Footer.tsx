@@ -33,6 +33,9 @@ export const Footer = memo(function Footer() {
             <li><Link href="/teknologi">Teknologi</Link></li>
             <li><Link href="/om-oss">Om oss</Link></li>
             <li><Link href="/kontakt">Kontakt oss</Link></li>
+            <li><button onClick={() => {
+              window.dispatchEvent(new Event("open-cookie-preferences"));
+            }} style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: 0, fontSize: 'inherit', fontFamily: 'inherit' }}>Samtykkepreferanser</button></li>
           </ul>
         </div>
         
