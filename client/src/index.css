@@ -64,11 +64,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 88px;
 }
 
 .header .logo img {
-  height: 44px;
+  height: 60px;
   width: auto;
 }
 
@@ -107,7 +107,7 @@ img {
 
 @media (max-width: 768px) {
   .header .logo img {
-    height: 36px;
+    height: 44px;
   }
 
   .mobile-menu-btn {

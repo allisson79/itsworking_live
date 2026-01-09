@@ -22,7 +22,7 @@ export const Header = memo(function Header() {
     <header className="header">
       <div className="container header-content">
         <Link href="/" className="logo">
-          <img src="/Its%20Working%20trans1test.png" alt="Its Working" />
+          <img src="/itsworking_logo_transparent.svg" alt="Its Working" />
         </Link>
 
         <button 
