@@ -73,6 +73,7 @@ shared/
 - **Technology (/teknologi)**: Technology partners (GlobalConnect, Digiflow)
 - **About (/om-oss)**: Company story and philosophy
 - **Contact (/kontakt)**: Contact form and company information
+- **Privacy (/personvern)**: Privacy policy and cookie information (GDPR/Norwegian E-Com Act compliant)
 
 ### Database Schema
 - **contact_messages**: Stores contact form submissions (name, email, company, message)
