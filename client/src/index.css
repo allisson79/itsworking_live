@@ -363,6 +363,7 @@ img {
   border-radius: 12px;
   padding: 32px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -378,6 +379,21 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
+  text-align: center;
+}
+
+.about-content.single-column {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.about-text h2 {
+  text-align: center;
 }
 
 .rounded-image {
@@ -491,6 +507,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
+  text-align: center;
 }
 
 .contact-info h2,
@@ -500,12 +517,14 @@ img {
 
 .contact-person-primary {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   margin: 24px 0;
-  padding: 16px;
+  padding: 20px;
   background: #f8fafc;
   border-radius: 12px;
+  text-align: center;
 }
 
 .contact-person-primary-photo {
@@ -532,13 +551,16 @@ img {
 .contact-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
 }
 
 .contact-icon-wrapper {
@@ -683,7 +705,16 @@ img {
 ========================= */
 .service-detail-section {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+
+.service-detail-section + .service-detail-section {
+  margin-top: 0;
 }
 
 .service-detail-icon {
@@ -710,10 +741,11 @@ img {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .check-list li {
-  display: flex;
+  display: inline-flex;
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 12px;
@@ -729,6 +761,8 @@ img {
 ========================= */
 .about-section-text {
   max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .about-section-text h2 {
@@ -769,6 +803,7 @@ img {
 .contact-inline-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 8px;
 }
@@ -792,6 +827,7 @@ img {
 ========================= */
 .section-header-offset h2 {
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .partner-cards-grid {
@@ -805,11 +841,13 @@ img {
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
 }
 
 .partner-card-header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -839,10 +877,11 @@ img {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .check-list-compact li {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
@@ -860,6 +899,7 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
+  text-align: center;
 }
 
 .contact-local-image img {
