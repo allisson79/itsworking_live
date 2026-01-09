@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 export const CookieConsent = memo(function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -14,9 +14,9 @@ export const CookieConsent = memo(function CookieConsent() {
     } else {
       try {
         const parsed = JSON.parse(consent);
-        setAnalyticsEnabled(parsed.analytics ?? true);
+        setAnalyticsEnabled(parsed.analytics ?? false);
       } catch {
-        setAnalyticsEnabled(true);
+        setAnalyticsEnabled(false);
       }
     }
   }, []);
@@ -27,9 +27,9 @@ export const CookieConsent = memo(function CookieConsent() {
       if (consent) {
         try {
           const parsed = JSON.parse(consent);
-          setAnalyticsEnabled(parsed.analytics ?? true);
+          setAnalyticsEnabled(parsed.analytics ?? false);
         } catch {
-          setAnalyticsEnabled(true);
+          setAnalyticsEnabled(false);
         }
       }
       setShowPreferences(true);
@@ -130,14 +130,15 @@ export const CookieConsent = memo(function CookieConsent() {
     <div className="cookie-banner">
       <div className="cookie-content">
         <p>
-          Vi bruker informasjonskapsler for å forbedre opplevelsen din på nettsiden vår.
+          Vi bruker informasjonskapsler for å forbedre opplevelsen din på nettsiden vår. 
+          Les mer i vår <a href="/personvern" className="cookie-policy-link">personvernpolicy</a>.
         </p>
         <div className="cookie-actions">
+          <button onClick={handleAcceptNecessary} className="btn">
+            Bare nødvendige
+          </button>
           <button onClick={handleAcceptAll} className="btn">
             Godta alle
-          </button>
-          <button onClick={handleAcceptNecessary} className="btn btn-secondary">
-            Bare nødvendige
           </button>
           <button onClick={handleOpenPreferences} className="cookie-link-btn">
             Administrer
