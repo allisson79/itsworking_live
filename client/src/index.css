@@ -58,6 +58,11 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .header-content {
@@ -167,6 +172,19 @@ img {
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background: #093f84;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 78, 162, 0.25);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .hero-cta {
@@ -230,18 +248,62 @@ img {
 /* Fullscreen Hero with Background Image */
 .hero-fullscreen {
   min-height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-animated .hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  animation: heroZoom 20s ease-out forwards;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
 }
 
 .hero-overlay {
   background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7));
   min-height: 70vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-4px);
+  }
 }
 
 .hero-fullscreen-content {
@@ -372,6 +434,78 @@ img {
   text-align: center;
 }
 
+.personal-partner-section {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.personal-partner-photo {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.founder-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 4px solid #ffffff;
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #0b4ea2 0%, #1e40af 100%);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(11, 78, 162, 0.3);
+}
+
+.personal-partner-text-side {
+  text-align: left;
+}
+
+.personal-partner-text-side h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.personal-partner-text-side p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .personal-partner-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .founder-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .personal-partner-text-side {
+    text-align: center;
+  }
+}
+
 /* =========================
    SERVICES
 ========================= */
@@ -388,6 +522,12 @@ img {
   padding: 32px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 900px) {
@@ -1054,62 +1194,93 @@ img {
 ========================= */
 .cookie-banner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #ffffff;
-  padding: 20px 24px;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 14px 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  border-top: 1px solid #e5e7eb;
+  border-radius: 12px;
+  max-width: 800px;
+  width: calc(100% - 32px);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .cookie-content {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 
 .cookie-content p {
   margin: 0;
   flex: 1;
-  min-width: 280px;
-  color: #374151;
-  font-size: 0.95rem;
+  min-width: 200px;
+  color: #e2e8f0;
+  font-size: 0.85rem;
 }
 
 .cookie-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
+}
+
+.cookie-banner .btn {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.cookie-banner .btn-outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.cookie-banner .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .cookie-link-btn {
   background: none;
   border: none;
-  color: #0b4ea2;
-  font-size: 0.95rem;
+  color: #93c5fd;
+  font-size: 0.85rem;
   cursor: pointer;
   text-decoration: underline;
   padding: 0;
 }
 
 .cookie-link-btn:hover {
-  color: #093f84;
+  color: #ffffff;
 }
 
 .cookie-policy-link {
-  color: #0b4ea2;
+  color: #93c5fd;
   text-decoration: underline;
 }
 
 .cookie-policy-link:hover {
-  color: #093f84;
+  color: #ffffff;
 }
 
 .cookie-modal-overlay {
@@ -1293,14 +1464,31 @@ img {
 }
 
 @media (max-width: 600px) {
+  .cookie-banner {
+    bottom: 12px;
+    padding: 12px 16px;
+  }
+
   .cookie-content {
     flex-direction: column;
     text-align: center;
+    gap: 10px;
+  }
+
+  .cookie-content p {
+    font-size: 0.8rem;
+    min-width: unset;
   }
 
   .cookie-actions {
     justify-content: center;
     width: 100%;
+    gap: 6px;
+  }
+
+  .cookie-banner .btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 }
 

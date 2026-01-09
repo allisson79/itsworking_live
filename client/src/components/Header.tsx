@@ -1,10 +1,20 @@
 import { Link, useLocation } from "wouter";
-import { useState, useCallback, memo, useMemo } from "react";
+import { useState, useCallback, memo, useMemo, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 export const Header = memo(function Header() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setIsMenuOpen(false), []);
@@ -17,7 +27,7 @@ export const Header = memo(function Header() {
   }), [location]);
 
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
         <Link href="/" className="logo">
           <img src="/itsworking_logo_transparent.svg" alt="Its Working" />

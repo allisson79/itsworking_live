@@ -10,6 +10,8 @@ import {
   Cloud,
   Lock,
   TrendingUp,
+  ChevronDown,
+  Award,
 } from "lucide-react";
 
 export default function Home() {
@@ -22,7 +24,8 @@ export default function Home() {
         image="/trondheim_city.jpg"
       />
       {/* HERO */}
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/trondheim_city.jpg)' }}>
+      <section className="hero-fullscreen hero-animated">
+        <div className="hero-bg" style={{ backgroundImage: 'url(/trondheim_city.jpg)' }}></div>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
@@ -39,6 +42,9 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+          <div className="scroll-indicator">
+            <ChevronDown size={28} />
           </div>
         </div>
       </section>
@@ -101,11 +107,22 @@ export default function Home() {
       {/* PERSONLIG IT-PARTNER */}
       <section className="section-padding section-white">
         <div className="container">
-          <div className="personal-partner-content">
-            <div className="personal-partner-text">
+          <div className="personal-partner-section">
+            <div className="personal-partner-photo">
+              <img 
+                src="/ProfilbildeThomas.png" 
+                alt="Thomas Allisson" 
+                className="founder-photo"
+              />
+              <div className="experience-badge">
+                <Award size={18} />
+                <span>20+ års erfaring</span>
+              </div>
+            </div>
+            <div className="personal-partner-text-side">
               <h2>Personlig IT-partner</h2>
               <p>
-                Its Working drives av Thomas Allisson, med lang erfaring innen
+                Its Working drives av Thomas Allisson, med over 20 års erfaring innen
                 IT-drift, nettverk og rådgivning for små og mellomstore bedrifter.
               </p>
               <p>
