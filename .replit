@@ -2,7 +2,7 @@ modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-24_11"
-packages = ["psmisc", "lsof"]
+packages = ["psmisc", "lsof", "poppler_utils"]
 
 [deployment]
 deploymentTarget = "autoscale"
