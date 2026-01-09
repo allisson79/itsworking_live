@@ -155,8 +155,16 @@ img {
   font-weight: 600;
 }
 
-.btn:hover {
-  background: #093f84;
+.hero-cta {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.section-cta-center {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 /* =========================

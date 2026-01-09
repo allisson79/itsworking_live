@@ -150,7 +150,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="section-cta-left">
+          <div className="section-cta-center">
             <Link href="/tjenester" className="btn">
               Se alle tjenester
             </Link>
