@@ -14,6 +14,12 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Enhanced mobile responsiveness across all pages (header, navigation, footer, forms)
 - Implemented fullscreen hero sections with background images on all pages
 - Updated header logo to SVG format (60px desktop, 44px mobile)
+- Centered all text across all pages for consistent presentation (service cards, about sections, partner cards, contact sections)
+
+### Design Choices
+- **Text alignment**: All text is centered across the website for consistent presentation
+- **Layout patterns**: Service detail sections use vertical column layout with centered icons and text
+- **Single-column sections**: Use `.about-content.single-column` modifier for pages with one column (e.g., Technology page)
 
 ### Hero Image Mapping
 - **Home**: trondheim_city.jpg
