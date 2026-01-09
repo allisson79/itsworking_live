@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
-import { CheckCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Server, Shield, Users, Cloud, Lock } from "lucide-react";
 
 export default function Technology() {
   return (
@@ -64,15 +64,15 @@ export default function Technology() {
               </p>
               <div className="card-list">
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Server size={20} /></div>
                   <span className="card-list-text">Stabil og skalerbar infrastruktur</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Shield size={20} /></div>
                   <span className="card-list-text">Profesjonell overvåkning og sikkerhet</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Users size={20} /></div>
                   <span className="card-list-text">Én ansvarlig leveranse gjennom Its Working</span>
                 </div>
               </div>
@@ -91,11 +91,11 @@ export default function Technology() {
               <div className="partner-subheading">Plattformer og løsninger</div>
               <div className="card-list">
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Cloud size={20} /></div>
                   <span className="card-list-text">Microsoft 365</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Lock size={20} /></div>
                   <span className="card-list-text">Sikkerhetsløsninger fra anerkjente leverandører som Fortinet</span>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
-import { CheckCircle, Wifi, Globe, Shield, Monitor, Phone, Mail } from "lucide-react";
+import { Wifi, Globe, Shield, Monitor, Phone, Mail, Zap, Settings, TrendingUp, Users, Lock, Key, RefreshCw, Cloud, Headphones, HardDrive, LayoutDashboard } from "lucide-react";
 
 export default function Services() {
   return (
@@ -43,19 +43,19 @@ export default function Services() {
               <h3 className="service-subheading">Dette får du:</h3>
               <div className="card-list">
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Zap size={20} /></div>
                   <span className="card-list-text">Stabil og skalerbar fiberforbindelse</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Settings size={20} /></div>
                   <span className="card-list-text">Tilpasset kapasitet og redundans basert på virksomhetens behov</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Users size={20} /></div>
                   <span className="card-list-text">Én ansvarlig leveranse gjennom Its Working</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><LayoutDashboard size={20} /></div>
                   <span className="card-list-text">Full oversikt gjennom en administrasjonsportal levert av Global Connect</span>
                 </div>
               </div>
@@ -83,19 +83,19 @@ export default function Services() {
               <h3 className="service-subheading">Dette får du:</h3>
               <div className="card-list">
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Wifi size={20} /></div>
                   <span className="card-list-text">Profesjonelle nettverks- og WiFi-løsninger tilpasset virksomhetens behov</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Monitor size={20} /></div>
                   <span className="card-list-text">Sentralisert styring og overvåkning av nettverket</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><TrendingUp size={20} /></div>
                   <span className="card-list-text">Skalerbart oppsett som vokser med virksomheten</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Headphones size={20} /></div>
                   <span className="card-list-text">Support og oppfølging gjennom Its Working</span>
                 </div>
               </div>
@@ -119,15 +119,15 @@ export default function Services() {
               <h3 className="service-subheading">Dette får du:</h3>
               <div className="card-list">
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Shield size={20} /></div>
                   <span className="card-list-text">Brannmur og endepunktssikkerhet fra anerkjente leverandører</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Key size={20} /></div>
                   <span className="card-list-text">Tofaktor-autentisering og tilgangsstyring</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><RefreshCw size={20} /></div>
                   <span className="card-list-text">Regelmessig gjennomgang og oppfølging av sikkerhetsstatus</span>
                 </div>
               </div>
@@ -151,19 +151,19 @@ export default function Services() {
               <h3 className="service-subheading">Dette får du:</h3>
               <div className="card-list">
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Cloud size={20} /></div>
                   <span className="card-list-text">Oppsett og drift av Microsoft 365</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Mail size={20} /></div>
                   <span className="card-list-text">E-post, kalender og samhandlingsverktøy</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><HardDrive size={20} /></div>
                   <span className="card-list-text">Sikker lagring og deling av filer</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Headphones size={20} /></div>
                   <span className="card-list-text">Brukerstøtte og lisensstyring</span>
                 </div>
               </div>

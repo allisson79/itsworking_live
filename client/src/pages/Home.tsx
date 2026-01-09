@@ -2,7 +2,6 @@ import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import {
-  CheckCircle,
   Shield,
   Server,
   Headphones,
@@ -10,6 +9,7 @@ import {
   Wifi,
   Cloud,
   Lock,
+  TrendingUp,
 } from "lucide-react";
 
 export default function Home() {
@@ -161,7 +161,7 @@ export default function Home() {
       {/* OM OSS */}
       <section className="section-padding section-white">
         <div className="container">
-          <div className="about-content">
+          <div className="about-content single-column">
             <div className="about-text">
               <h2>En enklere hverdag</h2>
               <p>
@@ -170,27 +170,18 @@ export default function Home() {
               </p>
               <div className="card-list">
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Headphones size={20} /></div>
                   <span className="card-list-text">Rask og personlig support</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><TrendingUp size={20} /></div>
                   <span className="card-list-text">Forutsigbare kostnader</span>
                 </div>
                 <div className="card-list-item">
-                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <div className="card-list-icon"><Shield size={20} /></div>
                   <span className="card-list-text">Sikkerhet i høysetet</span>
                 </div>
               </div>
-            </div>
-
-            <div className="about-image">
-              <img
-                src="/modern_office_01.jpg"
-                alt="Moderne kontormiljø"
-                className="rounded-image"
-                loading="lazy"
-              />
             </div>
           </div>
         </div>
