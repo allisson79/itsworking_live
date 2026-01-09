@@ -1,0 +1,91 @@
+## Personvern og informasjonskapsler
+
+Denne personvernpolicyen beskriver hvordan Its Working AS samler inn, bruker og beskytter personopplysninger når du besøker nettsiden vår.
+
+### Behandlingsansvarlig
+Its Working AS er behandlingsansvarlig for personopplysninger som behandles via denne nettsiden.
+
+**Bedrift:** Its Working AS  
+**Adresse:** Fjordgata 43, 7010 Trondheim  
+**E-post:** kontakt@itsworking.no  
+**Telefon:** 988 50 462  
+
+---
+
+### Hvilke opplysninger samler vi inn?
+Vi samler inn følgende personopplysninger når du bruker nettsiden:
+
+- **Kontaktskjema:** Navn, e-postadresse, bedriftsnavn (valgfritt) og melding når du sender oss en henvendelse.
+- **Teknisk informasjon:** IP-adresse (behandles som personopplysning), nettlesertype og enhetstype, for å sikre korrekt teknisk drift av nettsiden.
+
+---
+
+### Formål med behandlingen
+Opplysningene brukes til å:
+- Besvare henvendelser sendt via kontaktskjema
+- Sikre stabil og sikker teknisk drift av nettsiden
+- Forbedre nettsidens funksjonalitet og brukeropplevelse
+
+---
+
+### Rettslig grunnlag
+Behandling av personopplysninger skjer på følgende grunnlag:
+- **Samtykke**, der dette er påkrevd (for informasjonskapsler)
+- **Berettiget interesse**, for å kunne besvare henvendelser og sikre teknisk drift av nettsiden
+
+---
+
+### Informasjonskapsler (cookies)
+Informasjonskapsler er små tekstfiler som lagres på din enhet når du besøker en nettside.
+
+#### Nødvendige informasjonskapsler
+Disse er påkrevd for at nettsiden skal fungere og kan ikke deaktiveres.
+- **cookie-consent:** Lagrer ditt samtykkevalg. Lagring skjer lokalt i nettleseren og utløper ikke automatisk.
+
+#### Analyseinformasjonskapsler
+Brukes for å forstå hvordan nettsiden benyttes, slik at den kan forbedres.  
+Disse settes **kun dersom du gir samtykke**.  
+Per i dag benytter Its Working AS **ingen tredjeparts analyseverktøy**.
+
+---
+
+### Administrer samtykke
+Du kan når som helst endre eller trekke tilbake dine samtykkepreferanser ved å klikke på **«Samtykkepreferanser»** i bunnteksten på nettsiden.
+
+---
+
+### Oppbevaring
+- Henvendelser via kontaktskjema lagres så lenge dialogen pågår, og slettes senest innen **12 måneder etter avsluttet sak**, med mindre videre oppbevaring er lovpålagt.
+- Samtykkevalg for informasjonskapsler lagres lokalt i din nettleser.
+
+---
+
+### Overføring til tredjeland
+Personopplysninger overføres ikke til land utenfor EU/EØS.
+
+---
+
+### Dine rettigheter
+Du har rett til å:
+- Be om innsyn i hvilke personopplysninger vi har lagret om deg
+- Be om retting av uriktige eller ufullstendige opplysninger
+- Be om sletting av personopplysninger
+- Trekke tilbake samtykke til bruk av informasjonskapsler
+- Klage til Datatilsynet dersom du mener behandlingen skjer i strid med regelverket
+
+---
+
+### Sikkerhet
+Its Working AS benytter egnede tekniske og organisatoriske tiltak for å beskytte personopplysninger mot uautorisert tilgang, endring, utlevering eller sletting.
+
+---
+
+### Endringer
+Denne personvernpolicyen kan oppdateres ved behov.  
+**Sist oppdatert:** Januar 2026.
+
+---
+
+### Kontakt
+Har du spørsmål om personvern eller ønsker å utøve dine rettigheter, kontakt oss på:  
+**kontakt@itsworking.no**
