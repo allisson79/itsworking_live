@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
+import { FileText, Server, MessageSquare, Shield, Zap, Eye, Edit, Trash2, ToggleLeft, AlertTriangle, Database, Clock } from "lucide-react";
 
 export default function Privacy() {
   return (
@@ -36,29 +37,50 @@ export default function Privacy() {
               <section className="privacy-section">
                 <h2>Hvilke opplysninger samler vi inn?</h2>
                 <p>Vi samler inn følgende personopplysninger når du bruker nettsiden:</p>
-                <ul>
-                  <li><strong>Kontaktskjema:</strong> Navn, e-postadresse, bedriftsnavn (valgfritt) og melding når du sender oss en henvendelse.</li>
-                  <li><strong>Teknisk informasjon:</strong> IP-adresse (behandles som personopplysning), nettlesertype og enhetstype, for å sikre korrekt teknisk drift av nettsiden.</li>
-                </ul>
+                <div className="card-list">
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><FileText size={20} /></div>
+                    <span className="card-list-text"><strong>Kontaktskjema:</strong> Navn, e-postadresse, bedriftsnavn (valgfritt) og melding når du sender oss en henvendelse.</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Server size={20} /></div>
+                    <span className="card-list-text"><strong>Teknisk informasjon:</strong> IP-adresse (behandles som personopplysning), nettlesertype og enhetstype, for å sikre korrekt teknisk drift av nettsiden.</span>
+                  </div>
+                </div>
               </section>
 
               <section className="privacy-section">
                 <h2>Formål med behandlingen</h2>
                 <p>Opplysningene brukes til å:</p>
-                <ul>
-                  <li>Besvare henvendelser sendt via kontaktskjema</li>
-                  <li>Sikre stabil og sikker teknisk drift av nettsiden</li>
-                  <li>Forbedre nettsidens funksjonalitet og brukeropplevelse</li>
-                </ul>
+                <div className="card-list">
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><MessageSquare size={20} /></div>
+                    <span className="card-list-text">Besvare henvendelser sendt via kontaktskjema</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Shield size={20} /></div>
+                    <span className="card-list-text">Sikre stabil og sikker teknisk drift av nettsiden</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Zap size={20} /></div>
+                    <span className="card-list-text">Forbedre nettsidens funksjonalitet og brukeropplevelse</span>
+                  </div>
+                </div>
               </section>
 
               <section className="privacy-section">
                 <h2>Rettslig grunnlag</h2>
                 <p>Behandling av personopplysninger skjer på følgende grunnlag:</p>
-                <ul>
-                  <li><strong>Samtykke</strong>, der dette er påkrevd (for informasjonskapsler)</li>
-                  <li><strong>Berettiget interesse</strong>, for å kunne besvare henvendelser og sikre teknisk drift av nettsiden</li>
-                </ul>
+                <div className="card-list">
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><ToggleLeft size={20} /></div>
+                    <span className="card-list-text"><strong>Samtykke</strong>, der dette er påkrevd (for informasjonskapsler)</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Shield size={20} /></div>
+                    <span className="card-list-text"><strong>Berettiget interesse</strong>, for å kunne besvare henvendelser og sikre teknisk drift av nettsiden</span>
+                  </div>
+                </div>
               </section>
 
               <section className="privacy-section">
@@ -97,10 +119,16 @@ export default function Privacy() {
 
               <section className="privacy-section">
                 <h2>Oppbevaring</h2>
-                <ul>
-                  <li>Henvendelser via kontaktskjema lagres så lenge dialogen pågår, og slettes senest innen <strong>12 måneder etter avsluttet sak</strong>, med mindre videre oppbevaring er lovpålagt.</li>
-                  <li>Samtykkevalg for informasjonskapsler lagres lokalt i din nettleser.</li>
-                </ul>
+                <div className="card-list">
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Clock size={20} /></div>
+                    <span className="card-list-text">Henvendelser via kontaktskjema lagres så lenge dialogen pågår, og slettes senest innen <strong>12 måneder etter avsluttet sak</strong>, med mindre videre oppbevaring er lovpålagt.</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Database size={20} /></div>
+                    <span className="card-list-text">Samtykkevalg for informasjonskapsler lagres lokalt i din nettleser.</span>
+                  </div>
+                </div>
               </section>
 
               <section className="privacy-section">
@@ -111,13 +139,28 @@ export default function Privacy() {
               <section className="privacy-section">
                 <h2>Dine rettigheter</h2>
                 <p>Du har rett til å:</p>
-                <ul>
-                  <li>Be om innsyn i hvilke personopplysninger vi har lagret om deg</li>
-                  <li>Be om retting av uriktige eller ufullstendige opplysninger</li>
-                  <li>Be om sletting av personopplysninger</li>
-                  <li>Trekke tilbake samtykke til bruk av informasjonskapsler</li>
-                  <li>Klage til Datatilsynet dersom du mener behandlingen skjer i strid med regelverket</li>
-                </ul>
+                <div className="card-list">
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Eye size={20} /></div>
+                    <span className="card-list-text">Be om innsyn i hvilke personopplysninger vi har lagret om deg</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Edit size={20} /></div>
+                    <span className="card-list-text">Be om retting av uriktige eller ufullstendige opplysninger</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><Trash2 size={20} /></div>
+                    <span className="card-list-text">Be om sletting av personopplysninger</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><ToggleLeft size={20} /></div>
+                    <span className="card-list-text">Trekke tilbake samtykke til bruk av informasjonskapsler</span>
+                  </div>
+                  <div className="card-list-item">
+                    <div className="card-list-icon"><AlertTriangle size={20} /></div>
+                    <span className="card-list-text">Klage til Datatilsynet dersom du mener behandlingen skjer i strid med regelverket</span>
+                  </div>
+                </div>
               </section>
 
               <section className="privacy-section">

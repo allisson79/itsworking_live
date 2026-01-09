@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Users, Lightbulb, Heart } from "lucide-react";
 
 export default function About() {
   return (
@@ -60,12 +60,24 @@ export default function About() {
               God IT starter med forståelse for menneskene og virksomheten den skal støtte.
             </p>
             <p>Det betyr at vi:</p>
-            <ul className="about-list">
-              <li>Tar oss tid til kundene våre – også når det ikke brenner</li>
-              <li>Gjerne kommer innom for å høre hvordan det faktisk går</li>
-              <li>Setter oss inn i hva kundene jobber med, ikke bare hva som står i systemene</li>
-              <li>Ser IT som et verktøy for mennesker, ikke som et mål i seg selv</li>
-            </ul>
+            <div className="card-list">
+              <div className="card-list-item">
+                <div className="card-list-icon"><Clock size={20} /></div>
+                <span className="card-list-text">Tar oss tid til kundene våre – også når det ikke brenner</span>
+              </div>
+              <div className="card-list-item">
+                <div className="card-list-icon"><Users size={20} /></div>
+                <span className="card-list-text">Gjerne kommer innom for å høre hvordan det faktisk går</span>
+              </div>
+              <div className="card-list-item">
+                <div className="card-list-icon"><Lightbulb size={20} /></div>
+                <span className="card-list-text">Setter oss inn i hva kundene jobber med, ikke bare hva som står i systemene</span>
+              </div>
+              <div className="card-list-item">
+                <div className="card-list-icon"><Heart size={20} /></div>
+                <span className="card-list-text">Ser IT som et verktøy for mennesker, ikke som et mål i seg selv</span>
+              </div>
+            </div>
             <p>
               For oss er IT mer enn data, nettverk og plattformer. Det er innsikt i kundens hverdag som gjør faget spennende – og leveransen riktig.
             </p>
