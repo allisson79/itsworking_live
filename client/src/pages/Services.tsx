@@ -124,10 +124,6 @@ export default function Services() {
                 </li>
                 <li>
                   <CheckCircle size={18} className="icon-primary" />
-                  <span>SOC-tjenester via Netsecurity (godkjent av Nkom)</span>
-                </li>
-                <li>
-                  <CheckCircle size={18} className="icon-primary" />
                   <span>Tofaktor-autentisering og tilgangsstyring</span>
                 </li>
                 <li>
