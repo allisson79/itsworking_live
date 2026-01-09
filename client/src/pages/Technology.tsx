@@ -27,7 +27,7 @@ export default function Technology() {
 
       <section className="section-padding section-white">
         <div className="container">
-          <div className="about-content">
+          <div className="about-content single-column">
             <div className="about-text">
               <h2>Én kontaktperson – profesjonell infrastruktur</h2>
               <p>
