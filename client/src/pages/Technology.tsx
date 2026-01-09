@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
-import { CheckCircle, Network, Shield, Phone, Mail, MapPin } from "lucide-react";
+import { CheckCircle, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Technology() {
   return (
@@ -50,10 +50,7 @@ export default function Technology() {
           <div className="partner-cards-grid">
             <div className="partner-card-large" data-testid="card-partner-globalconnect">
               <div className="partner-card-header">
-                <div className="card-icon">
-                  <Network size={28} />
-                </div>
-                <h3>Global Connect</h3>
+                <img src="/gc-logo-hor-blue.png" alt="GlobalConnect logo" className="partner-logo" />
               </div>
               <p>
                 Its Working har hatt et tett samarbeid med Global Connect i over 15 år. Dette gir gode relasjoner og etablerte kanaler inn hos leverandøren, og sikrer effektiv oppfølging.
@@ -63,7 +60,7 @@ export default function Technology() {
               </p>
               <div className="partner-subheading">Nettverk, WiFi og sikkerhet</div>
               <p>
-                Global Connect leverer markedsledende løsninger innen nettverk, WiFi og sikkerhet for SMB-markedet. Innen sikkerhet benyttes SOC-tjenester levert av Netsecurity, som er godkjent av Nasjonal kommunikasjonsmyndighet (Nkom).
+                Global Connect leverer markedsledende løsninger innen nettverk, WiFi og sikkerhet for SMB-markedet.
               </p>
               <ul className="check-list-compact">
                 <li>
@@ -80,10 +77,7 @@ export default function Technology() {
             
             <div className="partner-card-large" data-testid="card-partner-digiflow">
               <div className="partner-card-header">
-                <div className="card-icon">
-                  <Shield size={28} />
-                </div>
-                <h3>Digiflow</h3>
+                <img src="/Logo-Digiflow-AS.png" alt="Digiflow logo" className="partner-logo" />
               </div>
               <p>
                 Digiflow leverer driftstjenester og teknologiplattformer for profesjonelle IT-miljøer, med et tydelig fokus på SMB-markedet.
