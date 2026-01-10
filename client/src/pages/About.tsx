@@ -1,7 +1,8 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Users, Lightbulb, Heart, Linkedin } from "lucide-react";
 
 export default function About() {
   return (
@@ -12,11 +13,10 @@ export default function About() {
         path="/om-oss"
         image="/ProfilbildeThomas.png"
       />
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/oversikt_kontoret.png)' }}>
+      <section className="hero-fullscreen hero-fullscreen--about" style={{ backgroundImage: 'url(/oversikt_kontoret.png)' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Om Its Working</p>
               <h1>Et personlig IT-selskap bygget på erfaring</h1>
               <p className="hero-subtitle-light">
                 Its Working er et lokalt IT-selskap i Trondheim, etablert for å levere stabile, ærlige og forståelige IT-tjenester til små og mellomstore bedrifter.
@@ -26,7 +26,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
             <h2>Erfaringen som formet Its Working</h2>
@@ -47,9 +47,9 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="about-section-text">
             <h2>IT handler ikke bare om systemer – men om mennesker</h2>
@@ -60,20 +60,32 @@ export default function About() {
               God IT starter med forståelse for menneskene og virksomheten den skal støtte.
             </p>
             <p>Det betyr at vi:</p>
-            <ul className="about-list">
-              <li>Tar oss tid til kundene våre – også når det ikke brenner</li>
-              <li>Gjerne kommer innom for å høre hvordan det faktisk går</li>
-              <li>Setter oss inn i hva kundene jobber med, ikke bare hva som står i systemene</li>
-              <li>Ser IT som et verktøy for mennesker, ikke som et mål i seg selv</li>
-            </ul>
+            <div className="card-list">
+              <div className="card-list-item">
+                <div className="card-list-icon"><Clock size={20} /></div>
+                <span className="card-list-text">Tar oss tid til kundene våre – også når det ikke brenner</span>
+              </div>
+              <div className="card-list-item">
+                <div className="card-list-icon"><Users size={20} /></div>
+                <span className="card-list-text">Gjerne kommer innom for å høre hvordan det faktisk går</span>
+              </div>
+              <div className="card-list-item">
+                <div className="card-list-icon"><Lightbulb size={20} /></div>
+                <span className="card-list-text">Setter oss inn i hva kundene jobber med, ikke bare hva som står i systemene</span>
+              </div>
+              <div className="card-list-item">
+                <div className="card-list-icon"><Heart size={20} /></div>
+                <span className="card-list-text">Ser IT som et verktøy for mennesker, ikke som et mål i seg selv</span>
+              </div>
+            </div>
             <p>
               For oss er IT mer enn data, nettverk og plattformer. Det er innsikt i kundens hverdag som gjør faget spennende – og leveransen riktig.
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
             <h2>Én kontaktperson. Ett ansvar.</h2>
@@ -85,9 +97,9 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="about-content">
             <div className="about-text">
@@ -104,9 +116,9 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
             <h2>Kontakt</h2>
@@ -130,6 +142,10 @@ export default function About() {
                 <MapPin size={18} className="icon-primary" />
                 <span>Fjordgata 43, 7010 Trondheim – 2. etasje</span>
               </div>
+              <div className="contact-inline-item">
+                <Linkedin size={18} className="icon-primary" />
+                <a href="https://linkedin.com/in/thomas-g-allisson-9a7611126" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
             </div>
             
             <p className="contact-availability">
@@ -143,7 +159,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }

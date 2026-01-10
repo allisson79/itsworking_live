@@ -2,7 +2,7 @@ modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-24_11"
-packages = ["psmisc", "lsof"]
+packages = ["psmisc", "lsof", "poppler_utils", "imagemagick"]
 
 [deployment]
 deploymentTarget = "autoscale"
@@ -32,13 +32,13 @@ args = "Dev Server"
 name = "Dev Server"
 author = "agent"
 
+[workflows.workflow.metadata]
+outputType = "webview"
+
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
-
-[workflows.workflow.metadata]
-outputType = "webview"
 
 [[ports]]
 localPort = 5000
@@ -46,3 +46,8 @@ externalPort = 80
 
 [agent]
 expertMode = true
+
+[userenv]
+
+[userenv.shared]
+VITE_RECAPTCHA_SITE_KEY = "6Lda8kUsAAAAAKlr8ciSa5UHAT1axF2qgyepQ8Ec"

@@ -1,8 +1,8 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
 import {
-  CheckCircle,
   Shield,
   Server,
   Headphones,
@@ -10,6 +10,8 @@ import {
   Wifi,
   Cloud,
   Lock,
+  TrendingUp,
+  Award,
 } from "lucide-react";
 
 export default function Home() {
@@ -22,11 +24,11 @@ export default function Home() {
         image="/trondheim_city.jpg"
       />
       {/* HERO */}
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/trondheim_city.jpg)' }}>
+      <section className="hero-fullscreen hero-animated">
+        <div className="hero-bg" style={{ backgroundImage: 'url(/trondheim_city.jpg)' }}></div>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Lokal IT-partner i Trondheim</p>
               <h1>IT-partner i Trondheim som bare fungerer</h1>
               <p className="hero-subtitle-light">
                 Vi tar oss av IT for små og mellomstore bedrifter i Trondheim og
@@ -44,7 +46,7 @@ export default function Home() {
       </section>
 
       {/* ANSVAR */}
-      <section className="section-padding section-white section-overlap">
+      <FadeInSection className="section-padding section-white section-overlap">
         <div className="container">
           <div className="responsibility-section">
             <h2>Dette tar vi ansvar for</h2>
@@ -68,10 +70,10 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* SAMARBEIDSPARTNERE */}
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="partner-logos-section">
             <h3>Samarbeidspartnere</h3>
@@ -96,16 +98,27 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* PERSONLIG IT-PARTNER */}
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
-          <div className="personal-partner-content">
-            <div className="personal-partner-text">
+          <div className="personal-partner-section">
+            <div className="personal-partner-photo">
+              <img 
+                src="/ProfilbildeThomas.png" 
+                alt="Thomas Allisson" 
+                className="founder-photo"
+              />
+              <div className="experience-badge">
+                <Award size={18} />
+                <span>20+ års erfaring</span>
+              </div>
+            </div>
+            <div className="personal-partner-text-side">
               <h2>Personlig IT-partner</h2>
               <p>
-                Its Working drives av Thomas Allisson, med lang erfaring innen
+                Its Working drives av Thomas Allisson, med over 20 års erfaring innen
                 IT-drift, nettverk og rådgivning for små og mellomstore bedrifter.
               </p>
               <p>
@@ -115,10 +128,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* TJENESTER */}
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <h2>Hva vi leverer</h2>
 
@@ -156,45 +169,39 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* OM OSS */}
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
-          <div className="about-content">
+          <div className="about-content single-column">
             <div className="about-text">
               <h2>En enklere hverdag</h2>
               <p>
                 IT skal ikke være en tidstyv. Vi leverer løsninger som bare
                 fungerer – slik at du kan fokusere på drift og vekst.
               </p>
-              <ul className="check-list">
-                <li>
-                  <CheckCircle size={20} /> Rask og personlig support
-                </li>
-                <li>
-                  <CheckCircle size={20} /> Forutsigbare kostnader
-                </li>
-                <li>
-                  <CheckCircle size={20} /> Sikkerhet i høysetet
-                </li>
-              </ul>
-            </div>
-
-            <div className="about-image">
-              <img
-                src="/modern_office_01.jpg"
-                alt="Moderne kontormiljø"
-                className="rounded-image"
-                loading="lazy"
-              />
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><Headphones size={20} /></div>
+                  <span className="card-list-text">Rask og personlig support</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><TrendingUp size={20} /></div>
+                  <span className="card-list-text">Forutsigbare kostnader</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><Shield size={20} /></div>
+                  <span className="card-list-text">Sikkerhet i høysetet</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* CTA */}
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="cta-box">
             <h2>Klar for enklere IT?</h2>
@@ -207,7 +214,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }

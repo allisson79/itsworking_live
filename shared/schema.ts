@@ -20,5 +20,10 @@ export const insertContactMessageSchema = createInsertSchema(contactMessages).ex
   createdAt: true,
 });
 
+export const contactFormSubmissionSchema = insertContactMessageSchema.extend({
+  recaptchaToken: z.string().min(1, "reCAPTCHA-verifisering kreves"),
+});
+
 export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
+export type ContactFormSubmission = z.infer<typeof contactFormSubmissionSchema>;
 export type ContactMessage = typeof contactMessages.$inferSelect;

@@ -13,11 +13,22 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - Created favicon (SVG, PNG, Apple touch icon)
 - Enhanced mobile responsiveness across all pages (header, navigation, footer, forms)
 - Implemented fullscreen hero sections with background images on all pages
-- Updated header logo to SVG format (60px desktop, 44px mobile)
+- Updated header logo to high-resolution PNG (1965x708, transparent background) for crisp display on mobile/retina screens (60px desktop, 44px mobile)
 - Centered all text across all pages for consistent presentation (service cards, about sections, partner cards, contact sections)
 - **Performance optimizations**: Added React.lazy() code splitting for all pages, lazy loading for below-the-fold images
 - **Navigation CTA**: "Kontakt oss" styled as prominent blue button in header (inspired by Digiflow)
 - **Cookie consent**: Added GDPR-compliant cookie consent banner with preferences management
+- **UI Polish (January 2026)**:
+  - Scroll-aware sticky header with shadow on scroll
+  - Subtle zoom animation on hero background image
+  - Hover lift effects on service cards, partner cards, and CTA boxes site-wide
+  - Scroll-triggered fade-in animations on content sections (using IntersectionObserver)
+  - Restyled cookie banner - floating, dark background, more subtle
+  - Founder photo with "20+ års erfaring" experience badge in Personlig IT-partner section
+  - Accessibility: prefers-reduced-motion support for all animations
+  - Removed blue taglines from all hero sections for cleaner look
+  - Added LinkedIn integration: company page in footer, Thomas's profile in contact sections
+  - Added responsibility-box styling for emphasis statements
 
 ### Design Choices
 - **Text alignment**: All text is centered across the website for consistent presentation
@@ -28,8 +39,12 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - **Home**: trondheim_city.jpg
 - **Services**: tjenester.jpg
 - **Technology**: fjordgata.jpg
-- **About**: oversikt_kontoret.png
+- **About**: oversikt_kontoret.png (positioned at center 70% to show Klingenberggården building)
 - **Contact**: ProfilbildeThomas.png (positioned at center 85% to show jacket/logo)
+
+### Social Links
+- **Company LinkedIn**: https://www.linkedin.com/company/itsworking-no
+- **Thomas Allisson LinkedIn**: https://linkedin.com/in/thomas-g-allisson-9a7611126
 
 ## User Preferences
 
@@ -84,8 +99,15 @@ shared/
   - No authentication required
   - Used for health checks and monitoring
 - **POST /api/contact**: Submit contact form
-  - Requires: name, email, company (optional), message
+  - Requires: name, email, company (optional), message, recaptchaToken
+  - Protected by Google reCAPTCHA v3 (score threshold: 0.5)
   - Returns: 201 with created message or error
+
+### Security
+- **reCAPTCHA v3**: Contact form protected with invisible CAPTCHA
+  - Site key stored in VITE_RECAPTCHA_SITE_KEY env var
+  - Secret key stored in RECAPTCHA_SECRET_KEY secret
+  - Score below 0.5 rejects submission as potential bot
 
 ### Running the Project
 - **Development**: `npm run dev` - Starts Express server with Vite middleware

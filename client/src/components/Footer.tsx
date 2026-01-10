@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { memo, useMemo } from "react";
 
 // Memoize styles to prevent object recreation on every render
@@ -54,6 +54,10 @@ export const Footer = memo(function Footer() {
             <li style={contactItemStyle}>
               <Mail size={18} />
               <a href="mailto:thomas@itsworking.no">thomas@itsworking.no</a>
+            </li>
+            <li style={contactItemStyle}>
+              <Linkedin size={18} />
+              <a href="https://www.linkedin.com/company/itsworking-no" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </li>
           </ul>
         </div>

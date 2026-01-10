@@ -1,13 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 import { api } from "@shared/routes";
-import type { InsertContactMessage } from "@shared/schema";
-import { useToast } from "@/hooks/use-toast";
-import { z } from "zod";
+import type { ContactFormSubmission } from "@shared/schema";
 
 export function useContactForm() {
   return useMutation({
-    mutationFn: async (data: InsertContactMessage) => {
-      // Validate data before sending if needed, although zod middleware on server does it too
+    mutationFn: async (data: ContactFormSubmission) => {
       const validated = api.contact.create.input.parse(data);
       
       const res = await fetch(api.contact.create.path, {

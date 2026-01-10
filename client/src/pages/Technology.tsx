@@ -1,7 +1,8 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
-import { CheckCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Server, Shield, Users, Cloud, Lock, Linkedin, CheckCircle } from "lucide-react";
 
 export default function Technology() {
   return (
@@ -15,7 +16,6 @@ export default function Technology() {
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Samarbeid og leveranse</p>
               <h1>Teknologi & partnere</h1>
               <p className="hero-subtitle-light">
                 Etablert teknologi og profesjonelle partnere gir deg stabilitet og sikkerhet – med én kontaktperson som tar ansvar for helheten.
@@ -25,7 +25,7 @@ export default function Technology() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-content single-column">
             <div className="about-text">
@@ -39,9 +39,9 @@ export default function Technology() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="section-header-offset">
             <h2>Våre teknologipartnere</h2>
@@ -62,17 +62,20 @@ export default function Technology() {
               <p>
                 Global Connect leverer markedsledende løsninger innen nettverk, WiFi og sikkerhet for SMB-markedet.
               </p>
-              <ul className="check-list-compact">
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Stabil og skalerbar infrastruktur</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Profesjonell overvåkning og sikkerhet</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Én ansvarlig leveranse gjennom Its Working</span>
-                </li>
-              </ul>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><Server size={20} /></div>
+                  <span className="card-list-text">Stabil og skalerbar infrastruktur</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><Shield size={20} /></div>
+                  <span className="card-list-text">Profesjonell overvåkning og sikkerhet</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><Users size={20} /></div>
+                  <span className="card-list-text">Én ansvarlig leveranse gjennom Its Working</span>
+                </div>
+              </div>
             </div>
             
             <div className="partner-card-large" data-testid="card-partner-digiflow">
@@ -86,23 +89,26 @@ export default function Technology() {
                 Gjennom samarbeidet med Digiflow har Its Working tilgang på moderne og velprøvde plattformer som støtter sikker og effektiv IT-drift.
               </p>
               <div className="partner-subheading">Plattformer og løsninger</div>
-              <ul className="check-list-compact">
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Microsoft 365</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="icon-primary" /> <span>Sikkerhetsløsninger fra anerkjente leverandører som Fortinet</span>
-                </li>
-              </ul>
-              <p className="partner-note">
-                Its Working har ansvar for valg av løsning, oppsett, drift og oppfølging.
-              </p>
+              <div className="card-list">
+                <div className="card-list-item">
+                  <div className="card-list-icon"><Cloud size={20} /></div>
+                  <span className="card-list-text">Microsoft 365</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><Lock size={20} /></div>
+                  <span className="card-list-text">Sikkerhetsløsninger fra anerkjente leverandører som Fortinet</span>
+                </div>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Its Working har ansvar for valg av løsning, oppsett, drift og oppfølging</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="contact-local-section">
             <div className="contact-local-image">
@@ -133,6 +139,10 @@ export default function Technology() {
                   <MapPin size={18} className="icon-primary" />
                   <span>Fjordgata 43, 7010 Trondheim – 2. etasje</span>
                 </div>
+                <div className="contact-inline-item">
+                  <Linkedin size={18} className="icon-primary" />
+                  <a href="https://linkedin.com/in/thomas-g-allisson-9a7611126" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
               </div>
               
               <p className="contact-availability">
@@ -147,7 +157,7 @@ export default function Technology() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }

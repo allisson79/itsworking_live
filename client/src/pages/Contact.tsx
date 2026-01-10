@@ -1,15 +1,19 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { useContactForm } from "@/hooks/use-contact";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { Mail, MapPin, Phone, CheckCircle, Loader2 } from "lucide-react";
 import { useState, useCallback } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
   const contactMutation = useContactForm();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
@@ -21,14 +25,27 @@ export default function Contact() {
     }
   });
 
-  const onSubmit = useCallback((data: InsertContactMessage) => {
-    contactMutation.mutate(data, {
-      onSuccess: () => {
-        setSubmitted(true);
-        form.reset();
-      }
-    });
-  }, [contactMutation, form]);
+  const onSubmit = useCallback(async (data: InsertContactMessage) => {
+    setRecaptchaError(null);
+    
+    if (!executeRecaptcha) {
+      setRecaptchaError("reCAPTCHA er ikke klar. Vennligst vent og prøv igjen.");
+      return;
+    }
+
+    try {
+      const recaptchaToken = await executeRecaptcha("contact_form");
+      
+      contactMutation.mutate({ ...data, recaptchaToken }, {
+        onSuccess: () => {
+          setSubmitted(true);
+          form.reset();
+        }
+      });
+    } catch {
+      setRecaptchaError("Kunne ikke verifisere. Vennligst prøv igjen.");
+    }
+  }, [contactMutation, form, executeRecaptcha]);
 
   const handleNewMessage = useCallback(() => setSubmitted(false), []);
 
@@ -43,7 +60,6 @@ export default function Contact() {
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Ta kontakt</p>
               <h1>Kontakt oss</h1>
               <p className="hero-subtitle-light">
                 Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.
@@ -53,7 +69,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
@@ -120,9 +136,9 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={form.handleSubmit(onSubmit)} className="contact-form">
-                  {contactMutation.isError && (
+                  {(contactMutation.isError || recaptchaError) && (
                     <div className="form-error-banner">
-                      {contactMutation.error.message}
+                      {recaptchaError || contactMutation.error?.message}
                     </div>
                   )}
 
@@ -201,7 +217,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }
