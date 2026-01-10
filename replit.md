@@ -26,6 +26,9 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
   - Restyled cookie banner - floating, dark background, more subtle
   - Founder photo with "20+ års erfaring" experience badge in Personlig IT-partner section
   - Accessibility: prefers-reduced-motion support for all animations
+  - Removed blue taglines from all hero sections for cleaner look
+  - Added LinkedIn integration: company page in footer, Thomas's profile in contact sections
+  - Added responsibility-box styling for emphasis statements
 
 ### Design Choices
 - **Text alignment**: All text is centered across the website for consistent presentation
@@ -36,8 +39,12 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - **Home**: trondheim_city.jpg
 - **Services**: tjenester.jpg
 - **Technology**: fjordgata.jpg
-- **About**: oversikt_kontoret.png
+- **About**: oversikt_kontoret.png (positioned at center 70% to show Klingenberggården building)
 - **Contact**: ProfilbildeThomas.png (positioned at center 85% to show jacket/logo)
+
+### Social Links
+- **Company LinkedIn**: https://www.linkedin.com/company/itsworking-no
+- **Thomas Allisson LinkedIn**: https://linkedin.com/in/thomas-g-allisson-9a7611126
 
 ## User Preferences
 
