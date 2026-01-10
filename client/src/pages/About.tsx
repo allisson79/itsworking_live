@@ -2,7 +2,7 @@ import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Clock, Users, Lightbulb, Heart } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Users, Lightbulb, Heart, Linkedin } from "lucide-react";
 
 export default function About() {
   return (
@@ -141,6 +141,10 @@ export default function About() {
               <div className="contact-inline-item">
                 <MapPin size={18} className="icon-primary" />
                 <span>Fjordgata 43, 7010 Trondheim – 2. etasje</span>
+              </div>
+              <div className="contact-inline-item">
+                <Linkedin size={18} className="icon-primary" />
+                <a href="https://linkedin.com/in/thomas-g-allisson-9a7611126" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </div>
             </div>
             
