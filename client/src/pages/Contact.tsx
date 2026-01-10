@@ -44,7 +44,6 @@ export default function Contact() {
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Ta kontakt</p>
               <h1>Kontakt oss</h1>
               <p className="hero-subtitle-light">
                 Vi er klare til å hjelpe din bedrift. Fyll ut skjemaet eller ring oss for en hyggelig prat.

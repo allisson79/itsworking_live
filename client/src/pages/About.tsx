@@ -17,7 +17,6 @@ export default function About() {
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Om Its Working</p>
               <h1>Et personlig IT-selskap bygget på erfaring</h1>
               <p className="hero-subtitle-light">
                 Its Working er et lokalt IT-selskap i Trondheim, etablert for å levere stabile, ærlige og forståelige IT-tjenester til små og mellomstore bedrifter.

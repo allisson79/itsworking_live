@@ -29,7 +29,6 @@ export default function Home() {
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Lokal IT-partner i Trondheim</p>
               <h1>IT-partner i Trondheim som bare fungerer</h1>
               <p className="hero-subtitle-light">
                 Vi tar oss av IT for små og mellomstore bedrifter i Trondheim og

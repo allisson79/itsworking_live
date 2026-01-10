@@ -324,7 +324,7 @@ img {
 }
 
 .hero-fullscreen--about {
-  background-position: center 30%;
+  background-position: center 70%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1177,6 +1177,21 @@ img {
   margin-top: 16px;
   color: #64748b;
   font-size: 0.9rem;
+}
+
+.responsibility-box {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #f1f7ff;
+  border-left: 4px solid #0b4ea2;
+  border-radius: 0 8px 8px 0;
+}
+
+.responsibility-box p {
+  margin: 0;
+  color: #1e3a5f;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .contact-local-section {

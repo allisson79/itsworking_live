@@ -16,7 +16,6 @@ export default function Services() {
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">IT for SMB</p>
               <h1>Tjenester</h1>
               <p className="hero-subtitle-light">
                 Praktiske IT-tjenester for små og mellomstore bedrifter – levert med én fast kontaktperson og ansvar samlet ett sted.

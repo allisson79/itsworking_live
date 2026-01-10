@@ -16,7 +16,6 @@ export default function Technology() {
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
-              <p className="hero-tagline-light">Samarbeid og leveranse</p>
               <h1>Teknologi & partnere</h1>
               <p className="hero-subtitle-light">
                 Etablert teknologi og profesjonelle partnere gir deg stabilitet og sikkerhet – med én kontaktperson som tar ansvar for helheten.
@@ -100,9 +99,9 @@ export default function Technology() {
                   <span className="card-list-text">Sikkerhetsløsninger fra anerkjente leverandører som Fortinet</span>
                 </div>
               </div>
-              <p className="partner-note">
-                Its Working har ansvar for valg av løsning, oppsett, drift og oppfølging.
-              </p>
+              <div className="responsibility-box">
+                <p>Its Working har ansvar for valg av løsning, oppsett, drift og oppfølging.</p>
+              </div>
             </div>
           </div>
         </div>
