@@ -46,3 +46,8 @@ externalPort = 80
 
 [agent]
 expertMode = true
+
+[userenv]
+
+[userenv.shared]
+VITE_RECAPTCHA_SITE_KEY = "6Lda8kUsAAAAAKlr8ciSa5UHAT1axF2qgyepQ8Ec"

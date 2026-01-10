@@ -99,8 +99,15 @@ shared/
   - No authentication required
   - Used for health checks and monitoring
 - **POST /api/contact**: Submit contact form
-  - Requires: name, email, company (optional), message
+  - Requires: name, email, company (optional), message, recaptchaToken
+  - Protected by Google reCAPTCHA v3 (score threshold: 0.5)
   - Returns: 201 with created message or error
+
+### Security
+- **reCAPTCHA v3**: Contact form protected with invisible CAPTCHA
+  - Site key stored in VITE_RECAPTCHA_SITE_KEY env var
+  - Secret key stored in RECAPTCHA_SECRET_KEY secret
+  - Score below 0.5 rejects submission as potential bot
 
 ### Running the Project
 - **Development**: `npm run dev` - Starts Express server with Vite middleware
