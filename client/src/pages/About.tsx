@@ -13,7 +13,7 @@ export default function About() {
         path="/om-oss"
         image="/ProfilbildeThomas.png"
       />
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/oversikt_kontoret.png)' }}>
+      <section className="hero-fullscreen hero-fullscreen--about" style={{ backgroundImage: 'url(/oversikt_kontoret.png)' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">

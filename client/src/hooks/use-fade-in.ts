@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export function useFadeIn(threshold = 0.1) {
+export function useFadeIn(threshold = 0.05) {
   const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -21,7 +21,7 @@ export function useFadeIn(threshold = 0.1) {
           observer.unobserve(element);
         }
       },
-      { threshold, rootMargin: '0px 0px -50px 0px' }
+      { threshold, rootMargin: '0px 0px -5% 0px' }
     );
 
     observer.observe(element);
