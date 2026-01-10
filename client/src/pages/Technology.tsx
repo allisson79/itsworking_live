@@ -2,7 +2,7 @@ import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Server, Shield, Users, Cloud, Lock, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Server, Shield, Users, Cloud, Lock, Linkedin, CheckCircle } from "lucide-react";
 
 export default function Technology() {
   return (
@@ -98,9 +98,10 @@ export default function Technology() {
                   <div className="card-list-icon"><Lock size={20} /></div>
                   <span className="card-list-text">Sikkerhetsløsninger fra anerkjente leverandører som Fortinet</span>
                 </div>
-              </div>
-              <div className="responsibility-box">
-                <p>Its Working har ansvar for valg av løsning, oppsett, drift og oppfølging.</p>
+                <div className="card-list-item">
+                  <div className="card-list-icon"><CheckCircle size={20} /></div>
+                  <span className="card-list-text">Its Working har ansvar for valg av løsning, oppsett, drift og oppfølging</span>
+                </div>
               </div>
             </div>
           </div>
