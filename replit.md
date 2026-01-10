@@ -21,10 +21,11 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - **UI Polish (January 2026)**:
   - Scroll-aware sticky header with shadow on scroll
   - Subtle zoom animation on hero background image
-  - Scroll-down indicator arrow in hero section
-  - Hover effects on service cards and buttons (lift + shadow)
+  - Hover lift effects on service cards, partner cards, and CTA boxes site-wide
+  - Scroll-triggered fade-in animations on content sections (using IntersectionObserver)
   - Restyled cookie banner - floating, dark background, more subtle
   - Founder photo with "20+ års erfaring" experience badge in Personlig IT-partner section
+  - Accessibility: prefers-reduced-motion support for all animations
 
 ### Design Choices
 - **Text alignment**: All text is centered across the website for consistent presentation

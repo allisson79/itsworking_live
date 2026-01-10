@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
 import { Wifi, Globe, Shield, Monitor, Phone, Mail, Zap, Settings, TrendingUp, Users, Lock, Key, RefreshCw, Cloud, Headphones, HardDrive, LayoutDashboard } from "lucide-react";
 
@@ -25,7 +26,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="service-detail-section">
             <div className="service-detail-icon">
@@ -66,9 +67,9 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="service-detail-section">
             <div className="service-detail-icon">
@@ -102,9 +103,9 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="service-detail-section">
             <div className="service-detail-icon">
@@ -134,9 +135,9 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="service-detail-section">
             <div className="service-detail-icon">
@@ -170,9 +171,9 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="cta-box">
             <h2>Vil du vite mer?</h2>
@@ -196,7 +197,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }

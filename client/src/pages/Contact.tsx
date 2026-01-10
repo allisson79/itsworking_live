@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { useContactForm } from "@/hooks/use-contact";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -53,7 +54,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
@@ -201,7 +202,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }

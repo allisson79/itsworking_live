@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Server, Shield, Users, Cloud, Lock } from "lucide-react";
 
@@ -25,7 +26,7 @@ export default function Technology() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-content single-column">
             <div className="about-text">
@@ -39,9 +40,9 @@ export default function Technology() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="section-header-offset">
             <h2>Våre teknologipartnere</h2>
@@ -105,9 +106,9 @@ export default function Technology() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="contact-local-section">
             <div className="contact-local-image">
@@ -152,7 +153,7 @@ export default function Technology() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }

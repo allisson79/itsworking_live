@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
 import {
   Shield,
@@ -10,7 +11,6 @@ import {
   Cloud,
   Lock,
   TrendingUp,
-  ChevronDown,
   Award,
 } from "lucide-react";
 
@@ -43,14 +43,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="scroll-indicator">
-            <ChevronDown size={28} />
-          </div>
         </div>
       </section>
 
       {/* ANSVAR */}
-      <section className="section-padding section-white section-overlap">
+      <FadeInSection className="section-padding section-white section-overlap">
         <div className="container">
           <div className="responsibility-section">
             <h2>Dette tar vi ansvar for</h2>
@@ -74,10 +71,10 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* SAMARBEIDSPARTNERE */}
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="partner-logos-section">
             <h3>Samarbeidspartnere</h3>
@@ -102,10 +99,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* PERSONLIG IT-PARTNER */}
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="personal-partner-section">
             <div className="personal-partner-photo">
@@ -132,10 +129,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* TJENESTER */}
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <h2>Hva vi leverer</h2>
 
@@ -173,10 +170,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* OM OSS */}
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-content single-column">
             <div className="about-text">
@@ -202,10 +199,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* CTA */}
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="cta-box">
             <h2>Klar for enklere IT?</h2>
@@ -218,7 +215,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }

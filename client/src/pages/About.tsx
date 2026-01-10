@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
+import { FadeInSection } from "@/components/FadeInSection";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock, Users, Lightbulb, Heart } from "lucide-react";
 
@@ -26,7 +27,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
             <h2>Erfaringen som formet Its Working</h2>
@@ -47,9 +48,9 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="about-section-text">
             <h2>IT handler ikke bare om systemer – men om mennesker</h2>
@@ -83,9 +84,9 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
             <h2>Én kontaktperson. Ett ansvar.</h2>
@@ -97,9 +98,9 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-light">
+      <FadeInSection className="section-padding section-light">
         <div className="container">
           <div className="about-content">
             <div className="about-text">
@@ -116,9 +117,9 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="section-padding section-white">
+      <FadeInSection className="section-padding section-white">
         <div className="container">
           <div className="about-section-text">
             <h2>Kontakt</h2>
@@ -155,7 +156,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </FadeInSection>
     </Layout>
   );
 }
