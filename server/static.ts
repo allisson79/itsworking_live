@@ -5,13 +5,15 @@ import path from "path";
 export function serveStatic(app: Express) {
   const distPath = path.resolve(process.cwd(), "dist", "public");
   const indexPath = path.resolve(distPath, "index.html");
+  const isProd = process.env.NODE_ENV === "production";
   
-  // Cache file existence check in production
+  // Cache file existence check in production only
   let indexExists: boolean | null = null;
   const checkIndexExists = () => {
-    if (indexExists === null) {
-      indexExists = fs.existsSync(indexPath);
+    if (isProd && indexExists !== null) {
+      return indexExists;
     }
+    indexExists = fs.existsSync(indexPath);
     return indexExists;
   };
   

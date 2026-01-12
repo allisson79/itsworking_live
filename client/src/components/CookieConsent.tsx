@@ -20,6 +20,15 @@ const defaultPreferences: CookiePreferences = {
 // Cache parsed preferences to avoid repeated JSON.parse calls
 let cachedPreferences: CookiePreferences | null = null;
 
+// Invalidate cache when storage changes from another tab/window
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'cookie-consent') {
+      cachedPreferences = null;
+    }
+  });
+}
+
 function getStoredPreferences(): CookiePreferences {
   if (cachedPreferences) {
     return cachedPreferences;

@@ -17,27 +17,32 @@ function initDb() {
 
 let _pool: pg.Pool | undefined;
 let _db: ReturnType<typeof drizzle> | undefined;
+let _initializing = false;
 
 // Direct exports that initialize once on first access
 // Avoids Proxy overhead on every property access
 export const pool: pg.Pool = new Proxy({} as pg.Pool, {
   get(_target, prop) {
-    if (!_pool) {
+    if (!_pool && !_initializing) {
+      _initializing = true;
       const result = initDb();
       _pool = result.pool;
       _db = result.db;
+      _initializing = false;
     }
-    return Reflect.get(_pool, prop);
+    return Reflect.get(_pool!, prop);
   }
 });
 
 export const db: ReturnType<typeof drizzle> = new Proxy({} as ReturnType<typeof drizzle>, {
   get(_target, prop) {
-    if (!_db) {
+    if (!_db && !_initializing) {
+      _initializing = true;
       const result = initDb();
       _pool = result.pool;
       _db = result.db;
+      _initializing = false;
     }
-    return Reflect.get(_db, prop);
+    return Reflect.get(_db!, prop);
   }
 });
