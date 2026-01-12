@@ -4,11 +4,22 @@ import path from "path";
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(process.cwd(), "dist", "public");
+  const indexPath = path.resolve(distPath, "index.html");
+  const isProd = process.env.NODE_ENV === "production";
+  
+  // Cache file existence check in production only
+  let indexExists: boolean | null = null;
+  const checkIndexExists = () => {
+    if (isProd && indexExists !== null) {
+      return indexExists;
+    }
+    indexExists = fs.existsSync(indexPath);
+    return indexExists;
+  };
   
   // Explicitly handle root for health checks
   app.get("/", (_req: Request, res: Response) => {
-    const indexPath = path.resolve(distPath, "index.html");
-    if (fs.existsSync(indexPath)) {
+    if (checkIndexExists()) {
       res.sendFile(indexPath);
     } else {
       // In production, index.html should exist. If not, it's a build issue.
@@ -30,8 +41,7 @@ export function serveStatic(app: Express) {
       return next();
     }
     
-    const indexPath = path.resolve(distPath, "index.html");
-    if (fs.existsSync(indexPath)) {
+    if (checkIndexExists()) {
       res.sendFile(indexPath);
     } else {
       next();

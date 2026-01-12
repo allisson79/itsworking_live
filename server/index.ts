@@ -51,15 +51,30 @@ app.get("/_health", (_req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
-export function log(message: string, source = "express") {
-  const formattedTime = new Date().toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
-  });
+// Optimized logging with cached date formatting
+const formatTime = (() => {
+  let lastTime = "";
+  let lastMs = 0;
+  
+  return () => {
+    const now = Date.now();
+    // Cache for 1 second to avoid expensive toLocaleTimeString calls
+    if (now - lastMs < 1000) {
+      return lastTime;
+    }
+    lastMs = now;
+    lastTime = new Date(now).toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+    return lastTime;
+  };
+})();
 
-  console.log(`${formattedTime} [${source}] ${message}`);
+export function log(message: string, source = "express") {
+  console.log(`${formatTime()} [${source}] ${message}`);
 }
 
 /**
