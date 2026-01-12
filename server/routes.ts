@@ -5,11 +5,12 @@ import { api } from "@shared/routes";
 import { z } from "zod";
 
 const ALLOWED_HOSTNAMES = ["itsworking.no", "www.itsworking.no", "localhost"];
+const isProd = process.env.NODE_ENV === "production";
 
 async function verifyRecaptcha(token: string, expectedAction: string): Promise<{ success: boolean; score: number; reason?: string }> {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   if (!secretKey) {
-    console.error("RECAPTCHA_SECRET_KEY not configured");
+    if (!isProd) console.error("RECAPTCHA_SECRET_KEY not configured");
     return { success: false, score: 0, reason: "config_error" };
   }
 
@@ -22,25 +23,25 @@ async function verifyRecaptcha(token: string, expectedAction: string): Promise<{
     const data = await response.json();
     
     if (!data.success) {
-      console.warn("reCAPTCHA verification failed:", data["error-codes"]);
+      if (!isProd) console.warn("reCAPTCHA verification failed:", data["error-codes"]);
       return { success: false, score: 0, reason: "verification_failed" };
     }
     
     if (data.action !== expectedAction) {
-      console.warn(`reCAPTCHA action mismatch: expected ${expectedAction}, got ${data.action}`);
+      if (!isProd) console.warn(`reCAPTCHA action mismatch: expected ${expectedAction}, got ${data.action}`);
       return { success: false, score: 0, reason: "action_mismatch" };
     }
     
     const hostname = data.hostname || "";
     const isValidHost = ALLOWED_HOSTNAMES.some(h => hostname === h || hostname.endsWith(`.${h}`) || hostname.endsWith(".replit.dev"));
     if (!isValidHost) {
-      console.warn(`reCAPTCHA hostname not allowed: ${hostname}`);
+      if (!isProd) console.warn(`reCAPTCHA hostname not allowed: ${hostname}`);
       return { success: false, score: 0, reason: "invalid_hostname" };
     }
     
     return { success: true, score: data.score || 0 };
   } catch (error) {
-    console.error("reCAPTCHA verification error:", error);
+    if (!isProd) console.error("reCAPTCHA verification error:", error);
     return { success: false, score: 0, reason: "network_error" };
   }
 }
@@ -64,7 +65,7 @@ export async function registerRoutes(
       
       const recaptchaResult = await verifyRecaptcha(input.recaptchaToken, "contact_form");
       if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
-        console.warn(`Contact form rejected: score=${recaptchaResult.score}, reason=${recaptchaResult.reason}`);
+        if (!isProd) console.warn(`Contact form rejected: score=${recaptchaResult.score}, reason=${recaptchaResult.reason}`);
         return res.status(400).json({
           message: "Verifisering mislyktes. Vennligst prøv igjen.",
           field: "recaptcha",

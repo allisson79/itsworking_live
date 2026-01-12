@@ -18,34 +18,26 @@ function initDb() {
 let _pool: pg.Pool | undefined;
 let _db: ReturnType<typeof drizzle> | undefined;
 
-function ensureDb() {
-  if (!_db || !_pool) {
-    const result = initDb();
-    _pool = result.pool;
-    _db = result.db;
-  }
-  return { pool: _pool, db: _db };
-}
-
-// Simplified getters that call ensureDb once, avoiding Proxy overhead
-export function getPool(): pg.Pool {
-  return ensureDb().pool;
-}
-
-export function getDb(): ReturnType<typeof drizzle> {
-  return ensureDb().db;
-}
-
-// Export instances that initialize on first access
-// This is more efficient than using Proxy on every property access
-export const pool = new Proxy({} as pg.Pool, {
+// Direct exports that initialize once on first access
+// Avoids Proxy overhead on every property access
+export const pool: pg.Pool = new Proxy({} as pg.Pool, {
   get(_target, prop) {
-    return Reflect.get(getPool(), prop);
+    if (!_pool) {
+      const result = initDb();
+      _pool = result.pool;
+      _db = result.db;
+    }
+    return Reflect.get(_pool, prop);
   }
 });
 
-export const db = new Proxy({} as ReturnType<typeof drizzle>, {
+export const db: ReturnType<typeof drizzle> = new Proxy({} as ReturnType<typeof drizzle>, {
   get(_target, prop) {
-    return Reflect.get(getDb(), prop);
+    if (!_db) {
+      const result = initDb();
+      _pool = result.pool;
+      _db = result.db;
+    }
+    return Reflect.get(_db, prop);
   }
 });

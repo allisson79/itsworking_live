@@ -17,6 +17,42 @@ const defaultPreferences: CookiePreferences = {
   advertising: false,
 };
 
+// Cache parsed preferences to avoid repeated JSON.parse calls
+let cachedPreferences: CookiePreferences | null = null;
+
+function getStoredPreferences(): CookiePreferences {
+  if (cachedPreferences) {
+    return cachedPreferences;
+  }
+  
+  const consent = localStorage.getItem("cookie-consent");
+  if (!consent) {
+    return defaultPreferences;
+  }
+  
+  try {
+    const parsed = JSON.parse(consent);
+    cachedPreferences = {
+      necessary: true,
+      functional: parsed.functional ?? false,
+      analytics: parsed.analytics ?? false,
+      performance: parsed.performance ?? false,
+      advertising: parsed.advertising ?? false,
+    };
+    return cachedPreferences;
+  } catch {
+    return defaultPreferences;
+  }
+}
+
+function savePreferences(prefs: CookiePreferences) {
+  localStorage.setItem("cookie-consent", JSON.stringify({ 
+    ...prefs,
+    timestamp: new Date().toISOString()
+  }));
+  cachedPreferences = prefs;
+}
+
 export const CookieConsent = memo(function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
@@ -28,18 +64,7 @@ export const CookieConsent = memo(function CookieConsent() {
       const timer = setTimeout(() => setIsVisible(true), 500);
       return () => clearTimeout(timer);
     } else {
-      try {
-        const parsed = JSON.parse(consent);
-        setPreferences({
-          necessary: true,
-          functional: parsed.functional ?? false,
-          analytics: parsed.analytics ?? false,
-          performance: parsed.performance ?? false,
-          advertising: parsed.advertising ?? false,
-        });
-      } catch {
-        setPreferences(defaultPreferences);
-      }
+      setPreferences(getStoredPreferences());
     }
   }, []);
 
@@ -47,18 +72,7 @@ export const CookieConsent = memo(function CookieConsent() {
     const handleOpenPreferences = () => {
       const consent = localStorage.getItem("cookie-consent");
       if (consent) {
-        try {
-          const parsed = JSON.parse(consent);
-          setPreferences({
-            necessary: true,
-            functional: parsed.functional ?? false,
-            analytics: parsed.analytics ?? false,
-            performance: parsed.performance ?? false,
-            advertising: parsed.advertising ?? false,
-          });
-        } catch {
-          setPreferences(defaultPreferences);
-        }
+        setPreferences(getStoredPreferences());
       }
       setShowPreferences(true);
     };
@@ -74,29 +88,14 @@ export const CookieConsent = memo(function CookieConsent() {
       analytics: true,
       performance: true,
       advertising: true,
-      timestamp: new Date().toISOString()
     };
-    localStorage.setItem("cookie-consent", JSON.stringify(allAccepted));
+    savePreferences(allAccepted);
     setIsVisible(false);
-    setPreferences({
-      necessary: true,
-      functional: true,
-      analytics: true,
-      performance: true,
-      advertising: true,
-    });
+    setPreferences(allAccepted);
   }, []);
 
   const handleRejectAll = useCallback(() => {
-    const onlyNecessary = {
-      necessary: true,
-      functional: false,
-      analytics: false,
-      performance: false,
-      advertising: false,
-      timestamp: new Date().toISOString()
-    };
-    localStorage.setItem("cookie-consent", JSON.stringify(onlyNecessary));
+    savePreferences(defaultPreferences);
     setIsVisible(false);
     setShowPreferences(false);
     setPreferences(defaultPreferences);
@@ -111,10 +110,7 @@ export const CookieConsent = memo(function CookieConsent() {
   }, []);
 
   const handleSavePreferences = useCallback(() => {
-    localStorage.setItem("cookie-consent", JSON.stringify({ 
-      ...preferences,
-      timestamp: new Date().toISOString()
-    }));
+    savePreferences(preferences);
     setShowPreferences(false);
     setIsVisible(false);
   }, [preferences]);
