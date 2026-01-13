@@ -48,6 +48,8 @@ All hero images compressed and resized for faster loading:
 - WebP format for hero images (27% smaller than JPEG), JPEG fallbacks available
 - Home page hero preloaded in index.html for optimal LCP
 - Images resized to max 1920px width for web optimization
+- **Logo optimizations**: Header logo 443KB→17KB (96% smaller), footer logo 188KB→1.4KB (99% smaller)
+- Partner logos converted to WebP with proper sizing
 
 ### Social Links
 - **Company LinkedIn**: https://www.linkedin.com/company/itsworking-no
