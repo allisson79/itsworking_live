@@ -35,17 +35,18 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - **Layout patterns**: Service detail sections use vertical column layout with centered icons and text
 - **Single-column sections**: Use `.about-content.single-column` modifier for pages with one column (e.g., Technology page)
 
-### Hero Image Mapping
-- **Home**: trondheim_city.jpg
-- **Services**: tjenester.jpg
-- **Technology**: fjordgata.jpg
-- **About**: oversikt_kontoret.jpg (positioned at center 70% to show Klingenberggården building)
-- **Contact**: ProfilbildeThomas.jpg (positioned at center 85% to show jacket/logo)
+### Hero Image Mapping (WebP format for performance)
+- **Home**: trondheim_city.webp (preloaded with fetchpriority="high")
+- **Services**: tjenester.webp
+- **Technology**: fjordgata.webp
+- **About**: oversikt_kontoret.webp (positioned at center 70% to show Klingenberggården building)
+- **Contact**: ProfilbildeThomas.webp (positioned at center 85% to show jacket/logo)
 
 ### Image Optimization (January 2026)
 All hero images compressed and resized for faster loading:
 - Total size reduced from ~29MB to ~1.4MB (95% reduction)
-- JPEG format for compatibility, WebP versions available for modern browsers
+- WebP format for hero images (27% smaller than JPEG), JPEG fallbacks available
+- Home page hero preloaded in index.html for optimal LCP
 - Images resized to max 1920px width for web optimization
 
 ### Social Links
