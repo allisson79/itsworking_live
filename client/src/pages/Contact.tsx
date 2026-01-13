@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { Mail, MapPin, Phone, CheckCircle, Loader2 } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Contact() {
@@ -14,6 +14,7 @@ export default function Contact() {
   const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
   const contactMutation = useContactForm();
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const successRef = useRef<HTMLDivElement | null>(null);
 
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
@@ -48,6 +49,12 @@ export default function Contact() {
   }, [contactMutation, form, executeRecaptcha]);
 
   const handleNewMessage = useCallback(() => setSubmitted(false), []);
+
+  useEffect(() => {
+    if (submitted) {
+      successRef.current?.focus();
+    }
+  }, [submitted]);
 
   return (
     <Layout>
@@ -122,7 +129,12 @@ export default function Contact() {
               <h2>Send oss en melding</h2>
               
               {submitted ? (
-                <div className="success-state">
+                <div
+                  className="success-state"
+                  aria-live="polite"
+                  tabIndex={-1}
+                  ref={successRef}
+                >
                   <CheckCircle size={56} className="success-icon" />
                   <h3>Takk for din henvendelse!</h3>
                   <p>Vi har mottatt meldingen din og tar kontakt med deg så snart som mulig.</p>
@@ -137,7 +149,7 @@ export default function Contact() {
               ) : (
                 <form onSubmit={form.handleSubmit(onSubmit)} className="contact-form">
                   {(contactMutation.isError || recaptchaError) && (
-                    <div className="form-error-banner">
+                    <div className="form-error-banner" role="alert" aria-live="assertive">
                       {recaptchaError || contactMutation.error?.message}
                     </div>
                   )}
@@ -152,9 +164,13 @@ export default function Contact() {
                       data-testid="input-name"
                       {...form.register("name")}
                       disabled={contactMutation.isPending}
+                      aria-invalid={Boolean(form.formState.errors.name)}
+                      aria-describedby={form.formState.errors.name ? "name-error" : undefined}
                     />
                     {form.formState.errors.name && (
-                      <p className="error-message">{form.formState.errors.name.message}</p>
+                      <p className="error-message" id="name-error">
+                        {form.formState.errors.name.message}
+                      </p>
                     )}
                   </div>
 
@@ -168,9 +184,13 @@ export default function Contact() {
                       data-testid="input-email"
                       {...form.register("email")}
                       disabled={contactMutation.isPending}
+                      aria-invalid={Boolean(form.formState.errors.email)}
+                      aria-describedby={form.formState.errors.email ? "email-error" : undefined}
                     />
                     {form.formState.errors.email && (
-                      <p className="error-message">{form.formState.errors.email.message}</p>
+                      <p className="error-message" id="email-error">
+                        {form.formState.errors.email.message}
+                      </p>
                     )}
                   </div>
 
@@ -197,9 +217,13 @@ export default function Contact() {
                       data-testid="input-message"
                       {...form.register("message")}
                       disabled={contactMutation.isPending}
+                      aria-invalid={Boolean(form.formState.errors.message)}
+                      aria-describedby={form.formState.errors.message ? "message-error" : undefined}
                     ></textarea>
                     {form.formState.errors.message && (
-                      <p className="error-message">{form.formState.errors.message.message}</p>
+                      <p className="error-message" id="message-error">
+                        {form.formState.errors.message.message}
+                      </p>
                     )}
                   </div>
 

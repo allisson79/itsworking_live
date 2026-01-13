@@ -12,8 +12,11 @@ const mainStyle = { flex: 1 } as const;
 export const Layout = memo(function Layout({ children }: LayoutProps) {
   return (
     <div style={layoutStyle}>
+      <a href="#main-content" className="skip-link">
+        Hopp til innhold
+      </a>
       <Header />
-      <main style={mainStyle}>
+      <main id="main-content" style={mainStyle}>
         {children}
       </main>
       <Footer />
