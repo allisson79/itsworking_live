@@ -315,50 +315,6 @@ img {
 /* =========================
    HERO
 ========================= */
-.hero-elevated {
-  background: #f1f7ff;
-  padding: 64px 0 96px;
-}
-
-.hero-card {
-  background: #ffffff;
-  border-radius: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.hero-card-content {
-  padding: 56px;
-}
-
-.hero-tagline {
-  color: #2563eb;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.hero-subtitle {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.hero-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-
-@media (max-width: 900px) {
-  .hero-card {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Fullscreen Hero with Background Image */
 .hero-fullscreen {
   min-height: 70vh;
   position: relative;
@@ -1047,20 +1003,6 @@ img {
   color: #64748b;
 }
 
-.check-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.check-list li {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
 .icon-primary {
   color: #0b4ea2;
   flex-shrink: 0;
@@ -1091,24 +1033,6 @@ img {
 .text-emphasis {
   font-weight: 600;
   color: #0b4ea2;
-}
-
-.about-list {
-  list-style: none;
-  padding: 0;
-}
-
-.about-list li {
-  padding: 8px 0 8px 24px;
-  position: relative;
-}
-
-.about-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #0b4ea2;
-  font-weight: bold;
 }
 
 .contact-details-compact {
@@ -1188,10 +1112,6 @@ img {
   opacity: 1;
 }
 
-.card-icon {
-  color: #0b4ea2;
-}
-
 .partner-card-header h3 {
   margin: 0;
 }
@@ -1200,27 +1120,6 @@ img {
   font-weight: 600;
   margin: 20px 0 12px;
   color: #374151;
-}
-
-.check-list-compact {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.check-list-compact li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-.partner-note {
-  margin-top: 16px;
-  color: #64748b;
-  font-size: 0.9rem;
 }
 
 .responsibility-box {
