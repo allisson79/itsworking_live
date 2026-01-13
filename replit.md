@@ -109,6 +109,11 @@ shared/
   - Secret key stored in RECAPTCHA_SECRET_KEY secret
   - Score below 0.5 rejects submission as potential bot
 
+### Caching Policy
+- **HTML pages**: `no-store, must-revalidate` - Ensures updates propagate immediately
+- **Hashed assets (/assets/*)**: `1 year, immutable` - Vite generates content-hashed filenames for cache-busting
+- **Images (public/)**: `7 days, stale-while-revalidate` - Moderate cache for non-hashed assets
+
 ### Running the Project
 - **Development**: `npm run dev` - Starts Express server with Vite middleware
 - **Database**: `npm run db:push` - Push schema changes to database

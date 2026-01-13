@@ -7,7 +7,6 @@ export function serveStatic(app: Express) {
   const indexPath = path.resolve(distPath, "index.html");
   const isProd = process.env.NODE_ENV === "production";
   
-  // Cache file existence check in production only
   let indexExists: boolean | null = null;
   const checkIndexExists = () => {
     if (isProd && indexExists !== null) {
@@ -16,25 +15,44 @@ export function serveStatic(app: Express) {
     indexExists = fs.existsSync(indexPath);
     return indexExists;
   };
+
+  const sendHtmlWithNoCache = (res: Response) => {
+    res.set("Cache-Control", "no-store, must-revalidate");
+    res.set("Pragma", "no-cache");
+    res.set("Expires", "0");
+    res.sendFile(indexPath);
+  };
   
-  // Explicitly handle root for health checks
   app.get("/", (_req: Request, res: Response) => {
     if (checkIndexExists()) {
-      res.sendFile(indexPath);
+      sendHtmlWithNoCache(res);
     } else {
-      // In production, index.html should exist. If not, it's a build issue.
-      // We return 200 with a message if it's a health check probe during early boot
       res.status(200).send("Server is starting...");
     }
   });
 
+  app.use("/assets", express.static(path.join(distPath, "assets"), {
+    maxAge: "1y",
+    immutable: true,
+    etag: true,
+    lastModified: true,
+  }));
+
   app.use(express.static(distPath, {
-    index: "index.html",
-    maxAge: "1d",
+    index: false,
+    maxAge: "7d",
+    etag: true,
+    lastModified: true,
+    setHeaders: (res, filePath) => {
+      if (filePath.endsWith(".html")) {
+        res.set("Cache-Control", "no-store, must-revalidate");
+      } else if (filePath.match(/\.(jpg|jpeg|png|gif|svg|webp|ico)$/i)) {
+        res.set("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
+      }
+    },
   }));
 
   app.use((req: Request, res: Response, next: NextFunction) => {
-    // API and internal routes already handled
     if (req.path.startsWith("/api") || 
         req.path.startsWith("/_") || 
         req.path.startsWith("/__")) {
@@ -42,7 +60,7 @@ export function serveStatic(app: Express) {
     }
     
     if (checkIndexExists()) {
-      res.sendFile(indexPath);
+      sendHtmlWithNoCache(res);
     } else {
       next();
     }
