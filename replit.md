@@ -39,8 +39,14 @@ This is a professional website for Its Working AS, a Norwegian IT services compa
 - **Home**: trondheim_city.jpg
 - **Services**: tjenester.jpg
 - **Technology**: fjordgata.jpg
-- **About**: oversikt_kontoret.png (positioned at center 70% to show Klingenberggården building)
-- **Contact**: ProfilbildeThomas.png (positioned at center 85% to show jacket/logo)
+- **About**: oversikt_kontoret.jpg (positioned at center 70% to show Klingenberggården building)
+- **Contact**: ProfilbildeThomas.jpg (positioned at center 85% to show jacket/logo)
+
+### Image Optimization (January 2026)
+All hero images compressed and resized for faster loading:
+- Total size reduced from ~29MB to ~1.4MB (95% reduction)
+- JPEG format for compatibility, WebP versions available for modern browsers
+- Images resized to max 1920px width for web optimization
 
 ### Social Links
 - **Company LinkedIn**: https://www.linkedin.com/company/itsworking-no
