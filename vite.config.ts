@@ -36,7 +36,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-helmet-async'],
-          'vendor-ui': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-tabs'],
           'vendor-forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
         },
       },
