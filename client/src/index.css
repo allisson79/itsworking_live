@@ -213,6 +213,21 @@ img {
   background: #093f84;
 }
 
+.nav-linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0077b5;
+  padding: 8px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-linkedin:hover {
+  color: #005582;
+  background: rgba(0, 119, 181, 0.1);
+}
+
 .mobile-menu-btn {
   display: none;
   background: none;

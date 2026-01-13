@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { useState, useCallback, memo, useMemo, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Linkedin } from "lucide-react";
 
 export const Header = memo(function Header() {
   const [location] = useLocation();
@@ -117,6 +117,15 @@ export const Header = memo(function Header() {
           <Link href="/kontakt" className="nav-btn-cta" onClick={closeMenu}>
             Kontakt oss
           </Link>
+          <a 
+            href="https://www.linkedin.com/company/itsworking-no" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="nav-linkedin"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={20} />
+          </a>
         </nav>
       </div>
     </header>
