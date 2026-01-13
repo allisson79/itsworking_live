@@ -44,8 +44,12 @@ export function serveStatic(app: Express) {
     etag: true,
     lastModified: true,
     setHeaders: (res, filePath) => {
+      const fileName = path.basename(filePath);
       if (filePath.endsWith(".html")) {
         res.set("Cache-Control", "no-store, must-revalidate");
+      } else if (fileName.match(/^[a-zA-Z0-9_-]+\.[a-f0-9]{8,}\.(js|css|mjs)$/i) || 
+                 fileName.match(/^[a-zA-Z0-9]{8,}=?\.(js|css|mjs)$/i)) {
+        res.set("Cache-Control", "public, max-age=31536000, immutable");
       } else if (filePath.match(/\.(jpg|jpeg|png|gif|svg|webp|ico)$/i)) {
         res.set("Cache-Control", "public, max-age=604800, stale-while-revalidate=86400");
       }
