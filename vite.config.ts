@@ -1,12 +1,27 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+
+function nonBlockingCss(): Plugin {
+  return {
+    name: 'non-blocking-css',
+    enforce: 'post',
+    transformIndexHtml(html) {
+      return html.replace(
+        /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/g,
+        '<link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\'">' +
+        '<noscript><link rel="stylesheet" href="$1"></noscript>'
+      );
+    },
+  };
+}
 
 export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
+    nonBlockingCss(),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
