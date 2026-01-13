@@ -1,0 +1,6 @@
+# Robots.txt for itsworking.no
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://itsworking.no/sitemap.xml

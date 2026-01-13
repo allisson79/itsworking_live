@@ -50,7 +50,7 @@ export default function Technology() {
           <div className="partner-cards-grid">
             <div className="partner-card-large" data-testid="card-partner-globalconnect">
               <div className="partner-card-header">
-                <img src="/gc-logo-hor-blue.png" alt="GlobalConnect logo" className="partner-logo" loading="lazy" />
+                <img src="/gc-logo-hor-blue.png" alt="GlobalConnect logo" className="partner-logo" loading="lazy" width="200" height="60" />
               </div>
               <p>
                 Its Working har hatt et tett samarbeid med Global Connect i over 15 år. Dette gir gode relasjoner og etablerte kanaler inn hos leverandøren, og sikrer effektiv oppfølging.
@@ -80,7 +80,7 @@ export default function Technology() {
             
             <div className="partner-card-large" data-testid="card-partner-digiflow">
               <div className="partner-card-header">
-                <img src="/Logo-Digiflow-AS.png" alt="Digiflow logo" className="partner-logo" loading="lazy" />
+                <img src="/Logo-Digiflow-AS.png" alt="Digiflow logo" className="partner-logo" loading="lazy" width="200" height="60" />
               </div>
               <p>
                 Digiflow leverer driftstjenester og teknologiplattformer for profesjonelle IT-miljøer, med et tydelig fokus på SMB-markedet.
@@ -112,7 +112,7 @@ export default function Technology() {
         <div className="container">
           <div className="contact-local-section">
             <div className="contact-local-image">
-              <img src="/trondheim_city.jpg" alt="Trondheim sentrum" className="rounded-image" loading="lazy" />
+              <img src="/trondheim_city.jpg" alt="Trondheim sentrum" className="rounded-image" loading="lazy" width="600" height="400" />
             </div>
             <div className="contact-local-text">
               <h2>Kontakt og lokal forankring</h2>
