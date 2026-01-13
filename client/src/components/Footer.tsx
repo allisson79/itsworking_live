@@ -18,7 +18,7 @@ export const Footer = memo(function Footer() {
       <div className="container footer-grid">
         <div className="footer-column">
           <Link href="/" className="logo" style={logoStyle}>
-            <img src="/its-working-logo-white.png" alt="Its Working" width="200" height="55" />
+            <img src="/its-working-logo-white-small.webp" alt="Its Working" width="200" height="55" />
           </Link>
           <p>
             Profesjonell IT-drift for små og mellomstore bedrifter. 

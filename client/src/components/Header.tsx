@@ -83,7 +83,7 @@ export const Header = memo(function Header() {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
         <Link href="/" className="logo">
-          <img src="/itsworking_logo_transparent_new.png" alt="Its Working" width="180" height="50" />
+          <img src="/itsworking_logo_header.webp" alt="Its Working" width="244" height="88" />
         </Link>
 
         <button 

@@ -84,7 +84,7 @@ export default function Home() {
 
             <div className="partner-logos-grid">
               <img
-                src="/gc-logo-hor-blue.png"
+                src="/gc-logo-hor-blue.webp"
                 alt="GlobalConnect"
                 className="partner-logo"
                 loading="lazy"
@@ -92,7 +92,7 @@ export default function Home() {
                 height="60"
               />
               <img
-                src="/Logo-Digiflow-AS.png"
+                src="/Logo-Digiflow-AS.webp"
                 alt="Digiflow AS"
                 className="partner-logo"
                 loading="lazy"
