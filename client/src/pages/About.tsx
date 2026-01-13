@@ -13,7 +13,7 @@ export default function About() {
         path="/om-oss"
         image="/ProfilbildeThomas.jpg"
       />
-      <section className="hero-fullscreen hero-fullscreen--about" style={{ backgroundImage: 'url(/oversikt_kontoret.jpg)' }}>
+      <section className="hero-fullscreen hero-fullscreen--about" style={{ backgroundImage: 'url(/oversikt_kontoret.webp)' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">

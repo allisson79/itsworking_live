@@ -12,7 +12,7 @@ export default function Technology() {
         description="Its Working samarbeider med GlobalConnect og Digiflow for å levere stabil fiber, nettverk og sikkerhet til bedrifter i Trondheim."
         path="/teknologi"
       />
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/fjordgata.jpg)' }}>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/fjordgata.webp)' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">

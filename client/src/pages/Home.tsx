@@ -25,7 +25,7 @@ export default function Home() {
       />
       {/* HERO */}
       <section className="hero-fullscreen hero-animated">
-        <div className="hero-bg" style={{ backgroundImage: 'url(/trondheim_city.jpg)' }}></div>
+        <div className="hero-bg" style={{ backgroundImage: 'url(/trondheim_city.webp)' }}></div>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">

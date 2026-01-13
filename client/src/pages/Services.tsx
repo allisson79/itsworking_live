@@ -12,7 +12,7 @@ export default function Services() {
         description="Fiber, nettverk, WiFi, IT-sikkerhet og Microsoft 365 for bedrifter i Trondheim. Profesjonelle IT-tjenester med personlig oppfølging."
         path="/tjenester"
       />
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/tjenester.jpg)' }}>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/tjenester.webp)' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
