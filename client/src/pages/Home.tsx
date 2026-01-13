@@ -88,12 +88,16 @@ export default function Home() {
                 alt="GlobalConnect"
                 className="partner-logo"
                 loading="lazy"
+                width="200"
+                height="60"
               />
               <img
                 src="/Logo-Digiflow-AS.png"
                 alt="Digiflow AS"
                 className="partner-logo"
                 loading="lazy"
+                width="200"
+                height="60"
               />
             </div>
           </div>
@@ -109,6 +113,8 @@ export default function Home() {
                 src="/ProfilbildeThomas.png" 
                 alt="Thomas Allisson" 
                 className="founder-photo"
+                width="280"
+                height="280"
               />
               <div className="experience-badge">
                 <Award size={18} />
