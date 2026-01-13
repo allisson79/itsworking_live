@@ -63,7 +63,7 @@ export default function Contact() {
         description="Ta kontakt med Its Working i Trondheim. Ring 988 50 462 eller send oss en melding. Vi hjelper din bedrift med IT-løsninger."
         path="/kontakt"
       />
-      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/ProfilbildeThomas.png)', backgroundPosition: 'center 85%' }}>
+      <section className="hero-fullscreen" style={{ backgroundImage: 'url(/ProfilbildeThomas.jpg)', backgroundPosition: 'center 85%' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
@@ -84,7 +84,7 @@ export default function Contact() {
               <p>Vi holder til i Trondheim og betjener bedrifter i hele regionen.</p>
 
               <div className="contact-person-primary">
-                <img src="/ProfilbildeThomas.png" alt="Thomas Allisson" className="contact-person-primary-photo" loading="lazy" width="120" height="120" />
+                <img src="/ProfilbildeThomas.jpg" alt="Thomas Allisson" className="contact-person-primary-photo" loading="lazy" width="120" height="120" />
                 <div className="contact-person-primary-info">
                   <p className="contact-person-primary-name">Thomas Allisson</p>
                   <p className="contact-person-primary-role">Én fast kontaktperson</p>

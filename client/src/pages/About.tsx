@@ -11,9 +11,9 @@ export default function About() {
         title="Om oss"
         description="Its Working er et lokalt IT-selskap i Trondheim, etablert av Thomas Allisson. Vi leverer personlig IT-støtte til små og mellomstore bedrifter."
         path="/om-oss"
-        image="/ProfilbildeThomas.png"
+        image="/ProfilbildeThomas.jpg"
       />
-      <section className="hero-fullscreen hero-fullscreen--about" style={{ backgroundImage: 'url(/oversikt_kontoret.png)' }}>
+      <section className="hero-fullscreen hero-fullscreen--about" style={{ backgroundImage: 'url(/oversikt_kontoret.jpg)' }}>
         <div className="hero-overlay">
           <div className="container">
             <div className="hero-fullscreen-content">
@@ -112,7 +112,7 @@ export default function About() {
               </p>
             </div>
             <div className="about-image">
-              <img src="/oversikt_kontoret.png" alt="Kontoret til Its Working" className="rounded-image" loading="lazy" width="600" height="400" />
+              <img src="/oversikt_kontoret.jpg" alt="Kontoret til Its Working" className="rounded-image" loading="lazy" width="600" height="400" />
             </div>
           </div>
         </div>

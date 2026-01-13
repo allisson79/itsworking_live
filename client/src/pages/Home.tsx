@@ -110,7 +110,7 @@ export default function Home() {
           <div className="personal-partner-section">
             <div className="personal-partner-photo">
               <img 
-                src="/ProfilbildeThomas.png" 
+                src="/ProfilbildeThomas.jpg" 
                 alt="Thomas Allisson" 
                 className="founder-photo"
                 width="280"
