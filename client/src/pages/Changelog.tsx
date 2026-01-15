@@ -118,6 +118,10 @@ export default memo(function Changelog() {
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
                     <ArrowRight size={16} style={{ marginTop: '4px', color: '#64748b', flexShrink: 0 }} />
+                    <span>Støtte for redusert bevegelse (prefers-reduced-motion) for alle animasjoner</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                    <ArrowRight size={16} style={{ marginTop: '4px', color: '#64748b', flexShrink: 0 }} />
                     <span>Grunnleggerfoto med "20+ års erfaring" merke i Personlig IT-partner-seksjonen</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>

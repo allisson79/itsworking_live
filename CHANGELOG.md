@@ -15,7 +15,7 @@ og dette prosjektet følger [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Zoom-animasjon på hero bakgrunnsbilde
 - Hover lift-effekter på tjenestekort, partnerkort og CTA-bokser
 - Scroll-utløste fade-in animasjoner på innholdsseksjoner
-- Grunnleggende-redusert-bevegelse støtte for alle animasjoner
+- Støtte for redusert bevegelse (prefers-reduced-motion) for alle animasjoner
 - Grunnleggerfoto med "20+ års erfaring" merke i Personlig IT-partner-seksjonen
 - `/api/status` endepunkt for integrasjons health checks
 - SEO metadata med Open Graph og Twitter card støtte på alle sider
