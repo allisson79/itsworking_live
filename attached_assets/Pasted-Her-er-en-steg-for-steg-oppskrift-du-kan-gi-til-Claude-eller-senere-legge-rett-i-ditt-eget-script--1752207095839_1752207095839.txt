@@ -1,0 +1,68 @@
+Her er en steg‐for‐steg-oppskrift du kan gi til Claude (eller senere legge rett i ditt eget script) for å feilsøke og fikse hamburger-menyen:
+
+```js
+// 1) Sjekk at du bare har én <script src="script.js" defer> i head/body, og at path er riktig.
+
+// 2) Legg til logging for å se om event listeneren fanges opp:
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainMenu   = document.querySelector('.main-menu');
+
+  console.log('Init hamburger:', !!menuToggle, !!mainMenu);
+  if (!menuToggle || !mainMenu) return;
+
+  menuToggle.addEventListener('click', e => {
+    e.preventDefault();
+    console.log('Hamburger clicked');
+    mainMenu.classList.toggle('show');
+  });
+
+  // (valgfritt) steng menyen om man klikker utenfor
+  document.addEventListener('click', evt => {
+    if (mainMenu.classList.contains('show') &&
+        !menuToggle.contains(evt.target) &&
+        !mainMenu.contains(evt.target)) {
+      console.log('Closing menu');
+      mainMenu.classList.remove('show');
+    }
+  });
+});
+```
+
+Og putt dette i CSS:
+
+```css
+/* Skjul hovedmeny på mobil helt til vi åpner den */
+@media (max-width: 768px) {
+  .main-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(13,20,33,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+  .main-menu.show {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-menu.show li {
+    margin: 0;
+  }
+  .main-menu.show a {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: white;
+  }
+}
+```
+
+**Forklaring:**
+
+1. **`console.log`-sjekk** lar deg se i dev-konsollen om knapp og meny blir funnet, og om klikket trigges.
+2. **`.main-menu.show`** er en ren toggler-klasse som du kan style fritt – på mobil skjuler du `.main-menu` helt, og viser den igjen når `.show` er påsatt.
+3. Flytt all kode over i én `DOMContentLoaded`-blokk slik at du unngår duplikater eller at koden kjører før elementene ligger i DOM.
+
+Kopier inn denne JS-blokken og denne CSS-reglene, så bør hamburger-menyen fungere identisk med resten av siden.

@@ -1,13 +1,14 @@
-modules = ["nodejs-20", "postgresql-16"]
+
+entrypoint = "index.html"
+modules = ["web", "python-3.11"]
 
 [nix]
 channel = "stable-24_11"
-packages = ["psmisc", "lsof", "poppler_utils", "imagemagick"]
 
 [deployment]
+publicDir = "."
 deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
-run = ["npm", "run", "start"]
+run = ["python", "-m", "http.server", "5000"]
 
 [workflows]
 runButton = "Project"
@@ -17,19 +18,12 @@ name = "Project"
 mode = "parallel"
 author = "agent"
 
-[workflows.workflow.metadata]
-outputType = "webview"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run start"
-
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Dev Server"
+args = "Web Server"
 
 [[workflows.workflow]]
-name = "Dev Server"
+name = "Web Server"
 author = "agent"
 
 [workflows.workflow.metadata]
@@ -37,17 +31,20 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev"
+args = "python -m http.server 5000"
 waitForPort = 5000
+
+[[ports]]
+localPort = 80
+externalPort = 80
 
 [[ports]]
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 36243
+externalPort = 3000
+
 [agent]
 expertMode = true
-
-[userenv]
-
-[userenv.shared]
-VITE_RECAPTCHA_SITE_KEY = "6Lda8kUsAAAAAKlr8ciSa5UHAT1axF2qgyepQ8Ec"
