@@ -11,6 +11,7 @@ const Technology = lazy(() => import("@/pages/Technology"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
+const Changelog = lazy(() => import("@/pages/Changelog"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -55,6 +56,7 @@ function Router() {
         <Route path="/om-oss" component={About} />
         <Route path="/kontakt" component={Contact} />
         <Route path="/personvern" component={Privacy} />
+        <Route path="/endringslogg" component={Changelog} />
         
         {/* Fallback to 404 */}
         <Route component={NotFound} />
