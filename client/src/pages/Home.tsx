@@ -31,9 +31,7 @@ export default function Home() {
             <div className="hero-fullscreen-content">
               <h1>IT-partner i Trondheim som bare fungerer</h1>
               <p className="hero-subtitle-light">
-                Vi tar oss av IT for små og mellomstore bedrifter i Trondheim og
-                regionen. Med én fast kontaktperson får du trygg, stabil og
-                profesjonell IT-drift.
+                Vi tar oss av IT, slik at små og mellomstore bedrifter får mer tid til å drive sin virksomhet.
               </p>
               <div className="hero-cta">
                 <Link href="/kontakt" className="btn">
